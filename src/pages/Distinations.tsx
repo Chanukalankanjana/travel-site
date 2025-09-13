@@ -1,14 +1,19 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Star, Clock, ArrowLeft, MapPin, Users, Camera, Heart, Filter } from "lucide-react"
-import { useLanguage } from "@/contexts/language-context"
+import { useState } from "react";
+import { ArrowLeft, MapPin, Heart, Filter } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
-export default function DestinationsPage() {
-  const { t } = useLanguage()
-  const [selectedCategory, setSelectedCategory] = useState("all")
-  const [selectedDuration, setSelectedDuration] = useState("all")
-  const [sortBy, setSortBy] = useState("popular")
+interface DestinationsPageProps {
+  onNavigateToDestination: (id: string) => void;
+}
+
+export default function DestinationsPage({
+  onNavigateToDestination,
+}: DestinationsPageProps) {
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedDuration, setSelectedDuration] = useState("all");
+  const [sortBy, setSortBy] = useState("popular");
 
   const categories = [
     { id: "all", label: "All Destinations" },
@@ -17,7 +22,7 @@ export default function DestinationsPage() {
     { id: "culture", label: "Cultural" },
     { id: "adventure", label: "Adventure" },
     { id: "beaches", label: "Beaches" },
-  ]
+  ];
 
   const durations = [
     { id: "all", label: "Any Duration" },
@@ -25,7 +30,7 @@ export default function DestinationsPage() {
     { id: "2-3", label: "2-3 Days" },
     { id: "4-7", label: "4-7 Days" },
     { id: "7+", label: "7+ Days" },
-  ]
+  ];
 
   const destinations = [
     {
@@ -40,7 +45,12 @@ export default function DestinationsPage() {
       location: "Central Province",
       description:
         "Ancient royal palace and fortress built on a massive rock formation, featuring stunning frescoes and water gardens.",
-      highlights: ["Ancient Palace Ruins", "Famous Frescoes", "Water Gardens", "Archaeological Museum"],
+      highlights: [
+        "Ancient Palace Ruins",
+        "Famous Frescoes",
+        "Water Gardens",
+        "Archaeological Museum",
+      ],
       bestTime: "December to April",
       difficulty: "Moderate",
       groupSize: "2-15 people",
@@ -57,7 +67,12 @@ export default function DestinationsPage() {
       location: "Central Province",
       description:
         "Sacred city housing the Temple of the Tooth Relic, surrounded by beautiful botanical gardens and traditional culture.",
-      highlights: ["Temple of the Tooth", "Royal Botanical Gardens", "Traditional Dance Shows", "Kandy Lake"],
+      highlights: [
+        "Temple of the Tooth",
+        "Royal Botanical Gardens",
+        "Traditional Dance Shows",
+        "Kandy Lake",
+      ],
       bestTime: "Year-round",
       difficulty: "Easy",
       groupSize: "2-20 people",
@@ -74,7 +89,12 @@ export default function DestinationsPage() {
       location: "Uva Province",
       description:
         "Misty mountains, tea plantations, and scenic train rides through some of Sri Lanka's most beautiful landscapes.",
-      highlights: ["Nine Arch Bridge", "Little Adam's Peak", "Tea Plantation Tours", "Scenic Train Ride"],
+      highlights: [
+        "Nine Arch Bridge",
+        "Little Adam's Peak",
+        "Tea Plantation Tours",
+        "Scenic Train Ride",
+      ],
       bestTime: "December to March",
       difficulty: "Moderate",
       groupSize: "2-12 people",
@@ -91,7 +111,12 @@ export default function DestinationsPage() {
       location: "Southern Province",
       description:
         "UNESCO World Heritage colonial fort with historic lighthouse, museums, and charming cobblestone streets.",
-      highlights: ["Colonial Architecture", "Historic Lighthouse", "Fort Ramparts", "Maritime Museum"],
+      highlights: [
+        "Colonial Architecture",
+        "Historic Lighthouse",
+        "Fort Ramparts",
+        "Maritime Museum",
+      ],
       bestTime: "November to April",
       difficulty: "Easy",
       groupSize: "2-25 people",
@@ -108,7 +133,12 @@ export default function DestinationsPage() {
       location: "Southern Province",
       description:
         "Premier wildlife destination famous for leopards, elephants, and diverse bird species in their natural habitat.",
-      highlights: ["Leopard Spotting", "Elephant Herds", "Bird Watching", "Beach Camping"],
+      highlights: [
+        "Leopard Spotting",
+        "Elephant Herds",
+        "Bird Watching",
+        "Beach Camping",
+      ],
       bestTime: "February to July",
       difficulty: "Easy",
       groupSize: "2-8 people",
@@ -125,7 +155,12 @@ export default function DestinationsPage() {
       location: "Southern Province",
       description:
         "Pristine golden beaches perfect for whale watching, surfing, and enjoying spectacular tropical sunsets.",
-      highlights: ["Blue Whale Watching", "Golden Beaches", "Surfing Spots", "Coconut Tree Hill"],
+      highlights: [
+        "Blue Whale Watching",
+        "Golden Beaches",
+        "Surfing Spots",
+        "Coconut Tree Hill",
+      ],
       bestTime: "November to April",
       difficulty: "Easy",
       groupSize: "2-15 people",
@@ -142,7 +177,12 @@ export default function DestinationsPage() {
       location: "North Central Province",
       description:
         "Ancient capital with sacred Buddhist sites, massive dagobas, and ruins dating back over 2,000 years.",
-      highlights: ["Sacred Bodhi Tree", "Ancient Dagobas", "Ruins & Monasteries", "Archaeological Sites"],
+      highlights: [
+        "Sacred Bodhi Tree",
+        "Ancient Dagobas",
+        "Ruins & Monasteries",
+        "Archaeological Sites",
+      ],
       bestTime: "December to March",
       difficulty: "Easy",
       groupSize: "2-20 people",
@@ -159,32 +199,39 @@ export default function DestinationsPage() {
       location: "Central Province",
       description:
         "Cool climate hill station surrounded by tea plantations, colonial architecture, and beautiful gardens.",
-      highlights: ["Tea Factory Tours", "Colonial Architecture", "Horton Plains", "Gregory Lake"],
+      highlights: [
+        "Tea Factory Tours",
+        "Colonial Architecture",
+        "Horton Plains",
+        "Gregory Lake",
+      ],
       bestTime: "December to April",
       difficulty: "Easy",
       groupSize: "2-18 people",
     },
-  ]
+  ];
 
   const filteredDestinations = destinations.filter((dest) => {
-    const categoryMatch = selectedCategory === "all" || dest.category === selectedCategory
-    const durationMatch = selectedDuration === "all" || dest.duration === selectedDuration
-    return categoryMatch && durationMatch
-  })
+    const categoryMatch =
+      selectedCategory === "all" || dest.category === selectedCategory;
+    const durationMatch =
+      selectedDuration === "all" || dest.duration === selectedDuration;
+    return categoryMatch && durationMatch;
+  });
 
   const sortedDestinations = [...filteredDestinations].sort((a, b) => {
     switch (sortBy) {
       case "price-low":
-        return a.price - b.price
+        return a.price - b.price;
       case "price-high":
-        return b.price - a.price
+        return b.price - a.price;
       case "rating":
-        return b.rating - a.rating
+        return b.rating - a.rating;
       case "popular":
       default:
-        return b.reviews - a.reviews
+        return b.reviews - a.reviews;
     }
-  })
+  });
 
   return (
     <div className="min-h-screen bg-white pt-16">
@@ -196,10 +243,12 @@ export default function DestinationsPage() {
               <MapPin className="w-4 h-4 mr-2" />
               Explore Paradise
             </div>
-            <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 mb-6">Discover Sri Lanka</h1>
+            <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 mb-6">
+              Discover Sri Lanka
+            </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              From ancient kingdoms to pristine beaches, explore the most captivating destinations in the Pearl of the
-              Indian Ocean
+              From ancient kingdoms to pristine beaches, explore the most
+              captivating destinations in the Pearl of the Indian Ocean
             </p>
 
             {/* Back to Home */}
@@ -220,7 +269,9 @@ export default function DestinationsPage() {
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center space-x-4">
               <Filter className="w-5 h-5 text-gray-500" />
-              <span className="text-sm font-medium text-gray-700">Filter by:</span>
+              <span className="text-sm font-medium text-gray-700">
+                Filter by:
+              </span>
             </div>
 
             <div className="flex flex-wrap items-center gap-4">
@@ -264,7 +315,11 @@ export default function DestinationsPage() {
             </div>
 
             <div className="text-sm text-gray-600">
-              Showing <span className="font-semibold text-emerald-600">{sortedDestinations.length}</span> destinations
+              Showing{" "}
+              <span className="font-semibold text-emerald-600">
+                {sortedDestinations.length}
+              </span>{" "}
+              destinations
             </div>
           </div>
         </div>
@@ -293,12 +348,6 @@ export default function DestinationsPage() {
                     {destination.category}
                   </div>
 
-                  {/* Rating */}
-                  <div className="absolute top-4 right-4 flex items-center space-x-1 bg-white/90 backdrop-blur-sm rounded-full px-2 py-1">
-                    <Star className="w-4 h-4 text-yellow-500 fill-current" />
-                    <span className="text-sm font-medium text-gray-800">{destination.rating}</span>
-                  </div>
-
                   {/* Heart Icon */}
                   <button className="absolute bottom-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors duration-300">
                     <Heart className="w-5 h-5 text-white hover:text-red-400 transition-colors duration-300" />
@@ -307,46 +356,26 @@ export default function DestinationsPage() {
 
                 {/* Content */}
                 <div className="p-6">
-                  <div className="flex items-start justify-between mb-3">
-                    <div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-emerald-600 transition-colors duration-300">
-                        {destination.name}
-                      </h3>
-                      <p className="text-gray-500 text-sm flex items-center">
-                        <MapPin className="w-4 h-4 mr-1" />
-                        {destination.location}
-                      </p>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-2xl font-bold text-gray-900">${destination.price}</div>
-                      <div className="text-xs text-gray-500">per person</div>
-                    </div>
+                  <div className="mb-3">
+                    <h3 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-emerald-600 transition-colors duration-300">
+                      {destination.name}
+                    </h3>
+                    <p className="text-gray-500 text-sm flex items-center">
+                      <MapPin className="w-4 h-4 mr-1" />
+                      {destination.location}
+                    </p>
                   </div>
 
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed line-clamp-2">{destination.description}</p>
-
-                  {/* Quick Info */}
-                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                    <div className="flex items-center space-x-1">
-                      <Clock className="w-4 h-4" />
-                      <span>{destination.duration} days</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <Users className="w-4 h-4" />
-                      <span>{destination.groupSize}</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <Camera className="w-4 h-4" />
-                      <span>{destination.reviews} reviews</span>
-                    </div>
-                  </div>
+                  <p className="text-gray-600 text-sm mb-4 leading-relaxed line-clamp-2">
+                    {destination.description}
+                  </p>
 
                   {/* Highlights */}
                   <div className="mb-6">
                     <div className="flex flex-wrap gap-2">
-                      {destination.highlights.slice(0, 2).map((highlight, idx) => (
+                      {destination.highlights.slice(0, 2).map((highlight) => (
                         <span
-                          key={idx}
+                          key={highlight}
                           className="px-2 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-full font-medium"
                         >
                           {highlight}
@@ -361,12 +390,14 @@ export default function DestinationsPage() {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex space-x-3">
-                    <button className="flex-1 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition-colors duration-300">
-                      Book Now
-                    </button>
-                    <button className="px-4 py-3 border border-gray-300 hover:border-emerald-500 text-gray-700 hover:text-emerald-600 rounded-lg font-semibold transition-colors duration-300">
-                      Details
+                  <div className="flex justify-center">
+                    <button
+                      onClick={() =>
+                        onNavigateToDestination(destination.id.toString())
+                      }
+                      className="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition-colors duration-300"
+                    >
+                      More Details
                     </button>
                   </div>
                 </div>
@@ -383,5 +414,5 @@ export default function DestinationsPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }
