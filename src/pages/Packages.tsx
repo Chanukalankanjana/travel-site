@@ -1,510 +1,756 @@
 "use client"
 
-import { useState } from "react"
-import { Star, Check, ArrowRight, Crown, Zap, Heart, ArrowLeft, Calendar, Users, Filter } from "lucide-react"
-import { useLanguage } from "@/contexts/language-context"
+import { useState, useEffect } from "react"
+import { LanguageProvider } from "../contexts/LanguageContext"
+import Header from "../components/Header"
+import Footer from "../components/Footer"
+import {
+  Clock,
+  Users,
+  Star,
+  Check,
+  ArrowRight,
+  Calendar,
+  Gift,
+  Zap,
+  Crown,
+  Heart,
+  MapPin,
+  Camera,
+  Mountain,
+  Building,
+  Binary as Binoculars,
+  Apple as Temple,
+} from "lucide-react"
+import { useLanguage } from "../contexts/LanguageContext"
 
-export default function PackagesPage() {
-  const { t } = useLanguage()
-  const [selectedCategory, setSelectedCategory] = useState("all")
+const PackagesContent = () => {
+  const { t, currentLanguage } = useLanguage()
   const [selectedDuration, setSelectedDuration] = useState("all")
-  const [selectedBudget, setSelectedBudget] = useState("all")
-  const [sortBy, setSortBy] = useState("popular")
+  const [selectedCategory, setSelectedCategory] = useState("all")
+  const [isVisible, setIsVisible] = useState(false)
 
-  const categories = [
-    { id: "all", label: "All Packages" },
-    { id: "cultural", label: "Cultural Heritage" },
-    { id: "adventure", label: "Adventure & Wildlife" },
-    { id: "luxury", label: "Luxury & Relaxation" },
-    { id: "nature", label: "Nature & Eco" },
-    { id: "family", label: "Family Friendly" },
-  ]
+  useEffect(() => {
+    setIsVisible(true)
+  }, [])
+
+  const whatsappNumbers = {
+    en: "+94771234567",
+    ru: "+94777654321",
+  }
+
+  const handleWhatsAppClick = (packageName: string, price: string) => {
+    const number = whatsappNumbers[currentLanguage.code]
+    const message = encodeURIComponent(
+      currentLanguage.code === "en"
+        ? `Hello! I'm interested in the ${packageName} tour package (${price}). Could you provide more details and availability?`
+        : `Привет! Меня интересует тур "${packageName}" (${price}). Можете предоставить больше информации и доступность?`,
+    )
+    window.open(`https://wa.me/${number}?text=${message}`, "_blank")
+  }
 
   const durations = [
-    { id: "all", label: "Any Duration" },
-    { id: "3-5", label: "3-5 Days" },
-    { id: "6-10", label: "6-10 Days" },
-    { id: "11-15", label: "11-15 Days" },
-    { id: "15+", label: "15+ Days" },
+    { id: "all", label: "All Tours" },
+    { id: "1day", label: "1 Day Tours" },
+    { id: "2day", label: "2 Day Tours" },
+    { id: "7day", label: "7 Day Tours" },
   ]
 
-  const budgets = [
-    { id: "all", label: "Any Budget" },
-    { id: "budget", label: "Budget ($500-$1000)" },
-    { id: "mid", label: "Mid-range ($1000-$2000)" },
-    { id: "luxury", label: "Luxury ($2000+)" },
+  const categories = [
+    { id: "all", label: "All Categories" },
+    { id: "cultural", label: "Cultural Heritage" },
+    { id: "adventure", label: "Adventure & Nature" },
+    { id: "wildlife", label: "Wildlife Safari" },
+    { id: "city", label: "City Tours" },
+    { id: "beach", label: "Beach & Coast" },
+    { id: "comprehensive", label: "Multi-Day Tours" },
   ]
 
-  const packages = [
+  const tourPackages = [
+    // One Day Tours
     {
       id: 1,
-      name: "Cultural Heritage Explorer",
-      duration: "7 Days / 6 Nights",
-      price: 899,
-      originalPrice: 1199,
-      image: "/images/kandy-temple.jpg",
-      category: "cultural",
-      budget: "mid",
+      name: "Ella Mountain Excursion",
+      subtitle: "Foggy City Adventure",
+      duration: "1day",
+      category: "adventure",
+      price: "$85",
+      originalPrice: "$110",
+      image:
+        "https://images.pexels.com/photos/1076081/pexels-photo-1076081.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
       rating: 4.9,
-      reviews: 156,
-      badge: "bestseller",
-      badgeIcon: Crown,
-      description:
-        "Journey through 2,500 years of Sri Lankan history and culture, visiting ancient kingdoms and sacred temples.",
-      highlights: ["Sigiriya Rock Fortress", "Kandy Temple of Tooth", "Dambulla Cave Temples", "Polonnaruwa Ruins"],
+      reviews: 234,
+      groupSize: "2-15",
+      badge: "popular",
+      badgeIcon: Mountain,
+      highlights: [
+        "Rawana Waterfall",
+        "Nine Arches Bridge",
+        "Feed the Monkeys",
+        "Little Adam's Peak",
+        "Tea Plantation & Government Tea Shop",
+        "Traditional Ayurvedic Garden",
+      ],
+      extras: ["Elephant Feeding at Transit Home (Optional)"],
       included: [
-        "6 nights accommodation in 4-star hotels",
-        "All meals (breakfast, lunch, dinner)",
-        "Private air-conditioned vehicle",
-        "Professional English-speaking guide",
-        "All entrance fees and permits",
-        "Airport transfers",
+        "All entrance tickets",
+        "Professional guide and driver",
+        "Bottled water",
+        "Comfortable air-conditioned vehicle",
       ],
       itinerary: [
-        { day: 1, title: "Arrival in Colombo", activities: ["Airport pickup", "City tour", "Hotel check-in"] },
-        { day: 2, title: "Colombo to Sigiriya", activities: ["Sigiriya Rock climb", "Village tour", "Sunset viewing"] },
-        { day: 3, title: "Sigiriya to Kandy", activities: ["Temple of Tooth visit", "Cultural show", "Lake walk"] },
+        { time: "07:00", activity: "Hotel pickup and departure to Ella" },
+        { time: "09:30", activity: "Visit Rawana Waterfall" },
+        { time: "10:30", activity: "Nine Arches Bridge photography" },
+        { time: "11:30", activity: "Feed monkeys and nature walk" },
+        { time: "13:00", activity: "Lunch break" },
+        { time: "14:30", activity: "Little Adam's Peak hiking" },
+        { time: "16:00", activity: "Tea plantation and factory tour" },
+        { time: "17:30", activity: "Ayurvedic garden visit" },
+        { time: "19:00", activity: "Return to hotel" },
       ],
-      bestTime: "December to April",
-      groupSize: "2-15 people",
-      difficulty: "Moderate",
     },
     {
       id: 2,
-      name: "Adventure & Wildlife Safari",
-      duration: "10 Days / 9 Nights",
-      price: 1299,
-      originalPrice: 1599,
-      image: "/images/elephant-safari.jpg",
-      category: "adventure",
-      budget: "mid",
+      name: "Galle Dutch Fort Tour",
+      subtitle: "UNESCO Heritage Coast",
+      duration: "1day",
+      category: "cultural",
+      price: "$75",
+      originalPrice: "$95",
+      image:
+        "https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
       rating: 4.8,
-      reviews: 203,
-      badge: "popular",
-      badgeIcon: Zap,
-      description:
-        "Thrilling adventures in Sri Lanka's wild landscapes with leopard safaris, hiking, and water sports.",
-      highlights: ["Yala Leopard Safari", "Ella Hiking Trails", "White Water Rafting", "Whale Watching"],
-      included: [
-        "9 nights in eco-lodges and hotels",
-        "All adventure activities",
-        "Safari jeep with driver",
-        "Professional guide",
-        "Safety equipment",
-        "All meals and transfers",
+      reviews: 189,
+      groupSize: "2-20",
+      badge: "heritage",
+      badgeIcon: Temple,
+      highlights: [
+        "Turtle Farm Experience",
+        "Madu River Boat Safari",
+        "Moonstone Mine at Meetiyagoda",
+        "Turtle Beach Visit",
+        "UNESCO Dutch Galle Fort",
       ],
+      included: ["All entrance tickets", "Professional guide", "Bottled water", "Comfortable vehicle"],
       itinerary: [
-        { day: 1, title: "Arrival & Negombo", activities: ["Airport pickup", "Beach relaxation", "Welcome dinner"] },
-        {
-          day: 2,
-          title: "Yala National Park",
-          activities: ["Morning safari", "Leopard tracking", "Evening game drive"],
-        },
-        { day: 3, title: "Ella Hill Country", activities: ["Train journey", "Hiking", "Tea plantation visit"] },
+        { time: "08:00", activity: "Hotel pickup" },
+        { time: "10:00", activity: "Turtle Farm visit" },
+        { time: "11:30", activity: "Madu River boat safari" },
+        { time: "13:00", activity: "Lunch at local restaurant" },
+        { time: "14:30", activity: "Moonstone mine exploration" },
+        { time: "16:00", activity: "Turtle Beach relaxation" },
+        { time: "17:30", activity: "Galle Fort walking tour" },
+        { time: "19:00", activity: "Return journey" },
       ],
-      bestTime: "February to July",
-      groupSize: "2-8 people",
-      difficulty: "Challenging",
     },
     {
       id: 3,
-      name: "Luxury Beach & Spa Retreat",
-      duration: "5 Days / 4 Nights",
-      price: 1599,
-      originalPrice: 1999,
-      image: "/images/beach-sunset.jpg",
-      category: "luxury",
-      budget: "luxury",
-      rating: 5.0,
-      reviews: 89,
-      badge: "luxury",
-      badgeIcon: Heart,
-      description: "Ultimate relaxation in tropical paradise with luxury resorts, spa treatments, and private beaches.",
-      highlights: ["5-Star Beach Resort", "Daily Spa Treatments", "Private Beach Access", "Gourmet Dining"],
-      included: [
-        "4 nights in luxury beachfront resort",
-        "Daily spa treatments",
-        "Private butler service",
-        "All meals and premium beverages",
-        "Private beach cabana",
-        "Sunset cruise",
+      name: "Colombo City Discovery",
+      subtitle: "Modern Capital Experience",
+      duration: "1day",
+      category: "city",
+      price: "$65",
+      originalPrice: "$85",
+      image:
+        "https://images.pexels.com/photos/3889855/pexels-photo-3889855.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      rating: 4.7,
+      reviews: 156,
+      groupSize: "2-25",
+      badge: "city",
+      badgeIcon: Building,
+      highlights: [
+        "Galle Face Green (Colombo Beach)",
+        "Gangaramaya Temple",
+        "Independence Square",
+        "Pettah Street Markets",
+        "Modern Shopping Malls",
       ],
+      extras: ["Lotus Tower visit ($20 per adult - not included)"],
+      included: ["All entrance tickets", "Professional guide", "Bottled water", "Comfortable vehicle"],
       itinerary: [
-        { day: 1, title: "Arrival & Resort", activities: ["VIP airport transfer", "Resort check-in", "Welcome spa"] },
-        { day: 2, title: "Beach & Wellness", activities: ["Morning yoga", "Spa treatments", "Beach activities"] },
-        { day: 3, title: "Cultural Excursion", activities: ["Galle Fort visit", "Local market tour", "Sunset cruise"] },
+        { time: "09:00", activity: "Hotel pickup" },
+        { time: "09:30", activity: "Galle Face Green seaside walk" },
+        { time: "10:30", activity: "Gangaramaya Temple visit" },
+        { time: "12:00", activity: "Independence Square" },
+        { time: "13:00", activity: "Lunch break" },
+        { time: "14:30", activity: "Pettah Street market exploration" },
+        { time: "16:00", activity: "Shopping mall visit" },
+        { time: "17:30", activity: "Optional Lotus Tower (extra cost)" },
+        { time: "18:30", activity: "Return to hotel" },
       ],
-      bestTime: "November to April",
-      groupSize: "2-6 people",
-      difficulty: "Easy",
     },
     {
       id: 4,
-      name: "Nature & Eco Discovery",
-      duration: "8 Days / 7 Nights",
-      price: 1099,
-      originalPrice: 1399,
-      image: "/images/tea-plantation.jpg",
-      category: "nature",
-      budget: "mid",
-      rating: 4.7,
-      reviews: 134,
-      badge: "eco-friendly",
+      name: "Kandy Ancient City",
+      subtitle: "Cultural Heart of Sri Lanka",
+      duration: "1day",
+      category: "cultural",
+      price: "$95",
+      originalPrice: "$120",
+      image:
+        "https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      rating: 4.9,
+      reviews: 203,
+      groupSize: "2-15",
+      badge: "bestseller",
       badgeIcon: Crown,
-      description: "Sustainable travel through Sri Lanka's pristine natural environments and conservation projects.",
-      highlights: ["Sinharaja Rainforest", "Tea Plantation Tours", "Bird Watching", "Conservation Projects"],
-      included: [
-        "7 nights in eco-lodges",
-        "All nature activities",
-        "Expert naturalist guide",
-        "Conservation project visits",
-        "Organic meals",
-        "Carbon offset included",
+      highlights: [
+        "Elephant Feeding Experience",
+        "Elephant Ride",
+        "Temple of the Tooth Relic",
+        "Royal Botanical Gardens Peradeniya",
+        "Gem Museum",
+        "Ayurvedic Center & Spice Garden",
+        "Tea Factory & Plantations",
       ],
+      included: ["All entrance tickets", "Professional guide", "Bottled water", "Comfortable vehicle"],
       itinerary: [
-        { day: 1, title: "Arrival & Negombo", activities: ["Eco-lodge check-in", "Mangrove tour", "Bird watching"] },
-        {
-          day: 2,
-          title: "Sinharaja Rainforest",
-          activities: ["Rainforest trek", "Endemic species spotting", "Night sounds"],
-        },
-        {
-          day: 3,
-          title: "Hill Country",
-          activities: ["Tea plantation tour", "Organic farming visit", "Waterfall hike"],
-        },
+        { time: "07:00", activity: "Early morning pickup" },
+        { time: "09:00", activity: "Elephant feeding and ride" },
+        { time: "11:00", activity: "Temple of the Tooth Relic" },
+        { time: "13:00", activity: "Lunch break" },
+        { time: "14:30", activity: "Royal Botanical Gardens" },
+        { time: "16:00", activity: "Gem Museum visit" },
+        { time: "17:00", activity: "Ayurvedic center and spice garden" },
+        { time: "18:30", activity: "Tea factory tour" },
+        { time: "20:00", activity: "Return journey" },
       ],
-      bestTime: "Year-round",
-      groupSize: "2-12 people",
-      difficulty: "Moderate",
     },
     {
       id: 5,
-      name: "Family Adventure Package",
-      duration: "6 Days / 5 Nights",
-      price: 799,
-      originalPrice: 999,
-      image: "/images/ella-train.jpg",
-      category: "family",
-      budget: "budget",
-      rating: 4.6,
-      reviews: 178,
-      badge: "family-friendly",
-      badgeIcon: Heart,
-      description:
-        "Perfect family adventure with kid-friendly activities, comfortable accommodations, and educational experiences.",
-      highlights: ["Elephant Orphanage", "Train Ride Experience", "Beach Fun", "Cultural Workshops"],
-      included: [
-        "5 nights family-friendly hotels",
-        "All family activities",
-        "Child-friendly guide",
-        "Educational materials",
-        "Family meals",
-        "Safety equipment for kids",
+      name: "Sigiriya Rock Fortress",
+      subtitle: "UNESCO World Wonder",
+      duration: "1day",
+      category: "cultural",
+      price: "$105",
+      originalPrice: "$135",
+      image:
+        "https://images.pexels.com/photos/2166711/pexels-photo-2166711.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      rating: 4.9,
+      reviews: 278,
+      groupSize: "2-12",
+      badge: "wonder",
+      badgeIcon: Mountain,
+      highlights: [
+        "Dambulla Royal Cave Temple & Golden Buddha",
+        "Ancient Rock Fortress of Sigiriya (UNESCO)",
+        "Elephant Ride Experience",
+        "Ayurvedic Center & Spice Garden",
+        "Cooking Class & Local Cuisine Tasting",
       ],
+      extras: ["Buffalo sledding, Lake boat ride, Village tour (tickets not included)"],
+      included: ["All entrance tickets", "Professional guide", "Bottled water", "Comfortable vehicle"],
       itinerary: [
-        { day: 1, title: "Arrival & Negombo", activities: ["Family room check-in", "Beach time", "Welcome dinner"] },
-        {
-          day: 2,
-          title: "Elephant Experience",
-          activities: ["Elephant orphanage", "Feeding session", "Educational talk"],
-        },
-        {
-          day: 3,
-          title: "Hill Country Train",
-          activities: ["Scenic train ride", "Tea factory visit", "Playground time"],
-        },
+        { time: "06:00", activity: "Early departure" },
+        { time: "08:30", activity: "Dambulla Cave Temple" },
+        { time: "10:30", activity: "Sigiriya Rock Fortress climb" },
+        { time: "13:00", activity: "Lunch and rest" },
+        { time: "14:30", activity: "Elephant ride experience" },
+        { time: "16:00", activity: "Ayurvedic center visit" },
+        { time: "17:30", activity: "Cooking class and dinner" },
+        { time: "19:30", activity: "Return journey" },
       ],
-      bestTime: "December to March",
-      groupSize: "Families of 2-8",
-      difficulty: "Easy",
     },
     {
       id: 6,
-      name: "Complete Island Discovery",
-      duration: "14 Days / 13 Nights",
-      price: 2299,
-      originalPrice: 2899,
-      image: "/images/sigiriya.jpg",
-      category: "cultural",
-      budget: "luxury",
-      rating: 4.9,
-      reviews: 92,
-      badge: "comprehensive",
-      badgeIcon: Crown,
-      description: "The ultimate Sri Lankan experience covering all major destinations, cultures, and landscapes.",
-      highlights: ["All UNESCO Sites", "Complete Island Tour", "Multiple Safaris", "Beach & Mountains"],
+      name: "Yala Safari Adventure",
+      subtitle: "Wildlife National Park",
+      duration: "1day",
+      category: "wildlife",
+      price: "$120",
+      originalPrice: "$150",
+      image:
+        "https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      rating: 4.8,
+      reviews: 167,
+      groupSize: "2-8",
+      badge: "wildlife",
+      badgeIcon: Binoculars,
+      highlights: [
+        "Open Jeep Safari in Yala National Park",
+        "Spot Elephants, Leopards, Deer",
+        "Buffalo, Crocodiles, Monkeys",
+        "Peacocks, Flamingos, Mongooses",
+        "Professional Wildlife Guide",
+      ],
       included: [
-        "13 nights premium accommodations",
-        "All destinations covered",
-        "Multiple safari experiences",
-        "Cultural performances",
-        "All meals and activities",
-        "Luxury transportation",
+        "All park tickets",
+        "Safari jeep with driver",
+        "Bottled water",
+        "Comfortable transport to/from park",
+        "Professional wildlife guide",
       ],
       itinerary: [
-        { day: 1, title: "Arrival Colombo", activities: ["VIP pickup", "City tour", "Welcome dinner"] },
-        { day: 2, title: "Cultural Triangle", activities: ["Sigiriya climb", "Dambulla caves", "Village experience"] },
-        { day: 3, title: "Ancient Capitals", activities: ["Polonnaruwa ruins", "Cycling tour", "Sunset viewing"] },
+        { time: "05:00", activity: "Early morning pickup" },
+        { time: "06:30", activity: "Arrive at Yala National Park" },
+        { time: "07:00", activity: "Morning safari session (3 hours)" },
+        { time: "10:00", activity: "Breakfast break" },
+        { time: "11:00", activity: "Rest and wildlife photography" },
+        { time: "14:00", activity: "Afternoon safari session (3 hours)" },
+        { time: "17:00", activity: "Exit park and refreshments" },
+        { time: "19:30", activity: "Return to hotel" },
       ],
-      bestTime: "December to April",
-      groupSize: "2-12 people",
-      difficulty: "Moderate",
+    },
+    {
+      id: 7,
+      name: "Ella & Yala Combo",
+      subtitle: "Mountains & Wildlife",
+      duration: "1day",
+      category: "adventure",
+      price: "$145",
+      originalPrice: "$180",
+      image:
+        "https://images.pexels.com/photos/1076081/pexels-photo-1076081.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      rating: 4.9,
+      reviews: 134,
+      groupSize: "2-10",
+      badge: "combo",
+      badgeIcon: Zap,
+      highlights: [
+        "Rawana Waterfall",
+        "Nine Arches Bridge",
+        "Feed Monkeys",
+        "Tea Plantation Visit",
+        "Ayurvedic Garden",
+        "Yala National Park Safari",
+      ],
+      included: ["All entrance tickets", "Safari jeep", "Bottled water", "Comfortable vehicle", "Professional guide"],
+      itinerary: [
+        { time: "05:00", activity: "Very early pickup" },
+        { time: "07:00", activity: "Ella sightseeing (condensed)" },
+        { time: "11:00", activity: "Travel to Yala" },
+        { time: "13:00", activity: "Lunch break" },
+        { time: "14:30", activity: "Yala safari adventure" },
+        { time: "17:30", activity: "Return journey" },
+        { time: "20:00", activity: "Arrive at hotel" },
+      ],
+    },
+    // Two Day Tours
+    {
+      id: 8,
+      name: "Gold Tour: Ella & Sigiriya",
+      subtitle: "Mountains to Ancient Wonders",
+      duration: "2day",
+      category: "comprehensive",
+      price: "$280",
+      originalPrice: "$350",
+      image:
+        "https://images.pexels.com/photos/2166711/pexels-photo-2166711.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      rating: 4.9,
+      reviews: 89,
+      groupSize: "2-12",
+      badge: "gold",
+      badgeIcon: Crown,
+      highlights: [
+        "Day 1: Ella - Ravana Falls, Train Ride, 9-Arch Bridge, Little Adam's Peak",
+        "Day 1: Nuwara Eliya - Grand Hotel, Tea Plantations, Tea Factory",
+        "Day 2: Ambuluwawa Tower, Ayurvedic Garden",
+        "Day 2: Dambulla Golden Buddha, Sigiriya Rock, Elephant Feeding",
+      ],
+      included: [
+        "Professional guide",
+        "All entrance fees",
+        "Hotel with dinner and breakfast",
+        "Comfortable air-conditioned transport",
+      ],
+      itinerary: [
+        { time: "Day 1 - 07:00", activity: "Pickup and travel to Ella" },
+        { time: "09:00", activity: "Ravana Falls visit" },
+        { time: "10:30", activity: "Scenic train ride experience" },
+        { time: "12:00", activity: "Nine Arch Bridge photography" },
+        { time: "14:00", activity: "Lunch break" },
+        { time: "15:30", activity: "Little Adam's Peak hike" },
+        { time: "17:00", activity: "Travel to Nuwara Eliya" },
+        { time: "18:30", activity: "Grand Hotel visit and tea plantations" },
+        { time: "20:00", activity: "Check-in hotel, dinner" },
+        { time: "Day 2 - 08:00", activity: "Breakfast and checkout" },
+        { time: "09:00", activity: "Ambuluwawa Tower visit" },
+        { time: "11:00", activity: "Ayurvedic garden tour" },
+        { time: "13:00", activity: "Lunch and travel to Dambulla" },
+        { time: "15:00", activity: "Golden Buddha statue and caves" },
+        { time: "16:30", activity: "Sigiriya Rock Fortress" },
+        { time: "18:30", activity: "Elephant feeding experience" },
+        { time: "20:00", activity: "Return journey" },
+      ],
+    },
+    {
+      id: 9,
+      name: "Silva Tour: Kandy & Ella",
+      subtitle: "Cultural Heritage & Nature",
+      duration: "2day",
+      category: "comprehensive",
+      price: "$260",
+      originalPrice: "$320",
+      image:
+        "https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      rating: 4.8,
+      reviews: 112,
+      groupSize: "2-15",
+      badge: "popular",
+      badgeIcon: Heart,
+      highlights: [
+        "Day 1: Elephant Orphanage, Ayurvedic Garden, Tea Factory",
+        "Day 1: Royal Botanical Garden, Kandy Tooth Temple, Nuwara Eliya",
+        "Day 2: Tea Plantation, Ramboda Waterfall, Nine Arch Bridge",
+        "Day 2: Little Adam's Peak, Ravana Waterfall, Train Ride, Monkey Feeding",
+      ],
+      included: [
+        "All entrance tickets",
+        "Hotel meals (breakfast and dinner)",
+        "Bottled water",
+        "Professional guide",
+        "Air-conditioned transport",
+      ],
+      itinerary: [
+        { time: "Day 1 - 07:00", activity: "Hotel pickup" },
+        { time: "09:00", activity: "Elephant Orphanage visit" },
+        { time: "10:30", activity: "Ayurvedic garden and spice tour" },
+        { time: "12:00", activity: "Tea factory experience" },
+        { time: "13:30", activity: "Lunch break" },
+        { time: "15:00", activity: "Royal Botanical Gardens" },
+        { time: "16:30", activity: "Temple of the Tooth" },
+        { time: "18:00", activity: "Travel to Nuwara Eliya" },
+        { time: "20:00", activity: "Hotel check-in and dinner" },
+        { time: "Day 2 - 08:00", activity: "Breakfast and checkout" },
+        { time: "09:00", activity: "Tea plantation tour" },
+        { time: "10:30", activity: "Ramboda Waterfall" },
+        { time: "12:00", activity: "Travel to Ella" },
+        { time: "13:30", activity: "Lunch break" },
+        { time: "15:00", activity: "Nine Arch Bridge" },
+        { time: "16:00", activity: "Little Adam's Peak" },
+        { time: "17:30", activity: "Ravana Waterfall and monkey feeding" },
+        { time: "18:30", activity: "Train ride experience" },
+        { time: "20:00", activity: "Return journey" },
+      ],
+    },
+    // 7 Day Tour
+    {
+      id: 10,
+      name: "Grand Sri Lanka Discovery",
+      subtitle: "Complete Island Experience",
+      duration: "7day",
+      category: "comprehensive",
+      price: "$1,299",
+      originalPrice: "$1,599",
+      image:
+        "https://images.pexels.com/photos/2166711/pexels-photo-2166711.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      rating: 5.0,
+      reviews: 67,
+      groupSize: "2-12",
+      badge: "premium",
+      badgeIcon: Crown,
+      highlights: [
+        "Airport → Sigiriya → Kandy → Ella → Yala → Galle → Colombo",
+        "UNESCO World Heritage Sites",
+        "Wildlife Safari Adventures",
+        "Cultural Immersion Experiences",
+        "Scenic Train Journeys",
+        "Beach & Coastal Exploration",
+        "Traditional Cuisine & Cooking Classes",
+      ],
+      included: [
+        "6 nights accommodation",
+        "All meals (breakfast, lunch, dinner)",
+        "Professional guide throughout",
+        "Air-conditioned vehicle",
+        "All entrance fees and activities",
+        "Airport transfers",
+      ],
+      itinerary: [
+        {
+          time: "Day 1",
+          activity: "Airport pickup → Sigiriya. Evening: Sigiriya Rock Fortress climb. Overnight in Sigiriya.",
+        },
+        {
+          time: "Day 2",
+          activity:
+            "Sigiriya → Kandy. Visit Dambulla Cave Temple, spice gardens. Evening cultural show and Temple of the Tooth. Overnight in Kandy.",
+        },
+        {
+          time: "Day 3",
+          activity:
+            "Kandy → Ella via Nuwara Eliya. Tea factory visit, waterfalls. Amazing train ride Nanuoya to Ella through stunning mountain landscapes. Overnight in Ella.",
+        },
+        {
+          time: "Day 4",
+          activity:
+            "Ella exploration: Little Adam's Peak, Nine Arch Bridge. Transfer to Yala. Overnight near Yala National Park.",
+        },
+        {
+          time: "Day 5",
+          activity:
+            "Yala National Park safari (elephants, leopards, wildlife). Transfer to South Coast (Mirissa/Weligama). Overnight at beach hotel.",
+        },
+        {
+          time: "Day 6",
+          activity: "Morning whale watching session. Beach activities and relaxation. Overnight at beach hotel.",
+        },
+        {
+          time: "Day 7",
+          activity: "Galle Fort visit (UNESCO World Heritage). Madu River boat safari. Transfer to Colombo or Airport.",
+        },
+      ],
     },
   ]
 
-  const filteredPackages = packages.filter((pkg) => {
+  const filteredPackages = tourPackages.filter((pkg) => {
+    const durationMatch = selectedDuration === "all" || pkg.duration === selectedDuration
     const categoryMatch = selectedCategory === "all" || pkg.category === selectedCategory
-    const durationMatch = selectedDuration === "all" || pkg.duration.includes(selectedDuration.split("-")[0])
-    const budgetMatch = selectedBudget === "all" || pkg.budget === selectedBudget
-    return categoryMatch && durationMatch && budgetMatch
-  })
-
-  const sortedPackages = [...filteredPackages].sort((a, b) => {
-    switch (sortBy) {
-      case "price-low":
-        return a.price - b.price
-      case "price-high":
-        return b.price - a.price
-      case "rating":
-        return b.rating - a.rating
-      case "duration":
-        return Number.parseInt(a.duration) - Number.parseInt(b.duration)
-      case "popular":
-      default:
-        return b.reviews - a.reviews
-    }
+    return durationMatch && categoryMatch
   })
 
   const getBadgeColor = (badge: string) => {
     switch (badge) {
       case "bestseller":
-        return "bg-yellow-500"
+        return "from-yellow-500 to-orange-500"
       case "popular":
-        return "bg-green-500"
-      case "luxury":
-        return "bg-purple-500"
-      case "eco-friendly":
-        return "bg-emerald-500"
-      case "family-friendly":
-        return "bg-blue-500"
-      case "comprehensive":
-        return "bg-indigo-500"
+        return "from-pink-500 to-red-500"
+      case "heritage":
+        return "from-purple-500 to-indigo-500"
+      case "city":
+        return "from-blue-500 to-cyan-500"
+      case "wildlife":
+        return "from-green-500 to-teal-500"
+      case "combo":
+        return "from-orange-500 to-red-500"
+      case "gold":
+        return "from-yellow-400 to-yellow-600"
+      case "premium":
+        return "from-purple-600 to-pink-600"
+      case "wonder":
+        return "from-emerald-500 to-teal-600"
       default:
-        return "bg-gray-500"
-    }
-  }
-
-  const getBadgeText = (badge: string) => {
-    switch (badge) {
-      case "bestseller":
-        return "Best Seller"
-      case "popular":
-        return "Most Popular"
-      case "luxury":
-        return "Luxury"
-      case "eco-friendly":
-        return "Eco-Friendly"
-      case "family-friendly":
-        return "Family Friendly"
-      case "comprehensive":
-        return "Complete Tour"
-      default:
-        return badge
+        return "from-gray-500 to-gray-600"
     }
   }
 
   return (
-    <div className="min-h-screen bg-white pt-16">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-emerald-50">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-emerald-50 to-teal-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <div className="inline-flex items-center px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium mb-6">
-              <Crown className="w-4 h-4 mr-2" />
-              Premium Packages
+      <section className="relative pt-20 pb-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-900 via-teal-900 to-cyan-900"></div>
+        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/2166711/pexels-photo-2166711.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+
+        {/* Floating Elements */}
+        <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-r from-emerald-400/30 to-teal-400/30 rounded-full blur-xl animate-float"></div>
+        <div
+          className="absolute bottom-32 right-16 w-32 h-32 bg-gradient-to-r from-teal-400/30 to-cyan-400/30 rounded-full blur-xl animate-float"
+          style={{ animationDelay: "2s" }}
+        ></div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className={`animate-in-up ${isVisible ? "animate-in-up" : ""}`}>
+            <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white text-sm font-medium mb-8">
+              <Calendar className="w-4 h-4 mr-2 animate-pulse" />
+              Premium Sri Lankan Adventures
             </div>
-            <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 mb-6">Travel Packages</h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Carefully curated experiences for every type of traveler. From cultural heritage to adventure safaris,
-              find your perfect Sri Lankan journey.
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
+              <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
+                Complete Tour Packages
+              </span>
+            </h1>
+            <p className="text-xl sm:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-12">
+              From single-day excursions to comprehensive week-long adventures. Discover the best of Sri Lanka with our
+              expertly crafted tour packages.
             </p>
-
-            {/* Back to Home */}
-            <a
-              href="/"
-              className="inline-flex items-center px-6 py-3 bg-white border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors duration-200"
-            >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Home
-            </a>
           </div>
         </div>
       </section>
 
-      {/* Filters Section */}
-      <section className="py-8 bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <div className="flex items-center space-x-4">
-              <Filter className="w-5 h-5 text-gray-500" />
-              <span className="text-sm font-medium text-gray-700">Filter by:</span>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-4">
-              {/* Category Filter */}
-              <select
-                value={selectedCategory}
-                onChange={(e) => setSelectedCategory(e.target.value)}
-                className="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
-              >
-                {categories.map((category) => (
-                  <option key={category.id} value={category.id}>
-                    {category.label}
-                  </option>
-                ))}
-              </select>
-
-              {/* Duration Filter */}
-              <select
-                value={selectedDuration}
-                onChange={(e) => setSelectedDuration(e.target.value)}
-                className="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
-              >
+      {/* Filters */}
+      <section className="relative -mt-16 z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-white/80 backdrop-blur-lg rounded-3xl shadow-2xl border border-white/20 p-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Duration Filter */}
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+                <Clock className="w-5 h-5 mr-2 text-emerald-600" />
+                Tour Duration
+              </h3>
+              <div className="flex flex-wrap gap-3">
                 {durations.map((duration) => (
-                  <option key={duration.id} value={duration.id}>
+                  <button
+                    key={duration.id}
+                    onClick={() => setSelectedDuration(duration.id)}
+                    className={`px-4 py-2 rounded-full font-medium transition-all duration-300 transform hover:scale-105 ${
+                      selectedDuration === duration.id
+                        ? "bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg"
+                        : "bg-gray-100 hover:bg-gray-200 text-gray-700"
+                    }`}
+                  >
                     {duration.label}
-                  </option>
+                  </button>
                 ))}
-              </select>
-
-              {/* Budget Filter */}
-              <select
-                value={selectedBudget}
-                onChange={(e) => setSelectedBudget(e.target.value)}
-                className="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
-              >
-                {budgets.map((budget) => (
-                  <option key={budget.id} value={budget.id}>
-                    {budget.label}
-                  </option>
-                ))}
-              </select>
-
-              {/* Sort Filter */}
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-                className="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
-              >
-                <option value="popular">Most Popular</option>
-                <option value="rating">Highest Rated</option>
-                <option value="price-low">Price: Low to High</option>
-                <option value="price-high">Price: High to Low</option>
-                <option value="duration">Duration</option>
-              </select>
+              </div>
             </div>
 
-            <div className="text-sm text-gray-600">
-              Showing <span className="font-semibold text-emerald-600">{sortedPackages.length}</span> packages
+            {/* Category Filter */}
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+                <MapPin className="w-5 h-5 mr-2 text-emerald-600" />
+                Tour Category
+              </h3>
+              <div className="flex flex-wrap gap-3">
+                {categories.map((category) => (
+                  <button
+                    key={category.id}
+                    onClick={() => setSelectedCategory(category.id)}
+                    className={`px-4 py-2 rounded-full font-medium transition-all duration-300 transform hover:scale-105 ${
+                      selectedCategory === category.id
+                        ? "bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg"
+                        : "bg-gray-100 hover:bg-gray-200 text-gray-700"
+                    }`}
+                  >
+                    {category.label}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Packages Grid */}
-      <section className="py-16">
+      {/* Tour Packages Grid */}
+      <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-            {sortedPackages.map((pkg) => {
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {filteredPackages.map((pkg, index) => {
               const BadgeIcon = pkg.badgeIcon
-
               return (
                 <div
                   key={pkg.id}
-                  className="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
+                  className="group bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-3 overflow-hidden"
                 >
-                  {/* Badge */}
-                  <div
-                    className={`absolute top-4 left-4 z-10 ${getBadgeColor(pkg.badge)} text-white px-3 py-1 rounded-full flex items-center space-x-1 text-sm font-medium`}
-                  >
-                    <BadgeIcon className="w-4 h-4" />
-                    <span>{getBadgeText(pkg.badge)}</span>
-                  </div>
-
-                  {/* Image */}
-                  <div className="relative h-48 overflow-hidden">
+                  {/* Image Section */}
+                  <div className="relative h-64 overflow-hidden">
                     <img
                       src={pkg.image || "/placeholder.svg"}
                       alt={pkg.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+
+                    {/* Badge */}
+                    <div
+                      className={`absolute top-6 left-6 bg-gradient-to-r ${getBadgeColor(pkg.badge)} text-white px-4 py-2 rounded-full flex items-center space-x-2 shadow-lg`}
+                    >
+                      <BadgeIcon className="w-4 h-4" />
+                      <span className="text-sm font-semibold capitalize">{pkg.badge}</span>
+                    </div>
+
+                    {/* Duration Badge */}
+                    <div className="absolute top-6 right-6 bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium">
+                      {pkg.duration === "1day" ? "1 Day" : pkg.duration === "2day" ? "2 Days" : "7 Days"}
+                    </div>
 
                     {/* Rating */}
                     <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center space-x-1">
                       <Star className="w-4 h-4 text-yellow-500 fill-current" />
-                      <span className="text-sm font-medium text-gray-800">{pkg.rating}</span>
+                      <span className="text-sm font-semibold text-gray-900">{pkg.rating}</span>
                       <span className="text-xs text-gray-600">({pkg.reviews})</span>
                     </div>
                   </div>
 
-                  {/* Content */}
-                  <div className="p-6">
-                    <div className="flex items-start justify-between mb-3">
+                  {/* Content Section */}
+                  <div className="p-8">
+                    <div className="flex items-start justify-between mb-4">
                       <div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-emerald-600 transition-colors duration-300">
+                        <h3 className="text-2xl font-bold text-gray-900 group-hover:text-emerald-600 transition-colors duration-300">
                           {pkg.name}
                         </h3>
-                        <p className="text-gray-500 text-sm">{pkg.duration}</p>
+                        <p className="text-emerald-600 font-medium text-sm">{pkg.subtitle}</p>
                       </div>
                       <div className="text-right">
-                        <div className="text-2xl font-bold text-gray-900">${pkg.price}</div>
-                        <div className="text-sm text-gray-500 line-through">${pkg.originalPrice}</div>
-                        <div className="text-xs text-green-600 font-medium">Save ${pkg.originalPrice - pkg.price}</div>
+                        <div className="text-3xl font-bold text-gray-900">{pkg.price}</div>
+                        <div className="text-sm text-gray-500 line-through">{pkg.originalPrice}</div>
                       </div>
                     </div>
 
-                    <p className="text-gray-600 text-sm mb-4 leading-relaxed line-clamp-2">{pkg.description}</p>
-
-                    {/* Quick Info */}
-                    <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                      <div className="flex items-center space-x-1">
-                        <Calendar className="w-4 h-4" />
-                        <span>{pkg.bestTime}</span>
+                    {/* Package Info */}
+                    <div className="flex items-center space-x-6 mb-6 text-sm text-gray-600">
+                      <div className="flex items-center">
+                        <Clock className="w-4 h-4 mr-1" />
+                        <span>{pkg.duration === "1day" ? "1 Day" : pkg.duration === "2day" ? "2 Days" : "7 Days"}</span>
                       </div>
-                      <div className="flex items-center space-x-1">
-                        <Users className="w-4 h-4" />
-                        <span>{pkg.groupSize}</span>
+                      <div className="flex items-center">
+                        <Users className="w-4 h-4 mr-1" />
+                        <span>{pkg.groupSize} people</span>
                       </div>
                     </div>
 
                     {/* Highlights */}
                     <div className="mb-6">
-                      <h4 className="font-semibold text-gray-900 mb-2 text-sm">Tour Highlights:</h4>
-                      <div className="space-y-1">
-                        {pkg.highlights.slice(0, 3).map((highlight, idx) => (
-                          <div key={idx} className="flex items-center space-x-2">
-                            <Check className="w-3 h-3 text-emerald-500 flex-shrink-0" />
-                            <span className="text-xs text-gray-700">{highlight}</span>
+                      <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
+                        <Camera className="w-4 h-4 mr-2 text-emerald-600" />
+                        Tour Highlights
+                      </h4>
+                      <div className="space-y-2">
+                        {pkg.highlights.slice(0, 4).map((highlight, idx) => (
+                          <div key={idx} className="flex items-start space-x-2">
+                            <div className="w-2 h-2 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-sm text-gray-700">{highlight}</span>
                           </div>
                         ))}
-                        {pkg.highlights.length > 3 && (
-                          <div className="text-xs text-emerald-600 font-medium">
-                            +{pkg.highlights.length - 3} more highlights
+                        {pkg.highlights.length > 4 && (
+                          <div className="text-sm text-emerald-600 font-medium">
+                            +{pkg.highlights.length - 4} more highlights
                           </div>
                         )}
                       </div>
                     </div>
 
+                    {/* Included */}
+                    <div className="mb-8">
+                      <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
+                        <Check className="w-4 h-4 mr-2 text-green-600" />
+                        What's Included
+                      </h4>
+                      <div className="space-y-2">
+                        {pkg.included.slice(0, 3).map((item, idx) => (
+                          <div key={idx} className="flex items-center space-x-2">
+                            <Check className="w-4 h-4 text-green-500" />
+                            <span className="text-sm text-gray-700">{item}</span>
+                          </div>
+                        ))}
+                        {pkg.included.length > 3 && (
+                          <div className="text-sm text-emerald-600 font-medium">
+                            +{pkg.included.length - 3} more included
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Extras */}
+                    {pkg.extras && pkg.extras.length > 0 && (
+                      <div className="mb-8">
+                        <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
+                          <Gift className="w-4 h-4 mr-2 text-orange-600" />
+                          Optional Extras
+                        </h4>
+                        <div className="space-y-2">
+                          {pkg.extras.map((extra, idx) => (
+                            <div key={idx} className="flex items-start space-x-2">
+                              <div className="w-2 h-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-full mt-2 flex-shrink-0"></div>
+                              <span className="text-sm text-gray-700">{extra}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
                     {/* Action Buttons */}
                     <div className="space-y-3">
-                      <button className="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition-colors duration-300 flex items-center justify-center space-x-2">
-                        <span>Book Now</span>
-                        <ArrowRight className="w-4 h-4" />
+                      <button
+                        onClick={() => handleWhatsAppClick(pkg.name, pkg.price)}
+                        className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform group-hover:scale-105 flex items-center justify-center space-x-2 shadow-lg"
+                      >
+                        <span>Book Now via WhatsApp</span>
+                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                       </button>
-                      <button className="w-full border border-gray-300 hover:border-emerald-500 text-gray-700 hover:text-emerald-600 py-3 rounded-lg font-semibold transition-colors duration-300">
-                        View Full Itinerary
+                      <button className="w-full border-2 border-gray-300 hover:border-emerald-500 text-gray-700 hover:text-emerald-600 py-3 rounded-xl font-semibold transition-all duration-300">
+                        View Detailed Itinerary
                       </button>
                     </div>
                   </div>
@@ -512,33 +758,39 @@ export default function PackagesPage() {
               )
             })}
           </div>
-
-          {/* Load More */}
-          <div className="text-center mt-12">
-            <button className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition-colors duration-300">
-              Load More Packages
-            </button>
-          </div>
         </div>
       </section>
 
-      {/* Custom Package CTA */}
-      <section className="py-20 bg-emerald-600">
+      {/* Call to Action */}
+      <section className="py-20 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-4">Need a Custom Package?</h2>
-          <p className="text-xl text-emerald-100 mb-8 max-w-2xl mx-auto">
-            Let us create a personalized itinerary that matches your interests, schedule, and budget perfectly
+          <h2 className="text-4xl font-bold text-white mb-6">Need a Custom Tour Package?</h2>
+          <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+            Can't find exactly what you're looking for? Let us create a personalized itinerary that perfectly matches
+            your interests, schedule, and budget.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-4 bg-white text-emerald-600 hover:bg-gray-100 font-semibold rounded-lg transition-colors duration-300">
-              Plan My Custom Tour
-            </button>
-            <button className="px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-emerald-600 font-semibold rounded-lg transition-colors duration-300">
-              Download Brochure
-            </button>
-          </div>
+          <button
+            onClick={() => handleWhatsAppClick("Custom Tour Package", "Custom Pricing")}
+            className="bg-white text-emerald-600 hover:bg-gray-100 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+          >
+            Plan My Custom Tour
+          </button>
         </div>
       </section>
     </div>
   )
 }
+
+const PackagesPage = () => {
+  return (
+    <LanguageProvider>
+      <div className="min-h-screen">
+        <Header />
+        <PackagesContent />
+        <Footer />
+      </div>
+    </LanguageProvider>
+  )
+}
+
+export default PackagesPage

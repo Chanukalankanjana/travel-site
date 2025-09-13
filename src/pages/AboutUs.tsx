@@ -159,6 +159,14 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white pt-16">
       {/* Hero Section */}
+      <section className="relative h-[420px] sm:h-[500px] md:h-[600px] w-full overflow-hidden">
+        <img
+          src="/images/about-hero.jpg"
+          alt="Sri Lanka landscape"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/60 via-emerald-700/40 to-transparent" />
+      </section>
       <section className="py-20 bg-gradient-to-br from-emerald-50 to-teal-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -171,7 +179,6 @@ export default function AboutPage() {
               Your trusted partner for authentic Sri Lankan experiences. We've been creating unforgettable journeys for
               over a decade.
             </p>
-
             {/* Back to Home */}
             <a
               href="/"
