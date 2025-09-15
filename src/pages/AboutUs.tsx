@@ -163,7 +163,7 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <section className="relative min-h-screen py-20 flex items-center">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
@@ -174,7 +174,8 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-black/50"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-16">
           <div className="text-center">
             <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-medium mb-6">
               <Award className="w-4 h-4 mr-2" />
@@ -359,7 +360,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
 
       {/* Certifications */}
       <section className="py-20">

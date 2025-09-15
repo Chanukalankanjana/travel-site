@@ -1,23 +1,24 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   ArrowLeft,
   MapPin,
   Heart,
   Share2,
-  ChevronLeft,
-  ChevronRight,
   MessageCircle,
   Phone,
   Navigation,
   CheckCircle,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
+import Header from "../components/Header";
 
 interface DestinationDetailProps {
-  destinationId: string;
-  onNavigateBack: () => void;
+  readonly destinationId: string;
+  readonly onNavigateBack: () => void;
 }
 
 export default function DestinationDetail({
@@ -25,8 +26,8 @@ export default function DestinationDetail({
   onNavigateBack,
 }: DestinationDetailProps) {
   const { currentLanguage } = useLanguage();
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isFavorite, setIsFavorite] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Enhanced destination data with full details
   const destinations = {
@@ -36,12 +37,12 @@ export default function DestinationDetail({
       category: "heritage",
       location: "Central Province",
       coordinates: { lat: 7.9569, lng: 80.7597 },
-      mainImage: "/public/sigiriya-rock.jpg",
+      mainImage: "/sigiriya-rock.jpg",
       gallery: [
-        "/sigiriya.jpg",
-        "/sigiriya-frescoes.jpg",
-        "/sigiriya-water-gardens.jpg",
-        "/sigiriya-palace.jpg",
+        "/sigiriya-rock.jpg",
+        "/sigiria-sri-lanka-945x630.jpg",
+        "/temple.jpg",
+        "/temple-sacred.jpg",
       ],
       shortDescription:
         "Ancient royal palace and fortress built on a massive rock formation, featuring stunning frescoes and water gardens.",
@@ -95,12 +96,12 @@ The rock itself is a hardened magma plug from an extinct volcano. The site was u
       category: "culture",
       location: "Central Province",
       coordinates: { lat: 7.2906, lng: 80.6337 },
-      mainImage: "/images/kandy-temple.jpg",
+      mainImage: "/temple.jpg",
       gallery: [
-        "/images/kandy-temple.jpg",
-        "/images/kandy-gardens.jpg",
-        "/images/kandy-lake.jpg",
-        "/images/kandy-dance.jpg",
+        "/temple.jpg",
+        "/temple-sacred.jpg",
+        "/cultural.jpg",
+        "/culturalHeri.jpg",
       ],
       shortDescription:
         "Sacred city housing the Temple of the Tooth Relic, surrounded by beautiful botanical gardens and traditional culture.",
@@ -150,12 +151,12 @@ The city is a world heritage site declared by UNESCO, in part due to the temple.
       category: "nature",
       location: "Uva Province",
       coordinates: { lat: 6.8667, lng: 81.0464 },
-      mainImage: "/images/ella-train.jpg",
+      mainImage: "/distEella.jpg",
       gallery: [
-        "/images/ella-train.jpg",
-        "/images/ella-bridge.jpg",
-        "/images/ella-peak.jpg",
-        "/images/ella-tea.jpg",
+        "/distEella.jpg",
+        "/hicking.webp",
+        "/tea.jpg",
+        "/adventureHero.webp",
       ],
       shortDescription:
         "Misty mountains, tea plantations, and scenic train rides through some of Sri Lanka's most beautiful landscapes.",
@@ -207,12 +208,12 @@ Ella is also home to Little Adam's Peak, a popular hiking destination that offer
       category: "heritage",
       location: "Southern Province",
       coordinates: { lat: 6.0329, lng: 80.2169 },
-      mainImage: "/images/galle-fort.jpg",
+      mainImage: "/temple.jpg",
       gallery: [
-        "/images/galle-fort.jpg",
-        "/images/galle-lighthouse.jpg",
-        "/images/galle-streets.jpg",
-        "/images/galle-ramparts.jpg",
+        "/temple.jpg",
+        "/temple-sacred.jpg",
+        "/cultural.jpg",
+        "/culturalHeri.jpg",
       ],
       shortDescription:
         "UNESCO World Heritage colonial fort with historic lighthouse, museums, and charming cobblestone streets.",
@@ -261,12 +262,12 @@ The Galle Fort, also known as the Dutch Fort or the "Ramparts of Galle", withsto
       category: "nature",
       location: "Southern Province",
       coordinates: { lat: 6.37278, lng: 81.51694 },
-      mainImage: "/images/elephant-safari.jpg",
+      mainImage: "/safari.webp",
       gallery: [
-        "/images/elephant-safari.jpg",
-        "/images/yala-leopard.jpg",
-        "/images/yala-birds.jpg",
-        "/images/yala-beach.jpg",
+        "/safari.webp",
+        "/Sri-Lanka-wildlife.webp",
+        "/wildlife.jpg",
+        "/adventureWild.jpg",
       ],
       shortDescription:
         "Premier wildlife destination famous for leopards, elephants, and diverse bird species in their natural habitat.",
@@ -316,12 +317,15 @@ There are six national parks and three wildlife sanctuaries in the vicinity of Y
       category: "beaches",
       location: "Southern Province",
       coordinates: { lat: 5.9495, lng: 80.4563 },
-      mainImage: "/images/beach-sunset.jpg",
+      // Custom Google Maps embed URL with information card (get this from Google Maps Share > Embed a map)
+      mapEmbedUrl:
+        "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15873.494176179502!2d80.458584!3d5.943148000000001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae13fd4c636d5ff%3A0xb81456b9b41a93b2!2sMirissa%20Beach!5e0!3m2!1sen!2sus!4v1757832907260!5m2!1sen!2sus",
+      mainImage: "/beach.jpg",
       gallery: [
-        "/images/beach-sunset.jpg",
-        "/images/mirissa-whale.jpg",
-        "/images/mirissa-surfing.jpg",
-        "/images/mirissa-coconut.jpg",
+        "/beach.jpg",
+        "/whaleWatch.webp",
+        "/beachRelax.jpg",
+        "/tea.jpg",
       ],
       shortDescription:
         "Pristine golden beaches perfect for whale watching, surfing, and enjoying spectacular tropical sunsets.",
@@ -371,6 +375,17 @@ Mirissa is also known for its surfing spots, particularly at Weligama Bay, which
 
   const destination = destinations[destinationId as keyof typeof destinations];
 
+  // Auto-play carousel functionality
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex(
+        (prevIndex) => (prevIndex + 1) % destination.gallery.length
+      );
+    }, 4000); // Change image every 4 seconds
+
+    return () => clearInterval(interval);
+  }, [destination.gallery.length]);
+
   if (!destination) {
     return (
       <div className="min-h-screen bg-white pt-16 flex items-center justify-center">
@@ -390,17 +405,6 @@ Mirissa is also known for its surfing spots, particularly at Weligama Bay, which
     );
   }
 
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % destination.gallery.length);
-  };
-
-  const prevImage = () => {
-    setCurrentImageIndex(
-      (prev) =>
-        (prev - 1 + destination.gallery.length) % destination.gallery.length
-    );
-  };
-
   const whatsappNumbers = {
     en: "+94771234567",
     ru: "+94777654321",
@@ -414,44 +418,46 @@ Mirissa is also known for its surfing spots, particularly at Weligama Bay, which
     window.open(`https://wa.me/${number}?text=${message}`, "_blank");
   };
 
+  // Function to get Google Maps embed URL for each destination
+  const getGoogleMapsEmbedUrl = (
+    destination: (typeof destinations)[keyof typeof destinations] & {
+      mapEmbedUrl?: string;
+    }
+  ) => {
+    // If custom embed URL is provided, use it
+    if (destination.mapEmbedUrl) {
+      return destination.mapEmbedUrl;
+    }
+
+    // Otherwise, generate a search-based URL that shows place information
+    const searchQuery = encodeURIComponent(
+      `${destination.name}, ${destination.location}, Sri Lanka`
+    );
+    return `https://maps.google.com/maps?q=${searchQuery}&hl=en&z=15&output=embed&iwloc=near&t=m&ll=${destination.coordinates.lat},${destination.coordinates.lng}`;
+  };
+
+  // Function to generate Google Maps place URL for each destination
+  const getGoogleMapsPlaceUrl = (
+    destination: (typeof destinations)[keyof typeof destinations]
+  ) => {
+    const searchQuery = encodeURIComponent(
+      `${destination.name}, ${destination.location}, Sri Lanka`
+    );
+    return `https://www.google.com/maps/search/?api=1&query=${searchQuery}`;
+  };
+
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section with Image Slider */}
-      <section className="relative h-[70vh] overflow-hidden">
+      <Header/>
+      {/* Hero Section with Single Image */}
+      <section className="relative h-[90vh] overflow-hidden">
         <div className="relative w-full h-full">
           <img
-            src={destination.gallery[currentImageIndex]}
+            src={destination.mainImage}
             alt={destination.name}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/40"></div>
-        </div>
-
-        {/* Navigation Arrows */}
-        <button
-          onClick={prevImage}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors"
-        >
-          <ChevronLeft className="w-6 h-6" />
-        </button>
-        <button
-          onClick={nextImage}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors"
-        >
-          <ChevronRight className="w-6 h-6" />
-        </button>
-
-        {/* Image Indicators */}
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-          {destination.gallery.map((image, index) => (
-            <button
-              key={`${image}-${index}`}
-              onClick={() => setCurrentImageIndex(index)}
-              className={`w-3 h-3 rounded-full transition-colors ${
-                index === currentImageIndex ? "bg-white" : "bg-white/50"
-              }`}
-            />
-          ))}
         </div>
 
         {/* Header Content */}
@@ -530,29 +536,78 @@ Mirissa is also known for its surfing spots, particularly at Weligama Bay, which
               </div>
             </div>
 
-            {/* Gallery */}
+            {/* Photo Gallery Auto Carousel */}
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
                 Photo Gallery
               </h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {destination.gallery.map((image, index) => (
-                  <button
-                    key={`gallery-${image}-${index}`}
-                    onClick={() => setCurrentImageIndex(index)}
-                    className={`relative h-32 rounded-lg overflow-hidden ${
-                      index === currentImageIndex
-                        ? "ring-4 ring-emerald-500"
-                        : ""
-                    }`}
+              <div className="relative">
+                <div className="overflow-hidden rounded-2xl shadow-2xl">
+                  <div
+                    className="flex transition-transform duration-500 ease-in-out"
+                    style={{
+                      transform: `translateX(-${currentImageIndex * 100}%)`,
+                    }}
+                  >
+                    {destination.gallery.map((image, index) => (
+                      <div
+                        key={`gallery-image-${image}-${index}`}
+                        className="w-full flex-shrink-0"
                   >
                     <img
                       src={image}
-                      alt={`${destination.name} ${index + 1}`}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform"
+                          alt={`${destination.name} - ${index + 1}`}
+                          className="w-full h-96 object-cover"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Navigation Arrows */}
+                <button
+                  className="absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/80 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all duration-200 hover:scale-110"
+                  onClick={() => {
+                    setCurrentImageIndex((prevIndex) =>
+                      prevIndex === 0
+                        ? destination.gallery.length - 1
+                        : prevIndex - 1
+                    );
+                  }}
+                >
+                  <ChevronLeft className="w-6 h-6 text-gray-700" />
+                </button>
+                <button
+                  className="absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white/80 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all duration-200 hover:scale-110"
+                  onClick={() => {
+                    setCurrentImageIndex(
+                      (prevIndex) =>
+                        (prevIndex + 1) % destination.gallery.length
+                    );
+                  }}
+                >
+                  <ChevronRight className="w-6 h-6 text-gray-700" />
+                </button>
+
+                {/* Image Indicators */}
+                <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                  {destination.gallery.map((image, index) => (
+                    <button
+                      key={`indicator-${image}`}
+                      className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                        index === currentImageIndex
+                          ? "bg-white"
+                          : "bg-white/50 hover:bg-white/75"
+                      }`}
+                      onClick={() => setCurrentImageIndex(index)}
                     />
-                  </button>
-                ))}
+                  ))}
+                </div>
+
+                {/* Image Counter */}
+                <div className="absolute top-4 right-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
+                  {currentImageIndex + 1} / {destination.gallery.length}
+                </div>
               </div>
             </div>
 
@@ -563,9 +618,9 @@ Mirissa is also known for its surfing spots, particularly at Weligama Bay, which
               </h3>
               <div className="h-64 rounded-lg overflow-hidden shadow-lg">
                 <iframe
-                  src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.454499787585!2d81.46930977475266!3d6.463961293527669!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae5d3a62ffb9359%3A0x3bb623d70b5a3314!2sYala%20National%20Park!5e0!3m2!1sen!2sus!4v1757791549455!5m2!1sen!2sus&output=embed&iwloc=near&t=m`}
-                  width="100%"
-                  height="100%"
+                  src={getGoogleMapsEmbedUrl(destination)}
+                  width="800"
+                  height="450"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
@@ -584,10 +639,7 @@ Mirissa is also known for its surfing spots, particularly at Weligama Bay, which
                   </span>
                   <button
                     onClick={() =>
-                      window.open(
-                        `https://www.google.com/maps/place/Yala+National+Park/@6.4639613,81.4693098,15z/data=!3m1!4b1!4m6!3m5!1s0x3ae5d3a62ffb9359:0x3bb623d70b5a3314!8m2!3d6.4639613!4d81.4693098!16s%2Fg%2F11c0x8x8x8`,
-                        "_blank"
-                      )
+                      window.open(getGoogleMapsPlaceUrl(destination), "_blank")
                     }
                     className="text-emerald-600 hover:text-emerald-700 font-medium text-sm flex items-center space-x-1"
                   >
@@ -600,9 +652,9 @@ Mirissa is also known for its surfing spots, particularly at Weligama Bay, which
           </div>
 
           {/* Right Column - Booking & Info */}
-          <div className="space-y-6">
+          <div className="lg:sticky lg:top-24 space-y-6">
             {/* Booking Card */}
-            <div className="bg-white border border-gray-200 rounded-2xl p-6 top-24">
+            <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-lg">
               <div className="space-y-3">
                 <button
                   onClick={handleWhatsAppClick}
@@ -621,45 +673,89 @@ Mirissa is also known for its surfing spots, particularly at Weligama Bay, which
               </div>
             </div>
 
+            {/* Quick Info Card */}
+            <div className="bg-gradient-to-br from-emerald-50 to-blue-50 rounded-2xl p-6 border border-emerald-100">
+              <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                <MapPin className="w-5 h-5 text-emerald-600 mr-2" />
+                Quick Info
+              </h4>
+              <div className="space-y-3">
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-600 text-sm">Best Time:</span>
+                  <span className="text-gray-900 font-medium text-sm">
+                    {destination.bestTime}
+                  </span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-600 text-sm">Difficulty:</span>
+                  <span className="text-gray-900 font-medium text-sm">
+                    {destination.difficulty}
+                  </span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-600 text-sm">Duration:</span>
+                  <span className="text-gray-900 font-medium text-sm">
+                    {destination.duration}
+                  </span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-600 text-sm">Group Size:</span>
+                  <span className="text-gray-900 font-medium text-sm">
+                    {destination.groupSize}
+                  </span>
+                </div>
+              </div>
+            </div>
+
             {/* What's Included */}
-            <div className="bg-gray-50 rounded-2xl p-6">
-              <h4 className="text-lg font-bold text-gray-900 mb-4">
+            <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
+              <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                <CheckCircle className="w-5 h-5 text-emerald-600 mr-2" />
                 What's Included
               </h4>
-              <ul className="space-y-2">
+              <ul className="space-y-3">
                 {destination.included.map((item) => (
-                  <li key={item} className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                    <span className="text-gray-700 text-sm">{item}</span>
+                  <li key={item} className="flex items-start space-x-3">
+                    <CheckCircle className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                    <span className="text-gray-700 text-sm leading-relaxed">
+                      {item}
+                    </span>
                   </li>
                 ))}
               </ul>
             </div>
 
             {/* What's Not Included */}
-            <div className="bg-gray-50 rounded-2xl p-6">
+            <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
               <h4 className="text-lg font-bold text-gray-900 mb-4">
                 Not Included
               </h4>
-              <ul className="space-y-2">
+              <ul className="space-y-3">
                 {destination.notIncluded.map((item) => (
-                  <li key={item} className="flex items-center space-x-2">
-                    <div className="w-4 h-4 border border-gray-400 rounded-full flex-shrink-0"></div>
-                    <span className="text-gray-700 text-sm">{item}</span>
+                  <li key={item} className="flex items-start space-x-3">
+                    <div className="w-4 h-4 border border-gray-400 rounded-full flex-shrink-0 mt-0.5"></div>
+                    <span className="text-gray-700 text-sm leading-relaxed">
+                      {item}
+                    </span>
                   </li>
                 ))}
               </ul>
             </div>
 
             {/* Nearby Attractions */}
-            <div className="bg-gray-50 rounded-2xl p-6">
-              <h4 className="text-lg font-bold text-gray-900 mb-4">
+            <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
+              <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                <Navigation className="w-5 h-5 text-emerald-600 mr-2" />
                 Nearby Attractions
               </h4>
-              <ul className="space-y-2">
+              <ul className="space-y-3">
                 {destination.nearbyAttractions.map((attraction) => (
-                  <li key={attraction} className="text-gray-700 text-sm">
-                    • {attraction}
+                  <li
+                    key={attraction}
+                    className="text-gray-700 text-sm flex items-center"
+                  >
+                    <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3 flex-shrink-0"></div>
+                    {attraction}
                   </li>
                 ))}
               </ul>

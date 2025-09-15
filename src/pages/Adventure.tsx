@@ -21,7 +21,9 @@ const SriLankaAdventures: React.FC<SriLankaAdventuresProps> = ({
 }) => {
   const { t } = useLanguage();
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [animatedElements, setAnimatedElements] = useState<Set<number>>(new Set());
+  const [animatedElements, setAnimatedElements] = useState<Set<number>>(
+    new Set()
+  );
   const sectionTitleRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -91,7 +93,8 @@ const SriLankaAdventures: React.FC<SriLankaAdventuresProps> = ({
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.pageYOffset;
-      const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const documentHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
       const progress = (scrollTop / documentHeight) * 100;
       setScrollProgress(progress);
     };
@@ -105,7 +108,9 @@ const SriLankaAdventures: React.FC<SriLankaAdventuresProps> = ({
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const elementId = parseInt(entry.target.getAttribute("data-id") || "0");
+            const elementId = parseInt(
+              entry.target.getAttribute("data-id") || "0"
+            );
             setAnimatedElements((prev) => new Set([...prev, elementId]));
           }
         });
@@ -148,7 +153,7 @@ const SriLankaAdventures: React.FC<SriLankaAdventuresProps> = ({
         style={heroStyle}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30" />
-        <div className="relative z-10 max-w-4xl px-6 animate-fade-in">
+        <div className="relative z-10 max-w-4xl px-6 animate-fade-in pt-16">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-wider drop-shadow-lg">
             {t("srilankaadventures.hero.title")}
           </h1>
@@ -165,7 +170,9 @@ const SriLankaAdventures: React.FC<SriLankaAdventuresProps> = ({
             ref={sectionTitleRef}
             data-id="0"
             className={`text-center mb-20 transition-all duration-1000 ${
-              animatedElements.has(0) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+              animatedElements.has(0)
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-12"
             }`}
           >
             <h2 className="text-4xl md:text-6xl font-bold text-gray-800 mb-6 relative">
@@ -195,7 +202,9 @@ const SriLankaAdventures: React.FC<SriLankaAdventuresProps> = ({
                     alt={t(`srilankaadventures.${adventure.key}.title`)}
                     className="w-full h-full object-cover"
                     loading="lazy"
-                    onError={(e) => (e.currentTarget.src = "/images/fallback-adventure.jpg")}
+                    onError={(e) =>
+                      (e.currentTarget.src = "/images/fallback-adventure.jpg")
+                    }
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                   <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/5 to-black/20" />
