@@ -3,14 +3,12 @@
 import { useState, useEffect } from "react";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import { NavigationProvider } from "./contexts/NavigationContext";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 
 // Import all pages
 import HomePage from "./app/page";
 import Destinations from "./pages/Distinations";
 import DestinationDetail from "./pages/DestinationDetail";
-import AboutUs from "./app/about/page";
+import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import Gallery from "./pages/Gallery";
 import Packages from "./pages/Packages";
