@@ -6,21 +6,13 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import {
   Clock,
-  Users,
   Star,
   Check,
   ArrowRight,
   Calendar,
   Gift,
-  Zap,
-  Crown,
-  Heart,
   MapPin,
   Camera,
-  Mountain,
-  Building,
-  Binary as Binoculars,
-  Apple as Temple,
 } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 
@@ -39,21 +31,21 @@ const PackagesContent = () => {
     ru: "+94777654321",
   };
 
-  const handleWhatsAppClick = (packageName: string, price: string) => {
+  const handleWhatsAppClick = (packageName: string) => {
     const number = whatsappNumbers[currentLanguage.code];
     const message = encodeURIComponent(
       currentLanguage.code === "en"
-        ? `Hello! I'm interested in the ${packageName} tour package (${price}). Could you provide more details and availability?`
-        : `Привет! Меня интересует тур "${packageName}" (${price}). Можете предоставить больше информации и доступность?`
+        ? `Hello! I'm interested in the ${packageName} tour package. Could you provide more details and availability?`
+        : `Привет! Меня интересует тур "${packageName}". Можете предоставить больше информации и доступность?`
     );
     window.open(`https://wa.me/${number}?text=${message}`, "_blank");
   };
 
   const durations = [
     { id: "all", labelKey: "packages.filters.allTours" },
-    { id: "1day", labelKey: "packages.filters.oneDayTours" },
-    { id: "2day", labelKey: "packages.filters.twoDayTours" },
-    { id: "7day", labelKey: "packages.filters.twoDayTours" },
+    { id: "1day", labelKey: "packages.filters.oneDay" },
+    { id: "2day", labelKey: "packages.filters.twoDays" },
+    { id: "7day", labelKey: "packages.filters.sevenDays" },
   ];
 
   const categories = [
@@ -63,7 +55,7 @@ const PackagesContent = () => {
     { id: "wildlife", labelKey: "packages.filters.wildlifeSafari" },
     { id: "city", labelKey: "packages.filters.cityTours" },
     { id: "beach", labelKey: "packages.filters.beachCoast" },
-    { id: "comprehensive", labelKey: "packages.filters.twoDayTours" },
+    { id: "comprehensive", labelKey: "packages.filters.twoDays" },
   ];
 
   const tourPackages = [
@@ -82,7 +74,6 @@ const PackagesContent = () => {
       reviews: 234,
       groupSize: "2-15",
       badge: "popular",
-      badgeIcon: Mountain,
       highlights: [
         "Rawana Waterfall",
         "Nine Arches Bridge",
@@ -124,7 +115,6 @@ const PackagesContent = () => {
       reviews: 189,
       groupSize: "2-20",
       badge: "heritage",
-      badgeIcon: Temple,
       highlights: [
         "Turtle Farm Experience",
         "Madu River Boat Safari",
@@ -163,7 +153,6 @@ const PackagesContent = () => {
       reviews: 156,
       groupSize: "2-25",
       badge: "city",
-      badgeIcon: Building,
       highlights: [
         "Galle Face Green (Colombo Beach)",
         "Gangaramaya Temple",
@@ -204,7 +193,6 @@ const PackagesContent = () => {
       reviews: 203,
       groupSize: "2-15",
       badge: "bestseller",
-      badgeIcon: Crown,
       highlights: [
         "Elephant Feeding Experience",
         "Elephant Ride",
@@ -246,7 +234,6 @@ const PackagesContent = () => {
       reviews: 278,
       groupSize: "2-12",
       badge: "wonder",
-      badgeIcon: Mountain,
       highlights: [
         "Dambulla Royal Cave Temple & Golden Buddha",
         "Ancient Rock Fortress of Sigiriya (UNESCO)",
@@ -288,7 +275,6 @@ const PackagesContent = () => {
       reviews: 167,
       groupSize: "2-8",
       badge: "wildlife",
-      badgeIcon: Binoculars,
       highlights: [
         "Open Jeep Safari in Yala National Park",
         "Spot Elephants, Leopards, Deer",
@@ -328,7 +314,6 @@ const PackagesContent = () => {
       reviews: 134,
       groupSize: "2-10",
       badge: "combo",
-      badgeIcon: Zap,
       highlights: [
         "Rawana Waterfall",
         "Nine Arches Bridge",
@@ -369,7 +354,6 @@ const PackagesContent = () => {
       reviews: 89,
       groupSize: "2-12",
       badge: "gold",
-      badgeIcon: Crown,
       highlights: [
         "Day 1: Ella - Ravana Falls, Train Ride, 9-Arch Bridge, Little Adam's Peak",
         "Day 1: Nuwara Eliya - Grand Hotel, Tea Plantations, Tea Factory",
@@ -416,7 +400,6 @@ const PackagesContent = () => {
       reviews: 112,
       groupSize: "2-15",
       badge: "popular",
-      badgeIcon: Heart,
       highlights: [
         "Day 1: Elephant Orphanage, Ayurvedic Garden, Tea Factory",
         "Day 1: Royal Botanical Garden, Kandy Tooth Temple, Nuwara Eliya",
@@ -467,7 +450,6 @@ const PackagesContent = () => {
       reviews: 67,
       groupSize: "2-12",
       badge: "premium",
-      badgeIcon: Crown,
       highlights: [
         "Airport → Sigiriya → Kandy → Ella → Yala → Galle → Colombo",
         "UNESCO World Heritage Sites",
@@ -532,31 +514,6 @@ const PackagesContent = () => {
       selectedCategory === "all" || pkg.category === selectedCategory;
     return durationMatch && categoryMatch;
   });
-
-  const getBadgeColor = (badge: string) => {
-    switch (badge) {
-      case "bestseller":
-        return "from-yellow-500 to-orange-500";
-      case "popular":
-        return "from-pink-500 to-red-500";
-      case "heritage":
-        return "from-purple-500 to-indigo-500";
-      case "city":
-        return "from-blue-500 to-cyan-500";
-      case "wildlife":
-        return "from-green-500 to-teal-500";
-      case "combo":
-        return "from-orange-500 to-red-500";
-      case "gold":
-        return "from-yellow-400 to-yellow-600";
-      case "premium":
-        return "from-purple-600 to-pink-600";
-      case "wonder":
-        return "from-emerald-500 to-teal-600";
-      default:
-        return "from-gray-500 to-gray-600";
-    }
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-emerald-50">
@@ -669,18 +626,6 @@ const PackagesContent = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 
-                    {/* Badge */}
-                    <div
-                      className={`absolute top-6 left-6 bg-gradient-to-r ${getBadgeColor(
-                        pkg.badge
-                      )} text-white px-4 py-2 rounded-full flex items-center space-x-2 shadow-lg`}
-                    >
-                      <BadgeIcon className="w-4 h-4" />
-                      <span className="text-sm font-semibold capitalize">
-                        {pkg.badge}
-                      </span>
-                    </div>
-
                     {/* Duration Badge */}
                     <div className="absolute top-6 right-6 bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium">
                       {pkg.duration === "1day"
@@ -713,14 +658,6 @@ const PackagesContent = () => {
                           {pkg.subtitle}
                         </p>
                       </div>
-                      <div className="text-right">
-                        <div className="text-3xl font-bold text-gray-900">
-                          {pkg.price}
-                        </div>
-                        <div className="text-sm text-gray-500 line-through">
-                          {pkg.originalPrice}
-                        </div>
-                      </div>
                     </div>
 
                     {/* Package Info */}
@@ -734,10 +671,6 @@ const PackagesContent = () => {
                             ? "2 Days"
                             : "7 Days"}
                         </span>
-                      </div>
-                      <div className="flex items-center">
-                        <Users className="w-4 h-4 mr-1" />
-                        <span>{pkg.groupSize} people</span>
                       </div>
                     </div>
 
@@ -816,14 +749,11 @@ const PackagesContent = () => {
                     {/* Action Buttons */}
                     <div className="space-y-3">
                       <button
-                        onClick={() => handleWhatsAppClick(pkg.name, pkg.price)}
+                        onClick={() => handleWhatsAppClick(pkg.name)}
                         className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform group-hover:scale-105 flex items-center justify-center space-x-2 shadow-lg"
                       >
                         <span>Book Now via WhatsApp</span>
                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                      </button>
-                      <button className="w-full border-2 border-gray-300 hover:border-emerald-500 text-gray-700 hover:text-emerald-600 py-3 rounded-xl font-semibold transition-all duration-300">
-                        View Detailed Itinerary
                       </button>
                     </div>
                   </div>

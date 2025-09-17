@@ -370,6 +370,116 @@ Mirissa is also known for its surfing spots, particularly at Weligama Bay, which
         "Koggala Lake",
       ],
     },
+    "7": {
+      id: 7,
+      name: "Anuradhapura Ancient City",
+      category: "heritage",
+      location: "North Central Province",
+      coordinates: { lat: 8.3114, lng: 80.4037 },
+      mainImage: "/temple.jpg",
+      gallery: [
+        "/temple.jpg",
+        "/temple-sacred.jpg",
+        "/cultural.jpg",
+        "/culturalHeri.jpg",
+      ],
+      shortDescription:
+        "Ancient capital with sacred Buddhist sites, massive dagobas, and ruins dating back over 2,000 years.",
+      fullDescription: `Anuradhapura is one of the ancient capitals of Sri Lanka, famous for its well-preserved ruins of ancient Sinhalese civilization. It was the first capital of the island and remained so for nearly 1,400 years. The city, now a UNESCO World Heritage site, was the center of Theravada Buddhism for many centuries.
+
+The city is home to some of the most sacred Buddhist sites in the world, including the Sri Maha Bodhi tree, which is said to be a sapling from the original Bodhi tree under which Buddha attained enlightenment. This makes it one of the oldest living trees in the world, planted in 288 BC.
+
+Anuradhapura is also famous for its massive dagobas (stupas), including the Ruwanwelisaya, Jetavanaramaya, and Abhayagiri stupas. These architectural marvels showcase the advanced engineering skills of ancient Sri Lankan civilization.
+
+The city was abandoned in 993 AD due to repeated invasions from South India, and the capital was moved to Polonnaruwa. However, the sacred city continued to be maintained by Buddhist monks and pilgrims, preserving its religious significance.
+
+Today, Anuradhapura is a major pilgrimage site for Buddhists worldwide and attracts thousands of visitors who come to experience its rich history, ancient architecture, and spiritual atmosphere.`,
+      highlights: [
+        "Sacred Bodhi Tree (2,500 years old)",
+        "Ruwanwelisaya Dagoba",
+        "Jetavanaramaya Stupa",
+        "Abhayagiri Monastery",
+        "Isurumuniya Rock Temple",
+        "Sri Maha Bodhi Temple",
+      ],
+      bestTime: "Year-round (cooler months preferred)",
+      difficulty: "Easy",
+      duration: "1-2 days",
+      groupSize: "2-20 people",
+      rating: 4.6,
+      reviews: 145,
+      price: 90,
+      included: [
+        "Professional guide",
+        "Entrance fees",
+        "Transportation",
+        "Bottled water",
+        "Historical site visits",
+      ],
+      notIncluded: ["Personal expenses", "Tips", "Accommodation", "Meals"],
+      nearbyAttractions: [
+        "Mihintale Sacred Mountain",
+        "Polonnaruwa Ancient City",
+        "Dambulla Cave Temple",
+        "Sigiriya Rock Fortress",
+      ],
+    },
+    "8": {
+      id: 8,
+      name: "Nuwara Eliya Tea Country",
+      category: "nature",
+      location: "Central Province",
+      coordinates: { lat: 6.9497, lng: 80.7891 },
+      mainImage: "/tea.jpg",
+      gallery: [
+        "/tea.jpg",
+        "/cultural.jpg",
+        "/adventureWild.jpg",
+        "/beachRelax.jpg",
+      ],
+      shortDescription:
+        "Cool climate hill station surrounded by tea plantations, colonial architecture, and beautiful gardens.",
+      fullDescription: `Nuwara Eliya, often called "Little England," is a city in the hill country of the Central Province, Sri Lanka. It is the highest city in the country, sitting at an elevation of 1,868 meters (6,128 feet) above sea level. The city is famous for its cool climate, tea plantations, and colonial architecture.
+
+The city was established by the British in the 19th century as a hill station to escape the heat of the lowlands. The British influence is still visible in the architecture, with many colonial-style buildings, including the Grand Hotel and the Hill Club.
+
+Nuwara Eliya is the heart of Sri Lanka's tea country, surrounded by rolling hills covered in lush green tea plantations. The area produces some of the world's finest Ceylon tea, and visitors can tour tea factories to learn about the tea-making process.
+
+The city is also known for its beautiful gardens, including the Hakgala Botanical Gardens, which features a variety of exotic plants and flowers. Gregory Lake, located in the center of the city, offers boating and other recreational activities.
+
+The climate in Nuwara Eliya is much cooler than the rest of Sri Lanka, with temperatures rarely exceeding 20°C (68°F). This makes it a popular destination for both locals and tourists seeking relief from the tropical heat.
+
+The city is also a gateway to Horton Plains National Park, home to World's End, a dramatic cliff with stunning views over the surrounding landscape.`,
+      highlights: [
+        "Tea Plantation Tours",
+        "Horton Plains National Park",
+        "Gregory Lake",
+        "Hakgala Botanical Gardens",
+        "Pedro Tea Estate",
+        "Colonial Architecture",
+      ],
+      bestTime: "March to May, September to November",
+      difficulty: "Easy",
+      duration: "2-3 days",
+      groupSize: "2-15 people",
+      rating: 4.7,
+      reviews: 198,
+      price: 110,
+      included: [
+        "Professional guide",
+        "Tea factory tour",
+        "Transportation",
+        "Bottled water",
+        "Garden visits",
+      ],
+      notIncluded: ["Personal expenses", "Tips", "Accommodation", "Meals"],
+      nearbyAttractions: [
+        "Ella Hill Country",
+        "Adam's Peak",
+        "Kandy City",
+        "Horton Plains",
+      ],
+    },
   };
 
   const destination = destinations[destinationId as keyof typeof destinations];
@@ -551,9 +661,9 @@ Mirissa is also known for its surfing spots, particularly at Weligama Bay, which
                       <div
                         key={`gallery-image-${image}-${index}`}
                         className="w-full flex-shrink-0"
-                  >
-                    <img
-                      src={image}
+                      >
+                        <img
+                          src={image}
                           alt={`${destination.name} - ${index + 1}`}
                           className="w-full h-96 object-cover"
                         />

@@ -20,9 +20,10 @@ import {
   Phone,
   MessageCircle,
 } from "lucide-react";
-import { LanguageProvider } from "../contexts/LanguageContext";
+import { useLanguage } from "../contexts/LanguageContext";
 
 function AdventuresPageContent() {
+  const { t } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedDifficulty, setSelectedDifficulty] = useState("all");
   const [sortBy, setSortBy] = useState("popular");
@@ -767,9 +768,5 @@ function AdventuresPageContent() {
 }
 
 export default function AdventuresPage() {
-  return (
-    <LanguageProvider>
-      <AdventuresPageContent />
-    </LanguageProvider>
-  );
+  return <AdventuresPageContent />;
 }

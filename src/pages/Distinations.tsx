@@ -11,6 +11,7 @@ interface DestinationsPageProps {
 export default function DestinationsPage({
   onNavigateToDestination,
 }: DestinationsPageProps) {
+  const { t } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedDuration, setSelectedDuration] = useState("all");
   const [sortBy, setSortBy] = useState("popular");

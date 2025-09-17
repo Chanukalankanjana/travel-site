@@ -491,8 +491,9 @@ type TranslationKeys =
   | "gallery.common.download"
   // Packages Page
   | "packages.filters.allTours"
-  | "packages.filters.oneDayTours"
-  | "packages.filters.twoDayTours"
+  | "packages.filters.oneDay"
+  | "packages.filters.twoDays"
+  | "packages.filters.sevenDays"
   | "packages.filters.allCategories"
   | "packages.filters.culturalHeritage"
   | "packages.filters.adventureNature"
@@ -576,7 +577,11 @@ type TranslationKeys =
   | "contact.whyChooseUs.bestValue.title"
   | "contact.whyChooseUs.bestValue.description"
   | "contact.quickContact.title"
-  | "contact.quickContact.description";
+  | "contact.quickContact.description"
+  // Contact Hero Section
+  | "contact.hero.badge"
+  | "contact.hero.title"
+  | "contact.hero.subtitle";
 
 type TranslationMap = {
   [key in TranslationKeys]: string;
@@ -1063,8 +1068,9 @@ const translations: { [lang: string]: TranslationMap } = {
 
     // Packages Page
     "packages.filters.allTours": "All Tours",
-    "packages.filters.oneDayTours": "1 Day Tours",
-    "packages.filters.twoDayTours": "2 Day Tours",
+    "packages.filters.oneDay": "1 Day",
+    "packages.filters.twoDays": "2 Days",
+    "packages.filters.sevenDays": "7 Days",
     "packages.filters.allCategories": "All Categories",
     "packages.filters.culturalHeritage": "Cultural Heritage",
     "packages.filters.adventureNature": "Adventure & Nature",
@@ -1162,6 +1168,12 @@ const translations: { [lang: string]: TranslationMap } = {
     "contact.quickContact.title": "Need Immediate Assistance?",
     "contact.quickContact.description":
       "For urgent inquiries or last-minute bookings, contact us directly via WhatsApp or phone.",
+
+    // Contact Hero Section
+    "contact.hero.badge": "Get in Touch with Us",
+    "contact.hero.title": "Contact Us",
+    "contact.hero.subtitle":
+      "Ready to embark on your Sri Lankan adventure? We're here to help you plan the perfect journey. Reach out to us and let's create unforgettable memories together.",
   },
   ru: {
     // Navigation
@@ -1660,8 +1672,9 @@ const translations: { [lang: string]: TranslationMap } = {
 
     // Packages Page
     "packages.filters.allTours": "Все туры",
-    "packages.filters.oneDayTours": "Однодневные туры",
-    "packages.filters.twoDayTours": "Двухдневные туры",
+    "packages.filters.oneDay": "1 день",
+    "packages.filters.twoDays": "2 дня",
+    "packages.filters.sevenDays": "7 дней",
     "packages.filters.allCategories": "Все категории",
     "packages.filters.culturalHeritage": "Культурное наследие",
     "packages.filters.adventureNature": "Приключения и природа",
@@ -1761,6 +1774,12 @@ const translations: { [lang: string]: TranslationMap } = {
     "contact.quickContact.title": "Нужна немедленная помощь?",
     "contact.quickContact.description":
       "Для срочных запросов или бронирования в последнюю минуту, свяжитесь с нами напрямую через WhatsApp или телефон.",
+
+    // Contact Hero Section
+    "contact.hero.badge": "Свяжитесь с нами",
+    "contact.hero.title": "Контакты",
+    "contact.hero.subtitle":
+      "Готовы отправиться в приключение на Шри-Ланке? Мы здесь, чтобы помочь вам спланировать идеальное путешествие. Обратитесь к нам, и давайте создадим незабываемые воспоминания вместе.",
   },
 };
 

@@ -77,7 +77,7 @@ const ContactPageContent = () => {
     {
       icon: Mail,
       titleKey: "contact.info.email.title",
-      details: ["info@srilankadiscovery.com", "tours@srilankadiscovery.com"],
+      details: ["info@srilankadiscovery.com"],
       descriptionKey: "contact.info.email.description",
     },
     {
@@ -126,17 +126,15 @@ const ContactPageContent = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white text-sm font-medium mb-8">
             <MessageCircle className="w-4 h-4 mr-2 animate-pulse" />
-            Get in Touch with Us
+            {t("contact.hero.badge")}
           </div>
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
             <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
-              Contact Us
+              {t("contact.hero.title")}
             </span>
           </h1>
           <p className="text-xl sm:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-12">
-            Ready to embark on your Sri Lankan adventure? We're here to help you
-            plan the perfect journey. Reach out to us and let's create
-            unforgettable memories together.
+            {t("contact.hero.subtitle")}
           </p>
         </div>
       </section>
