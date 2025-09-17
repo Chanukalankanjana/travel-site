@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { LanguageProvider } from "./contexts/LanguageContext";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import { NavigationProvider } from "./contexts/NavigationContext";
 
 // Import all pages
@@ -178,13 +180,19 @@ function App() {
           {/* Only show Header and Footer for pages that don't have them built-in */}
           {currentPage !== "home" && currentPage !== "destination-detail" && (
             <>
-              <main className="pt-16">{renderCurrentPage()}</main>
+              <Header />
+              <main>{renderCurrentPage()}</main>
+              <Footer />
             </>
           )}
 
           {/* Pages with built-in Header/Footer */}
           {(currentPage === "home" || currentPage === "destination-detail") &&
-            renderCurrentPage()}
+            <>
+              <Header />
+              {renderCurrentPage()}
+              <Footer />
+            </>}
         </div>
       </NavigationProvider>
     </LanguageProvider>

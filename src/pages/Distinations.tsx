@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowLeft, MapPin, Heart, Filter } from "lucide-react";
+import { MapPin, Heart, Filter } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
 
 interface DestinationsPageProps {
@@ -16,20 +16,20 @@ export default function DestinationsPage({
   const [sortBy, setSortBy] = useState("popular");
 
   const categories = [
-    { id: "all", label: "All Destinations" },
-    { id: "heritage", label: "Heritage Sites" },
-    { id: "nature", label: "Nature & Wildlife" },
-    { id: "culture", label: "Cultural" },
-    { id: "adventure", label: "Adventure" },
-    { id: "beaches", label: "Beaches" },
+    { id: "all", labelKey: "destinations.filters.all" },
+    { id: "heritage", labelKey: "destinations.filters.heritage" },
+    { id: "nature", labelKey: "destinations.filters.nature" },
+    { id: "culture", labelKey: "destinations.filters.culture" },
+    { id: "adventure", labelKey: "destinations.filters.adventure" },
+    { id: "beaches", labelKey: "destinations.filters.beaches" },
   ];
 
   const durations = [
-    { id: "all", label: "Any Duration" },
-    { id: "1", label: "1 Day" },
-    { id: "2-3", label: "2-3 Days" },
-    { id: "4-7", label: "4-7 Days" },
-    { id: "7+", label: "7+ Days" },
+    { id: "all", labelKey: "destinations.filters.anyDuration" },
+    { id: "1", labelKey: "destinations.filters.oneDay" },
+    { id: "2-3", labelKey: "destinations.filters.twoThreeDays" },
+    { id: "4-7", labelKey: "destinations.filters.fourPlusDays" },
+    { id: "7+", labelKey: "destinations.filters.fourPlusDays" },
   ];
 
   const destinations = [
@@ -236,30 +236,27 @@ export default function DestinationsPage({
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-emerald-50 to-teal-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <div className="inline-flex items-center px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium mb-6">
-              <MapPin className="w-4 h-4 mr-2" />
-              Explore Paradise
-            </div>
-            <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 mb-6">
-              Discover Sri Lanka
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              From ancient kingdoms to pristine beaches, explore the most
-              captivating destinations in the Pearl of the Indian Ocean
-            </p>
+      <section className="relative min-h-[80vh] flex items-center overflow-hidden pt-28 pb-16">
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-900 via-teal-900 to-cyan-900"></div>
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-20"
+          style={{ backgroundImage: "url('/Hero/Destination.png')" }}
+        ></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
 
-            {/* Back to Home */}
-            <a
-              href="/"
-              className="inline-flex items-center px-6 py-3 bg-white border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors duration-200"
-            >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Home
-            </a>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white text-sm font-medium mb-8">
+            <MapPin className="w-4 h-4 mr-2" /> Explore Paradise
           </div>
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
+            <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
+              Discover Sri Lanka
+            </span>
+          </h1>
+          <p className="text-xl sm:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-12">
+            From ancient kingdoms to pristine beaches, explore the island's most
+            captivating destinations.
+          </p>
         </div>
       </section>
 
@@ -270,7 +267,7 @@ export default function DestinationsPage({
             <div className="flex items-center space-x-4">
               <Filter className="w-5 h-5 text-gray-500" />
               <span className="text-sm font-medium text-gray-700">
-                Filter by:
+                {t("destinations.filters.categories")}:
               </span>
             </div>
 
@@ -283,7 +280,7 @@ export default function DestinationsPage({
               >
                 {categories.map((category) => (
                   <option key={category.id} value={category.id}>
-                    {category.label}
+                    {t(category.labelKey)}
                   </option>
                 ))}
               </select>
@@ -296,7 +293,7 @@ export default function DestinationsPage({
               >
                 {durations.map((duration) => (
                   <option key={duration.id} value={duration.id}>
-                    {duration.label}
+                    {t(duration.labelKey)}
                   </option>
                 ))}
               </select>
@@ -383,7 +380,8 @@ export default function DestinationsPage({
                       ))}
                       {destination.highlights.length > 2 && (
                         <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full font-medium">
-                          +{destination.highlights.length - 2} more
+                          +{destination.highlights.length - 2}{" "}
+                          {t("common.readMore")}
                         </span>
                       )}
                     </div>
@@ -397,7 +395,7 @@ export default function DestinationsPage({
                       }
                       className="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition-colors duration-300"
                     >
-                      More Details
+                      {t("common.learnMore")}
                     </button>
                   </div>
                 </div>
@@ -408,7 +406,7 @@ export default function DestinationsPage({
           {/* Load More */}
           <div className="text-center mt-12">
             <button className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition-colors duration-300">
-              Load More Destinations
+              {t("common.viewAll")} {t("destinations.title")}
             </button>
           </div>
         </div>

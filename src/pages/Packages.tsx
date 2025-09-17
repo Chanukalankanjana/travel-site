@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { LanguageProvider } from "../contexts/LanguageContext"
-import Header from "../components/Header"
-import Footer from "../components/Footer"
+import { useState, useEffect } from "react";
+import { LanguageProvider } from "../contexts/LanguageContext";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 import {
   Clock,
   Users,
@@ -21,50 +21,50 @@ import {
   Building,
   Binary as Binoculars,
   Apple as Temple,
-} from "lucide-react"
-import { useLanguage } from "../contexts/LanguageContext"
+} from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const PackagesContent = () => {
-  const { t, currentLanguage } = useLanguage()
-  const [selectedDuration, setSelectedDuration] = useState("all")
-  const [selectedCategory, setSelectedCategory] = useState("all")
-  const [isVisible, setIsVisible] = useState(false)
+  const { t, currentLanguage } = useLanguage();
+  const [selectedDuration, setSelectedDuration] = useState("all");
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true)
-  }, [])
+    setIsVisible(true);
+  }, []);
 
   const whatsappNumbers = {
     en: "+94771234567",
     ru: "+94777654321",
-  }
+  };
 
   const handleWhatsAppClick = (packageName: string, price: string) => {
-    const number = whatsappNumbers[currentLanguage.code]
+    const number = whatsappNumbers[currentLanguage.code];
     const message = encodeURIComponent(
       currentLanguage.code === "en"
         ? `Hello! I'm interested in the ${packageName} tour package (${price}). Could you provide more details and availability?`
-        : `Привет! Меня интересует тур "${packageName}" (${price}). Можете предоставить больше информации и доступность?`,
-    )
-    window.open(`https://wa.me/${number}?text=${message}`, "_blank")
-  }
+        : `Привет! Меня интересует тур "${packageName}" (${price}). Можете предоставить больше информации и доступность?`
+    );
+    window.open(`https://wa.me/${number}?text=${message}`, "_blank");
+  };
 
   const durations = [
-    { id: "all", label: "All Tours" },
-    { id: "1day", label: "1 Day Tours" },
-    { id: "2day", label: "2 Day Tours" },
-    { id: "7day", label: "7 Day Tours" },
-  ]
+    { id: "all", labelKey: "packages.filters.allTours" },
+    { id: "1day", labelKey: "packages.filters.oneDayTours" },
+    { id: "2day", labelKey: "packages.filters.twoDayTours" },
+    { id: "7day", labelKey: "packages.filters.twoDayTours" },
+  ];
 
   const categories = [
-    { id: "all", label: "All Categories" },
-    { id: "cultural", label: "Cultural Heritage" },
-    { id: "adventure", label: "Adventure & Nature" },
-    { id: "wildlife", label: "Wildlife Safari" },
-    { id: "city", label: "City Tours" },
-    { id: "beach", label: "Beach & Coast" },
-    { id: "comprehensive", label: "Multi-Day Tours" },
-  ]
+    { id: "all", labelKey: "packages.filters.allCategories" },
+    { id: "cultural", labelKey: "packages.filters.culturalHeritage" },
+    { id: "adventure", labelKey: "packages.filters.adventureNature" },
+    { id: "wildlife", labelKey: "packages.filters.wildlifeSafari" },
+    { id: "city", labelKey: "packages.filters.cityTours" },
+    { id: "beach", labelKey: "packages.filters.beachCoast" },
+    { id: "comprehensive", labelKey: "packages.filters.twoDayTours" },
+  ];
 
   const tourPackages = [
     // One Day Tours
@@ -132,7 +132,12 @@ const PackagesContent = () => {
         "Turtle Beach Visit",
         "UNESCO Dutch Galle Fort",
       ],
-      included: ["All entrance tickets", "Professional guide", "Bottled water", "Comfortable vehicle"],
+      included: [
+        "All entrance tickets",
+        "Professional guide",
+        "Bottled water",
+        "Comfortable vehicle",
+      ],
       itinerary: [
         { time: "08:00", activity: "Hotel pickup" },
         { time: "10:00", activity: "Turtle Farm visit" },
@@ -167,7 +172,12 @@ const PackagesContent = () => {
         "Modern Shopping Malls",
       ],
       extras: ["Lotus Tower visit ($20 per adult - not included)"],
-      included: ["All entrance tickets", "Professional guide", "Bottled water", "Comfortable vehicle"],
+      included: [
+        "All entrance tickets",
+        "Professional guide",
+        "Bottled water",
+        "Comfortable vehicle",
+      ],
       itinerary: [
         { time: "09:00", activity: "Hotel pickup" },
         { time: "09:30", activity: "Galle Face Green seaside walk" },
@@ -204,7 +214,12 @@ const PackagesContent = () => {
         "Ayurvedic Center & Spice Garden",
         "Tea Factory & Plantations",
       ],
-      included: ["All entrance tickets", "Professional guide", "Bottled water", "Comfortable vehicle"],
+      included: [
+        "All entrance tickets",
+        "Professional guide",
+        "Bottled water",
+        "Comfortable vehicle",
+      ],
       itinerary: [
         { time: "07:00", activity: "Early morning pickup" },
         { time: "09:00", activity: "Elephant feeding and ride" },
@@ -239,8 +254,15 @@ const PackagesContent = () => {
         "Ayurvedic Center & Spice Garden",
         "Cooking Class & Local Cuisine Tasting",
       ],
-      extras: ["Buffalo sledding, Lake boat ride, Village tour (tickets not included)"],
-      included: ["All entrance tickets", "Professional guide", "Bottled water", "Comfortable vehicle"],
+      extras: [
+        "Buffalo sledding, Lake boat ride, Village tour (tickets not included)",
+      ],
+      included: [
+        "All entrance tickets",
+        "Professional guide",
+        "Bottled water",
+        "Comfortable vehicle",
+      ],
       itinerary: [
         { time: "06:00", activity: "Early departure" },
         { time: "08:30", activity: "Dambulla Cave Temple" },
@@ -315,7 +337,13 @@ const PackagesContent = () => {
         "Ayurvedic Garden",
         "Yala National Park Safari",
       ],
-      included: ["All entrance tickets", "Safari jeep", "Bottled water", "Comfortable vehicle", "Professional guide"],
+      included: [
+        "All entrance tickets",
+        "Safari jeep",
+        "Bottled water",
+        "Comfortable vehicle",
+        "Professional guide",
+      ],
       itinerary: [
         { time: "05:00", activity: "Very early pickup" },
         { time: "07:00", activity: "Ella sightseeing (condensed)" },
@@ -460,7 +488,8 @@ const PackagesContent = () => {
       itinerary: [
         {
           time: "Day 1",
-          activity: "Airport pickup → Sigiriya. Evening: Sigiriya Rock Fortress climb. Overnight in Sigiriya.",
+          activity:
+            "Airport pickup → Sigiriya. Evening: Sigiriya Rock Fortress climb. Overnight in Sigiriya.",
         },
         {
           time: "Day 2",
@@ -484,53 +513,60 @@ const PackagesContent = () => {
         },
         {
           time: "Day 6",
-          activity: "Morning whale watching session. Beach activities and relaxation. Overnight at beach hotel.",
+          activity:
+            "Morning whale watching session. Beach activities and relaxation. Overnight at beach hotel.",
         },
         {
           time: "Day 7",
-          activity: "Galle Fort visit (UNESCO World Heritage). Madu River boat safari. Transfer to Colombo or Airport.",
+          activity:
+            "Galle Fort visit (UNESCO World Heritage). Madu River boat safari. Transfer to Colombo or Airport.",
         },
       ],
     },
-  ]
+  ];
 
   const filteredPackages = tourPackages.filter((pkg) => {
-    const durationMatch = selectedDuration === "all" || pkg.duration === selectedDuration
-    const categoryMatch = selectedCategory === "all" || pkg.category === selectedCategory
-    return durationMatch && categoryMatch
-  })
+    const durationMatch =
+      selectedDuration === "all" || pkg.duration === selectedDuration;
+    const categoryMatch =
+      selectedCategory === "all" || pkg.category === selectedCategory;
+    return durationMatch && categoryMatch;
+  });
 
   const getBadgeColor = (badge: string) => {
     switch (badge) {
       case "bestseller":
-        return "from-yellow-500 to-orange-500"
+        return "from-yellow-500 to-orange-500";
       case "popular":
-        return "from-pink-500 to-red-500"
+        return "from-pink-500 to-red-500";
       case "heritage":
-        return "from-purple-500 to-indigo-500"
+        return "from-purple-500 to-indigo-500";
       case "city":
-        return "from-blue-500 to-cyan-500"
+        return "from-blue-500 to-cyan-500";
       case "wildlife":
-        return "from-green-500 to-teal-500"
+        return "from-green-500 to-teal-500";
       case "combo":
-        return "from-orange-500 to-red-500"
+        return "from-orange-500 to-red-500";
       case "gold":
-        return "from-yellow-400 to-yellow-600"
+        return "from-yellow-400 to-yellow-600";
       case "premium":
-        return "from-purple-600 to-pink-600"
+        return "from-purple-600 to-pink-600";
       case "wonder":
-        return "from-emerald-500 to-teal-600"
+        return "from-emerald-500 to-teal-600";
       default:
-        return "from-gray-500 to-gray-600"
+        return "from-gray-500 to-gray-600";
     }
-  }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-emerald-50">
       {/* Hero Section */}
-      <section className="relative pt-20 pb-32 overflow-hidden">
+      <section className="relative min-h-[80vh] flex items-center overflow-hidden pt-28 pb-16">
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-900 via-teal-900 to-cyan-900"></div>
-        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/2166711/pexels-photo-2166711.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop')] bg-cover bg-center opacity-20"></div>
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-20"
+          style={{ backgroundImage: "url('/Hero/Package.png')" }}
+        ></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
 
         {/* Floating Elements */}
@@ -552,8 +588,9 @@ const PackagesContent = () => {
               </span>
             </h1>
             <p className="text-xl sm:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-12">
-              From single-day excursions to comprehensive week-long adventures. Discover the best of Sri Lanka with our
-              expertly crafted tour packages.
+              From single-day excursions to comprehensive week-long adventures.
+              Discover the best of Sri Lanka with our expertly crafted tour
+              packages.
             </p>
           </div>
         </div>
@@ -580,7 +617,7 @@ const PackagesContent = () => {
                         : "bg-gray-100 hover:bg-gray-200 text-gray-700"
                     }`}
                   >
-                    {duration.label}
+                    {t(duration.labelKey)}
                   </button>
                 ))}
               </div>
@@ -603,7 +640,7 @@ const PackagesContent = () => {
                         : "bg-gray-100 hover:bg-gray-200 text-gray-700"
                     }`}
                   >
-                    {category.label}
+                    {t(category.labelKey)}
                   </button>
                 ))}
               </div>
@@ -617,7 +654,7 @@ const PackagesContent = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {filteredPackages.map((pkg, index) => {
-              const BadgeIcon = pkg.badgeIcon
+              const BadgeIcon = pkg.badgeIcon;
               return (
                 <div
                   key={pkg.id}
@@ -634,22 +671,34 @@ const PackagesContent = () => {
 
                     {/* Badge */}
                     <div
-                      className={`absolute top-6 left-6 bg-gradient-to-r ${getBadgeColor(pkg.badge)} text-white px-4 py-2 rounded-full flex items-center space-x-2 shadow-lg`}
+                      className={`absolute top-6 left-6 bg-gradient-to-r ${getBadgeColor(
+                        pkg.badge
+                      )} text-white px-4 py-2 rounded-full flex items-center space-x-2 shadow-lg`}
                     >
                       <BadgeIcon className="w-4 h-4" />
-                      <span className="text-sm font-semibold capitalize">{pkg.badge}</span>
+                      <span className="text-sm font-semibold capitalize">
+                        {pkg.badge}
+                      </span>
                     </div>
 
                     {/* Duration Badge */}
                     <div className="absolute top-6 right-6 bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium">
-                      {pkg.duration === "1day" ? "1 Day" : pkg.duration === "2day" ? "2 Days" : "7 Days"}
+                      {pkg.duration === "1day"
+                        ? "1 Day"
+                        : pkg.duration === "2day"
+                        ? "2 Days"
+                        : "7 Days"}
                     </div>
 
                     {/* Rating */}
                     <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center space-x-1">
                       <Star className="w-4 h-4 text-yellow-500 fill-current" />
-                      <span className="text-sm font-semibold text-gray-900">{pkg.rating}</span>
-                      <span className="text-xs text-gray-600">({pkg.reviews})</span>
+                      <span className="text-sm font-semibold text-gray-900">
+                        {pkg.rating}
+                      </span>
+                      <span className="text-xs text-gray-600">
+                        ({pkg.reviews})
+                      </span>
                     </div>
                   </div>
 
@@ -660,11 +709,17 @@ const PackagesContent = () => {
                         <h3 className="text-2xl font-bold text-gray-900 group-hover:text-emerald-600 transition-colors duration-300">
                           {pkg.name}
                         </h3>
-                        <p className="text-emerald-600 font-medium text-sm">{pkg.subtitle}</p>
+                        <p className="text-emerald-600 font-medium text-sm">
+                          {pkg.subtitle}
+                        </p>
                       </div>
                       <div className="text-right">
-                        <div className="text-3xl font-bold text-gray-900">{pkg.price}</div>
-                        <div className="text-sm text-gray-500 line-through">{pkg.originalPrice}</div>
+                        <div className="text-3xl font-bold text-gray-900">
+                          {pkg.price}
+                        </div>
+                        <div className="text-sm text-gray-500 line-through">
+                          {pkg.originalPrice}
+                        </div>
                       </div>
                     </div>
 
@@ -672,7 +727,13 @@ const PackagesContent = () => {
                     <div className="flex items-center space-x-6 mb-6 text-sm text-gray-600">
                       <div className="flex items-center">
                         <Clock className="w-4 h-4 mr-1" />
-                        <span>{pkg.duration === "1day" ? "1 Day" : pkg.duration === "2day" ? "2 Days" : "7 Days"}</span>
+                        <span>
+                          {pkg.duration === "1day"
+                            ? "1 Day"
+                            : pkg.duration === "2day"
+                            ? "2 Days"
+                            : "7 Days"}
+                        </span>
                       </div>
                       <div className="flex items-center">
                         <Users className="w-4 h-4 mr-1" />
@@ -690,7 +751,9 @@ const PackagesContent = () => {
                         {pkg.highlights.slice(0, 4).map((highlight, idx) => (
                           <div key={idx} className="flex items-start space-x-2">
                             <div className="w-2 h-2 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-sm text-gray-700">{highlight}</span>
+                            <span className="text-sm text-gray-700">
+                              {highlight}
+                            </span>
                           </div>
                         ))}
                         {pkg.highlights.length > 4 && (
@@ -709,9 +772,14 @@ const PackagesContent = () => {
                       </h4>
                       <div className="space-y-2">
                         {pkg.included.slice(0, 3).map((item, idx) => (
-                          <div key={idx} className="flex items-center space-x-2">
+                          <div
+                            key={idx}
+                            className="flex items-center space-x-2"
+                          >
                             <Check className="w-4 h-4 text-green-500" />
-                            <span className="text-sm text-gray-700">{item}</span>
+                            <span className="text-sm text-gray-700">
+                              {item}
+                            </span>
                           </div>
                         ))}
                         {pkg.included.length > 3 && (
@@ -731,9 +799,14 @@ const PackagesContent = () => {
                         </h4>
                         <div className="space-y-2">
                           {pkg.extras.map((extra, idx) => (
-                            <div key={idx} className="flex items-start space-x-2">
+                            <div
+                              key={idx}
+                              className="flex items-start space-x-2"
+                            >
                               <div className="w-2 h-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                              <span className="text-sm text-gray-700">{extra}</span>
+                              <span className="text-sm text-gray-700">
+                                {extra}
+                              </span>
                             </div>
                           ))}
                         </div>
@@ -755,7 +828,7 @@ const PackagesContent = () => {
                     </div>
                   </div>
                 </div>
-              )
+              );
             })}
           </div>
         </div>
@@ -764,13 +837,18 @@ const PackagesContent = () => {
       {/* Call to Action */}
       <section className="py-20 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">Need a Custom Tour Package?</h2>
+          <h2 className="text-4xl font-bold text-white mb-6">
+            Need a Custom Tour Package?
+          </h2>
           <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-            Can't find exactly what you're looking for? Let us create a personalized itinerary that perfectly matches
-            your interests, schedule, and budget.
+            Can't find exactly what you're looking for? Let us create a
+            personalized itinerary that perfectly matches your interests,
+            schedule, and budget.
           </p>
           <button
-            onClick={() => handleWhatsAppClick("Custom Tour Package", "Custom Pricing")}
+            onClick={() =>
+              handleWhatsAppClick("Custom Tour Package", "Custom Pricing")
+            }
             className="bg-white text-emerald-600 hover:bg-gray-100 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
           >
             Plan My Custom Tour
@@ -778,8 +856,8 @@ const PackagesContent = () => {
         </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
 const PackagesPage = () => {
   return (
@@ -790,7 +868,7 @@ const PackagesPage = () => {
         <Footer />
       </div>
     </LanguageProvider>
-  )
-}
+  );
+};
 
-export default PackagesPage
+export default PackagesPage;

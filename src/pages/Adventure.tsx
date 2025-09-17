@@ -1,228 +1,669 @@
-import React, { useState, useEffect, useRef } from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import { useLanguage } from "../contexts/LanguageContext";
+"use client";
 
-interface Adventure {
-  id: number;
-  key: string;
-  tagColor: string;
-  image: string;
-}
+import { useState, useEffect } from "react";
+import {
+  Mountain,
+  Waves,
+  TreePine,
+  MapPin,
+  Clock,
+  Users,
+  Star,
+  ArrowRight,
+  Filter,
+  Heart,
+  Zap,
+  Shield,
+  Award,
+  ArrowLeft,
+  Calendar,
+  Phone,
+  MessageCircle,
+} from "lucide-react";
+import { LanguageProvider } from "../contexts/LanguageContext";
 
-interface SriLankaAdventuresProps {
-  heroBackgroundImage?: string;
-  heroGradientOverlay?: string;
-}
+function AdventuresPageContent() {
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedDifficulty, setSelectedDifficulty] = useState("all");
+  const [sortBy, setSortBy] = useState("popular");
+  const [isVisible, setIsVisible] = useState(false);
 
-const SriLankaAdventures: React.FC<SriLankaAdventuresProps> = ({
-  heroBackgroundImage = "adventureHero.webp",
-  heroGradientOverlay = "linear-gradient(135deg, rgba(52, 52, 52, 0.7), rgba(202, 197, 197, 0.5))",
-}) => {
-  const { t } = useLanguage();
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const [animatedElements, setAnimatedElements] = useState<Set<number>>(
-    new Set()
-  );
-  const sectionTitleRef = useRef<HTMLDivElement>(null);
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
 
-  const adventures: Adventure[] = [
+  const categories = [
+    { id: "all", labelKey: "adventure.filters.allAdventures", icon: Zap },
+    {
+      id: "hiking",
+      labelKey: "adventure.filters.hikingTrekking",
+      icon: Mountain,
+    },
+    { id: "water", labelKey: "adventure.filters.waterSports", icon: Waves },
+    {
+      id: "wildlife",
+      labelKey: "adventure.filters.wildlifeSafari",
+      icon: TreePine,
+    },
+    { id: "extreme", labelKey: "adventure.filters.extremeSports", icon: Zap },
+  ];
+
+  const difficulties = [
+    { id: "all", label: "All Levels" },
+    { id: "easy", label: "Easy" },
+    { id: "moderate", label: "Moderate" },
+    { id: "challenging", label: "Challenging" },
+    { id: "extreme", label: "Extreme" },
+  ];
+
+  const adventures = [
     {
       id: 1,
-      key: "whale",
-      tagColor: "from-blue-500 to-blue-600",
-      image: "whaleWatch.webp",
+      name: "Adam's Peak Sacred Climb",
+      image: "/placeholder-s4klc.png",
+      category: "hiking",
+      difficulty: "challenging",
+      duration: "1 Day",
+      price: 120,
+      rating: 4.9,
+      reviews: 342,
+      location: "Central Province",
+      description:
+        "Embark on a spiritual journey to the sacred Adam's Peak (Sri Pada) at 2,243m. Experience the magical sunrise from the summit after a challenging night hike through ancient pilgrimage paths.",
+      highlights: [
+        "Sacred Buddhist pilgrimage site",
+        "Spectacular sunrise views",
+        "2,243m summit elevation",
+        "Ancient stone steps pathway",
+        "Spiritual experience",
+        "Tea plantation views",
+      ],
+      bestTime: "December to May",
+      groupSize: "2-12 people",
+      included: [
+        "Professional guide",
+        "Safety equipment",
+        "Light refreshments",
+        "Transportation",
+      ],
+      itinerary: [
+        "2:00 AM - Departure from base camp",
+        "2:30 AM - Begin night hike",
+        "5:30 AM - Reach summit",
+        "6:00 AM - Sunrise viewing",
+        "8:00 AM - Descent begins",
+        "11:00 AM - Return to base",
+      ],
     },
     {
       id: 2,
-      key: "hiking",
-      tagColor: "from-green-500 to-green-600",
-      image: "hicking.webp",
+      name: "White Water Rafting Kitulgala",
+      image: "/placeholder-7mcpl.png",
+      category: "water",
+      difficulty: "moderate",
+      duration: "Half Day",
+      price: 85,
+      rating: 4.8,
+      reviews: 256,
+      location: "Sabaragamuwa Province",
+      description:
+        "Navigate the thrilling rapids of the Kelani River in Kitulgala, famous as the filming location of 'Bridge on the River Kwai'. Perfect for both beginners and experienced rafters.",
+      highlights: [
+        "Grade 2-3 rapids",
+        "Kelani River adventure",
+        "Rainforest scenery",
+        "Movie filming location",
+        "Professional safety gear",
+        "Swimming opportunities",
+      ],
+      bestTime: "May to December",
+      groupSize: "4-8 people",
+      included: [
+        "Safety equipment",
+        "Professional guide",
+        "Lunch",
+        "Transportation",
+      ],
+      itinerary: [
+        "8:00 AM - Hotel pickup",
+        "10:00 AM - Safety briefing",
+        "10:30 AM - Rafting begins",
+        "12:30 PM - Lunch break",
+        "2:00 PM - Return journey",
+        "4:00 PM - Hotel drop-off",
+      ],
     },
     {
       id: 3,
-      key: "safari",
-      tagColor: "from-yellow-500 to-orange-500",
-      image: "safari.webp",
+      name: "Ella Rock Sunrise Trek",
+      image: "/placeholder-ypggw.png",
+      category: "hiking",
+      difficulty: "moderate",
+      duration: "Half Day",
+      price: 65,
+      rating: 4.7,
+      reviews: 189,
+      location: "Uva Province",
+      description:
+        "Trek through lush tea plantations and misty mountains to reach Ella Rock's summit. Witness breathtaking sunrise views over the hill country's rolling landscapes.",
+      highlights: [
+        "Panoramic hill country views",
+        "Tea plantation trails",
+        "Sunrise photography",
+        "Local village encounters",
+        "Railway track walking",
+        "Cloud forest experience",
+      ],
+      bestTime: "December to March",
+      groupSize: "2-10 people",
+      included: ["Local guide", "Light breakfast", "Photography assistance"],
+      itinerary: [
+        "4:30 AM - Hotel pickup",
+        "5:00 AM - Trek begins",
+        "6:30 AM - Summit reached",
+        "7:00 AM - Sunrise viewing",
+        "8:30 AM - Descent starts",
+        "10:00 AM - Return to hotel",
+      ],
     },
     {
       id: 4,
-      key: "ancient",
-      tagColor: "from-purple-500 to-purple-600",
-      image: "/images/adventures/ancient-adventure.jpg",
+      name: "Yala Leopard Safari",
+      image: "/placeholder-jdcp0.png",
+      category: "wildlife",
+      difficulty: "easy",
+      duration: "Full Day",
+      price: 180,
+      rating: 4.9,
+      reviews: 423,
+      location: "Southern Province",
+      description:
+        "Experience Sri Lanka's premier wildlife destination with the highest leopard density in the world. Encounter elephants, sloth bears, and over 200 bird species in their natural habitat.",
+      highlights: [
+        "Highest leopard density globally",
+        "Asian elephant herds",
+        "Sloth bear sightings",
+        "200+ bird species",
+        "Ancient rock formations",
+        "Coastal landscapes",
+      ],
+      bestTime: "February to July",
+      groupSize: "2-6 people",
+      included: [
+        "4WD safari vehicle",
+        "Expert naturalist",
+        "Packed lunch",
+        "Park fees",
+      ],
+      itinerary: [
+        "5:30 AM - Hotel pickup",
+        "6:30 AM - Enter Yala Park",
+        "6:45 AM - Morning safari",
+        "12:00 PM - Lunch break",
+        "1:00 PM - Afternoon safari",
+        "5:00 PM - Exit park",
+        "6:30 PM - Return to hotel",
+      ],
     },
     {
       id: 5,
-      key: "rafting",
-      tagColor: "from-cyan-500 to-blue-500",
-      image: "/images/adventures/rafting-adventure.jpg",
+      name: "Knuckles Range Expedition",
+      image: "/placeholder-82sl3.png",
+      category: "hiking",
+      difficulty: "challenging",
+      duration: "2 Days",
+      price: 280,
+      rating: 4.8,
+      reviews: 167,
+      location: "Central Province",
+      description:
+        "Explore the UNESCO World Heritage Knuckles Mountain Range with its unique biodiversity, cloud forests, and challenging peaks. A true wilderness adventure for experienced trekkers.",
+      highlights: [
+        "UNESCO World Heritage site",
+        "Cloud forest ecosystems",
+        "Endemic flora and fauna",
+        "Mountain camping",
+        "Waterfall discoveries",
+        "Village homestays",
+      ],
+      bestTime: "January to April",
+      groupSize: "4-8 people",
+      included: ["Camping equipment", "All meals", "Expert guide", "Permits"],
+      itinerary: [
+        "Day 1: Base camp to Mini World's End",
+        "Day 2: Summit attempt and return",
+      ],
     },
     {
       id: 6,
-      key: "train",
-      tagColor: "from-red-500 to-pink-500",
-      image: "/images/adventures/train-adventure.jpg",
+      name: "Mirissa Whale Watching",
+      image: "/placeholder-owjal.png",
+      category: "water",
+      difficulty: "easy",
+      duration: "Half Day",
+      price: 95,
+      rating: 4.6,
+      reviews: 298,
+      location: "Southern Province",
+      description:
+        "Witness the majestic blue whales and playful dolphins in their natural habitat off the coast of Mirissa. The best whale watching destination in Sri Lanka.",
+      highlights: [
+        "Blue whale encounters",
+        "Dolphin pods",
+        "Sperm whale sightings",
+        "Ocean photography",
+        "Coastal scenery",
+        "Marine education",
+      ],
+      bestTime: "November to April",
+      groupSize: "10-30 people",
+      included: [
+        "Boat trip",
+        "Life jackets",
+        "Marine biologist guide",
+        "Light refreshments",
+      ],
+      itinerary: [
+        "6:00 AM - Harbor departure",
+        "6:30 AM - Whale watching begins",
+        "10:30 AM - Return to harbor",
+        "11:00 AM - Tour ends",
+      ],
     },
     {
       id: 7,
-      key: "beach",
-      tagColor: "from-teal-500 to-cyan-500",
-      image: "/images/adventures/beach-adventure.jpg",
+      name: "Sigiriya Rock Climbing",
+      image: "/placeholder-z4dr9.png",
+      category: "extreme",
+      difficulty: "moderate",
+      duration: "Half Day",
+      price: 110,
+      rating: 4.7,
+      reviews: 234,
+      location: "Central Province",
+      description:
+        "Scale the ancient Sigiriya Rock Fortress, climbing 1,200 steps to reach the summit palace ruins. Experience history, art, and adventure combined in one iconic climb.",
+      highlights: [
+        "Ancient palace ruins",
+        "Famous mirror wall",
+        "Sigiriya frescoes",
+        "360-degree summit views",
+        "Archaeological wonders",
+        "Water garden complex",
+      ],
+      bestTime: "December to April",
+      groupSize: "2-15 people",
+      included: [
+        "Entry tickets",
+        "Professional guide",
+        "Photography assistance",
+        "Water",
+      ],
+      itinerary: [
+        "7:00 AM - Site entrance",
+        "7:30 AM - Climb begins",
+        "9:00 AM - Summit reached",
+        "10:30 AM - Descent starts",
+        "11:30 AM - Tour concludes",
+      ],
     },
     {
       id: 8,
-      key: "temple",
-      tagColor: "from-amber-500 to-orange-500",
-      image: "/images/adventures/temple-adventure.jpg",
-    },
-    {
-      id: 9,
-      key: "spice",
-      tagColor: "from-orange-500 to-red-500",
-      image: "/images/adventures/spice-adventure.jpg",
-    },
-    {
-      id: 10,
-      key: "rainforest",
-      tagColor: "from-emerald-500 to-green-600",
-      image: "/images/adventures/rainforest-adventure.jpg",
+      name: "Horton Plains World's End",
+      image: "/placeholder-i7zgc.png",
+      category: "hiking",
+      difficulty: "moderate",
+      duration: "Full Day",
+      price: 140,
+      rating: 4.8,
+      reviews: 201,
+      location: "Central Province",
+      description:
+        "Trek through the unique montane grasslands of Horton Plains to reach the dramatic World's End cliff with its 870m drop and stunning views across the southern plains.",
+      highlights: [
+        "World's End cliff viewpoint",
+        "Baker's Falls waterfall",
+        "Montane grasslands",
+        "Endemic wildlife",
+        "Cloud forest sections",
+        "UNESCO World Heritage",
+      ],
+      bestTime: "January to March",
+      groupSize: "2-12 people",
+      included: [
+        "Park entrance",
+        "Guide service",
+        "Packed lunch",
+        "Transportation",
+      ],
+      itinerary: [
+        "5:00 AM - Hotel pickup",
+        "7:00 AM - Park entrance",
+        "7:30 AM - Trek begins",
+        "9:00 AM - World's End",
+        "11:00 AM - Baker's Falls",
+        "1:00 PM - Return to entrance",
+        "3:00 PM - Hotel return",
+      ],
     },
   ];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.pageYOffset;
-      const documentHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
-      const progress = (scrollTop / documentHeight) * 100;
-      setScrollProgress(progress);
-    };
+  const filteredAdventures = adventures.filter((adventure) => {
+    const categoryMatch =
+      selectedCategory === "all" || adventure.category === selectedCategory;
+    const difficultyMatch =
+      selectedDifficulty === "all" ||
+      adventure.difficulty === selectedDifficulty;
+    return categoryMatch && difficultyMatch;
+  });
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const elementId = parseInt(
-              entry.target.getAttribute("data-id") || "0"
-            );
-            setAnimatedElements((prev) => new Set([...prev, elementId]));
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
-    );
-
-    if (sectionTitleRef.current) {
-      observer.observe(sectionTitleRef.current);
+  const sortedAdventures = [...filteredAdventures].sort((a, b) => {
+    switch (sortBy) {
+      case "price-low":
+        return a.price - b.price;
+      case "price-high":
+        return b.price - a.price;
+      case "rating":
+        return b.rating - a.rating;
+      case "popular":
+      default:
+        return b.reviews - a.reviews;
     }
+  });
 
-    cardRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
-  const heroStyle: React.CSSProperties = {
-    background: heroBackgroundImage
-      ? `${heroGradientOverlay}, url(${heroBackgroundImage}) center/cover no-repeat`
-      : heroGradientOverlay,
-    minHeight: "100vh",
+  const handleWhatsAppClick = () => {
+    window.open("https://wa.me/94771234567", "_blank");
   };
 
   return (
-    <div className="font-sans text-gray-800 overflow-x-hidden">
-      <Header />
-      {/* Scroll Progress Bar */}
-      <div className="fixed top-0 left-0 w-full h-1 bg-white/20 z-50">
-        <div
-          className="h-full bg-gradient-to-r from-orange-400 to-red-500 transition-all duration-100 ease-out"
-          style={{ width: `${scrollProgress}%` }}
-        />
-      </div>
-
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section
-        className="relative flex items-center justify-center text-center text-white min-h-screen"
-        style={heroStyle}
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30" />
-        <div className="relative z-10 max-w-4xl px-6 animate-fade-in pt-16">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-wider drop-shadow-lg">
-            {t("srilankaadventures.hero.title")}
+      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden pt-28 pb-16">
+        {/* Background Image */}
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-900 via-teal-900 to-cyan-900"></div>
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-20"
+          style={{ backgroundImage: "url('/Hero/Adventure.png')" }}
+        ></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+
+        {/* Floating Elements */}
+        <div className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-r from-emerald-400/30 to-teal-400/30 rounded-full blur-xl animate-pulse"></div>
+        <div
+          className="absolute bottom-32 right-16 w-32 h-32 bg-gradient-to-r from-teal-400/30 to-cyan-400/30 rounded-full blur-xl animate-pulse"
+          style={{ animationDelay: "2s" }}
+        ></div>
+
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white text-sm font-medium mb-8">
+            <Zap className="w-4 h-4 mr-2 animate-pulse" />
+            Adrenaline & Adventure Awaits
+          </div>
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
+            <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
+              Epic Adventures
+            </span>
+            <br />
+            <span className="text-white">in Sri Lanka</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 opacity-90 drop-shadow-md max-w-3xl mx-auto leading-relaxed">
-            {t("srilankaadventures.hero.subtitle")}
+          <p className="text-xl sm:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-12">
+            From sacred mountain peaks to thrilling rapids, discover
+            heart-pounding adventures in the Pearl of the Indian Ocean. Your
+            next adrenaline rush awaits in paradise.
           </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <button
+              onClick={handleWhatsAppClick}
+              className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2 shadow-lg"
+            >
+              <MessageCircle className="w-5 h-5" />
+              <span>Plan My Adventure</span>
+            </button>
+            <a
+              href="#adventures"
+              className="px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/30 text-white hover:bg-white/20 font-semibold rounded-xl transition-all duration-300 flex items-center justify-center space-x-2"
+            >
+              <Mountain className="w-5 h-5" />
+              <span>Explore Adventures</span>
+            </a>
+          </div>
+
+          {/* Back to Home */}
+          <a
+            href="/"
+            className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/30 text-white hover:bg-white/20 transition-colors duration-200 rounded-lg"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Home
+          </a>
         </div>
       </section>
 
-      {/* Adventures Section */}
-      <section className="py-24 bg-gradient-to-b from-gray-50 to-gray-100">
-        <div className="max-w-7xl mx-auto px-6">
-          <div
-            ref={sectionTitleRef}
-            data-id="0"
-            className={`text-center mb-20 transition-all duration-1000 ${
-              animatedElements.has(0)
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-12"
-            }`}
-          >
-            <h2 className="text-4xl md:text-6xl font-bold text-gray-800 mb-6 relative">
-              {t("srilankaadventures.section.title")}
+      {/* Adventure Categories */}
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Adventure Categories
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              {t("srilankaadventures.section.subtitle")}
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Choose your adventure style and discover the thrill that matches
+              your spirit
             </p>
           </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {categories.slice(1).map((category, index) => {
+              const IconComponent = category.icon;
+              return (
+                <div
+                  key={category.id}
+                  className="group bg-white rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 p-8 text-center border border-gray-100 hover:border-emerald-200"
+                >
+                  <div className="w-16 h-16 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <IconComponent className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-emerald-600 transition-colors duration-300">
+                    {t(category.labelKey)}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {category.id === "hiking" &&
+                      "Conquer peaks, explore trails, and witness breathtaking vistas"}
+                    {category.id === "water" &&
+                      "Dive into thrilling water adventures and marine encounters"}
+                    {category.id === "wildlife" &&
+                      "Get close to nature's most magnificent creatures"}
+                    {category.id === "extreme" &&
+                      "Push your limits with heart-pounding extreme sports"}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Filters Section */}
+      <section
+        id="adventures"
+        className="py-8 bg-white border-b border-gray-200"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div className="flex items-center space-x-4">
+              <Filter className="w-5 h-5 text-gray-500" />
+              <span className="text-sm font-medium text-gray-700">
+                Filter adventures:
+              </span>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-4">
+              {/* Category Filter */}
+              <select
+                value={selectedCategory}
+                onChange={(e) => setSelectedCategory(e.target.value)}
+                className="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              >
+                {categories.map((category) => (
+                  <option key={category.id} value={category.id}>
+                    {t(category.labelKey)}
+                  </option>
+                ))}
+              </select>
+
+              {/* Difficulty Filter */}
+              <select
+                value={selectedDifficulty}
+                onChange={(e) => setSelectedDifficulty(e.target.value)}
+                className="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              >
+                {difficulties.map((difficulty) => (
+                  <option key={difficulty.id} value={difficulty.id}>
+                    {difficulty.label}
+                  </option>
+                ))}
+              </select>
+
+              {/* Sort Filter */}
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+                className="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              >
+                <option value="popular">Most Popular</option>
+                <option value="rating">Highest Rated</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+              </select>
+            </div>
+
+            <div className="text-sm text-gray-600">
+              Showing{" "}
+              <span className="font-semibold text-emerald-600">
+                {sortedAdventures.length}
+              </span>{" "}
+              adventures
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Adventures Grid */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {adventures.map((adventure, index) => (
+            {sortedAdventures.map((adventure) => (
               <div
                 key={adventure.id}
-                ref={(el) => (cardRefs.current[index] = el)}
-                data-id={adventure.id}
-                className={`bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-2 hover:scale-105 ${
-                  animatedElements.has(adventure.id)
-                    ? "opacity-100 translate-y-0 scale-100"
-                    : "opacity-0 translate-y-16 scale-95"
-                }`}
-                style={{ transitionDelay: `${index * 100}ms` }}
+                className="group bg-white rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-emerald-200"
               >
-                <div className="h-64 relative overflow-hidden">
+                {/* Image */}
+                <div className="relative h-64 overflow-hidden">
                   <img
-                    src={adventure.image}
-                    alt={t(`srilankaadventures.${adventure.key}.title`)}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                    onError={(e) =>
-                      (e.currentTarget.src = "/images/fallback-adventure.jpg")
-                    }
+                    src={adventure.image || "/placeholder.svg"}
+                    alt={adventure.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/5 to-black/20" />
-                </div>
-                <div className="p-8">
-                  <div
-                    className={`inline-block px-4 py-2 rounded-full text-white font-semibold text-sm mb-4 bg-gradient-to-r ${adventure.tagColor}`}
-                  >
-                    {t(`srilankaadventures.${adventure.key}.tag`)}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+
+                  {/* Category & Difficulty Badges */}
+                  <div className="absolute top-4 left-4 flex flex-col gap-2">
+                    <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-medium text-gray-800 capitalize">
+                      {adventure.category.replace("_", " ")}
+                    </span>
+                    <span
+                      className={`px-3 py-1 backdrop-blur-sm rounded-full text-xs font-medium ${
+                        adventure.difficulty === "easy"
+                          ? "bg-green-500/90 text-white"
+                          : adventure.difficulty === "moderate"
+                          ? "bg-yellow-500/90 text-white"
+                          : adventure.difficulty === "challenging"
+                          ? "bg-orange-500/90 text-white"
+                          : "bg-red-500/90 text-white"
+                      }`}
+                    >
+                      {adventure.difficulty}
+                    </span>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-800 mb-4 leading-tight">
-                    {t(`srilankaadventures.${adventure.key}.title`)}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed mb-6 text-base">
-                    {t(`srilankaadventures.${adventure.key}.description`)}
+
+                  {/* Heart Icon */}
+                  <button className="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors duration-300">
+                    <Heart className="w-5 h-5 text-white hover:text-red-400 transition-colors duration-300" />
+                  </button>
+
+                  {/* Price */}
+                  <div className="absolute bottom-4 right-4 px-3 py-1 bg-emerald-600/90 backdrop-blur-sm rounded-full text-white font-semibold text-sm">
+                    ${adventure.price}
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="p-6">
+                  <div className="mb-4">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-emerald-600 transition-colors duration-300">
+                      {adventure.name}
+                    </h3>
+                    <div className="flex items-center justify-between text-sm text-gray-500 mb-2">
+                      <div className="flex items-center">
+                        <MapPin className="w-4 h-4 mr-1" />
+                        {adventure.location}
+                      </div>
+                      <div className="flex items-center">
+                        <Clock className="w-4 h-4 mr-1" />
+                        {adventure.duration}
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center">
+                        <Star className="w-4 h-4 text-yellow-400 mr-1" />
+                        <span className="font-semibold text-gray-900">
+                          {adventure.rating}
+                        </span>
+                        <span className="text-gray-500 text-sm ml-1">
+                          ({adventure.reviews} reviews)
+                        </span>
+                      </div>
+                      <div className="flex items-center text-sm text-gray-500">
+                        <Users className="w-4 h-4 mr-1" />
+                        {adventure.groupSize}
+                      </div>
+                    </div>
+                  </div>
+
+                  <p className="text-gray-600 text-sm mb-4 leading-relaxed line-clamp-3">
+                    {adventure.description}
                   </p>
-                  <div className="text-gray-500 text-sm flex items-center gap-2">
-                    {t(`srilankaadventures.${adventure.key}.duration`)}
+
+                  {/* Highlights */}
+                  <div className="mb-6">
+                    <div className="flex flex-wrap gap-2">
+                      {adventure.highlights.slice(0, 3).map((highlight) => (
+                        <span
+                          key={highlight}
+                          className="px-2 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-full font-medium"
+                        >
+                          {highlight}
+                        </span>
+                      ))}
+                      {adventure.highlights.length > 3 && (
+                        <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full font-medium">
+                          +{adventure.highlights.length - 3} more
+                        </span>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="flex gap-3">
+                    <button className="flex-1 px-4 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition-colors duration-300 flex items-center justify-center space-x-2">
+                      <Calendar className="w-4 h-4" />
+                      <span>Book Now</span>
+                    </button>
+                    <button className="px-4 py-3 border border-gray-300 hover:border-emerald-500 text-gray-700 hover:text-emerald-600 font-semibold rounded-lg transition-colors duration-300 flex items-center justify-center">
+                      <ArrowRight className="w-4 h-4" />
+                    </button>
                   </div>
                 </div>
               </div>
@@ -230,24 +671,105 @@ const SriLankaAdventures: React.FC<SriLankaAdventuresProps> = ({
           </div>
         </div>
       </section>
-      <style>{`
-        @keyframes fade-in {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fade-in {
-          animation: fade-in 2s ease-out;
-        }
-      `}</style>
-      <Footer />
+
+      {/* Why Choose Our Adventures */}
+      <section className="py-20 bg-gradient-to-br from-emerald-50 to-teal-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Why Choose Our Adventures?
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Experience Sri Lanka's adventures with the safety, expertise, and
+              local knowledge you deserve
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: Shield,
+                title: "Safety First",
+                description:
+                  "Professional safety equipment and certified guides ensure your adventure is both thrilling and secure.",
+              },
+              {
+                icon: Award,
+                title: "Expert Guides",
+                description:
+                  "Local experts with deep knowledge of terrain, wildlife, and cultural significance of each location.",
+              },
+              {
+                icon: Users,
+                title: "Small Groups",
+                description:
+                  "Intimate group sizes for personalized attention and minimal environmental impact.",
+              },
+              {
+                icon: Heart,
+                title: "Authentic Experiences",
+                description:
+                  "Genuine local encounters and off-the-beaten-path adventures you won't find elsewhere.",
+              },
+            ].map((feature, index) => {
+              const IconComponent = feature.icon;
+              return (
+                <div
+                  key={index}
+                  className="text-center bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow duration-300"
+                >
+                  <div className="w-16 h-16 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <IconComponent className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-20 bg-gradient-to-r from-emerald-600 to-teal-700">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-bold text-white mb-4">
+            Ready for Your Next Adventure?
+          </h2>
+          <p className="text-xl text-emerald-100 mb-8 max-w-2xl mx-auto">
+            Don't just visit Sri Lanka – experience it! Let us craft the perfect
+            adventure that matches your thrill level and interests.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              onClick={handleWhatsAppClick}
+              className="px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors duration-300 flex items-center justify-center space-x-2"
+            >
+              <MessageCircle className="w-5 h-5" />
+              <span>Chat with Adventure Expert</span>
+            </button>
+            <a
+              href="tel:+94771234567"
+              className="px-8 py-4 bg-white text-emerald-600 hover:bg-gray-100 font-semibold rounded-lg transition-colors duration-300 flex items-center justify-center space-x-2"
+            >
+              <Phone className="w-5 h-5" />
+              <span>Call Now</span>
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   );
-};
+}
 
-export default SriLankaAdventures;
+export default function AdventuresPage() {
+  return (
+    <LanguageProvider>
+      <AdventuresPageContent />
+    </LanguageProvider>
+  );
+}

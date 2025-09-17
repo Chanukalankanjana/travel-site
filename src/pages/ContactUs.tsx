@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { useState } from "react"
+import type React from "react";
+import { useState } from "react";
 import {
   Mail,
   Phone,
@@ -15,13 +15,11 @@ import {
   ArrowRight,
   Globe,
   Heart,
-} from "lucide-react"
-import Header from "../components/Header"
-import Footer from "../components/Footer"
-import { useLanguage, LanguageProvider } from "../contexts/LanguageContext"
+} from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const ContactPageContent = () => {
-  const { t } = useLanguage()
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -29,31 +27,35 @@ const ContactPageContent = () => {
     subject: "",
     message: "",
     tourType: "",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target
+  const handleInputChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-    }))
-  }
+    }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
     // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+    await new Promise((resolve) => setTimeout(resolve, 2000));
 
-    setIsSubmitting(false)
-    setIsSubmitted(true)
+    setIsSubmitting(false);
+    setIsSubmitted(true);
 
     // Reset form after 3 seconds
     setTimeout(() => {
-      setIsSubmitted(false)
+      setIsSubmitted(false);
       setFormData({
         name: "",
         email: "",
@@ -61,56 +63,57 @@ const ContactPageContent = () => {
         subject: "",
         message: "",
         tourType: "",
-      })
-    }, 3000)
-  }
+      });
+    }, 3000);
+  };
 
   const contactInfo = [
     {
       icon: Phone,
-      title: "Phone Numbers",
+      titleKey: "contact.info.phone.title",
       details: ["+94 77 123 4567", "+94 77 765 4321"],
-      description: "Available 24/7 for your convenience",
+      descriptionKey: "contact.info.phone.description",
     },
     {
       icon: Mail,
-      title: "Email Address",
+      titleKey: "contact.info.email.title",
       details: ["info@srilankadiscovery.com", "tours@srilankadiscovery.com"],
-      description: "We respond within 2 hours",
+      descriptionKey: "contact.info.email.description",
     },
     {
       icon: MapPin,
-      title: "Office Location",
+      titleKey: "contact.info.office.title",
       details: ["123 Galle Road", "Colombo 03, Sri Lanka"],
-      description: "Visit us for personalized planning",
+      descriptionKey: "contact.info.office.description",
     },
     {
       icon: Clock,
-      title: "Business Hours",
+      titleKey: "contact.info.businessHours.title",
       details: ["Mon - Sat: 8:00 AM - 8:00 PM", "Sunday: 9:00 AM - 6:00 PM"],
-      description: "Extended hours for your convenience",
+      descriptionKey: "contact.info.businessHours.description",
     },
-  ]
+  ];
 
   const tourTypes = [
-    "Cultural Heritage Tours",
-    "Adventure & Nature Tours",
-    "Wildlife Safari Tours",
-    "Beach & Coastal Tours",
-    "City Tours",
-    "Custom Tour Package",
-    "Multi-Day Tours",
-    "Day Excursions",
-  ]
+    "contact.form.tourTypes.cultural",
+    "contact.form.tourTypes.adventure",
+    "contact.form.tourTypes.wildlife",
+    "contact.form.tourTypes.beach",
+    "contact.form.tourTypes.city",
+    "contact.form.tourTypes.custom",
+    "contact.form.tourTypes.multiDay",
+    "contact.form.tourTypes.dayExcursions",
+  ];
 
   return (
     <div className="font-sans text-gray-800 overflow-x-hidden">
-      <Header />
-
       {/* Hero Section */}
-      <section className="relative pt-20 pb-32 overflow-hidden">
+      <section className="relative min-h-[80vh] flex items-center overflow-hidden pt-28 pb-16">
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-900 via-teal-900 to-cyan-900"></div>
-        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop')] bg-cover bg-center opacity-20"></div>
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-20"
+          style={{ backgroundImage: "url('/Hero/Contact.png')" }}
+        ></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
 
         {/* Floating Elements */}
@@ -131,8 +134,9 @@ const ContactPageContent = () => {
             </span>
           </h1>
           <p className="text-xl sm:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-12">
-            Ready to embark on your Sri Lankan adventure? We're here to help you plan the perfect journey. Reach out to
-            us and let's create unforgettable memories together.
+            Ready to embark on your Sri Lankan adventure? We're here to help you
+            plan the perfect journey. Reach out to us and let's create
+            unforgettable memories together.
           </p>
         </div>
       </section>
@@ -141,7 +145,7 @@ const ContactPageContent = () => {
       <section className="relative -mt-16 z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {contactInfo.map((info, index) => {
-            const IconComponent = info.icon
+            const IconComponent = info.icon;
             return (
               <div
                 key={index}
@@ -150,7 +154,9 @@ const ContactPageContent = () => {
                 <div className="w-16 h-16 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <IconComponent className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{info.title}</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  {t(info.titleKey)}
+                </h3>
                 <div className="space-y-2 mb-4">
                   {info.details.map((detail, idx) => (
                     <p key={idx} className="text-gray-700 font-medium">
@@ -158,9 +164,11 @@ const ContactPageContent = () => {
                     </p>
                   ))}
                 </div>
-                <p className="text-sm text-gray-600">{info.description}</p>
+                <p className="text-sm text-gray-600">
+                  {t(info.descriptionKey)}
+                </p>
               </div>
-            )
+            );
           })}
         </div>
       </section>
@@ -172,9 +180,11 @@ const ContactPageContent = () => {
             {/* Form */}
             <div className="bg-white rounded-3xl shadow-xl p-8 lg:p-12">
               <div className="text-center mb-8">
-                <h2 className="text-4xl font-bold text-gray-900 mb-4">Send Us a Message</h2>
+                <h2 className="text-4xl font-bold text-gray-900 mb-4">
+                  {t("contact.form.title")}
+                </h2>
                 <p className="text-gray-600 text-lg">
-                  Fill out the form below and we'll get back to you within 2 hours
+                  {t("contact.form.subtitle")}
                 </p>
               </div>
 
@@ -183,17 +193,22 @@ const ContactPageContent = () => {
                   <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
                     <CheckCircle className="w-10 h-10 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Message Sent Successfully!</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    {t("contact.form.success.title")}
+                  </h3>
                   <p className="text-gray-600">
-                    Thank you for contacting us. We'll respond to your inquiry within 2 hours.
+                    {t("contact.form.success.message")}
                   </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-semibold text-gray-900 mb-2">
-                        Full Name *
+                      <label
+                        htmlFor="name"
+                        className="block text-sm font-semibold text-gray-900 mb-2"
+                      >
+                        {t("contact.form.fullName")} *
                       </label>
                       <div className="relative">
                         <User className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
@@ -205,14 +220,17 @@ const ContactPageContent = () => {
                           onChange={handleInputChange}
                           required
                           className="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors duration-200"
-                          placeholder="Enter your full name"
+                          placeholder={t("contact.form.placeholders.fullName")}
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label htmlFor="email" className="block text-sm font-semibold text-gray-900 mb-2">
-                        Email Address *
+                      <label
+                        htmlFor="email"
+                        className="block text-sm font-semibold text-gray-900 mb-2"
+                      >
+                        {t("contact.form.emailAddress")} *
                       </label>
                       <div className="relative">
                         <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
@@ -224,7 +242,7 @@ const ContactPageContent = () => {
                           onChange={handleInputChange}
                           required
                           className="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors duration-200"
-                          placeholder="Enter your email address"
+                          placeholder={t("contact.form.placeholders.email")}
                         />
                       </div>
                     </div>
@@ -232,8 +250,11 @@ const ContactPageContent = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-semibold text-gray-900 mb-2">
-                        Phone Number
+                      <label
+                        htmlFor="phone"
+                        className="block text-sm font-semibold text-gray-900 mb-2"
+                      >
+                        {t("contact.form.phoneNumber")}
                       </label>
                       <div className="relative">
                         <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
@@ -244,14 +265,17 @@ const ContactPageContent = () => {
                           value={formData.phone}
                           onChange={handleInputChange}
                           className="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors duration-200"
-                          placeholder="Enter your phone number"
+                          placeholder={t("contact.form.placeholders.phone")}
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label htmlFor="tourType" className="block text-sm font-semibold text-gray-900 mb-2">
-                        Tour Interest
+                      <label
+                        htmlFor="tourType"
+                        className="block text-sm font-semibold text-gray-900 mb-2"
+                      >
+                        {t("contact.form.tourType")}
                       </label>
                       <div className="relative">
                         <Globe className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
@@ -262,10 +286,12 @@ const ContactPageContent = () => {
                           onChange={handleInputChange}
                           className="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors duration-200 appearance-none bg-white"
                         >
-                          <option value="">Select tour type</option>
+                          <option value="">
+                            {t("contact.form.placeholders.tourType")}
+                          </option>
                           {tourTypes.map((type, index) => (
                             <option key={index} value={type}>
-                              {type}
+                              {t(type)}
                             </option>
                           ))}
                         </select>
@@ -274,8 +300,11 @@ const ContactPageContent = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="subject" className="block text-sm font-semibold text-gray-900 mb-2">
-                      Subject *
+                    <label
+                      htmlFor="subject"
+                      className="block text-sm font-semibold text-gray-900 mb-2"
+                    >
+                      {t("contact.form.subject")} *
                     </label>
                     <div className="relative">
                       <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
@@ -287,14 +316,17 @@ const ContactPageContent = () => {
                         onChange={handleInputChange}
                         required
                         className="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors duration-200"
-                        placeholder="What can we help you with?"
+                        placeholder={t("contact.form.placeholders.subject")}
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-semibold text-gray-900 mb-2">
-                      Message *
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-semibold text-gray-900 mb-2"
+                    >
+                      {t("contact.form.message")} *
                     </label>
                     <textarea
                       id="message"
@@ -304,7 +336,7 @@ const ContactPageContent = () => {
                       required
                       rows={6}
                       className="w-full px-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors duration-200 resize-none"
-                      placeholder="Tell us about your travel plans, preferences, dates, group size, or any specific requirements..."
+                      placeholder={t("contact.form.placeholders.message")}
                     />
                   </div>
 
@@ -316,12 +348,16 @@ const ContactPageContent = () => {
                     {isSubmitting ? (
                       <>
                         <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                        <span>Sending Message...</span>
+                        <span>{t("contact.form.submitting")}</span>
                       </>
                     ) : (
                       <>
                         <Send className="w-5 h-5" />
-                        <span>Send Message</span>
+                        <span>
+                          {isSubmitting
+                            ? t("contact.form.submitting")
+                            : t("contact.form.submit")}
+                        </span>
                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                       </>
                     )}
@@ -336,35 +372,51 @@ const ContactPageContent = () => {
               <div className="bg-white rounded-3xl shadow-xl p-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                   <Heart className="w-6 h-6 mr-3 text-emerald-600" />
-                  Why Choose Us?
+                  {t("contact.whyChooseUs.title")}
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">Local Expertise</h4>
-                      <p className="text-gray-600 text-sm">Born and raised in Sri Lanka with deep local knowledge</p>
+                      <h4 className="font-semibold text-gray-900">
+                        {t("contact.whyChooseUs.localExpertise.title")}
+                      </h4>
+                      <p className="text-gray-600 text-sm">
+                        {t("contact.whyChooseUs.localExpertise.description")}
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">24/7 Support</h4>
-                      <p className="text-gray-600 text-sm">Round-the-clock assistance during your journey</p>
+                      <h4 className="font-semibold text-gray-900">
+                        {t("contact.whyChooseUs.support24.title")}
+                      </h4>
+                      <p className="text-gray-600 text-sm">
+                        {t("contact.whyChooseUs.support24.description")}
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">Customized Tours</h4>
-                      <p className="text-gray-600 text-sm">Tailored experiences based on your preferences</p>
+                      <h4 className="font-semibold text-gray-900">
+                        {t("contact.whyChooseUs.customizedTours.title")}
+                      </h4>
+                      <p className="text-gray-600 text-sm">
+                        {t("contact.whyChooseUs.customizedTours.description")}
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full mt-2 flex-shrink-0"></div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">Best Value</h4>
-                      <p className="text-gray-600 text-sm">Competitive pricing with no hidden costs</p>
+                      <h4 className="font-semibold text-gray-900">
+                        {t("contact.whyChooseUs.bestValue.title")}
+                      </h4>
+                      <p className="text-gray-600 text-sm">
+                        {t("contact.whyChooseUs.bestValue.description")}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -372,9 +424,11 @@ const ContactPageContent = () => {
 
               {/* Quick Contact */}
               <div className="bg-gradient-to-r from-emerald-500 to-teal-600 rounded-3xl shadow-xl p-8 text-white">
-                <h3 className="text-2xl font-bold mb-6">Need Immediate Assistance?</h3>
+                <h3 className="text-2xl font-bold mb-6">
+                  {t("contact.quickContact.title")}
+                </h3>
                 <p className="mb-6 text-white/90">
-                  For urgent inquiries or last-minute bookings, contact us directly via WhatsApp or phone.
+                  {t("contact.quickContact.description")}
                 </p>
                 <div className="space-y-4">
                   <a
@@ -386,7 +440,9 @@ const ContactPageContent = () => {
                     <MessageCircle className="w-6 h-6" />
                     <div>
                       <div className="font-semibold">WhatsApp</div>
-                      <div className="text-sm text-white/80">+94 77 123 4567</div>
+                      <div className="text-sm text-white/80">
+                        +94 77 123 4567
+                      </div>
                     </div>
                   </a>
                   <a
@@ -396,7 +452,9 @@ const ContactPageContent = () => {
                     <Phone className="w-6 h-6" />
                     <div>
                       <div className="font-semibold">Call Now</div>
-                      <div className="text-sm text-white/80">+94 77 123 4567</div>
+                      <div className="text-sm text-white/80">
+                        +94 77 123 4567
+                      </div>
                     </div>
                   </a>
                 </div>
@@ -404,12 +462,16 @@ const ContactPageContent = () => {
 
               {/* Map Placeholder */}
               <div className="bg-white rounded-3xl shadow-xl p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Visit Our Office</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                  Visit Our Office
+                </h3>
                 <div className="bg-gray-100 rounded-2xl h-64 flex items-center justify-center">
                   <div className="text-center">
                     <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-4" />
                     <p className="text-gray-600 font-medium">Interactive Map</p>
-                    <p className="text-sm text-gray-500">123 Galle Road, Colombo 03</p>
+                    <p className="text-sm text-gray-500">
+                      123 Galle Road, Colombo 03
+                    </p>
                   </div>
                 </div>
               </div>
@@ -417,18 +479,14 @@ const ContactPageContent = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
-  )
-}
+  );
+};
 
 export default function ContactPage() {
   return (
     <div className="min-h-screen">
-      <LanguageProvider>
-        <ContactPageContent />
-      </LanguageProvider>
+      <ContactPageContent />
     </div>
-  )
+  );
 }

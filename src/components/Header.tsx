@@ -17,6 +17,7 @@ export default function Header() {
     navigateToContact,
     navigateToGallery,
     navigateToPackages,
+    navigateToAdventure,
   } = useNavigation();
 
   useEffect(() => {
@@ -30,6 +31,7 @@ export default function Header() {
   const navItems = [
     { key: "nav.home", onClick: navigateToHome },
     { key: "nav.destinations", onClick: navigateToDestinations },
+    { key: "nav.adventure", onClick: navigateToAdventure },
     { key: "nav.packages", onClick: navigateToPackages },
     { key: "nav.about", onClick: navigateToAbout },
     { key: "nav.gallery", onClick: navigateToGallery },

@@ -14,7 +14,6 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
-import Header from "../components/Header";
 
 interface DestinationDetailProps {
   readonly destinationId: string;
@@ -388,7 +387,7 @@ Mirissa is also known for its surfing spots, particularly at Weligama Bay, which
 
   if (!destination) {
     return (
-      <div className="min-h-screen bg-white pt-16 flex items-center justify-center">
+      <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">
             Destination Not Found
@@ -448,7 +447,6 @@ Mirissa is also known for its surfing spots, particularly at Weligama Bay, which
 
   return (
     <div className="min-h-screen bg-white">
-      <Header/>
       {/* Hero Section with Single Image */}
       <section className="relative h-[90vh] overflow-hidden">
         <div className="relative w-full h-full">
@@ -461,7 +459,7 @@ Mirissa is also known for its surfing spots, particularly at Weligama Bay, which
         </div>
 
         {/* Header Content */}
-        <div className="absolute top-4 left-4 right-4 flex justify-between items-start">
+        <div className="absolute top-20 left-4 right-4 flex justify-between items-start">
           <button
             onClick={onNavigateBack}
             className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-lg hover:bg-white/30 transition-colors"
