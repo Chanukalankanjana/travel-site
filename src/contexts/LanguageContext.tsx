@@ -64,6 +64,196 @@ type TranslationKeys =
   | "packages.bookNow"
   | "packages.viewDetails"
   | "packages.reviews"
+  // Packages - Ella Highlights
+  | "packages.tours.ella.highlights.rawana"
+  | "packages.tours.ella.highlights.nineArch"
+  | "packages.tours.ella.highlights.monkeys"
+  | "packages.tours.ella.highlights.adamsPeak"
+  | "packages.tours.ella.highlights.tea"
+  | "packages.tours.ella.highlights.ayurveda"
+  | "packages.tours.ella.included.tickets"
+  | "packages.tours.ella.included.guide"
+  | "packages.tours.ella.included.water"
+  | "packages.tours.ella.included.vehicle"
+  // Galle Highlights
+  | "packages.tours.galle.highlights.turtleFarm"
+  | "packages.tours.galle.highlights.boatSafari"
+  | "packages.tours.galle.highlights.moonstoneMine"
+  | "packages.tours.galle.highlights.turtleBeach"
+  | "packages.tours.galle.included.tickets"
+  | "packages.tours.galle.included.guide"
+  | "packages.tours.galle.included.water"
+  // Colombo Highlights
+  | "packages.tours.colombo.highlights.galleFace"
+  | "packages.tours.colombo.highlights.gangaramaya"
+  | "packages.tours.colombo.highlights.independence"
+  | "packages.tours.colombo.highlights.pettah"
+  | "packages.tours.colombo.included.tickets"
+  | "packages.tours.colombo.included.guide"
+  | "packages.tours.colombo.included.water"
+  // Kandy Highlights
+  | "packages.tours.kandy.highlights.elephantFeeding"
+  | "packages.tours.kandy.highlights.elephantRide"
+  | "packages.tours.kandy.highlights.temple"
+  | "packages.tours.kandy.highlights.botanicalGardens"
+  | "packages.tours.kandy.included.tickets"
+  | "packages.tours.kandy.included.guide"
+  | "packages.tours.kandy.included.water"
+  // Sigiriya Highlights
+  | "packages.tours.sigiriya.highlights.dambullaCave"
+  | "packages.tours.sigiriya.highlights.rockFortress"
+  | "packages.tours.sigiriya.highlights.elephantRide"
+  | "packages.tours.sigiriya.highlights.ayurvedaSpice"
+  | "packages.tours.sigiriya.highlights.cookingClass"
+  | "packages.tours.sigiriya.included.tickets"
+  | "packages.tours.sigiriya.included.guide"
+  | "packages.tours.sigiriya.included.water"
+  | "packages.tours.sigiriya.included.vehicle"
+  // Yala Highlights
+  | "packages.tours.yala.highlights.jeepSafari"
+  | "packages.tours.yala.highlights.wildlife"
+  | "packages.tours.yala.highlights.birdWatching"
+  | "packages.tours.yala.highlights.crocodile"
+  | "packages.tours.yala.highlights.crocodiles"
+  | "packages.tours.yala.highlights.flamingos"
+  | "packages.tours.yala.highlights.camping"
+  | "packages.tours.yala.highlights.photography"
+  | "packages.tours.yala.included.tickets"
+  | "packages.tours.yala.included.guide"
+  | "packages.tours.yala.included.water"
+  | "packages.tours.yala.included.vehicle"
+  | "packages.tours.yala.included.jeep"
+  // Packages - Mirissa Highlights
+  | "packages.tours.mirissa.highlights.whaleBoat"
+  | "packages.tours.mirissa.highlights.dolphin"
+  | "packages.tours.mirissa.highlights.beach"
+  | "packages.tours.mirissa.highlights.parrotRock"
+  | "packages.tours.mirissa.highlights.coconutHill"
+  | "packages.tours.mirissa.highlights.seafood"
+  | "packages.tours.mirissa.included.tickets"
+  | "packages.tours.mirissa.included.boat"
+  | "packages.tours.mirissa.included.lifeJackets"
+  | "packages.tours.mirissa.included.water"
+  | "packages.tours.mirissa.included.guide"
+  | "packages.tours.mirissa.included.vehicle"
+  // Packages - Nuwara Eliya Highlights
+  | "packages.tours.nuwaraEliya.highlights.teaFactory"
+  | "packages.tours.nuwaraEliya.highlights.lake"
+  | "packages.tours.nuwaraEliya.highlights.waterfall"
+  | "packages.tours.nuwaraEliya.highlights.hiking"
+  | "packages.tours.nuwaraEliya.highlights.golf"
+  | "packages.tours.nuwaraEliya.included.tickets"
+  | "packages.tours.nuwaraEliya.included.guide"
+  | "packages.tours.nuwaraEliya.included.water"
+  | "packages.tours.nuwaraEliya.included.vehicle"
+
+  // Ella & Yala Combo
+  | "packages.tours.ellaYala.highlights.safari"
+  | "packages.tours.ellaYala.highlights.rawana"
+  | "packages.tours.ellaYala.highlights.nineArch"
+  | "packages.tours.ellaYala.highlights.monkeys"
+  | "packages.tours.ellaYala.highlights.tea"
+  | "packages.tours.ellaYala.highlights.ayurveda"
+  | "packages.tours.ellaYala.included.tickets"
+  | "packages.tours.ellaYala.included.jeepSafari"
+  | "packages.tours.ellaYala.included.water"
+  | "packages.tours.ellaYala.included.vehicle"
+  | "packages.tours.ellaYala.included.guide"
+  // Bentota
+  | "packages.tours.bentota.highlights.jetSki"
+  | "packages.tours.bentota.highlights.bananaBoat"
+  | "packages.tours.bentota.highlights.waterSki"
+  | "packages.tours.bentota.highlights.beach"
+  | "packages.tours.bentota.highlights.maduRiver"
+  | "packages.tours.bentota.highlights.turtleHatchery"
+  | "packages.tours.bentota.included.tickets"
+  | "packages.tours.bentota.included.equipment"
+  | "packages.tours.bentota.included.lifeJackets"
+  | "packages.tours.bentota.included.water"
+  | "packages.tours.bentota.included.guide"
+  | "packages.tours.bentota.included.vehicle"
+  // Unawatuna
+  | "packages.tours.unawatuna.highlights.beach"
+  | "packages.tours.unawatuna.highlights.snorkeling"
+  | "packages.tours.unawatuna.highlights.jungleBeach"
+  | "packages.tours.unawatuna.highlights.pagoda"
+  | "packages.tours.unawatuna.highlights.rumassala"
+  | "packages.tours.unawatuna.highlights.seafood"
+  | "packages.tours.unawatuna.included.tickets"
+  | "packages.tours.unawatuna.included.snorkeling"
+  | "packages.tours.unawatuna.included.water"
+  | "packages.tours.unawatuna.included.guide"
+  | "packages.tours.unawatuna.included.vehicle"
+  // Trincomalee
+  | "packages.tours.trincomalee.highlights.nilaveli"
+  | "packages.tours.trincomalee.highlights.pigeonIsland"
+  | "packages.tours.trincomalee.highlights.koneswaram"
+  | "packages.tours.trincomalee.highlights.fortFrederick"
+  | "packages.tours.trincomalee.highlights.hotSprings"
+  | "packages.tours.trincomalee.highlights.tamilCulture"
+  | "packages.tours.trincomalee.included.tickets"
+  | "packages.tours.trincomalee.included.boat"
+  | "packages.tours.trincomalee.included.water"
+  | "packages.tours.trincomalee.included.guide"
+  | "packages.tours.trincomalee.included.vehicle"
+  // Arugam Bay
+  | "packages.tours.arugam.highlights.surfing"
+  | "packages.tours.arugam.highlights.beach"
+  | "packages.tours.arugam.highlights.elephantRock"
+  | "packages.tours.arugam.highlights.kumana"
+  | "packages.tours.arugam.highlights.fishingVillage"
+  | "packages.tours.arugam.highlights.sunsetBBQ"
+  | "packages.tours.arugam.included.tickets"
+  | "packages.tours.arugam.included.surfboard"
+  | "packages.tours.arugam.included.instructor"
+  | "packages.tours.arugam.included.water"
+  | "packages.tours.arugam.included.guide"
+  | "packages.tours.arugam.included.vehicle"
+  // Negombo
+  | "packages.tours.negombo.highlights.beach"
+  | "packages.tours.negombo.highlights.canal"
+  | "packages.tours.negombo.highlights.fishMarket"
+  | "packages.tours.negombo.highlights.church"
+  | "packages.tours.negombo.highlights.temple"
+  | "packages.tours.negombo.highlights.lagoonFishing"
+  | "packages.tours.negombo.included.tickets"
+  | "packages.tours.negombo.included.boat"
+  | "packages.tours.negombo.included.water"
+  | "packages.tours.negombo.included.guide"
+  | "packages.tours.negombo.included.vehicle"
+  // Gold Tour
+  | "packages.tours.gold.highlights.day1.ella"
+  | "packages.tours.gold.highlights.day1.nuwara"
+  | "packages.tours.gold.highlights.day2.ambuluwawa"
+  | "packages.tours.gold.highlights.day2.sigiriya"
+  | "packages.tours.gold.included.guide"
+  | "packages.tours.gold.included.entrance"
+  | "packages.tours.gold.included.hotel"
+  | "packages.tours.gold.included.transport"
+  // Silva Tour
+  | "packages.tours.silva.highlights.day1.elephant"
+  | "packages.tours.silva.highlights.day1.kandy"
+  | "packages.tours.silva.highlights.day2.tea"
+  | "packages.tours.silva.highlights.day2.ella"
+  | "packages.tours.silva.included.tickets"
+  | "packages.tours.silva.included.meals"
+  | "packages.tours.silva.included.water"
+  | "packages.tours.silva.included.guide"
+  | "packages.tours.silva.included.transport"
+  // Grand Tour
+  | "packages.tours.grand.highlights.route"
+  | "packages.tours.grand.highlights.unesco"
+  | "packages.tours.grand.highlights.safari"
+  | "packages.tours.grand.highlights.culture"
+  | "packages.tours.grand.highlights.train"
+  | "packages.tours.grand.highlights.beach"
+  | "packages.tours.grand.highlights.cuisine"
+  | "packages.tours.grand.included.accommodation"
+  | "packages.tours.grand.included.meals"
+  | "packages.tours.grand.included.guide"
+  | "packages.tours.grand.included.vehicle"
+  | "packages.tours.grand.included.entrance"
+  | "packages.tours.grand.included.transfers"
   // Services
   | "services.title"
   | "services.subtitle"
@@ -1195,6 +1385,202 @@ const translations: { [lang: string]: TranslationMap } = {
     "packages.tours.silva.subtitle": "Cultural Heritage & Nature",
     "packages.tours.grand.name": "Grand Sri Lanka Discovery",
     "packages.tours.grand.subtitle": "Complete Island Experience",
+    "packages.tours.ella.highlights.rawana": "Rawana Waterfall",
+    "packages.tours.ella.highlights.nineArch": "Nine Arches Bridge",
+    "packages.tours.ella.highlights.monkeys": "Feed the Monkeys",
+    "packages.tours.ella.highlights.adamsPeak": "Small Adam's Peak",
+    "packages.tours.ella.highlights.tea":
+      "Tea Plantation & Government Tea Shop",
+    "packages.tours.ella.highlights.ayurveda":
+      "Sri Lanka Traditional Ayurvedic Garden",
+    "packages.tours.ella.included.tickets": "All tickets",
+    "packages.tours.ella.included.guide": "Guide and driver",
+    "packages.tours.ella.included.water": "Water bottles",
+    "packages.tours.ella.included.vehicle": "Comfortable vehicle",
+    "packages.tours.galle.highlights.turtleFarm": "Turtle Farm",
+    "packages.tours.galle.highlights.boatSafari": "Boat Safari",
+    "packages.tours.galle.highlights.moonstoneMine":
+      "Moonstone Mine Meetiyagoda",
+    "packages.tours.galle.highlights.turtleBeach": "Turtle Beach",
+    "packages.tours.galle.included.tickets": "All tickets",
+    "packages.tours.galle.included.guide": "Guide",
+    "packages.tours.galle.included.water": "Water bottles",
+    "packages.tours.colombo.highlights.galleFace": "Galle Face Green",
+    "packages.tours.colombo.highlights.gangaramaya": "Gangaramaya Temple",
+    "packages.tours.colombo.highlights.independence": "Independence Square",
+    "packages.tours.colombo.highlights.pettah": "Pettah Street",
+    "packages.tours.colombo.included.tickets": "All tickets",
+    "packages.tours.colombo.included.guide": "Guide",
+    "packages.tours.colombo.included.water": "Water bottles",
+    "packages.tours.kandy.highlights.elephantFeeding": "Elephant Feeding",
+    "packages.tours.kandy.highlights.elephantRide": "Elephant Ride",
+    "packages.tours.kandy.highlights.temple": "Temple of the Tooth Relic",
+    "packages.tours.kandy.highlights.botanicalGardens":
+      "Royal Botanical Gardens Peradeniya",
+    "packages.tours.kandy.included.tickets": "All tickets",
+    "packages.tours.kandy.included.guide": "Guide",
+    "packages.tours.kandy.included.water": "Water bottles",
+    "packages.tours.sigiriya.highlights.dambullaCave":
+      "Dambulla Royal Cave Temple and Golden Buddha Statue",
+    "packages.tours.sigiriya.highlights.rockFortress":
+      "Ancient Rock Fortress of Sigiriya (UNESCO protected)",
+    "packages.tours.sigiriya.highlights.elephantRide": "Elephant Ride",
+    "packages.tours.sigiriya.highlights.ayurvedaSpice":
+      "Ayurvedic Center, Spice Garden",
+    "packages.tours.sigiriya.highlights.cookingClass":
+      "Master Class on Cooking Local Dishes and Try Local Dishes",
+    "packages.tours.sigiriya.included.tickets": "All tickets",
+    "packages.tours.sigiriya.included.guide": "Guide",
+    "packages.tours.sigiriya.included.water": "Water bottles",
+    "packages.tours.sigiriya.included.vehicle": "Comfortable vehicle",
+    "packages.tours.yala.highlights.jeepSafari":
+      "Open Jeep Safari in Yala National Park",
+    "packages.tours.yala.highlights.wildlife":
+      "Watching Elephants, Leopards, Deer, Buffalo",
+    "packages.tours.yala.highlights.crocodile": "Crocodiles",
+    "packages.tours.yala.highlights.crocodiles":
+      "Crocodiles, Monkeys, Peacocks",
+    "packages.tours.yala.highlights.birdWatching": "Bird Watching",
+    "packages.tours.yala.highlights.flamingos": "Flamingos, Mongooses",
+    "packages.tours.yala.highlights.photography":
+      "Professional Wildlife Photography",
+    "packages.tours.yala.highlights.camping": "Luxury Camping",
+    "packages.tours.yala.included.tickets": "All tickets",
+    "packages.tours.yala.included.jeep": "Jeep",
+    "packages.tours.yala.included.water": "Water bottles",
+    "packages.tours.yala.included.vehicle": "Comfortable vehicle",
+    "packages.tours.yala.included.guide": "Guide",
+    "packages.tours.ellaYala.highlights.rawana": "Rawana Waterfall",
+    "packages.tours.ellaYala.highlights.nineArch": "Nine Arches Bridge",
+    "packages.tours.ellaYala.highlights.monkeys": "Feed the Monkeys",
+    "packages.tours.ellaYala.highlights.tea":
+      "Tea Plantation and Government Tea Shop",
+    "packages.tours.ellaYala.highlights.ayurveda":
+      "Sri Lanka Traditional Ayurvedic Garden",
+    "packages.tours.ellaYala.highlights.safari":
+      "Udawalawe or Yala National Park Safari",
+    "packages.tours.ellaYala.included.tickets": "All tickets",
+    "packages.tours.ellaYala.included.jeepSafari": "Jeep for Safari",
+    "packages.tours.ellaYala.included.water": "Water bottles",
+    "packages.tours.ellaYala.included.vehicle": "Comfortable vehicle",
+    "packages.tours.ellaYala.included.guide": "Guide",
+    "packages.tours.mirissa.highlights.whaleBoat": "Whale Watching Boat Trip",
+    "packages.tours.mirissa.highlights.dolphin": "Dolphin Spotting",
+    "packages.tours.mirissa.highlights.beach": "Mirissa Beach Relaxation",
+    "packages.tours.mirissa.highlights.parrotRock": "Parrot Rock Viewpoint",
+    "packages.tours.mirissa.highlights.coconutHill": "Coconut Tree Hill",
+    "packages.tours.mirissa.highlights.seafood": "Local Seafood Lunch",
+    "packages.tours.mirissa.included.tickets": "All tickets",
+    "packages.tours.mirissa.included.boat": "Boat trip",
+    "packages.tours.mirissa.included.lifeJackets": "Life jackets",
+    "packages.tours.mirissa.included.water": "Water bottles",
+    "packages.tours.mirissa.included.guide": "Guide",
+    "packages.tours.mirissa.included.vehicle": "Comfortable vehicle",
+    "packages.tours.bentota.highlights.jetSki": "Jet Skiing",
+    "packages.tours.bentota.highlights.bananaBoat": "Banana Boat Ride",
+    "packages.tours.bentota.highlights.waterSki": "Water Skiing",
+    "packages.tours.bentota.highlights.beach": "Bentota Beach Relaxation",
+    "packages.tours.bentota.highlights.maduRiver": "Madu River Boat Safari",
+    "packages.tours.bentota.highlights.turtleHatchery": "Turtle Hatchery Visit",
+    "packages.tours.bentota.included.tickets": "All tickets",
+    "packages.tours.bentota.included.equipment": "Water sports equipment",
+    "packages.tours.bentota.included.lifeJackets": "Life jackets",
+    "packages.tours.bentota.included.water": "Water bottles",
+    "packages.tours.bentota.included.guide": "Guide",
+    "packages.tours.bentota.included.vehicle": "Comfortable vehicle",
+    "packages.tours.unawatuna.highlights.beach": "Unawatuna Beach Swimming",
+    "packages.tours.unawatuna.highlights.snorkeling":
+      "Snorkeling at Coral Reefs",
+    "packages.tours.unawatuna.highlights.jungleBeach": "Jungle Beach Hike",
+    "packages.tours.unawatuna.highlights.pagoda": "Japanese Peace Pagoda",
+    "packages.tours.unawatuna.highlights.rumassala": "Rumassala Mountain View",
+    "packages.tours.unawatuna.highlights.seafood": "Beachside Seafood Dinner",
+    "packages.tours.unawatuna.included.tickets": "All tickets",
+    "packages.tours.unawatuna.included.snorkeling": "Snorkeling equipment",
+    "packages.tours.unawatuna.included.water": "Water bottles",
+    "packages.tours.unawatuna.included.guide": "Guide",
+    "packages.tours.unawatuna.included.vehicle": "Comfortable vehicle",
+    "packages.tours.trincomalee.highlights.nilaveli": "Nilaveli Beach",
+    "packages.tours.trincomalee.highlights.pigeonIsland":
+      "Pigeon Island National Park",
+    "packages.tours.trincomalee.highlights.koneswaram": "Koneswaram Temple",
+    "packages.tours.trincomalee.highlights.fortFrederick": "Fort Frederick",
+    "packages.tours.trincomalee.highlights.hotSprings":
+      "Hot Springs at Kanniya",
+    "packages.tours.trincomalee.highlights.tamilCulture":
+      "Local Tamil Culture Experience",
+    "packages.tours.trincomalee.included.tickets": "All tickets",
+    "packages.tours.trincomalee.included.boat": "Boat to Pigeon Island",
+    "packages.tours.trincomalee.included.water": "Water bottles",
+    "packages.tours.trincomalee.included.guide": "Guide",
+    "packages.tours.trincomalee.included.vehicle": "Comfortable vehicle",
+    "packages.tours.arugam.highlights.surfing": "Surfing Lessons",
+    "packages.tours.arugam.highlights.beach": "Arugam Bay Beach",
+    "packages.tours.arugam.highlights.elephantRock": "Elephant Rock Viewpoint",
+    "packages.tours.arugam.highlights.kumana": "Kumana National Park",
+    "packages.tours.arugam.highlights.fishingVillage": "Local Fishing Village",
+    "packages.tours.arugam.highlights.sunsetBBQ": "Sunset Beach BBQ",
+    "packages.tours.arugam.included.tickets": "All tickets",
+    "packages.tours.arugam.included.surfboard": "Surfboard rental",
+    "packages.tours.arugam.included.instructor": "Surfing instructor",
+    "packages.tours.arugam.included.water": "Water bottles",
+    "packages.tours.arugam.included.guide": "Guide",
+    "packages.tours.arugam.included.vehicle": "Comfortable vehicle",
+    "packages.tours.negombo.highlights.beach": "Negombo Beach",
+    "packages.tours.negombo.highlights.canal": "Dutch Canal Boat Ride",
+    "packages.tours.negombo.highlights.fishMarket": "Fish Market Visit",
+    "packages.tours.negombo.highlights.church": "St. Mary's Church",
+    "packages.tours.negombo.highlights.temple": "Angurukaramulla Temple",
+    "packages.tours.negombo.highlights.lagoonFishing":
+      "Lagoon Fishing Experience",
+    "packages.tours.negombo.included.tickets": "All tickets",
+    "packages.tours.negombo.included.boat": "Boat ride",
+    "packages.tours.negombo.included.water": "Water bottles",
+    "packages.tours.negombo.included.guide": "Guide",
+    "packages.tours.negombo.included.vehicle": "Comfortable vehicle",
+    "packages.tours.gold.highlights.day1.ella":
+      "Day 1: Ella - Ravana Falls, Train Ride, 9-Arch Bridge, Little Adam's Peak",
+    "packages.tours.gold.highlights.day1.nuwara":
+      "Day 1: Nuwara Eliya - Grand Hotel, Tea Plantations, Tea Factory",
+    "packages.tours.gold.highlights.day2.ambuluwawa":
+      "Day 2: Ambuluwawa Tower, Ayurvedic Garden",
+    "packages.tours.gold.highlights.day2.sigiriya":
+      "Day 2: Dambulla Golden Buddha, Sigiriya Rock, Elephant Feeding",
+    "packages.tours.gold.included.guide": "Professional guide",
+    "packages.tours.gold.included.entrance": "All entrance fees",
+    "packages.tours.gold.included.hotel": "Hotel with dinner and breakfast",
+    "packages.tours.gold.included.transport":
+      "Comfortable air-conditioned transport",
+    "packages.tours.silva.highlights.day1.elephant":
+      "Day 1: Elephant Orphanage, Ayurvedic Garden, Tea Factory",
+    "packages.tours.silva.highlights.day1.kandy":
+      "Day 1: Royal Botanical Garden, Kandy Tooth Temple, Nuwara Eliya",
+    "packages.tours.silva.highlights.day2.tea":
+      "Day 2: Tea Plantation, Ramboda Waterfall, Nine Arch Bridge",
+    "packages.tours.silva.highlights.day2.ella":
+      "Day 2: Little Adam's Peak, Ravana Waterfall, Train Ride, Monkey Feeding",
+    "packages.tours.silva.included.tickets": "All entrance tickets",
+    "packages.tours.silva.included.meals": "Hotel meals (breakfast and dinner)",
+    "packages.tours.silva.included.water": "Bottled water",
+    "packages.tours.silva.included.guide": "Professional guide",
+    "packages.tours.silva.included.transport": "Air-conditioned transport",
+    "packages.tours.grand.highlights.route":
+      "Airport → Sigiriya → Kandy → Ella → Yala → Galle → Colombo",
+    "packages.tours.grand.highlights.unesco": "UNESCO World Heritage Sites",
+    "packages.tours.grand.highlights.safari": "Wildlife Safari Adventures",
+    "packages.tours.grand.highlights.culture": "Cultural Immersion Experiences",
+    "packages.tours.grand.highlights.train": "Scenic Train Journeys",
+    "packages.tours.grand.highlights.beach": "Beach & Coastal Exploration",
+    "packages.tours.grand.highlights.cuisine":
+      "Traditional Cuisine & Cooking Classes",
+    "packages.tours.grand.included.accommodation": "6 nights accommodation",
+    "packages.tours.grand.included.meals":
+      "All meals (breakfast, lunch, dinner)",
+    "packages.tours.grand.included.guide": "Professional guide throughout",
+    "packages.tours.grand.included.vehicle": "Air-conditioned vehicle",
+    "packages.tours.grand.included.entrance":
+      "All entrance fees and activities",
+    "packages.tours.grand.included.transfers": "Airport transfers",
 
     // Adventure Page
     "adventure.filters.allAdventures": "All Adventures",
@@ -1854,6 +2240,213 @@ const translations: { [lang: string]: TranslationMap } = {
     "packages.tours.silva.subtitle": "Культурное наследие и природа",
     "packages.tours.grand.name": "Великое открытие Шри-Ланки",
     "packages.tours.grand.subtitle": "Полный островной опыт",
+    "packages.tours.ella.highlights.rawana": "Водопад Равана",
+    "packages.tours.ella.highlights.nineArch": "Мост Девяти Арок",
+    "packages.tours.ella.highlights.monkeys": "Покормить обезьян",
+    "packages.tours.ella.highlights.adamsPeak": "Малый пик Адама",
+    "packages.tours.ella.highlights.tea":
+      "Чайная плантация и государственный магазин чая",
+    "packages.tours.ella.highlights.ayurveda":
+      "Традиционный аюрведический сад Шри-Ланки",
+    "packages.tours.ella.included.tickets": "Все билеты",
+    "packages.tours.ella.included.guide": "Гид и водитель",
+    "packages.tours.ella.included.water": "Бутылки с водой",
+    "packages.tours.ella.included.vehicle": "Комфортабельный транспорт",
+    "packages.tours.galle.highlights.turtleFarm": "Ферма черепах",
+    "packages.tours.galle.highlights.boatSafari": "Сафари на лодке",
+    "packages.tours.galle.highlights.moonstoneMine": "Лунный камень Митиягода",
+    "packages.tours.galle.highlights.turtleBeach": "Пляж черепах",
+    "packages.tours.galle.included.tickets": "Все билеты",
+    "packages.tours.galle.included.guide": "Гид",
+    "packages.tours.galle.included.water": "Бутылки с водой",
+    "packages.tours.colombo.highlights.galleFace": "Галле Фейс Грин",
+    "packages.tours.colombo.highlights.gangaramaya": "Храм Гангарамая",
+    "packages.tours.colombo.highlights.independence": "Площадь Независимости",
+    "packages.tours.colombo.highlights.pettah": "Улица Петтах",
+    "packages.tours.colombo.included.tickets": "Все билеты",
+    "packages.tours.colombo.included.guide": "Гид",
+    "packages.tours.colombo.included.water": "Бутылки с водой",
+    "packages.tours.kandy.highlights.elephantFeeding": "Кормление слонов",
+    "packages.tours.kandy.highlights.elephantRide": "Катание на слоне",
+    "packages.tours.kandy.highlights.temple": "Храм Зуба Будды",
+    "packages.tours.kandy.highlights.botanicalGardens":
+      "Королевский ботанический сад Перадения",
+    "packages.tours.kandy.included.tickets": "Все билеты",
+    "packages.tours.kandy.included.guide": "Гид",
+    "packages.tours.kandy.included.water": "Бутылки с водой",
+    "packages.tours.sigiriya.highlights.dambullaCave":
+      "Королевский пещерный храм Дамбулла и статуя Золотого Будды",
+    "packages.tours.sigiriya.highlights.rockFortress":
+      "Древняя скальная крепость Сигирия (объект ЮНЕСКО)",
+    "packages.tours.sigiriya.highlights.elephantRide": "Катание на слоне",
+    "packages.tours.sigiriya.highlights.ayurvedaSpice":
+      "Аюрведический центр, сад специй",
+    "packages.tours.sigiriya.highlights.cookingClass":
+      "Мастер-класс по приготовлению и дегустации местных блюд",
+    "packages.tours.sigiriya.included.tickets": "Все билеты",
+    "packages.tours.sigiriya.included.guide": "Гид",
+    "packages.tours.sigiriya.included.water": "Бутылки с водой",
+    "packages.tours.sigiriya.included.vehicle": "Комфортабельный транспорт",
+
+    "packages.tours.yala.highlights.jeepSafari": "Джип-сафари в Яла",
+    "packages.tours.yala.highlights.wildlife":
+      "Слоны, леопарды, олени, буйволы",
+    "packages.tours.yala.highlights.crocodiles": "Крокодилы, обезьяны, павлины",
+    "packages.tours.yala.highlights.flamingos": "Фламинго, мангусты",
+    "packages.tours.yala.highlights.photography":
+      "Профессиональная фотосъемка дикой природы",
+    "packages.tours.yala.included.tickets": "Все билеты",
+    "packages.tours.yala.included.jeep": "Джип",
+    "packages.tours.yala.included.water": "Бутылки с водой",
+    "packages.tours.yala.included.vehicle": "Комфортабельный транспорт",
+    "packages.tours.yala.included.guide": "Гид",
+
+    "packages.tours.ellaYala.highlights.rawana": "Водопад Равана",
+    "packages.tours.ellaYala.highlights.nineArch": "Мост Девяти Арок",
+    "packages.tours.ellaYala.highlights.monkeys": "Покормить обезьян",
+    "packages.tours.ellaYala.highlights.tea":
+      "Чайная плантация и государственный магазин чая",
+    "packages.tours.ellaYala.highlights.ayurveda":
+      "Традиционный аюрведический сад Шри-Ланки",
+    "packages.tours.ellaYala.highlights.safari": "Сафари в Удавалаве или Яле",
+    "packages.tours.ellaYala.included.tickets": "Все билеты",
+    "packages.tours.ellaYala.included.jeepSafari": "Джип для сафари",
+    "packages.tours.ellaYala.included.water": "Бутылки с водой",
+    "packages.tours.ellaYala.included.vehicle": "Комфортабельный транспорт",
+    "packages.tours.ellaYala.included.guide": "Гид",
+
+    "packages.tours.mirissa.highlights.whaleBoat":
+      "Экскурсия на лодке для наблюдения за китами",
+    "packages.tours.mirissa.highlights.dolphin": "Наблюдение за дельфинами",
+    "packages.tours.mirissa.highlights.beach": "Отдых на пляже Мирисса",
+    "packages.tours.mirissa.highlights.parrotRock":
+      "Смотровая площадка Parrot Rock",
+    "packages.tours.mirissa.highlights.coconutHill": "Кокосовый холм",
+    "packages.tours.mirissa.highlights.seafood": "Обед из морепродуктов",
+    "packages.tours.mirissa.included.tickets": "Все билеты",
+    "packages.tours.mirissa.included.boat": "Лодочная экскурсия",
+    "packages.tours.mirissa.included.lifeJackets": "Спасательные жилеты",
+    "packages.tours.mirissa.included.water": "Бутылки с водой",
+    "packages.tours.mirissa.included.guide": "Гид",
+    "packages.tours.mirissa.included.vehicle": "Комфортабельный транспорт",
+
+    "packages.tours.bentota.highlights.jetSki": "Катание на гидроцикле",
+    "packages.tours.bentota.highlights.bananaBoat": "Катание на банане",
+    "packages.tours.bentota.highlights.waterSki": "Водные лыжи",
+    "packages.tours.bentota.highlights.beach": "Отдых на пляже Бентота",
+    "packages.tours.bentota.highlights.maduRiver": "Сафари по реке Маду",
+    "packages.tours.bentota.highlights.turtleHatchery":
+      "Посещение инкубатора черепах",
+    "packages.tours.bentota.included.tickets": "Все билеты",
+    "packages.tours.bentota.included.equipment":
+      "Оборудование для водных видов спорта",
+    "packages.tours.bentota.included.lifeJackets": "Спасательные жилеты",
+    "packages.tours.bentota.included.water": "Бутылки с водой",
+    "packages.tours.bentota.included.guide": "Гид",
+    "packages.tours.bentota.included.vehicle": "Комфортабельный транспорт",
+
+    "packages.tours.unawatuna.highlights.beach": "Купание на пляже Унаватуна",
+    "packages.tours.unawatuna.highlights.snorkeling":
+      "Снорклинг на коралловых рифах",
+    "packages.tours.unawatuna.highlights.jungleBeach":
+      "Прогулка по пляжу Jungle Beach",
+    "packages.tours.unawatuna.highlights.pagoda": "Японская пагода мира",
+    "packages.tours.unawatuna.highlights.rumassala": "Вид на гору Румассала",
+    "packages.tours.unawatuna.highlights.seafood":
+      "Ужин из морепродуктов на пляже",
+    "packages.tours.unawatuna.included.tickets": "Все билеты",
+    "packages.tours.unawatuna.included.snorkeling": "Снаряжение для снорклинга",
+    "packages.tours.unawatuna.included.water": "Бутылки с водой",
+    "packages.tours.unawatuna.included.guide": "Гид",
+    "packages.tours.unawatuna.included.vehicle": "Комфортабельный транспорт",
+
+    "packages.tours.trincomalee.highlights.nilaveli": "Пляж Нилавели",
+    "packages.tours.trincomalee.highlights.pigeonIsland":
+      "Национальный парк Остров Голубей",
+    "packages.tours.trincomalee.highlights.koneswaram": "Храм Конесварам",
+    "packages.tours.trincomalee.highlights.fortFrederick": "Форт Фредерик",
+    "packages.tours.trincomalee.highlights.hotSprings":
+      "Горячие источники Канния",
+    "packages.tours.trincomalee.highlights.tamilCulture":
+      "Знакомство с тамильской культурой",
+    "packages.tours.trincomalee.included.tickets": "Все билеты",
+    "packages.tours.trincomalee.included.boat": "Лодка до Острова Голубей",
+    "packages.tours.trincomalee.included.water": "Бутылки с водой",
+    "packages.tours.trincomalee.included.guide": "Гид",
+    "packages.tours.trincomalee.included.vehicle": "Комфортабельный транспорт",
+
+    "packages.tours.arugam.highlights.surfing": "Уроки серфинга",
+    "packages.tours.arugam.highlights.beach": "Пляж Аругам-Бей",
+    "packages.tours.arugam.highlights.elephantRock":
+      "Смотровая площадка Elephant Rock",
+    "packages.tours.arugam.highlights.kumana": "Национальный парк Кумана",
+    "packages.tours.arugam.highlights.fishingVillage": "Рыбацкая деревня",
+    "packages.tours.arugam.highlights.sunsetBBQ": "Барбекю на пляже на закате",
+    "packages.tours.arugam.included.tickets": "Все билеты",
+    "packages.tours.arugam.included.surfboard": "Аренда доски для серфинга",
+    "packages.tours.arugam.included.instructor": "Инструктор по серфингу",
+    "packages.tours.arugam.included.water": "Бутылки с водой",
+    "packages.tours.arugam.included.guide": "Гид",
+    "packages.tours.arugam.included.vehicle": "Комфортабельный транспорт",
+
+    "packages.tours.negombo.highlights.beach": "Пляж Негомбо",
+    "packages.tours.negombo.highlights.canal":
+      "Прогулка на лодке по голландскому каналу",
+    "packages.tours.negombo.highlights.fishMarket": "Посещение рыбного рынка",
+    "packages.tours.negombo.highlights.church": "Церковь Святой Марии",
+    "packages.tours.negombo.highlights.temple": "Храм Ангурукарамулла",
+    "packages.tours.negombo.highlights.lagoonFishing": "Рыбалка в лагуне",
+    "packages.tours.negombo.included.tickets": "Все билеты",
+    "packages.tours.negombo.included.boat": "Прогулка на лодке",
+    "packages.tours.negombo.included.water": "Бутылки с водой",
+    "packages.tours.negombo.included.guide": "Гид",
+    "packages.tours.negombo.included.vehicle": "Комфортабельный транспорт",
+
+    "packages.tours.gold.highlights.day1.ella":
+      "День 1: Элла — водопад Равана, поезд, мост 9 арок, Малый пик Адама",
+    "packages.tours.gold.highlights.day1.nuwara":
+      "День 1: Нувара Элия — Гранд-отель, чайные плантации, фабрика",
+    "packages.tours.gold.highlights.day2.ambuluwawa":
+      "День 2: Башня Амбулувава, аюрведический сад",
+    "packages.tours.gold.highlights.day2.sigiriya":
+      "День 2: Золотой Будда Дамбуллы, скала Сигирия, кормление слонов",
+    "packages.tours.gold.included.guide": "Профессиональный гид",
+    "packages.tours.gold.included.entrance": "Все входные билеты",
+    "packages.tours.gold.included.hotel": "Отель с ужином и завтраком",
+    "packages.tours.gold.included.transport":
+      "Комфортабельный кондиционируемый транспорт",
+
+    "packages.tours.silva.highlights.day1.elephant":
+      "День 1: Питомник слонов, аюрведический сад, чайная фабрика",
+    "packages.tours.silva.highlights.day1.kandy":
+      "День 1: Королевский ботанический сад, храм Зуба Будды, Нувара Элия",
+    "packages.tours.silva.highlights.day2.tea":
+      "День 2: Чайная плантация, водопад Рамбода, мост 9 арок",
+    "packages.tours.silva.highlights.day2.ella":
+      "День 2: Малый пик Адама, водопад Равана, поезд, кормление обезьян",
+    "packages.tours.silva.included.tickets": "Все входные билеты",
+    "packages.tours.silva.included.meals": "Питание в отеле (завтрак и ужин)",
+    "packages.tours.silva.included.water": "Бутылки с водой",
+    "packages.tours.silva.included.guide": "Профессиональный гид",
+    "packages.tours.silva.included.transport": "Кондиционируемый транспорт",
+
+    "packages.tours.grand.highlights.route":
+      "Аэропорт → Сигирия → Канди → Элла → Яла → Галле → Коломбо",
+    "packages.tours.grand.highlights.unesco":
+      "Объекты всемирного наследия ЮНЕСКО",
+    "packages.tours.grand.highlights.safari": "Приключения на сафари",
+    "packages.tours.grand.highlights.culture": "Культурные впечатления",
+    "packages.tours.grand.highlights.train": "Живописные поездки на поезде",
+    "packages.tours.grand.highlights.beach": "Пляжный и прибрежный отдых",
+    "packages.tours.grand.highlights.cuisine":
+      "Традиционная кухня и мастер-классы",
+    "packages.tours.grand.included.accommodation": "6 ночей проживания",
+    "packages.tours.grand.included.meals": "Все питание (завтрак, обед, ужин)",
+    "packages.tours.grand.included.guide":
+      "Профессиональный гид на всем маршруте",
+    "packages.tours.grand.included.vehicle": "Кондиционируемый транспорт",
+    "packages.tours.grand.included.entrance": "Все входные билеты и активности",
+    "packages.tours.grand.included.transfers": "Трансфер из/в аэропорт",
 
     // Adventure Page
     "adventure.filters.allAdventures": "Все приключения",
