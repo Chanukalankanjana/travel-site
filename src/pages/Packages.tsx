@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
- 
+
 import {
   Clock,
   Star,
@@ -39,6 +39,50 @@ const PackagesContent = () => {
     window.open(`https://wa.me/${number}?text=${message}`, "_blank");
   };
 
+  const getTourName = (tourId: number) => {
+    const tourKeys: { [key: number]: string } = {
+      1: "packages.tours.ella.name",
+      2: "packages.tours.galle.name",
+      3: "packages.tours.colombo.name",
+      4: "packages.tours.kandy.name",
+      5: "packages.tours.sigiriya.name",
+      6: "packages.tours.yala.name",
+      7: "packages.tours.ellaYala.name",
+      8: "packages.tours.mirissa.name",
+      9: "packages.tours.bentota.name",
+      10: "packages.tours.unawatuna.name",
+      11: "packages.tours.trincomalee.name",
+      12: "packages.tours.arugam.name",
+      13: "packages.tours.negombo.name",
+      14: "packages.tours.gold.name",
+      15: "packages.tours.silva.name",
+      16: "packages.tours.grand.name",
+    };
+    return t(tourKeys[tourId] || "");
+  };
+
+  const getTourSubtitle = (tourId: number) => {
+    const subtitleKeys: { [key: number]: string } = {
+      1: "packages.tours.ella.subtitle",
+      2: "packages.tours.galle.subtitle",
+      3: "packages.tours.colombo.subtitle",
+      4: "packages.tours.kandy.subtitle",
+      5: "packages.tours.sigiriya.subtitle",
+      6: "packages.tours.yala.subtitle",
+      7: "packages.tours.ellaYala.subtitle",
+      8: "packages.tours.mirissa.subtitle",
+      9: "packages.tours.bentota.subtitle",
+      10: "packages.tours.unawatuna.subtitle",
+      11: "packages.tours.trincomalee.subtitle",
+      12: "packages.tours.arugam.subtitle",
+      13: "packages.tours.negombo.subtitle",
+      14: "packages.tours.gold.subtitle",
+      15: "packages.tours.silva.subtitle",
+      16: "packages.tours.grand.subtitle",
+    };
+    return t(subtitleKeys[tourId] || "");
+  };
+
   const durations = [
     { id: "all", labelKey: "packages.filters.allTours" },
     { id: "1day", labelKey: "packages.filters.oneDay" },
@@ -60,14 +104,13 @@ const PackagesContent = () => {
     // One Day Tours
     {
       id: 1,
-      name: "Ella Mountain Excursion",
+      name: "Ella Excursion",
       subtitle: "Foggy City Adventure",
       duration: "1day",
       category: "adventure",
       price: "$85",
       originalPrice: "$110",
-      image:
-        "https://images.pexels.com/photos/1076081/pexels-photo-1076081.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      image: "/packages/Ella.jpg",
       rating: 4.9,
       reviews: 234,
       groupSize: "2-15",
@@ -76,238 +119,167 @@ const PackagesContent = () => {
         "Rawana Waterfall",
         "Nine Arches Bridge",
         "Feed the Monkeys",
-        "Little Adam's Peak",
+        "Small Adam's Peak",
         "Tea Plantation & Government Tea Shop",
-        "Traditional Ayurvedic Garden",
+        "Sri Lanka Traditional Ayurvedic Garden",
       ],
-      extras: ["Elephant Feeding at Transit Home (Optional)"],
       included: [
-        "All entrance tickets",
-        "Professional guide and driver",
-        "Bottled water",
-        "Comfortable air-conditioned vehicle",
-      ],
-      itinerary: [
-        { time: "07:00", activity: "Hotel pickup and departure to Ella" },
-        { time: "09:30", activity: "Visit Rawana Waterfall" },
-        { time: "10:30", activity: "Nine Arches Bridge photography" },
-        { time: "11:30", activity: "Feed monkeys and nature walk" },
-        { time: "13:00", activity: "Lunch break" },
-        { time: "14:30", activity: "Little Adam's Peak hiking" },
-        { time: "16:00", activity: "Tea plantation and factory tour" },
-        { time: "17:30", activity: "Ayurvedic garden visit" },
-        { time: "19:00", activity: "Return to hotel" },
+        "All tickets",
+        "Guide and driver",
+        "Water bottles",
+        "Comfortable vehicle",
       ],
     },
     {
       id: 2,
-      name: "Galle Dutch Fort Tour",
-      subtitle: "UNESCO Heritage Coast",
+      name: "Galle Tour",
+      subtitle: "Dutch Fort Heritage",
       duration: "1day",
       category: "cultural",
       price: "$75",
       originalPrice: "$95",
-      image:
-        "https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      image: "/packages/Galle.jpg",
       rating: 4.8,
       reviews: 189,
       groupSize: "2-20",
       badge: "heritage",
       highlights: [
-        "Turtle Farm Experience",
-        "Madu River Boat Safari",
-        "Moonstone Mine at Meetiyagoda",
-        "Turtle Beach Visit",
-        "UNESCO Dutch Galle Fort",
+        "Turtle Farm",
+        "Boat Safari",
+        "Moonstone Mine Meetiyagoda",
+        "Turtle Beach",
+        "UNESCO World Dutch Galle Fort",
       ],
       included: [
-        "All entrance tickets",
-        "Professional guide",
-        "Bottled water",
+        "All tickets",
+        "Guide",
+        "Water bottles",
         "Comfortable vehicle",
       ],
-      itinerary: [
-        { time: "08:00", activity: "Hotel pickup" },
-        { time: "10:00", activity: "Turtle Farm visit" },
-        { time: "11:30", activity: "Madu River boat safari" },
-        { time: "13:00", activity: "Lunch at local restaurant" },
-        { time: "14:30", activity: "Moonstone mine exploration" },
-        { time: "16:00", activity: "Turtle Beach relaxation" },
-        { time: "17:30", activity: "Galle Fort walking tour" },
-        { time: "19:00", activity: "Return journey" },
-      ],
+      extras: [],
     },
     {
       id: 3,
-      name: "Colombo City Discovery",
+      name: "Colombo City Tour",
       subtitle: "Modern Capital Experience",
       duration: "1day",
       category: "city",
       price: "$65",
       originalPrice: "$85",
-      image:
-        "https://images.pexels.com/photos/3889855/pexels-photo-3889855.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      image: "/packages/Colombo.png",
       rating: 4.7,
       reviews: 156,
       groupSize: "2-25",
       badge: "city",
       highlights: [
-        "Galle Face Green (Colombo Beach)",
+        "Galle Face Green",
         "Gangaramaya Temple",
         "Independence Square",
-        "Pettah Street Markets",
-        "Modern Shopping Malls",
+        "Pettah Street",
+        "Shopping Mall",
       ],
-      extras: ["Lotus Tower visit ($20 per adult - not included)"],
       included: [
-        "All entrance tickets",
-        "Professional guide",
-        "Bottled water",
+        "All tickets",
+        "Guide",
+        "Water bottles",
         "Comfortable vehicle",
-      ],
-      itinerary: [
-        { time: "09:00", activity: "Hotel pickup" },
-        { time: "09:30", activity: "Galle Face Green seaside walk" },
-        { time: "10:30", activity: "Gangaramaya Temple visit" },
-        { time: "12:00", activity: "Independence Square" },
-        { time: "13:00", activity: "Lunch break" },
-        { time: "14:30", activity: "Pettah Street market exploration" },
-        { time: "16:00", activity: "Shopping mall visit" },
-        { time: "17:30", activity: "Optional Lotus Tower (extra cost)" },
-        { time: "18:30", activity: "Return to hotel" },
       ],
     },
     {
       id: 4,
-      name: "Kandy Ancient City",
-      subtitle: "Cultural Heart of Sri Lanka",
+      name: "Kandy Excursions",
+      subtitle: "Ancient City of Kandy",
       duration: "1day",
       category: "cultural",
       price: "$95",
       originalPrice: "$120",
-      image:
-        "https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      image: "/packages/Kandy.jpg",
       rating: 4.9,
       reviews: 203,
       groupSize: "2-15",
       badge: "bestseller",
       highlights: [
-        "Elephant Feeding Experience",
+        "Elephant Feeding",
         "Elephant Ride",
         "Temple of the Tooth Relic",
         "Royal Botanical Gardens Peradeniya",
         "Gem Museum",
-        "Ayurvedic Center & Spice Garden",
-        "Tea Factory & Plantations",
+        "Ayurvedic Center, Spice Garden",
+        "Tea Factory and Plantations",
       ],
       included: [
-        "All entrance tickets",
-        "Professional guide",
-        "Bottled water",
+        "All tickets",
+        "Guide",
+        "Water bottles",
         "Comfortable vehicle",
       ],
-      itinerary: [
-        { time: "07:00", activity: "Early morning pickup" },
-        { time: "09:00", activity: "Elephant feeding and ride" },
-        { time: "11:00", activity: "Temple of the Tooth Relic" },
-        { time: "13:00", activity: "Lunch break" },
-        { time: "14:30", activity: "Royal Botanical Gardens" },
-        { time: "16:00", activity: "Gem Museum visit" },
-        { time: "17:00", activity: "Ayurvedic center and spice garden" },
-        { time: "18:30", activity: "Tea factory tour" },
-        { time: "20:00", activity: "Return journey" },
-      ],
+      extras: [],
     },
     {
       id: 5,
-      name: "Sigiriya Rock Fortress",
+      name: "Sigiriya Excursion",
       subtitle: "UNESCO World Wonder",
       duration: "1day",
       category: "cultural",
       price: "$105",
       originalPrice: "$135",
-      image:
-        "https://images.pexels.com/photos/2166711/pexels-photo-2166711.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      image: "/packages/Sigiriya.jpg",
       rating: 4.9,
       reviews: 278,
       groupSize: "2-12",
       badge: "wonder",
       highlights: [
-        "Dambulla Royal Cave Temple & Golden Buddha",
-        "Ancient Rock Fortress of Sigiriya (UNESCO)",
-        "Elephant Ride Experience",
-        "Ayurvedic Center & Spice Garden",
-        "Cooking Class & Local Cuisine Tasting",
-      ],
-      extras: [
-        "Buffalo sledding, Lake boat ride, Village tour (tickets not included)",
+        "Dambulla Royal Cave Temple and Golden Buddha Statue",
+        "Ancient Rock Fortress of Sigiriya (UNESCO protected)",
+        "Elephant Ride",
+        "Ayurvedic Center, Spice Garden",
+        "Master Class on Cooking Local Dishes and Try Local Dishes",
       ],
       included: [
-        "All entrance tickets",
-        "Professional guide",
-        "Bottled water",
+        "All tickets",
+        "Guide",
+        "Water bottles",
         "Comfortable vehicle",
-      ],
-      itinerary: [
-        { time: "06:00", activity: "Early departure" },
-        { time: "08:30", activity: "Dambulla Cave Temple" },
-        { time: "10:30", activity: "Sigiriya Rock Fortress climb" },
-        { time: "13:00", activity: "Lunch and rest" },
-        { time: "14:30", activity: "Elephant ride experience" },
-        { time: "16:00", activity: "Ayurvedic center visit" },
-        { time: "17:30", activity: "Cooking class and dinner" },
-        { time: "19:30", activity: "Return journey" },
       ],
     },
     {
       id: 6,
-      name: "Yala Safari Adventure",
+      name: "Udawalawe or Yala Safari",
       subtitle: "Wildlife National Park",
       duration: "1day",
       category: "wildlife",
       price: "$120",
       originalPrice: "$150",
-      image:
-        "https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      image: "/packages/Udawala-Yala.webp",
       rating: 4.8,
       reviews: 167,
       groupSize: "2-8",
       badge: "wildlife",
       highlights: [
         "Open Jeep Safari in Yala National Park",
-        "Spot Elephants, Leopards, Deer",
-        "Buffalo, Crocodiles, Monkeys",
-        "Peacocks, Flamingos, Mongooses",
-        "Professional Wildlife Guide",
+        "Watching Elephants, Leopards, Deer, Buffalo",
+        "Crocodiles, Monkeys, Peacocks",
+        "Flamingos, Mongooses",
+        "Professional Wildlife Photography",
       ],
       included: [
-        "All park tickets",
-        "Safari jeep with driver",
-        "Bottled water",
-        "Comfortable transport to/from park",
-        "Professional wildlife guide",
+        "All tickets",
+        "Jeep",
+        "Water bottles",
+        "Comfortable vehicle",
+        "Guide",
       ],
-      itinerary: [
-        { time: "05:00", activity: "Early morning pickup" },
-        { time: "06:30", activity: "Arrive at Yala National Park" },
-        { time: "07:00", activity: "Morning safari session (3 hours)" },
-        { time: "10:00", activity: "Breakfast break" },
-        { time: "11:00", activity: "Rest and wildlife photography" },
-        { time: "14:00", activity: "Afternoon safari session (3 hours)" },
-        { time: "17:00", activity: "Exit park and refreshments" },
-        { time: "19:30", activity: "Return to hotel" },
-      ],
+      extras: [],
     },
     {
       id: 7,
-      name: "Ella & Yala Combo",
+      name: "Ella & Yala ",
       subtitle: "Mountains & Wildlife",
       duration: "1day",
       category: "adventure",
       price: "$145",
       originalPrice: "$180",
-      image:
-        "https://images.pexels.com/photos/1076081/pexels-photo-1076081.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      image: "/packages/Ella-Yala-Colo.jpg",
       rating: 4.9,
       reviews: 134,
       groupSize: "2-10",
@@ -315,39 +287,213 @@ const PackagesContent = () => {
       highlights: [
         "Rawana Waterfall",
         "Nine Arches Bridge",
-        "Feed Monkeys",
-        "Tea Plantation Visit",
-        "Ayurvedic Garden",
-        "Yala National Park Safari",
+        "Feed the Monkeys",
+        "Tea Plantation and Government Tea Shop",
+        "Sri Lanka Traditional Ayurvedic Garden",
+        "Udawalawe or Yala National Park Safari",
       ],
       included: [
-        "All entrance tickets",
-        "Safari jeep",
-        "Bottled water",
+        "All tickets",
+        "Jeep for Safari",
+        "Water bottles",
         "Comfortable vehicle",
-        "Professional guide",
+        "Guide",
       ],
-      itinerary: [
-        { time: "05:00", activity: "Very early pickup" },
-        { time: "07:00", activity: "Ella sightseeing (condensed)" },
-        { time: "11:00", activity: "Travel to Yala" },
-        { time: "13:00", activity: "Lunch break" },
-        { time: "14:30", activity: "Yala safari adventure" },
-        { time: "17:30", activity: "Return journey" },
-        { time: "20:00", activity: "Arrive at hotel" },
+      extras: [],
+    },
+    {
+      id: 8,
+      name: "Mirissa Whale Watching",
+      subtitle: "Giant Blue Whales & Dolphins",
+      duration: "1day",
+      category: "beach",
+      price: "$95",
+      originalPrice: "$120",
+      image: "/packages/Mirissa-Whale.webp",
+      rating: 4.8,
+      reviews: 145,
+      groupSize: "2-20",
+      badge: "wildlife",
+      highlights: [
+        "Whale Watching Boat Trip",
+        "Dolphin Spotting",
+        "Mirissa Beach Relaxation",
+        "Parrot Rock Viewpoint",
+        "Coconut Tree Hill",
+        "Local Seafood Lunch",
       ],
+      included: [
+        "All tickets",
+        "Boat trip",
+        "Life jackets",
+        "Water bottles",
+        "Guide",
+        "Comfortable vehicle",
+      ],
+      extras: [],
+    },
+    {
+      id: 9,
+      name: "Bentota Beach Adventure",
+      subtitle: "Water Sports & Relaxation",
+      duration: "1day",
+      category: "beach",
+      price: "$85",
+      originalPrice: "$110",
+      image: "/packages/Bentota.jpg",
+      rating: 4.7,
+      reviews: 198,
+      groupSize: "2-15",
+      badge: "adventure",
+      highlights: [
+        "Jet Skiing",
+        "Banana Boat Ride",
+        "Water Skiing",
+        "Bentota Beach Relaxation",
+        "Madu River Boat Safari",
+        "Turtle Hatchery Visit",
+      ],
+      included: [
+        "All tickets",
+        "Water sports equipment",
+        "Life jackets",
+        "Water bottles",
+        "Guide",
+        "Comfortable vehicle",
+      ],
+      extras: [],
+    },
+    {
+      id: 10,
+      name: "Unawatuna Beach Paradise",
+      subtitle: "Golden Sands & Coral Reefs",
+      duration: "1day",
+      category: "beach",
+      price: "$75",
+      originalPrice: "$95",
+      image: "/packages/Unawatuna.jpg",
+      rating: 4.9,
+      reviews: 167,
+      groupSize: "2-25",
+      badge: "paradise",
+      highlights: [
+        "Unawatuna Beach Swimming",
+        "Snorkeling at Coral Reefs",
+        "Jungle Beach Hike",
+        "Japanese Peace Pagoda",
+        "Rumassala Mountain View",
+        "Beachside Seafood Dinner",
+      ],
+      included: [
+        "All tickets",
+        "Snorkeling equipment",
+        "Water bottles",
+        "Guide",
+        "Comfortable vehicle",
+      ],
+      extras: [],
+    },
+    {
+      id: 11,
+      name: "Trincomalee Beach & Culture",
+      subtitle: "East Coast Heritage",
+      duration: "2day",
+      category: "beach",
+      price: "$90",
+      originalPrice: "$115",
+      image: "/packages/Trincomalee.jpg",
+      rating: 4.6,
+      reviews: 123,
+      groupSize: "2-18",
+      badge: "heritage",
+      highlights: [
+        "Nilaveli Beach",
+        "Pigeon Island National Park",
+        "Koneswaram Temple",
+        "Fort Frederick",
+        "Hot Springs at Kanniya",
+        "Local Tamil Culture Experience",
+      ],
+      included: [
+        "All tickets",
+        "Boat to Pigeon Island",
+        "Water bottles",
+        "Guide",
+        "Comfortable vehicle",
+      ],
+      extras: [],
+    },
+    {
+      id: 12,
+      name: "Arugam Bay Surfing",
+      subtitle: "World-Class Surf Destination",
+      duration: "2day",
+      category: "beach",
+      price: "$110",
+      originalPrice: "$140",
+      image: "/packages/Arugambay.png",
+      rating: 4.8,
+      reviews: 89,
+      groupSize: "2-12",
+      badge: "surfing",
+      highlights: [
+        "Surfing Lessons",
+        "Arugam Bay Beach",
+        "Elephant Rock Viewpoint",
+        "Kumana National Park",
+        "Local Fishing Village",
+        "Sunset Beach BBQ",
+      ],
+      included: [
+        "All tickets",
+        "Surfboard rental",
+        "Surfing instructor",
+        "Water bottles",
+        "Guide",
+        "Comfortable vehicle",
+      ],
+      extras: [],
+    },
+    {
+      id: 13,
+      name: "Negombo Beach & Lagoon",
+      subtitle: "Airport Gateway Paradise",
+      duration: "1day",
+      category: "beach",
+      price: "$65",
+      originalPrice: "$85",
+      image: "/packages/Negombo.jpg",
+      rating: 4.5,
+      reviews: 134,
+      groupSize: "2-20",
+      badge: "gateway",
+      highlights: [
+        "Negombo Beach",
+        "Dutch Canal Boat Ride",
+        "Fish Market Visit",
+        "St. Mary's Church",
+        "Angurukaramulla Temple",
+        "Lagoon Fishing Experience",
+      ],
+      included: [
+        "All tickets",
+        "Boat ride",
+        "Water bottles",
+        "Guide",
+        "Comfortable vehicle",
+      ],
+      extras: [],
     },
     // Two Day Tours
     {
-      id: 8,
+      id: 14,
       name: "Gold Tour: Ella & Sigiriya",
       subtitle: "Mountains to Ancient Wonders",
       duration: "2day",
       category: "comprehensive",
       price: "$280",
       originalPrice: "$350",
-      image:
-        "https://images.pexels.com/photos/2166711/pexels-photo-2166711.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      image: "/packages/Ella-Sigiriya.jpg",
       rating: 4.9,
       reviews: 89,
       groupSize: "2-12",
@@ -364,36 +510,17 @@ const PackagesContent = () => {
         "Hotel with dinner and breakfast",
         "Comfortable air-conditioned transport",
       ],
-      itinerary: [
-        { time: "Day 1 - 07:00", activity: "Pickup and travel to Ella" },
-        { time: "09:00", activity: "Ravana Falls visit" },
-        { time: "10:30", activity: "Scenic train ride experience" },
-        { time: "12:00", activity: "Nine Arch Bridge photography" },
-        { time: "14:00", activity: "Lunch break" },
-        { time: "15:30", activity: "Little Adam's Peak hike" },
-        { time: "17:00", activity: "Travel to Nuwara Eliya" },
-        { time: "18:30", activity: "Grand Hotel visit and tea plantations" },
-        { time: "20:00", activity: "Check-in hotel, dinner" },
-        { time: "Day 2 - 08:00", activity: "Breakfast and checkout" },
-        { time: "09:00", activity: "Ambuluwawa Tower visit" },
-        { time: "11:00", activity: "Ayurvedic garden tour" },
-        { time: "13:00", activity: "Lunch and travel to Dambulla" },
-        { time: "15:00", activity: "Golden Buddha statue and caves" },
-        { time: "16:30", activity: "Sigiriya Rock Fortress" },
-        { time: "18:30", activity: "Elephant feeding experience" },
-        { time: "20:00", activity: "Return journey" },
-      ],
+      extras: [],
     },
     {
-      id: 9,
+      id: 15,
       name: "Silva Tour: Kandy & Ella",
       subtitle: "Cultural Heritage & Nature",
       duration: "2day",
       category: "comprehensive",
       price: "$260",
       originalPrice: "$320",
-      image:
-        "https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      image: "/packages/Kandy-Ella.jpg",
       rating: 4.8,
       reviews: 112,
       groupSize: "2-15",
@@ -411,39 +538,18 @@ const PackagesContent = () => {
         "Professional guide",
         "Air-conditioned transport",
       ],
-      itinerary: [
-        { time: "Day 1 - 07:00", activity: "Hotel pickup" },
-        { time: "09:00", activity: "Elephant Orphanage visit" },
-        { time: "10:30", activity: "Ayurvedic garden and spice tour" },
-        { time: "12:00", activity: "Tea factory experience" },
-        { time: "13:30", activity: "Lunch break" },
-        { time: "15:00", activity: "Royal Botanical Gardens" },
-        { time: "16:30", activity: "Temple of the Tooth" },
-        { time: "18:00", activity: "Travel to Nuwara Eliya" },
-        { time: "20:00", activity: "Hotel check-in and dinner" },
-        { time: "Day 2 - 08:00", activity: "Breakfast and checkout" },
-        { time: "09:00", activity: "Tea plantation tour" },
-        { time: "10:30", activity: "Ramboda Waterfall" },
-        { time: "12:00", activity: "Travel to Ella" },
-        { time: "13:30", activity: "Lunch break" },
-        { time: "15:00", activity: "Nine Arch Bridge" },
-        { time: "16:00", activity: "Little Adam's Peak" },
-        { time: "17:30", activity: "Ravana Waterfall and monkey feeding" },
-        { time: "18:30", activity: "Train ride experience" },
-        { time: "20:00", activity: "Return journey" },
-      ],
+      extras: [],
     },
     // 7 Day Tour
     {
-      id: 10,
+      id: 16,
       name: "Grand Sri Lanka Discovery",
       subtitle: "Complete Island Experience",
       duration: "7day",
       category: "comprehensive",
       price: "$1,299",
       originalPrice: "$1,599",
-      image:
-        "https://images.pexels.com/photos/2166711/pexels-photo-2166711.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      image: "/packages/7days.png",
       rating: 5.0,
       reviews: 67,
       groupSize: "2-12",
@@ -465,43 +571,7 @@ const PackagesContent = () => {
         "All entrance fees and activities",
         "Airport transfers",
       ],
-      itinerary: [
-        {
-          time: "Day 1",
-          activity:
-            "Airport pickup → Sigiriya. Evening: Sigiriya Rock Fortress climb. Overnight in Sigiriya.",
-        },
-        {
-          time: "Day 2",
-          activity:
-            "Sigiriya → Kandy. Visit Dambulla Cave Temple, spice gardens. Evening cultural show and Temple of the Tooth. Overnight in Kandy.",
-        },
-        {
-          time: "Day 3",
-          activity:
-            "Kandy → Ella via Nuwara Eliya. Tea factory visit, waterfalls. Amazing train ride Nanuoya to Ella through stunning mountain landscapes. Overnight in Ella.",
-        },
-        {
-          time: "Day 4",
-          activity:
-            "Ella exploration: Little Adam's Peak, Nine Arch Bridge. Transfer to Yala. Overnight near Yala National Park.",
-        },
-        {
-          time: "Day 5",
-          activity:
-            "Yala National Park safari (elephants, leopards, wildlife). Transfer to South Coast (Mirissa/Weligama). Overnight at beach hotel.",
-        },
-        {
-          time: "Day 6",
-          activity:
-            "Morning whale watching session. Beach activities and relaxation. Overnight at beach hotel.",
-        },
-        {
-          time: "Day 7",
-          activity:
-            "Galle Fort visit (UNESCO World Heritage). Madu River boat safari. Transfer to Colombo or Airport.",
-        },
-      ],
+      extras: [],
     },
   ];
 
@@ -535,17 +605,15 @@ const PackagesContent = () => {
           <div className={`animate-in-up ${isVisible ? "animate-in-up" : ""}`}>
             <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white text-sm font-medium mb-8">
               <Calendar className="w-4 h-4 mr-2 animate-pulse" />
-              Premium Sri Lankan Adventures
+              {t("packages.hero.badge")}
             </div>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
               <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
-                Complete Tour Packages
+                {t("packages.hero.title")}
               </span>
             </h1>
             <p className="text-xl sm:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-12">
-              From single-day excursions to comprehensive week-long adventures.
-              Discover the best of Sri Lanka with our expertly crafted tour
-              packages.
+              {t("packages.hero.subtitle")}
             </p>
           </div>
         </div>
@@ -559,7 +627,7 @@ const PackagesContent = () => {
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
                 <Clock className="w-5 h-5 mr-2 text-emerald-600" />
-                Tour Duration
+                {t("packages.tourDuration")}
               </h3>
               <div className="flex flex-wrap gap-3">
                 {durations.map((duration) => (
@@ -582,7 +650,7 @@ const PackagesContent = () => {
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
                 <MapPin className="w-5 h-5 mr-2 text-emerald-600" />
-                Tour Category
+                {t("packages.tourCategory")}
               </h3>
               <div className="flex flex-wrap gap-3">
                 {categories.map((category) => (
@@ -626,10 +694,10 @@ const PackagesContent = () => {
                     {/* Duration Badge */}
                     <div className="absolute top-6 right-6 bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium">
                       {pkg.duration === "1day"
-                        ? "1 Day"
+                        ? t("packages.duration.oneDay")
                         : pkg.duration === "2day"
-                        ? "2 Days"
-                        : "7 Days"}
+                        ? t("packages.duration.twoDays")
+                        : t("packages.duration.sevenDays")}
                     </div>
 
                     {/* Rating */}
@@ -649,10 +717,10 @@ const PackagesContent = () => {
                     <div className="flex items-start justify-between mb-4">
                       <div>
                         <h3 className="text-2xl font-bold text-gray-900 group-hover:text-emerald-600 transition-colors duration-300">
-                          {pkg.name}
+                          {getTourName(pkg.id)}
                         </h3>
                         <p className="text-emerald-600 font-medium text-sm">
-                          {pkg.subtitle}
+                          {getTourSubtitle(pkg.id)}
                         </p>
                       </div>
                     </div>
@@ -663,10 +731,10 @@ const PackagesContent = () => {
                         <Clock className="w-4 h-4 mr-1" />
                         <span>
                           {pkg.duration === "1day"
-                            ? "1 Day"
+                            ? t("packages.duration.oneDay")
                             : pkg.duration === "2day"
-                            ? "2 Days"
-                            : "7 Days"}
+                            ? t("packages.duration.twoDays")
+                            : t("packages.duration.sevenDays")}
                         </span>
                       </div>
                     </div>
@@ -675,7 +743,7 @@ const PackagesContent = () => {
                     <div className="mb-6">
                       <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
                         <Camera className="w-4 h-4 mr-2 text-emerald-600" />
-                        Tour Highlights
+                        {t("packages.tourHighlights")}
                       </h4>
                       <div className="space-y-2">
                         {pkg.highlights.slice(0, 4).map((highlight, idx) => (
@@ -688,7 +756,8 @@ const PackagesContent = () => {
                         ))}
                         {pkg.highlights.length > 4 && (
                           <div className="text-sm text-emerald-600 font-medium">
-                            +{pkg.highlights.length - 4} more highlights
+                            +{pkg.highlights.length - 4}{" "}
+                            {t("packages.moreHighlights")}
                           </div>
                         )}
                       </div>
@@ -698,7 +767,7 @@ const PackagesContent = () => {
                     <div className="mb-8">
                       <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
                         <Check className="w-4 h-4 mr-2 text-green-600" />
-                        What's Included
+                        {t("packages.whatsIncluded")}
                       </h4>
                       <div className="space-y-2">
                         {pkg.included.slice(0, 3).map((item, idx) => (
@@ -714,7 +783,8 @@ const PackagesContent = () => {
                         ))}
                         {pkg.included.length > 3 && (
                           <div className="text-sm text-emerald-600 font-medium">
-                            +{pkg.included.length - 3} more included
+                            +{pkg.included.length - 3}{" "}
+                            {t("packages.moreIncluded")}
                           </div>
                         )}
                       </div>
@@ -725,7 +795,7 @@ const PackagesContent = () => {
                       <div className="mb-8">
                         <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
                           <Gift className="w-4 h-4 mr-2 text-orange-600" />
-                          Optional Extras
+                          {t("packages.optionalExtras")}
                         </h4>
                         <div className="space-y-2">
                           {pkg.extras.map((extra, idx) => (
@@ -746,10 +816,10 @@ const PackagesContent = () => {
                     {/* Action Buttons */}
                     <div className="space-y-3">
                       <button
-                        onClick={() => handleWhatsAppClick(pkg.name)}
+                        onClick={() => handleWhatsAppClick(getTourName(pkg.id))}
                         className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform group-hover:scale-105 flex items-center justify-center space-x-2 shadow-lg"
                       >
-                        <span>Book Now via WhatsApp</span>
+                        <span>{t("packages.bookNowWhatsApp")}</span>
                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                       </button>
                     </div>
@@ -765,18 +835,16 @@ const PackagesContent = () => {
       <section className="py-20 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
-            Need a Custom Tour Package?
+            {t("packages.needCustomTour")}
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-            Can't find exactly what you're looking for? Let us create a
-            personalized itinerary that perfectly matches your interests,
-            schedule, and budget.
+            {t("packages.discoverBestSriLanka")}
           </p>
           <button
             onClick={() => handleWhatsAppClick("Custom Tour Package")}
             className="bg-white text-emerald-600 hover:bg-gray-100 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
           >
-            Plan My Custom Tour
+            {t("packages.planCustomTour")}
           </button>
         </div>
       </section>

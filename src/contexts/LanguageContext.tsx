@@ -512,6 +512,58 @@ type TranslationKeys =
   | "packages.common.noResults"
   | "packages.common.tryDifferent"
   | "packages.common.filters"
+  | "packages.hero.title"
+  | "packages.hero.subtitle"
+  | "packages.hero.badge"
+  | "packages.tourDuration"
+  | "packages.tourCategory"
+  | "packages.tourHighlights"
+  | "packages.whatsIncluded"
+  | "packages.optionalExtras"
+  | "packages.bookNowWhatsApp"
+  | "packages.needCustomTour"
+  | "packages.planCustomTour"
+  | "packages.premiumSriLankanAdventures"
+  | "packages.completeTourPackages"
+  | "packages.discoverBestSriLanka"
+  | "packages.expertlyCraftedTours"
+  | "packages.moreHighlights"
+  | "packages.moreIncluded"
+  | "packages.duration.oneDay"
+  | "packages.duration.twoDays"
+  | "packages.duration.sevenDays"
+  | "packages.tours.ella.name"
+  | "packages.tours.ella.subtitle"
+  | "packages.tours.galle.name"
+  | "packages.tours.galle.subtitle"
+  | "packages.tours.colombo.name"
+  | "packages.tours.colombo.subtitle"
+  | "packages.tours.kandy.name"
+  | "packages.tours.kandy.subtitle"
+  | "packages.tours.sigiriya.name"
+  | "packages.tours.sigiriya.subtitle"
+  | "packages.tours.yala.name"
+  | "packages.tours.yala.subtitle"
+  | "packages.tours.ellaYala.name"
+  | "packages.tours.ellaYala.subtitle"
+  | "packages.tours.mirissa.name"
+  | "packages.tours.mirissa.subtitle"
+  | "packages.tours.bentota.name"
+  | "packages.tours.bentota.subtitle"
+  | "packages.tours.unawatuna.name"
+  | "packages.tours.unawatuna.subtitle"
+  | "packages.tours.trincomalee.name"
+  | "packages.tours.trincomalee.subtitle"
+  | "packages.tours.arugam.name"
+  | "packages.tours.arugam.subtitle"
+  | "packages.tours.negombo.name"
+  | "packages.tours.negombo.subtitle"
+  | "packages.tours.gold.name"
+  | "packages.tours.gold.subtitle"
+  | "packages.tours.silva.name"
+  | "packages.tours.silva.subtitle"
+  | "packages.tours.grand.name"
+  | "packages.tours.grand.subtitle"
   // Adventure Page
   | "adventure.filters.allAdventures"
   | "adventure.filters.hikingTrekking"
@@ -1089,6 +1141,60 @@ const translations: { [lang: string]: TranslationMap } = {
     "packages.common.noResults": "No tours found",
     "packages.common.tryDifferent": "Try different filters",
     "packages.common.filters": "filters",
+    "packages.hero.title": "Complete Tour Packages",
+    "packages.hero.subtitle":
+      "From single-day excursions to comprehensive week-long adventures. Discover the best of Sri Lanka with our expertly crafted tour packages.",
+    "packages.hero.badge": "Premium Sri Lankan Adventures",
+    "packages.tourDuration": "Tour Duration",
+    "packages.tourCategory": "Tour Category",
+    "packages.tourHighlights": "Tour Highlights",
+    "packages.whatsIncluded": "What's Included",
+    "packages.optionalExtras": "Optional Extras",
+    "packages.bookNowWhatsApp": "Book Now via WhatsApp",
+    "packages.needCustomTour": "Need a Custom Tour Package?",
+    "packages.planCustomTour": "Plan My Custom Tour",
+    "packages.premiumSriLankanAdventures": "Premium Sri Lankan Adventures",
+    "packages.completeTourPackages": "Complete Tour Packages",
+    "packages.discoverBestSriLanka":
+      "Discover the best of Sri Lanka with our expertly crafted tour packages.",
+    "packages.expertlyCraftedTours": "Expertly crafted tour packages.",
+    "packages.moreHighlights": "more highlights",
+    "packages.moreIncluded": "more included",
+    "packages.duration.oneDay": "1 Day",
+    "packages.duration.twoDays": "2 Days",
+    "packages.duration.sevenDays": "7 Days",
+    "packages.tours.ella.name": "Ella Excursion",
+    "packages.tours.ella.subtitle": "Foggy City Adventure",
+    "packages.tours.galle.name": "Galle Tour",
+    "packages.tours.galle.subtitle": "Dutch Fort Heritage",
+    "packages.tours.colombo.name": "Colombo City Tour",
+    "packages.tours.colombo.subtitle": "Modern Capital Experience",
+    "packages.tours.kandy.name": "Kandy Excursions",
+    "packages.tours.kandy.subtitle": "Ancient City of Kandy",
+    "packages.tours.sigiriya.name": "Sigiriya Excursion",
+    "packages.tours.sigiriya.subtitle": "UNESCO World Wonder",
+    "packages.tours.yala.name": "Udawalawe or Yala Safari",
+    "packages.tours.yala.subtitle": "Wildlife National Park",
+    "packages.tours.ellaYala.name": "Ella & Yala Combo",
+    "packages.tours.ellaYala.subtitle": "Mountains & Wildlife",
+    "packages.tours.mirissa.name": "Mirissa Whale Watching",
+    "packages.tours.mirissa.subtitle": "Giant Blue Whales & Dolphins",
+    "packages.tours.bentota.name": "Bentota Beach Adventure",
+    "packages.tours.bentota.subtitle": "Water Sports & Relaxation",
+    "packages.tours.unawatuna.name": "Unawatuna Beach Paradise",
+    "packages.tours.unawatuna.subtitle": "Golden Sands & Coral Reefs",
+    "packages.tours.trincomalee.name": "Trincomalee Beach & Culture",
+    "packages.tours.trincomalee.subtitle": "East Coast Heritage",
+    "packages.tours.arugam.name": "Arugam Bay Surfing",
+    "packages.tours.arugam.subtitle": "World-Class Surf Destination",
+    "packages.tours.negombo.name": "Negombo Beach & Lagoon",
+    "packages.tours.negombo.subtitle": "Airport Gateway Paradise",
+    "packages.tours.gold.name": "Gold Tour: Ella & Sigiriya",
+    "packages.tours.gold.subtitle": "Mountains to Ancient Wonders",
+    "packages.tours.silva.name": "Silva Tour: Kandy & Ella",
+    "packages.tours.silva.subtitle": "Cultural Heritage & Nature",
+    "packages.tours.grand.name": "Grand Sri Lanka Discovery",
+    "packages.tours.grand.subtitle": "Complete Island Experience",
 
     // Adventure Page
     "adventure.filters.allAdventures": "All Adventures",
@@ -1117,7 +1223,6 @@ const translations: { [lang: string]: TranslationMap } = {
     "contact.info.businessHours.title": "Business Hours",
     "contact.info.businessHours.description":
       "Extended hours for your convenience",
-    
 
     // Contact Form Additional
     "contact.form.fullName": "Full Name",
@@ -1694,6 +1799,61 @@ const translations: { [lang: string]: TranslationMap } = {
     "packages.common.noResults": "Туры не найдены",
     "packages.common.tryDifferent": "Попробуйте другие фильтры",
     "packages.common.filters": "фильтры",
+    "packages.hero.title": "Полные туристические пакеты",
+    "packages.hero.subtitle":
+      "От однодневных экскурсий до комплексных недельных приключений. Откройте для себя лучшее из Шри-Ланки с нашими профессионально созданными туристическими пакетами.",
+    "packages.hero.badge": "Премиум приключения Шри-Ланки",
+    "packages.tourDuration": "Продолжительность тура",
+    "packages.tourCategory": "Категория тура",
+    "packages.tourHighlights": "Особенности тура",
+    "packages.whatsIncluded": "Что включено",
+    "packages.optionalExtras": "Дополнительные опции",
+    "packages.bookNowWhatsApp": "Забронировать через WhatsApp",
+    "packages.needCustomTour": "Нужен индивидуальный тур-пакет?",
+    "packages.planCustomTour": "Спланировать мой индивидуальный тур",
+    "packages.premiumSriLankanAdventures": "Премиум приключения Шри-Ланки",
+    "packages.completeTourPackages": "Полные туристические пакеты",
+    "packages.discoverBestSriLanka":
+      "Откройте для себя лучшее из Шри-Ланки с нашими профессионально созданными туристическими пакетами.",
+    "packages.expertlyCraftedTours":
+      "Профессионально созданные туристические пакеты.",
+    "packages.moreHighlights": "еще особенностей",
+    "packages.moreIncluded": "еще включено",
+    "packages.duration.oneDay": "1 день",
+    "packages.duration.twoDays": "2 дня",
+    "packages.duration.sevenDays": "7 дней",
+    "packages.tours.ella.name": "Экскурсия в Эллу",
+    "packages.tours.ella.subtitle": "Приключение в туманном городе",
+    "packages.tours.galle.name": "Тур по Галле",
+    "packages.tours.galle.subtitle": "Наследие голландского форта",
+    "packages.tours.colombo.name": "Городской тур по Коломбо",
+    "packages.tours.colombo.subtitle": "Опыт современной столицы",
+    "packages.tours.kandy.name": "Экскурсии в Канди",
+    "packages.tours.kandy.subtitle": "Древний город Канди",
+    "packages.tours.sigiriya.name": "Экскурсия в Сигирию",
+    "packages.tours.sigiriya.subtitle": "Чудо света ЮНЕСКО",
+    "packages.tours.yala.name": "Сафари в Удавалаве или Яле",
+    "packages.tours.yala.subtitle": "Национальный парк дикой природы",
+    "packages.tours.ellaYala.name": "Комбо Элла и Яла",
+    "packages.tours.ellaYala.subtitle": "Горы и дикая природа",
+    "packages.tours.mirissa.name": "Наблюдение за китами в Мириссе",
+    "packages.tours.mirissa.subtitle": "Гигантские синие киты и дельфины",
+    "packages.tours.bentota.name": "Пляжное приключение в Бентоте",
+    "packages.tours.bentota.subtitle": "Водные виды спорта и релаксация",
+    "packages.tours.unawatuna.name": "Пляжный рай Унаватуна",
+    "packages.tours.unawatuna.subtitle": "Золотые пески и коралловые рифы",
+    "packages.tours.trincomalee.name": "Пляж и культура Тринкомали",
+    "packages.tours.trincomalee.subtitle": "Наследие восточного побережья",
+    "packages.tours.arugam.name": "Серфинг в Аругам-Бей",
+    "packages.tours.arugam.subtitle": "Мирового класса серфинг-направление",
+    "packages.tours.negombo.name": "Пляж и лагуна Негомбо",
+    "packages.tours.negombo.subtitle": "Рай у ворот аэропорта",
+    "packages.tours.gold.name": "Золотой тур: Элла и Сигирия",
+    "packages.tours.gold.subtitle": "От гор к древним чудесам",
+    "packages.tours.silva.name": "Тур Сильва: Канди и Элла",
+    "packages.tours.silva.subtitle": "Культурное наследие и природа",
+    "packages.tours.grand.name": "Великое открытие Шри-Ланки",
+    "packages.tours.grand.subtitle": "Полный островной опыт",
 
     // Adventure Page
     "adventure.filters.allAdventures": "Все приключения",
@@ -1724,7 +1884,6 @@ const translations: { [lang: string]: TranslationMap } = {
     "contact.info.businessHours.title": "Часы работы",
     "contact.info.businessHours.description":
       "Расширенные часы для вашего удобства",
-    
 
     // Contact Form Additional
     "contact.form.fullName": "Полное имя",
