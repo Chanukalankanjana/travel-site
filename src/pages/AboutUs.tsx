@@ -16,8 +16,6 @@ import {
   MessageCircle,
 } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 
 export default function AboutPage() {
   const { t, currentLanguage } = useLanguage();
@@ -66,6 +64,8 @@ export default function AboutPage() {
     const number = whatsappNumbers[currentLanguage.code];
     window.open(`https://wa.me/${number}`, "_blank");
   };
+
+  const phoneDigits = currentLanguage.code === "ru" ? "94777654321" : "94771234567";
 
   const stats = [
     {
@@ -177,7 +177,6 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
       <section className="relative min-h-[80vh] flex items-center overflow-hidden pt-28 pb-16">
         {/* Background Image */}
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-900 via-teal-900 to-cyan-900"></div>
@@ -412,7 +411,7 @@ export default function AboutPage() {
               <span>{t("hero.whatsapp")}</span>
             </button>
             <a
-              href="tel:+94771234567"
+              href={`tel:+${phoneDigits}`}
               className="px-8 py-4 bg-white text-emerald-600 hover:bg-gray-100 font-semibold rounded-lg transition-colors duration-300 flex items-center justify-center space-x-2"
             >
               <Phone className="w-5 h-5" />
@@ -421,7 +420,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      <Footer />
     </div>
   );
 }

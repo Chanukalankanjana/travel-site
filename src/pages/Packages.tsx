@@ -1,9 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { LanguageProvider } from "../contexts/LanguageContext";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+ 
 import {
   Clock,
   Star,
@@ -35,8 +33,8 @@ const PackagesContent = () => {
     const number = whatsappNumbers[currentLanguage.code];
     const message = encodeURIComponent(
       currentLanguage.code === "en"
-        ? `Hello! I'm interested in the ${packageName} tour package. Could you provide more details and availability?`
-        : `Привет! Меня интересует тур "${packageName}". Можете предоставить больше информации и доступность?`
+        ? `Hello! I'm interested in the ${packageName}. Could you provide more details and availability?`
+        : `Привет! Меня интересует тур ${packageName}. Можете предоставить больше информации и доступность?`
     );
     window.open(`https://wa.me/${number}?text=${message}`, "_blank");
   };
@@ -610,8 +608,7 @@ const PackagesContent = () => {
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {filteredPackages.map((pkg, index) => {
-              const BadgeIcon = pkg.badgeIcon;
+            {filteredPackages.map((pkg) => {
               return (
                 <div
                   key={pkg.id}
@@ -776,9 +773,7 @@ const PackagesContent = () => {
             schedule, and budget.
           </p>
           <button
-            onClick={() =>
-              handleWhatsAppClick("Custom Tour Package", "Custom Pricing")
-            }
+            onClick={() => handleWhatsAppClick("Custom Tour Package")}
             className="bg-white text-emerald-600 hover:bg-gray-100 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
           >
             Plan My Custom Tour
@@ -791,13 +786,9 @@ const PackagesContent = () => {
 
 const PackagesPage = () => {
   return (
-    <LanguageProvider>
-      <div className="min-h-screen">
-        <Header />
-        <PackagesContent />
-        <Footer />
-      </div>
-    </LanguageProvider>
+    <div className="min-h-screen">
+      <PackagesContent />
+    </div>
   );
 };
 

@@ -21,9 +21,11 @@ import {
   MessageCircle,
 } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
+import { useNavigation } from "../contexts/NavigationContext";
 
 function AdventuresPageContent() {
   const { t } = useLanguage();
+  const { navigateToDestination, navigateToPackages } = useNavigation();
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedDifficulty, setSelectedDifficulty] = useState("all");
   const [sortBy, setSortBy] = useState("popular");
@@ -376,10 +378,29 @@ function AdventuresPageContent() {
     window.open("https://wa.me/94771234567", "_blank");
   };
 
+  const adventureToDestinationMap: Record<string, string> = {
+    "Yala Leopard Safari": "5",
+    "Mirissa Whale Watching": "6",
+    "Adam's Peak Sacred Climb": "9",
+    "White Water Rafting Kitulgala": "10",
+    "Ella Rock Sunrise Trek": "11",
+    "Knuckles Range Expedition": "12",
+    "Horton Plains World's End": "13",
+  };
+
+  const handleArrowClick = (adventureName: string) => {
+    const destId = adventureToDestinationMap[adventureName];
+    if (destId) {
+      navigateToDestination(destId);
+    } else {
+      navigateToPackages();
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden pt-28 pb-16">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 bg-gradient-to-br from-emerald-900 via-teal-900 to-cyan-900"></div>
         <div
@@ -662,7 +683,10 @@ function AdventuresPageContent() {
                       <Calendar className="w-4 h-4" />
                       <span>Book Now</span>
                     </button>
-                    <button className="px-4 py-3 border border-gray-300 hover:border-emerald-500 text-gray-700 hover:text-emerald-600 font-semibold rounded-lg transition-colors duration-300 flex items-center justify-center">
+                    <button
+                      onClick={() => handleArrowClick(adventure.name)}
+                      className="px-4 py-3 border border-gray-300 hover:border-emerald-500 text-gray-700 hover:text-emerald-600 font-semibold rounded-lg transition-colors duration-300 flex items-center justify-center"
+                    >
                       <ArrowRight className="w-4 h-4" />
                     </button>
                   </div>

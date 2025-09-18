@@ -2,6 +2,7 @@
 
 import type React from "react";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import {
   Mail,
   Phone,
@@ -19,7 +20,26 @@ import {
 import { useLanguage } from "../contexts/LanguageContext";
 
 const ContactPageContent = () => {
-  const { t } = useLanguage();
+  const { t, currentLanguage } = useLanguage();
+  const phoneNumber = currentLanguage.code === "ru" ? "+94 77 765 4321" : "+94 77 123 4567";
+  const phoneDigits = currentLanguage.code === "ru" ? "94777654321" : "94771234567";
+  const labels = currentLanguage.code === "ru"
+    ? {
+        whatsapp: "WhatsApp",
+        callNow: "Позвонить",
+        address1: "123 Галле-роуд",
+        address2: "Коломбо 03, Шри-Ланка",
+        weekdays: "Пн - Сб: 8:00 - 20:00",
+        sunday: "Вс: 9:00 - 18:00",
+      }
+    : {
+        whatsapp: "WhatsApp",
+        callNow: "Call Now",
+        address1: "123 Galle Road",
+        address2: "Colombo 03, Sri Lanka",
+        weekdays: "Mon - Sat: 8:00 AM - 8:00 PM",
+        sunday: "Sunday: 9:00 AM - 6:00 PM",
+      };
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -30,6 +50,11 @@ const ContactPageContent = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+
+  const SERVICE_ID = "service_9oxqn8s" as const;
+  const TEMPLATE_ID = "template_nqy4167" as const;
+  const PUBLIC_KEY = "CnVG5eSOCmzCH7IvZ" as const;
 
   const handleInputChange = (
     e: React.ChangeEvent<
@@ -45,33 +70,47 @@ const ContactPageContent = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitError(null);
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    try {
+      const templateParams = {
+        from_name: formData.name,
+        reply_to: formData.email,
+        phone: formData.phone,
+        subject: formData.subject,
+        message: formData.message,
+        tour_type: formData.tourType,
+      } as Record<string, unknown>;
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
 
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: "",
-        tourType: "",
-      });
-    }, 3000);
+      setIsSubmitted(true);
+
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+          tourType: "",
+        });
+      }, 3000);
+    } catch (err) {
+      setSubmitError("Failed to send. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
     {
       icon: Phone,
       titleKey: "contact.info.phone.title",
-      details: ["+94 77 123 4567", "+94 77 765 4321"],
+      details: [phoneNumber],
       descriptionKey: "contact.info.phone.description",
     },
     {
@@ -83,13 +122,13 @@ const ContactPageContent = () => {
     {
       icon: MapPin,
       titleKey: "contact.info.office.title",
-      details: ["123 Galle Road", "Colombo 03, Sri Lanka"],
+      details: [labels.address1, labels.address2],
       descriptionKey: "contact.info.office.description",
     },
     {
       icon: Clock,
       titleKey: "contact.info.businessHours.title",
-      details: ["Mon - Sat: 8:00 AM - 8:00 PM", "Sunday: 9:00 AM - 6:00 PM"],
+      details: [labels.weekdays, labels.sunday],
       descriptionKey: "contact.info.businessHours.description",
     },
   ];
@@ -200,6 +239,11 @@ const ContactPageContent = () => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {submitError && (
+                    <div className="text-red-600 text-sm text-center font-medium">
+                      {submitError}
+                    </div>
+                  )}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label
@@ -288,7 +332,7 @@ const ContactPageContent = () => {
                             {t("contact.form.placeholders.tourType")}
                           </option>
                           {tourTypes.map((type, index) => (
-                            <option key={index} value={type}>
+                            <option key={index} value={t(type)}>
                               {t(type)}
                             </option>
                           ))}
@@ -430,28 +474,28 @@ const ContactPageContent = () => {
                 </p>
                 <div className="space-y-4">
                   <a
-                    href="https://wa.me/94771234567"
+                    href={`https://wa.me/${phoneDigits}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-3 bg-white/20 backdrop-blur-sm rounded-xl p-4 hover:bg-white/30 transition-colors duration-200"
                   >
                     <MessageCircle className="w-6 h-6" />
                     <div>
-                      <div className="font-semibold">WhatsApp</div>
+                      <div className="font-semibold">{labels.whatsapp}</div>
                       <div className="text-sm text-white/80">
-                        +94 77 123 4567
+                        {phoneNumber}
                       </div>
                     </div>
                   </a>
                   <a
-                    href="tel:+94771234567"
+                    href={`tel:+${phoneDigits}`}
                     className="flex items-center space-x-3 bg-white/20 backdrop-blur-sm rounded-xl p-4 hover:bg-white/30 transition-colors duration-200"
                   >
                     <Phone className="w-6 h-6" />
                     <div>
-                      <div className="font-semibold">Call Now</div>
+                      <div className="font-semibold">{labels.callNow}</div>
                       <div className="text-sm text-white/80">
-                        +94 77 123 4567
+                        {phoneNumber}
                       </div>
                     </div>
                   </a>
@@ -461,14 +505,14 @@ const ContactPageContent = () => {
               {/* Map Placeholder */}
               <div className="bg-white rounded-3xl shadow-xl p-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                  Visit Our Office
+                  {t("contact.info.office.title")}
                 </h3>
                 <div className="bg-gray-100 rounded-2xl h-64 flex items-center justify-center">
                   <div className="text-center">
                     <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-                    <p className="text-gray-600 font-medium">Interactive Map</p>
+                    <p className="text-gray-600 font-medium">{t("contact.info.office.description")}</p>
                     <p className="text-sm text-gray-500">
-                      123 Galle Road, Colombo 03
+                      {labels.address1}, {labels.address2}
                     </p>
                   </div>
                 </div>

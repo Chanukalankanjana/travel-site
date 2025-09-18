@@ -376,7 +376,7 @@ Mirissa is also known for its surfing spots, particularly at Weligama Bay, which
       category: "heritage",
       location: "North Central Province",
       coordinates: { lat: 8.3114, lng: 80.4037 },
-      mainImage: "/temple.jpg",
+      mainImage: "/Distination/anuradhapura.jpg",
       gallery: [
         "/temple.jpg",
         "/temple-sacred.jpg",
@@ -480,6 +480,183 @@ The city is also a gateway to Horton Plains National Park, home to World's End, 
         "Horton Plains",
       ],
     },
+    "9": {
+      id: 9,
+      name: "Adam's Peak (Sri Pada)",
+      category: "hiking",
+      location: "Central Province",
+      coordinates: { lat: 6.8097, lng: 80.4994 },
+      mainImage: "/temple-sacred.jpg",
+      gallery: [
+        "/temple-sacred.jpg",
+        "/temple.jpg",
+        "/cultural.jpg",
+        "/distEella.jpg",
+      ],
+      shortDescription:
+        "Sacred night hike to the 2,243m summit for a breathtaking sunrise and spiritual experience.",
+      fullDescription:
+        `Adam's Peak, also known as Sri Pada, is a revered mountain famous for its summit footprint and spectacular sunrise. The traditional pilgrimage route climbs thousands of steps through tea country and cloud forest. This hike is challenging but achievable for most active travelers, with rest stops and tea stalls along the way.`,
+      highlights: [
+        "Sacred pilgrimage site",
+        "Sunrise above the clouds",
+        "Ancient stone steps",
+        "Tea country views",
+        "Night hike experience",
+        "Local culture",
+      ],
+      bestTime: "December to May",
+      difficulty: "Challenging",
+      groupSize: "2-12 people",
+      duration: "1 day (night hike)",
+      price: 120,
+      rating: 4.9,
+      reviews: 342,
+      included: [
+        "Professional guide",
+        "Safety equipment",
+        "Tea/refreshments",
+        "Transportation",
+      ],
+      notIncluded: ["Entrance donations", "Meals", "Personal expenses"],
+      nearbyAttractions: [
+        "Nallathanniya",
+        "Hatton Tea Estates",
+        "Maskeliya Reservoir",
+      ],
+    },
+    "10": {
+      id: 10,
+      name: "White Water Rafting – Kitulgala",
+      category: "water",
+      location: "Sabaragamuwa Province",
+      coordinates: { lat: 6.9902, lng: 80.4153 },
+      mainImage: "/adventureWild.jpg",
+      gallery: [
+        "/adventureWild.jpg",
+        "/Sri-Lanka-wildlife.webp",
+        "/wildlife.jpg",
+      ],
+      shortDescription:
+        "Thrilling Grade 2–3 rapids on the Kelani River through lush rainforest scenery.",
+      fullDescription:
+        `Kitulgala is Sri Lanka's white-water capital. After a safety briefing, you'll raft down the Kelani River tackling a series of fun rapids suitable for beginners and families. Between rapids, enjoy calm pools for swimming and rainforest views.`,
+      highlights: [
+        "Grade 2–3 rapids",
+        "Rainforest canyon",
+        "Swimming spots",
+        "Professional safety gear",
+        "Riverside lunch",
+      ],
+      bestTime: "May to December",
+      difficulty: "Moderate",
+      groupSize: "4-8 people",
+      duration: "Half day",
+      price: 85,
+      rating: 4.8,
+      reviews: 256,
+      included: [
+        "Rafting equipment",
+        "Guide & safety team",
+        "Lunch",
+        "Transport from base",
+      ],
+      notIncluded: ["Photos/videos", "Personal expenses"],
+      nearbyAttractions: ["Belilena Cave", "Filming sites", "Rainforest walks"],
+    },
+    "11": {
+      id: 11,
+      name: "Ella Rock Sunrise Trek",
+      category: "hiking",
+      location: "Uva Province",
+      coordinates: { lat: 6.8667, lng: 81.0464 },
+      mainImage: "/distEella.jpg",
+      gallery: ["/distEella.jpg", "/hicking.webp", "/tea.jpg"],
+      shortDescription:
+        "Pre-dawn trek through tea fields to panoramic sunrise views from Ella Rock.",
+      fullDescription:
+        `A classic Ella experience: start before dawn, follow rail tracks and tea trails, then climb to the rocky summit for incredible sunrise views over the hill country. Suitable for active travelers with a moderate fitness level.`,
+      highlights: [
+        "Sunrise panorama",
+        "Tea plantation trails",
+        "Local village paths",
+        "Rail track walking",
+      ],
+      bestTime: "December to March",
+      difficulty: "Moderate",
+      groupSize: "2-10 people",
+      duration: "Half day",
+      price: 65,
+      rating: 4.7,
+      reviews: 189,
+      included: ["Local guide", "Light breakfast", "Transfers"],
+      notIncluded: ["Park fees (if any)", "Personal expenses"],
+      nearbyAttractions: [
+        "Nine Arch Bridge",
+        "Little Adam's Peak",
+        "Ravana Falls",
+      ],
+    },
+    "12": {
+      id: 12,
+      name: "Knuckles Range Expedition",
+      category: "hiking",
+      location: "Central Province",
+      coordinates: { lat: 7.4431, lng: 80.7772 },
+      mainImage: "/culturalHeri.jpg",
+      gallery: ["/culturalHeri.jpg", "/cultural.jpg", "/tea.jpg"],
+      shortDescription:
+        "Two-day trek through UNESCO-listed cloud forests, peaks, and remote villages.",
+      fullDescription:
+        `The Knuckles Mountain Range offers rugged terrain, pristine cloud forests, and endemic wildlife. This two-day expedition includes camping or eco-lodge stays, guided summit attempts, and immersive nature trails.`,
+      highlights: [
+        "UNESCO biosphere",
+        "Cloud forest ecosystem",
+        "Mountain camping",
+        "Waterfalls & streams",
+        "Endemic flora & fauna",
+      ],
+      bestTime: "January to April",
+      difficulty: "Challenging",
+      groupSize: "4-8 people",
+      duration: "2 days",
+      price: 280,
+      rating: 4.8,
+      reviews: 167,
+      included: ["Camping gear", "Meals", "Expert guide", "Permits"],
+      notIncluded: ["Personal gear", "Tips"],
+      nearbyAttractions: ["Riverston", "Mini World's End", "Wasgamuwa"],
+    },
+    
+    "13": {
+      id: 13,
+      name: "Horton Plains – World's End",
+      category: "hiking",
+      location: "Central Province",
+      coordinates: { lat: 6.8018, lng: 80.8039 },
+      mainImage: "/wildlife.jpg",
+      gallery: ["/wildlife.jpg", "/beachRelax.jpg", "/tea.jpg"],
+      shortDescription:
+        "Full-day trek across montane grasslands to World's End and Baker's Falls.",
+      fullDescription:
+        `Horton Plains National Park is a unique highland plateau with sweeping grasslands and cloud forests. The loop trail visits World's End, a dramatic 870m escarpment, and the scenic Baker's Falls. Cool weather and clear mornings offer best views.`,
+      highlights: [
+        "World's End viewpoint",
+        "Baker's Falls",
+        "Montane grasslands",
+        "Endemic wildlife",
+      ],
+      bestTime: "January to March",
+      difficulty: "Moderate",
+      groupSize: "2-12 people",
+      duration: "Full day",
+      price: 140,
+      rating: 4.8,
+      reviews: 201,
+      included: ["Park entrance", "Guide service", "Packed lunch", "Transport"],
+      notIncluded: ["Warm clothing", "Personal expenses"],
+      nearbyAttractions: ["Nuwara Eliya", "Pedro Tea Estate", "Gregory Lake"],
+    },
   };
 
   const destination = destinations[destinationId as keyof typeof destinations];
@@ -566,32 +743,6 @@ The city is also a gateway to Horton Plains National Park, home to World's End, 
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/40"></div>
-        </div>
-
-        {/* Header Content */}
-        <div className="absolute top-20 left-4 right-4 flex justify-between items-start">
-          <button
-            onClick={onNavigateBack}
-            className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-lg hover:bg-white/30 transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Destinations
-          </button>
-          <div className="flex space-x-2">
-            <button
-              onClick={() => setIsFavorite(!isFavorite)}
-              className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors"
-            >
-              <Heart
-                className={`w-5 h-5 ${
-                  isFavorite ? "fill-red-500 text-red-500" : ""
-                }`}
-              />
-            </button>
-            <button className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors">
-              <Share2 className="w-5 h-5" />
-            </button>
-          </div>
         </div>
 
         {/* Title Overlay */}

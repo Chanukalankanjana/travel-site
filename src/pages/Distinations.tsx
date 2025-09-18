@@ -37,7 +37,7 @@ export default function DestinationsPage({
     {
       id: 1,
       name: "Sigiriya Rock Fortress",
-      image: "/images/sigiriya.jpg",
+      image: "/sigiriya-rock.jpg",
       category: "heritage",
       duration: "2-3",
       price: 150,
@@ -59,7 +59,7 @@ export default function DestinationsPage({
     {
       id: 2,
       name: "Kandy Cultural Triangle",
-      image: "/images/kandy-temple.jpg",
+      image: "/Distination/kandy-cultural.jpg",
       category: "culture",
       duration: "2-3",
       price: 200,
@@ -81,7 +81,7 @@ export default function DestinationsPage({
     {
       id: 3,
       name: "Ella Hill Country",
-      image: "/images/ella-train.jpg",
+      image: "/Distination/Ella-country.jpg",
       category: "nature",
       duration: "2-3",
       price: 120,
@@ -103,7 +103,7 @@ export default function DestinationsPage({
     {
       id: 4,
       name: "Galle Dutch Fort",
-      image: "/images/galle-fort.jpg",
+      image: "/Distination/dutch-fort.jpg",
       category: "heritage",
       duration: "1",
       price: 80,
@@ -125,7 +125,7 @@ export default function DestinationsPage({
     {
       id: 5,
       name: "Yala National Park",
-      image: "/images/elephant-safari.jpg",
+      image: "/Distination/yala-national.jpg",
       category: "nature",
       duration: "1-2",
       price: 180,
@@ -147,7 +147,7 @@ export default function DestinationsPage({
     {
       id: 6,
       name: "Mirissa Beach",
-      image: "/images/beach-sunset.jpg",
+      image: "/Distination/mirissa-beach.jpg",
       category: "beaches",
       duration: "2-3",
       price: 100,
@@ -169,7 +169,7 @@ export default function DestinationsPage({
     {
       id: 7,
       name: "Anuradhapura Ancient City",
-      image: "/images/sigiriya.jpg",
+      image: "/Distination/anuradhapura.jpg",
       category: "heritage",
       duration: "1-2",
       price: 90,
@@ -191,7 +191,7 @@ export default function DestinationsPage({
     {
       id: 8,
       name: "Nuwara Eliya Tea Country",
-      image: "/images/tea-plantation.jpg",
+      image: "/tea.jpg",
       category: "nature",
       duration: "2-3",
       price: 110,

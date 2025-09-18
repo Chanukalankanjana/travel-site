@@ -55,7 +55,7 @@ export default function Header() {
               className="flex items-center space-x-2"
             >
               <div className="w-8 h-8 bg-[#faf9f9] rounded-lg flex items-center justify-center">
-                <img src="logo.png" alt="logo" />
+                <img src="/logo.png" alt="logo" />
               </div>
               <span
                 className={`text-xl font-bold ${

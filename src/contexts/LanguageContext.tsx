@@ -1117,6 +1117,7 @@ const translations: { [lang: string]: TranslationMap } = {
     "contact.info.businessHours.title": "Business Hours",
     "contact.info.businessHours.description":
       "Extended hours for your convenience",
+    
 
     // Contact Form Additional
     "contact.form.fullName": "Full Name",
@@ -1723,6 +1724,7 @@ const translations: { [lang: string]: TranslationMap } = {
     "contact.info.businessHours.title": "Часы работы",
     "contact.info.businessHours.description":
       "Расширенные часы для вашего удобства",
+    
 
     // Contact Form Additional
     "contact.form.fullName": "Полное имя",
