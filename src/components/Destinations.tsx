@@ -3,10 +3,12 @@
 import { useEffect, useState } from "react"
 import { Star, ArrowRight, MapPin } from "lucide-react"
 import { useLanguage } from "../contexts/LanguageContext"
+import { useNavigation } from "../contexts/NavigationContext"
 
 export default function Destinations() {
   const { t } = useLanguage()
   const [isVisible, setIsVisible] = useState(false)
+  const { navigateToDestination, navigateToDestinations } = useNavigation()
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -65,12 +67,21 @@ export default function Destinations() {
           {destinations.map((destination, index) => (
             <div
               key={destination.id}
-              className="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
+              className="group bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer"
+              onClick={() => navigateToDestination(destination.id)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault()
+                  navigateToDestination(destination.id)
+                }
+              }}
             >
               {/* Image */}
               <div className="relative h-64 overflow-hidden">
                 <img
-                  src={destination.image || "/placeholder.svg"}
+                  src={`${import.meta.env.BASE_URL}${(destination.image || "/placeholder.svg").replace(/^\//, "")}`}
                   alt={destination.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -121,7 +132,13 @@ export default function Destinations() {
                   </div>
                 </div>
                 <div className="flex items-center justify-between">
-                  <button className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium rounded-lg transition-colors duration-300">
+                  <button
+                    className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium rounded-lg transition-colors duration-300"
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      navigateToDestination(destination.id)
+                    }}
+                  >
                     View Details
                   </button>
                 </div>
@@ -132,7 +149,7 @@ export default function Destinations() {
 
         {/* View All Button */}
         <div className="text-center">
-          <button className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center space-x-2 mx-auto">
+          <button onClick={() => navigateToDestinations()} className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center space-x-2 mx-auto">
             <span>{t("destinations.viewAll")}</span>
             <ArrowRight className="w-5 h-5" />
           </button>

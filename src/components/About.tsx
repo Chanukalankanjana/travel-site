@@ -3,9 +3,11 @@
 import { useState, useEffect } from "react"
 import { Award, Users, MapPin, Shield, Target, Eye } from "lucide-react"
 import { useLanguage } from "../contexts/LanguageContext"
+import { useNavigation } from "../contexts/NavigationContext"
 
 export default function About() {
   const { t } = useLanguage()
+  const { navigateToAbout } = useNavigation()
   const [isVisible, setIsVisible] = useState(false)
   const [counters, setCounters] = useState({ experience: 0, clients: 0, tours: 0, guides: 0 })
 
@@ -104,7 +106,10 @@ export default function About() {
             <p className="text-xl text-gray-600 mb-6">{t("about.subtitle")}</p>
             <p className="text-gray-700 leading-relaxed mb-8 text-lg">{t("about.desc")}</p>
 
-            <button className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition-colors duration-300">
+            <button
+              onClick={() => navigateToAbout()}
+              className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition-colors duration-300"
+            >
               Learn More About Us
             </button>
           </div>

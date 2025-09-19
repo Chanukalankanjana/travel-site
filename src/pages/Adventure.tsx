@@ -24,11 +24,12 @@ import { useLanguage } from "../contexts/LanguageContext";
 import { useNavigation } from "../contexts/NavigationContext";
 
 function AdventuresPageContent() {
-  const { t } = useLanguage();
+  const { t, currentLanguage } = useLanguage();
+  const isRu = currentLanguage.code === "ru";
   const { navigateToDestination, navigateToPackages } = useNavigation();
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedDifficulty, setSelectedDifficulty] = useState("all");
-  const [sortBy, setSortBy] = useState("popular");
+  
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -63,7 +64,7 @@ function AdventuresPageContent() {
     {
       id: 1,
       name: "Adam's Peak Sacred Climb",
-      image: "/placeholder-s4klc.png",
+      image: "/adventure/adams-peak.jpg?cb=1",
       category: "hiking",
       difficulty: "challenging",
       duration: "1 Day",
@@ -101,7 +102,7 @@ function AdventuresPageContent() {
     {
       id: 2,
       name: "White Water Rafting Kitulgala",
-      image: "/placeholder-7mcpl.png",
+      image: "/adventure/kithulgala.jpg?cb=1",
       category: "water",
       difficulty: "moderate",
       duration: "Half Day",
@@ -139,7 +140,7 @@ function AdventuresPageContent() {
     {
       id: 3,
       name: "Ella Rock Sunrise Trek",
-      image: "/placeholder-ypggw.png",
+      image: "/adventure/ella-rock-hiking.png?cb=1",
       category: "hiking",
       difficulty: "moderate",
       duration: "Half Day",
@@ -172,7 +173,7 @@ function AdventuresPageContent() {
     {
       id: 4,
       name: "Yala Leopard Safari",
-      image: "/placeholder-jdcp0.png",
+      image: "/adventure/Sri-Lankan-leopard.jpg?cb=1",
       category: "wildlife",
       difficulty: "easy",
       duration: "Full Day",
@@ -211,7 +212,7 @@ function AdventuresPageContent() {
     {
       id: 5,
       name: "Knuckles Range Expedition",
-      image: "/placeholder-82sl3.png",
+      image: "/adventure/knuckles.webp?cb=1",
       category: "hiking",
       difficulty: "challenging",
       duration: "2 Days",
@@ -240,7 +241,7 @@ function AdventuresPageContent() {
     {
       id: 6,
       name: "Mirissa Whale Watching",
-      image: "/placeholder-owjal.png",
+      image: "/adventure/Mirissa-Whale.webp?cb=1",
       category: "water",
       difficulty: "easy",
       duration: "Half Day",
@@ -276,7 +277,7 @@ function AdventuresPageContent() {
     {
       id: 7,
       name: "Sigiriya Rock Climbing",
-      image: "/placeholder-z4dr9.png",
+      image: "/adventure/sigiriya.jpg?cb=1",
       category: "extreme",
       difficulty: "moderate",
       duration: "Half Day",
@@ -313,7 +314,7 @@ function AdventuresPageContent() {
     {
       id: 8,
       name: "Horton Plains World's End",
-      image: "/placeholder-i7zgc.png",
+      image: "/adventure/Horton-Plains-national.png?cb=1",
       category: "hiking",
       difficulty: "moderate",
       duration: "Full Day",
@@ -351,7 +352,159 @@ function AdventuresPageContent() {
     },
   ];
 
-  const filteredAdventures = adventures.filter((adventure) => {
+  const localizedAdventures = adventures.map((adventure) => {
+    if (!isRu) return adventure;
+    switch (adventure.id) {
+      case 1:
+        return {
+          ...adventure,
+          name: "Священное восхождение на Пик Адама",
+          location: "Центральная провинция",
+          duration: "1 день",
+          groupSize: "2–12 человек",
+          description:
+            "Отправьтесь в духовное путешествие на священную гору Пик Адама (Шри-Пада), высотой 2 243 м. Встретьте магический рассвет на вершине после ночного подъёма по древним паломническим тропам.",
+          highlights: [
+            "Священное место буддийского паломничества",
+            "Великолепные рассветные виды",
+            "Высота вершины 2 243 м",
+            "Древняя каменная лестница",
+            "Духовный опыт",
+            "Панорамы чайных плантаций",
+          ],
+        };
+      case 2:
+        return {
+          ...adventure,
+          name: "Рафтинг в Китулгале",
+          location: "Провинция Сабарагамува",
+          duration: "Полдня",
+          groupSize: "4–8 человек",
+          description:
+            "Преодолейте стремительные пороги реки Келани в Китулгале, знаменитой как место съёмок ‘Моста через реку Квай’. Подходит как новичкам, так и опытным рафтерам.",
+          highlights: [
+            "Пороги 2–3 категории",
+            "Приключение на реке Келани",
+            "Тропический дождевой лес",
+            "Место киносъёмок",
+            "Профессиональное снаряжение",
+            "Возможности для купания",
+          ],
+        };
+      case 3:
+        return {
+          ...adventure,
+          name: "Восход на Элла‑Рок",
+          location: "Провинция Ува",
+          duration: "Полдня",
+          groupSize: "2–10 человек",
+          description:
+            "Пройдите через зелёные чайные плантации и туманные горы к вершине Элла‑Рок. Восхититесь рассветными видами на волнистые холмы Хайлендса.",
+          highlights: [
+            "Панорамные виды холмистой страны",
+            "Тропы через чайные плантации",
+            "Рассветная фотосъёмка",
+            "Знакомство с местными деревнями",
+            "Прогулка вдоль железной дороги",
+            "Опыт облачного леса",
+          ],
+        };
+      case 4:
+        return {
+          ...adventure,
+          name: "Сафари на леопардов в Яле",
+          location: "Южная провинция",
+          duration: "Полный день",
+          groupSize: "2–6 человек",
+          description:
+            "Откройте для себя главный заповедник Шри‑Ланки с самой высокой плотностью леопардов в мире. Встретьте слонов, губачей и более 200 видов птиц в их естественной среде.",
+          highlights: [
+            "Самая высокая плотность леопардов в мире",
+            "Стада азиатских слонов",
+            "Встречи с губачами",
+            "200+ видов птиц",
+            "Древние скальные образования",
+            "Прибрежные ландшафты",
+          ],
+        };
+      case 5:
+        return {
+          ...adventure,
+          name: "Экспедиция в хребет Наклз",
+          location: "Центральная провинция",
+          duration: "2 дня",
+          groupSize: "4–8 человек",
+          description:
+            "Исследуйте объект всемирного наследия ЮНЕСКО — горный хребет Наклз с уникальным биоразнообразием, облачными лесами и сложными вершинами. Истинное приключение для опытных треккеров.",
+          highlights: [
+            "Объект Всемирного наследия ЮНЕСКО",
+            "Экосистемы облачных лесов",
+            "Эндемичные виды флоры и фауны",
+            "Горный кемпинг",
+            "Открытие водопадов",
+            "Проживание в деревнях",
+          ],
+        };
+      case 6:
+        return {
+          ...adventure,
+          name: "Наблюдение за китами в Мириссе",
+          location: "Южная провинция",
+          duration: "Полдня",
+          groupSize: "10–30 человек",
+          description:
+            "Наблюдайте за величественными синими китами и игривыми дельфинами у побережья Мириссы — лучшем месте Шри‑Ланки для морских сафари.",
+          highlights: [
+            "Встречи с синими китами",
+            "Стаи дельфинов",
+            "Наблюдение за кашалотами",
+            "Морская фотосъёмка",
+            "Побережные пейзажи",
+            "Знакомство с морской фауной",
+          ],
+        };
+      case 7:
+        return {
+          ...adventure,
+          name: "Подъём на скалу Сигирия",
+          location: "Центральная провинция",
+          duration: "Полдня",
+          groupSize: "2–15 человек",
+          description:
+            "Поднимитесь на древнюю скалу‑крепость Сигирия, преодолев 1 200 ступеней к руинам дворца на вершине. История, искусство и приключение в одном культовом подъёме.",
+          highlights: [
+            "Древние руины дворца",
+            "Знаменитая Зеркальная стена",
+            "Фрески Сигирии",
+            "Круговые виды с вершины",
+            "Археологические чудеса",
+            "Комплекс водных садов",
+          ],
+        };
+      case 8:
+        return {
+          ...adventure,
+          name: "Хортон‑Плейнс: Край Света",
+          location: "Центральная провинция",
+          duration: "Полный день",
+          groupSize: "2–12 человек",
+          description:
+            "Пройдите по уникальным высокогорным равнинам Хортон‑Плейнс к драматическому обрыву Край Света (870 м) с потрясающими видами на южные равнины.",
+          highlights: [
+            "Смотровая площадка Край Света",
+            "Водопад Бейкерс‑Фолс",
+            "Высокогорные равнины",
+            "Эндемичная дикая природа",
+            "Участки облачного леса",
+            "Наследие ЮНЕСКО",
+          ],
+        };
+      default:
+        return adventure;
+    }
+  });
+
+  const filteredAdventures = localizedAdventures.filter((adventure) => {
     const categoryMatch =
       selectedCategory === "all" || adventure.category === selectedCategory;
     const difficultyMatch =
@@ -360,19 +513,7 @@ function AdventuresPageContent() {
     return categoryMatch && difficultyMatch;
   });
 
-  const sortedAdventures = [...filteredAdventures].sort((a, b) => {
-    switch (sortBy) {
-      case "price-low":
-        return a.price - b.price;
-      case "price-high":
-        return b.price - a.price;
-      case "rating":
-        return b.rating - a.rating;
-      case "popular":
-      default:
-        return b.reviews - a.reviews;
-    }
-  });
+  const sortedAdventures = filteredAdventures;
 
   const handleWhatsAppClick = () => {
     window.open("https://wa.me/94771234567", "_blank");
@@ -550,30 +691,13 @@ function AdventuresPageContent() {
                   {t("adventure.difficulty.extreme")}
                 </option>
               </select>
-
-              {/* Sort Filter */}
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-                className="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
-              >
-                <option value="popular">{t("adventure.sort.popular")}</option>
-                <option value="rating">{t("adventure.sort.rating")}</option>
-                <option value="price-low">
-                  {t("adventure.sort.priceLow")}
-                </option>
-                <option value="price-high">
-                  {t("adventure.sort.priceHigh")}
-                </option>
-              </select>
             </div>
 
             <div className="text-sm text-gray-600">
-              Showing{" "}
-              <span className="font-semibold text-emerald-600">
-                {sortedAdventures.length}
-              </span>{" "}
-              adventures
+              {t("adventure.filters.showing").replace(
+                "{count}",
+                String(sortedAdventures.length)
+              )}
             </div>
           </div>
         </div>
@@ -591,97 +715,95 @@ function AdventuresPageContent() {
                 {/* Image */}
                 <div className="relative h-64 overflow-hidden">
                   <img
-                    src={adventure.image || "/placeholder.svg"}
+                    src={`${import.meta.env.BASE_URL}${(adventure.image || "/placeholder.svg").replace(/^\//, "")}`}
                     alt={adventure.name}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-
-                  {/* Category & Difficulty Badges */}
-                  <div className="absolute top-4 left-4 flex flex-col gap-2">
-                    <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-medium text-gray-800 capitalize">
-                      {adventure.category.replace("_", " ")}
-                    </span>
-                    <span
-                      className={`px-3 py-1 backdrop-blur-sm rounded-full text-xs font-medium ${
-                        adventure.difficulty === "easy"
-                          ? "bg-green-500/90 text-white"
-                          : adventure.difficulty === "moderate"
-                          ? "bg-yellow-500/90 text-white"
-                          : adventure.difficulty === "challenging"
-                          ? "bg-orange-500/90 text-white"
-                          : "bg-red-500/90 text-white"
-                      }`}
-                    >
-                      {adventure.difficulty}
-                    </span>
-                  </div>
 
                   {/* Heart Icon */}
                   <button className="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors duration-300">
                     <Heart className="w-5 h-5 text-white hover:text-red-400 transition-colors duration-300" />
                   </button>
 
-                  {/* Price */}
-                  <div className="absolute bottom-4 right-4 px-3 py-1 bg-emerald-600/90 backdrop-blur-sm rounded-full text-white font-semibold text-sm">
-                    ${adventure.price}
-                  </div>
                 </div>
 
                 {/* Content */}
                 <div className="p-6">
                   <div className="mb-4">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-emerald-600 transition-colors duration-300">
-                      {adventure.name}
-                    </h3>
-                    <div className="flex items-center justify-between text-sm text-gray-500 mb-2">
-                      <div className="flex items-center">
-                        <MapPin className="w-4 h-4 mr-1" />
-                        {adventure.location}
-                      </div>
-                      <div className="flex items-center">
-                        <Clock className="w-4 h-4 mr-1" />
-                        {adventure.duration}
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center">
-                        <Star className="w-4 h-4 text-yellow-400 mr-1" />
-                        <span className="font-semibold text-gray-900">
-                          {adventure.rating}
-                        </span>
-                        <span className="text-gray-500 text-sm ml-1">
-                          ({adventure.reviews} reviews)
-                        </span>
-                      </div>
-                      <div className="flex items-center text-sm text-gray-500">
-                        <Users className="w-4 h-4 mr-1" />
-                        {adventure.groupSize}
-                      </div>
-                    </div>
-                  </div>
+                    {(() => {
+                      const isRu = currentLanguage.code === "ru";
+                      const isYala = adventure.id === 4 || adventure.name === "Yala Leopard Safari";
+                      const name = isRu && isYala ? "Сафари на леопардов в Яле" : adventure.name;
+                      const location = isRu && isYala ? "Южная провинция" : adventure.location;
+                      const duration = isRu && isYala ? "Полный день" : adventure.duration;
+                      const groupSize = isRu && isYala ? "2–6 человек" : adventure.groupSize;
+                      const description =
+                        isRu && isYala
+                          ? "Откройте для себя главный заповедник Шри‑Ланки с самой высокой плотностью леопардов в мире. Встретьте слонов, губачей и более 200 видов птиц в их естественной среде."
+                          : adventure.description;
+                      const highlights =
+                        isRu && isYala
+                          ? [
+                              "Самая высокая плотность леопардов в мире",
+                              "Стада азиатских слонов",
+                              "Встречи с губачами",
+                              ...adventure.highlights.slice(3),
+                            ]
+                          : adventure.highlights;
 
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed line-clamp-3">
-                    {adventure.description}
-                  </p>
+                      return (
+                        <>
+                          <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-emerald-600 transition-colors duration-300">
+                            {name}
+                          </h3>
+                          <div className="flex items-center justify-between text-sm text-gray-500 mb-2">
+                            <div className="flex items-center">
+                              <MapPin className="w-4 h-4 mr-1" />
+                              {location}
+                            </div>
+                            <div className="flex items-center">
+                              <Clock className="w-4 h-4 mr-1" />
+                              {duration}
+                            </div>
+                          </div>
+                          <div className="flex items-center">
+                            <div className="flex items-center">
+                              <Star className="w-4 h-4 text-yellow-400 mr-1" />
+                              <span className="font-semibold text-gray-900">
+                                {adventure.rating}
+                              </span>
+                              <span className="text-gray-500 text-sm ml-1">
+                                ({adventure.reviews} {isRu ? "отзывов" : "reviews"})
+                              </span>
+                            </div>
+                          </div>
 
-                  {/* Highlights */}
-                  <div className="mb-6">
-                    <div className="flex flex-wrap gap-2">
-                      {adventure.highlights.slice(0, 3).map((highlight) => (
-                        <span
-                          key={highlight}
-                          className="px-2 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-full font-medium"
-                        >
-                          {highlight}
-                        </span>
-                      ))}
-                      {adventure.highlights.length > 3 && (
-                        <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full font-medium">
-                          +{adventure.highlights.length - 3} more
-                        </span>
-                      )}
-                    </div>
+                          <p className="text-gray-600 text-sm mb-4 leading-relaxed line-clamp-3">
+                            {description}
+                          </p>
+
+                          {/* Highlights */}
+                          <div className="mb-6">
+                            <div className="flex flex-wrap gap-2">
+                              {highlights.slice(0, 3).map((highlight) => (
+                                <span
+                                  key={highlight}
+                                  className="px-2 py-1 bg-emerald-50 text-emerald-700 text-xs rounded-full font-medium"
+                                >
+                                  {highlight}
+                                </span>
+                              ))}
+                              {highlights.length > 3 && (
+                                <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full font-medium">
+                                  +{highlights.length - 3} {isRu ? "еще" : "more"}
+                                </span>
+                              )}
+                            </div>
+                          </div>
+                        </>
+                      );
+                    })()}
                   </div>
 
                   {/* Action Buttons */}

@@ -1,9 +1,24 @@
 "use client"
 import { Star, ArrowRight, Crown, Zap, Heart } from "lucide-react"
 import { useLanguage } from "../contexts/LanguageContext"
+import { useNavigation } from "../contexts/NavigationContext"
 
 export default function Packages() {
-  const { t } = useLanguage()
+  const { t, currentLanguage } = useLanguage()
+  const { navigateToPackages } = useNavigation()
+  const whatsappNumbers: Record<string, string> = {
+    en: "94771234567",
+    ru: "79261234567",
+  }
+  const whatsappMessages: Record<string, string> = {
+    en: "Hello! I’d like a custom Sri Lanka tour package. Please help me plan an itinerary.",
+    ru: "Здравствуйте! Хочу индивидуальный тур по Шри‑Ланке. Помогите, пожалуйста, составить маршрут.",
+  }
+  const handleGetQuote = () => {
+    const num = whatsappNumbers[currentLanguage.code] || whatsappNumbers.en
+    const msg = whatsappMessages[currentLanguage.code] || whatsappMessages.en
+    window.open(`https://wa.me/${num}?text=${encodeURIComponent(msg)}`, "_blank")
+  }
 
   const packages = [
     {
@@ -106,7 +121,7 @@ export default function Packages() {
                 {/* Image */}
                 <div className="relative h-48 overflow-hidden">
                   <img
-                    src={pkg.image || "/placeholder.svg"}
+                    src={`${import.meta.env.BASE_URL}${(pkg.image || "/placeholder.svg").replace(/^\//, "")}`}
                     alt={pkg.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
@@ -142,11 +157,11 @@ export default function Packages() {
                   </div>
 
                   <div className="space-y-3">
-                    <button className="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition-colors duration-300 flex items-center justify-center space-x-2">
+                    <button onClick={() => navigateToPackages()} className="w-full py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition-colors duration-300 flex items-center justify-center space-x-2">
                       <span>{t("packages.bookNow")}</span>
                       <ArrowRight className="w-4 h-4" />
                     </button>
-                    <button className="w-full border border-gray-300 hover:border-emerald-500 text-gray-700 hover:text-emerald-600 py-3 rounded-lg font-semibold transition-colors duration-300">
+                    <button onClick={() => navigateToPackages()} className="w-full border border-gray-300 hover:border-emerald-500 text-gray-700 hover:text-emerald-600 py-3 rounded-lg font-semibold transition-colors duration-300">
                       {t("packages.viewDetails")}
                     </button>
                   </div>
@@ -160,7 +175,7 @@ export default function Packages() {
         <div className="text-center bg-emerald-600 rounded-2xl p-8 text-white">
           <h3 className="text-3xl font-bold mb-4">Need a Custom Package?</h3>
           <p className="text-xl mb-6 opacity-90">Let us create a personalized itinerary just for you</p>
-          <button className="bg-white text-emerald-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors duration-300">
+          <button onClick={handleGetQuote} className="bg-white text-emerald-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors duration-300">
             {t("common.getQuote")}
           </button>
         </div>
