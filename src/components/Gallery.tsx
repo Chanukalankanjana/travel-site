@@ -31,42 +31,42 @@ export default function Gallery() {
     {
       id: 1,
       image: "sigiriya-rock.jpg",
-      title: "Sigiriya Rock Fortress",
+      title: t("gallery.items.sigiriya.title"),
       category: "heritage",
       type: "image",
     },
     {
       id: 2,
       image: "beach.jpg",
-      title: "Beach Paradise",
+      title: t("gallery.items.beach.title"),
       category: "beaches",
       type: "image",
     },
     {
       id: 3,
       image: "tea.jpg",
-      title: "Tea Plantations",
+      title: t("gallery.items.tea.title"),
       category: "nature",
       type: "image",
     },
     {
       id: 4,
       image: "temple-sacred.jpg",
-      title: "Sacred Temple",
+      title: t("gallery.items.temple.title"),
       category: "culture",
       type: "image",
     },
     {
       id: 5,
       image: "wildlife.jpg",
-      title: "Wildlife Safari",
+      title: t("gallery.items.wildlife.title"),
       category: "adventure",
       type: "image",
     },
     {
       id: 6,
       image: "cultural.jpg",
-      title: "Cultural Performance",
+      title: t("gallery.items.cultural.title"),
       category: "culture",
       type: "image",
     },
@@ -82,7 +82,7 @@ export default function Gallery() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium mb-4">
             <Camera className="w-4 h-4 mr-2" />
-            Visual Journey
+{t("gallery.hero.visualJourney")}
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">{t("gallery.title")}</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">{t("gallery.subtitle")}</p>

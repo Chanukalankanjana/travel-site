@@ -36,179 +36,171 @@ export default function DestinationsPage({
   const destinations = [
     {
       id: 1,
-      name: "Sigiriya Rock Fortress",
+      name: t("destinations.destination.sigiriya.name"),
       image: "/sigiriya-rock.jpg",
       category: "heritage",
       duration: "2-3",
       price: 150,
       rating: 4.9,
       reviews: 234,
-      location: "Central Province",
-      description:
-        "Ancient royal palace and fortress built on a massive rock formation, featuring stunning frescoes and water gardens.",
+      location: t("destinations.destination.sigiriya.location"),
+      description: t("destinations.destination.sigiriya.description"),
       highlights: [
-        "Ancient Palace Ruins",
-        "Famous Frescoes",
-        "Water Gardens",
-        "Archaeological Museum",
+        t("destinations.destination.sigiriya.highlights.ancient"),
+        t("destinations.destination.sigiriya.highlights.frescoes"),
+        t("destinations.destination.sigiriya.highlights.gardens"),
+        t("destinations.destination.sigiriya.highlights.museum"),
       ],
-      bestTime: "December to April",
-      difficulty: "Moderate",
-      groupSize: "2-15 people",
+      bestTime: t("destinations.destination.sigiriya.bestTime"),
+      difficulty: t("destinations.destination.sigiriya.difficulty"),
+      groupSize: t("destinations.destination.sigiriya.groupSize"),
     },
     {
       id: 2,
-      name: "Kandy Cultural Triangle",
+      name: t("destinations.destination.kandy.name"),
       image: "/Distination/kandy-cultural.jpg",
       category: "culture",
       duration: "2-3",
       price: 200,
       rating: 4.8,
       reviews: 189,
-      location: "Central Province",
-      description:
-        "Sacred city housing the Temple of the Tooth Relic, surrounded by beautiful botanical gardens and traditional culture.",
+      location: t("destinations.destination.kandy.location"),
+      description: t("destinations.destination.kandy.description"),
       highlights: [
-        "Temple of the Tooth",
-        "Royal Botanical Gardens",
-        "Traditional Dance Shows",
-        "Kandy Lake",
+        t("destinations.destination.kandy.highlights.temple"),
+        t("destinations.destination.kandy.highlights.gardens"),
+        t("destinations.destination.kandy.highlights.dance"),
+        t("destinations.destination.kandy.highlights.lake"),
       ],
-      bestTime: "Year-round",
-      difficulty: "Easy",
-      groupSize: "2-20 people",
+      bestTime: t("destinations.destination.kandy.bestTime"),
+      difficulty: t("destinations.destination.kandy.difficulty"),
+      groupSize: t("destinations.destination.kandy.groupSize"),
     },
     {
       id: 3,
-      name: "Ella Hill Country",
+      name: t("destinations.destination.ella.name"),
       image: "/Distination/Ella-country.jpg",
       category: "nature",
       duration: "2-3",
       price: 120,
       rating: 4.9,
       reviews: 156,
-      location: "Uva Province",
-      description:
-        "Misty mountains, tea plantations, and scenic train rides through some of Sri Lanka's most beautiful landscapes.",
+      location: t("destinations.destination.ella.location"),
+      description: t("destinations.destination.ella.description"),
       highlights: [
-        "Nine Arch Bridge",
-        "Little Adam's Peak",
-        "Tea Plantation Tours",
-        "Scenic Train Ride",
+        t("destinations.destination.ella.highlights.bridge"),
+        t("destinations.destination.ella.highlights.peak"),
+        t("destinations.destination.ella.highlights.tea"),
+        t("destinations.destination.ella.highlights.train"),
       ],
-      bestTime: "December to March",
-      difficulty: "Moderate",
-      groupSize: "2-12 people",
+      bestTime: t("destinations.destination.ella.bestTime"),
+      difficulty: t("destinations.destination.ella.difficulty"),
+      groupSize: t("destinations.destination.ella.groupSize"),
     },
     {
       id: 4,
-      name: "Galle Dutch Fort",
+      name: t("destinations.destination.galle.name"),
       image: "/Distination/dutch-fort.jpg",
       category: "heritage",
       duration: "1",
       price: 80,
       rating: 4.7,
       reviews: 203,
-      location: "Southern Province",
-      description:
-        "UNESCO World Heritage colonial fort with historic lighthouse, museums, and charming cobblestone streets.",
+      location: t("destinations.destination.galle.location"),
+      description: t("destinations.destination.galle.description"),
       highlights: [
-        "Colonial Architecture",
-        "Historic Lighthouse",
-        "Fort Ramparts",
-        "Maritime Museum",
+        t("destinations.destination.galle.highlights.architecture"),
+        t("destinations.destination.galle.highlights.lighthouse"),
+        t("destinations.destination.galle.highlights.ramparts"),
+        t("destinations.destination.galle.highlights.museum"),
       ],
-      bestTime: "November to April",
-      difficulty: "Easy",
-      groupSize: "2-25 people",
+      bestTime: t("destinations.destination.galle.bestTime"),
+      difficulty: t("destinations.destination.galle.difficulty"),
+      groupSize: t("destinations.destination.galle.groupSize"),
     },
     {
       id: 5,
-      name: "Yala National Park",
+      name: t("destinations.destination.yala.name"),
       image: "/Distination/yala-national.jpg",
       category: "nature",
       duration: "1-2",
       price: 180,
       rating: 4.8,
       reviews: 178,
-      location: "Southern Province",
-      description:
-        "Premier wildlife destination famous for leopards, elephants, and diverse bird species in their natural habitat.",
+      location: t("destinations.destination.yala.location"),
+      description: t("destinations.destination.yala.description"),
       highlights: [
-        "Leopard Spotting",
-        "Elephant Herds",
-        "Bird Watching",
-        "Beach Camping",
+        t("destinations.destination.yala.highlights.leopard"),
+        t("destinations.destination.yala.highlights.elephants"),
+        t("destinations.destination.yala.highlights.birds"),
+        t("destinations.destination.yala.highlights.camping"),
       ],
-      bestTime: "February to July",
-      difficulty: "Easy",
-      groupSize: "2-8 people",
+      bestTime: t("destinations.destination.yala.bestTime"),
+      difficulty: t("destinations.destination.yala.difficulty"),
+      groupSize: t("destinations.destination.yala.groupSize"),
     },
     {
       id: 6,
-      name: "Mirissa Beach",
+      name: t("destinations.destination.mirissa.name"),
       image: "/Distination/mirissa-beach.jpg",
       category: "beaches",
       duration: "2-3",
       price: 100,
       rating: 4.9,
       reviews: 267,
-      location: "Southern Province",
-      description:
-        "Pristine golden beaches perfect for whale watching, surfing, and enjoying spectacular tropical sunsets.",
+      location: t("destinations.destination.mirissa.location"),
+      description: t("destinations.destination.mirissa.description"),
       highlights: [
-        "Blue Whale Watching",
-        "Golden Beaches",
-        "Surfing Spots",
-        "Coconut Tree Hill",
+        t("destinations.destination.mirissa.highlights.whales"),
+        t("destinations.destination.mirissa.highlights.beaches"),
+        t("destinations.destination.mirissa.highlights.surfing"),
+        t("destinations.destination.mirissa.highlights.coconut"),
       ],
-      bestTime: "November to April",
-      difficulty: "Easy",
-      groupSize: "2-15 people",
+      bestTime: t("destinations.destination.mirissa.bestTime"),
+      difficulty: t("destinations.destination.mirissa.difficulty"),
+      groupSize: t("destinations.destination.mirissa.groupSize"),
     },
     {
       id: 7,
-      name: "Anuradhapura Ancient City",
+      name: t("destinations.destination.anuradhapura.name"),
       image: "/Distination/anuradhapura.jpg",
       category: "heritage",
       duration: "1-2",
       price: 90,
       rating: 4.6,
       reviews: 145,
-      location: "North Central Province",
-      description:
-        "Ancient capital with sacred Buddhist sites, massive dagobas, and ruins dating back over 2,000 years.",
+      location: t("destinations.destination.anuradhapura.location"),
+      description: t("destinations.destination.anuradhapura.description"),
       highlights: [
-        "Sacred Bodhi Tree",
-        "Ancient Dagobas",
-        "Ruins & Monasteries",
-        "Archaeological Sites",
+        t("destinations.destination.anuradhapura.highlights.bodhi"),
+        t("destinations.destination.anuradhapura.highlights.dagobas"),
+        t("destinations.destination.anuradhapura.highlights.ruins"),
+        t("destinations.destination.anuradhapura.highlights.archaeological"),
       ],
-      bestTime: "December to March",
-      difficulty: "Easy",
-      groupSize: "2-20 people",
+      bestTime: t("destinations.destination.anuradhapura.bestTime"),
+      difficulty: t("destinations.destination.anuradhapura.difficulty"),
+      groupSize: t("destinations.destination.anuradhapura.groupSize"),
     },
     {
       id: 8,
-      name: "Nuwara Eliya Tea Country",
+      name: t("destinations.destination.nuwara.name"),
       image: "/tea.jpg",
       category: "nature",
       duration: "2-3",
       price: 110,
       rating: 4.7,
       reviews: 198,
-      location: "Central Province",
-      description:
-        "Cool climate hill station surrounded by tea plantations, colonial architecture, and beautiful gardens.",
+      location: t("destinations.destination.nuwara.location"),
+      description: t("destinations.destination.nuwara.description"),
       highlights: [
-        "Tea Factory Tours",
-        "Colonial Architecture",
-        "Horton Plains",
-        "Gregory Lake",
+        t("destinations.destination.nuwara.highlights.tea"),
+        t("destinations.destination.nuwara.highlights.architecture"),
+        t("destinations.destination.nuwara.highlights.horton"),
+        t("destinations.destination.nuwara.highlights.lake"),
       ],
-      bestTime: "December to April",
-      difficulty: "Easy",
-      groupSize: "2-18 people",
+      bestTime: t("destinations.destination.nuwara.bestTime"),
+      difficulty: t("destinations.destination.nuwara.difficulty"),
+      groupSize: t("destinations.destination.nuwara.groupSize"),
     },
   ];
 
@@ -247,16 +239,15 @@ export default function DestinationsPage({
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white text-sm font-medium mb-8">
-            <MapPin className="w-4 h-4 mr-2" /> Explore Paradise
+            <MapPin className="w-4 h-4 mr-2" /> {t("destinations.hero.exploreParadise")}
           </div>
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
             <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
-              Discover Sri Lanka
+              {t("destinations.hero.title")}
             </span>
           </h1>
           <p className="text-xl sm:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-12">
-            From ancient kingdoms to pristine beaches, explore the island's most
-            captivating destinations.
+            {t("destinations.hero.subtitle")}
           </p>
         </div>
       </section>
@@ -305,19 +296,19 @@ export default function DestinationsPage({
                 onChange={(e) => setSortBy(e.target.value)}
                 className="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
               >
-                <option value="popular">Most Popular</option>
-                <option value="rating">Highest Rated</option>
-                <option value="price-low">Price: Low to High</option>
-                <option value="price-high">Price: High to Low</option>
+                <option value="popular">{t("destinations.sort.mostPopular")}</option>
+                <option value="rating">{t("destinations.sort.highestRated")}</option>
+                <option value="price-low">{t("destinations.sort.priceLowToHigh")}</option>
+                <option value="price-high">{t("destinations.sort.priceHighToLow")}</option>
               </select>
             </div>
 
             <div className="text-sm text-gray-600">
-              Showing{" "}
+              {t("destinations.showing")}{" "}
               <span className="font-semibold text-emerald-600">
                 {sortedDestinations.length}
               </span>{" "}
-              destinations
+              {t("destinations.destinations")}
             </div>
           </div>
         </div>
@@ -342,8 +333,8 @@ export default function DestinationsPage({
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
 
                   {/* Category Badge */}
-                  <div className="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-medium text-gray-800 capitalize">
-                    {destination.category}
+                  <div className="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-medium text-gray-800">
+                    {t(`destinations.categories.${destination.category}`)}
                   </div>
 
                   {/* Heart Icon */}

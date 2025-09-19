@@ -52,6 +52,143 @@ type TranslationKeys =
   | "destinations.from"
   | "destinations.days"
   | "destinations.highlights"
+  | "destinations.hero.exploreParadise"
+  | "destinations.hero.title"
+  | "destinations.hero.subtitle"
+  | "destinations.sort.mostPopular"
+  | "destinations.sort.highestRated"
+  | "destinations.sort.priceLowToHigh"
+  | "destinations.sort.priceHighToLow"
+  | "destinations.showing"
+  | "destinations.destinations"
+  | "destinations.categories.heritage"
+  | "destinations.categories.nature"
+  | "destinations.categories.culture"
+  | "destinations.categories.adventure"
+  | "destinations.categories.beaches"
+  | "destinations.categories.hiking"
+  | "destinations.categories.water"
+  // Home Page Components
+  | "destinations.hero.exploreParadise"
+  | "common.viewDetails"
+  | "services.hero.premiumServices"
+  | "packages.hero.premiumPackages"
+  | "packages.custom.title"
+  | "packages.custom.subtitle"
+  | "packages.home.culturalHeritage.name"
+  | "packages.home.culturalHeritage.duration"
+  | "packages.home.culturalHeritage.price"
+  | "packages.home.culturalHeritage.originalPrice"
+  | "packages.home.adventureWildlife.name"
+  | "packages.home.adventureWildlife.duration"
+  | "packages.home.adventureWildlife.price"
+  | "packages.home.adventureWildlife.originalPrice"
+  | "packages.home.beachRelaxation.name"
+  | "packages.home.beachRelaxation.duration"
+  | "packages.home.beachRelaxation.price"
+  | "packages.home.beachRelaxation.originalPrice"
+  | "about.hero.trustedSince"
+  | "about.cta.learnMore"
+  | "testimonials.hero.clientStories"
+  | "testimonials.sarah.name"
+  | "testimonials.sarah.location"
+  | "testimonials.sarah.tour"
+  | "testimonials.sarah.review"
+  | "testimonials.michael.name"
+  | "testimonials.michael.location"
+  | "testimonials.michael.tour"
+  | "testimonials.michael.review"
+  | "testimonials.emma.name"
+  | "testimonials.emma.location"
+  | "testimonials.emma.tour"
+  | "testimonials.emma.review"
+  | "gallery.hero.visualJourney"
+  | "gallery.items.sigiriya.title"
+  | "gallery.items.beach.title"
+  | "gallery.items.tea.title"
+  | "gallery.items.temple.title"
+  | "gallery.items.wildlife.title"
+  | "gallery.items.cultural.title"
+  // Additional Destinations for Detail Page
+  | "destinations.detail.adamsPeak.name"
+  | "destinations.detail.adamsPeak.location"
+  | "destinations.detail.adamsPeak.description"
+  | "destinations.detail.adamsPeak.fullDescription"
+  | "destinations.detail.adamsPeak.highlights.pilgrimage"
+  | "destinations.detail.adamsPeak.highlights.sunrise"
+  | "destinations.detail.adamsPeak.highlights.steps"
+  | "destinations.detail.adamsPeak.highlights.views"
+  | "destinations.detail.adamsPeak.highlights.nightHike"
+  | "destinations.detail.adamsPeak.highlights.culture"
+  | "destinations.detail.adamsPeak.bestTime"
+  | "destinations.detail.adamsPeak.difficulty"
+  | "destinations.detail.adamsPeak.groupSize"
+  | "destinations.detail.adamsPeak.duration"
+  | "destinations.detail.adamsPeak.price"
+  | "destinations.detail.adamsPeak.rating"
+  | "destinations.detail.adamsPeak.reviews"
+  | "destinations.detail.kitulgala.name"
+  | "destinations.detail.kitulgala.location"
+  | "destinations.detail.kitulgala.description"
+  | "destinations.detail.kitulgala.fullDescription"
+  | "destinations.detail.kitulgala.highlights.rapids"
+  | "destinations.detail.kitulgala.highlights.canyon"
+  | "destinations.detail.kitulgala.highlights.swimming"
+  | "destinations.detail.kitulgala.highlights.safety"
+  | "destinations.detail.kitulgala.highlights.lunch"
+  | "destinations.detail.kitulgala.bestTime"
+  | "destinations.detail.kitulgala.difficulty"
+  | "destinations.detail.kitulgala.groupSize"
+  | "destinations.detail.kitulgala.duration"
+  | "destinations.detail.kitulgala.price"
+  | "destinations.detail.kitulgala.rating"
+  | "destinations.detail.kitulgala.reviews"
+  | "destinations.detail.ellaRock.name"
+  | "destinations.detail.ellaRock.location"
+  | "destinations.detail.ellaRock.description"
+  | "destinations.detail.ellaRock.fullDescription"
+  | "destinations.detail.ellaRock.highlights.sunrise"
+  | "destinations.detail.ellaRock.highlights.teaTrails"
+  | "destinations.detail.ellaRock.highlights.villagePaths"
+  | "destinations.detail.ellaRock.highlights.railWalking"
+  | "destinations.detail.ellaRock.bestTime"
+  | "destinations.detail.ellaRock.difficulty"
+  | "destinations.detail.ellaRock.groupSize"
+  | "destinations.detail.ellaRock.duration"
+  | "destinations.detail.ellaRock.price"
+  | "destinations.detail.ellaRock.rating"
+  | "destinations.detail.ellaRock.reviews"
+  | "destinations.detail.knuckles.name"
+  | "destinations.detail.knuckles.location"
+  | "destinations.detail.knuckles.description"
+  | "destinations.detail.knuckles.fullDescription"
+  | "destinations.detail.knuckles.highlights.biosphere"
+  | "destinations.detail.knuckles.highlights.ecosystem"
+  | "destinations.detail.knuckles.highlights.camping"
+  | "destinations.detail.knuckles.highlights.waterfalls"
+  | "destinations.detail.knuckles.highlights.wildlife"
+  | "destinations.detail.knuckles.bestTime"
+  | "destinations.detail.knuckles.difficulty"
+  | "destinations.detail.knuckles.groupSize"
+  | "destinations.detail.knuckles.duration"
+  | "destinations.detail.knuckles.price"
+  | "destinations.detail.knuckles.rating"
+  | "destinations.detail.knuckles.reviews"
+  | "destinations.detail.hortonPlains.name"
+  | "destinations.detail.hortonPlains.location"
+  | "destinations.detail.hortonPlains.description"
+  | "destinations.detail.hortonPlains.fullDescription"
+  | "destinations.detail.hortonPlains.highlights.worldsEnd"
+  | "destinations.detail.hortonPlains.highlights.bakersFalls"
+  | "destinations.detail.hortonPlains.highlights.grasslands"
+  | "destinations.detail.hortonPlains.highlights.wildlife"
+  | "destinations.detail.hortonPlains.bestTime"
+  | "destinations.detail.hortonPlains.difficulty"
+  | "destinations.detail.hortonPlains.groupSize"
+  | "destinations.detail.hortonPlains.duration"
+  | "destinations.detail.hortonPlains.price"
+  | "destinations.detail.hortonPlains.rating"
+  | "destinations.detail.hortonPlains.reviews"
   // Packages
   | "packages.title"
   | "packages.subtitle"
@@ -529,6 +666,14 @@ type TranslationKeys =
   | "destinations.destination.sigiriya.name"
   | "destinations.destination.sigiriya.location"
   | "destinations.destination.sigiriya.description"
+  | "destinations.destination.sigiriya.fullDescription"
+  | "destinations.destination.kandy.fullDescription"
+  | "destinations.destination.ella.fullDescription"
+  | "destinations.destination.galle.fullDescription"
+  | "destinations.destination.yala.fullDescription"
+  | "destinations.destination.mirissa.fullDescription"
+  | "destinations.destination.anuradhapura.fullDescription"
+  | "destinations.destination.nuwara.fullDescription"
   | "destinations.destination.sigiriya.highlights.ancient"
   | "destinations.destination.sigiriya.highlights.frescoes"
   | "destinations.destination.sigiriya.highlights.gardens"
@@ -613,6 +758,203 @@ type TranslationKeys =
   | "destinations.common.moderate"
   | "destinations.common.easy"
   | "destinations.common.yearRound"
+  // Destination Detail Page
+  | "destinations.detail.aboutDestination"
+  | "destinations.detail.highlights"
+  | "destinations.detail.photoGallery"
+  | "destinations.detail.location"
+  | "destinations.detail.quickInfo"
+  | "destinations.detail.whatsIncluded"
+  | "destinations.detail.notIncluded"
+  | "destinations.detail.nearbyAttractions"
+  | "destinations.detail.bookViaWhatsApp"
+  | "destinations.detail.callUs"
+  | "destinations.detail.viewOnGoogleMaps"
+  | "destinations.detail.destinationNotFound"
+  | "destinations.detail.backToDestinations"
+  | "destinations.detail.bestTime"
+  | "destinations.detail.difficulty"
+  | "destinations.detail.duration"
+  | "destinations.detail.duration.oneDay"
+  | "destinations.detail.duration.twoDays"
+  | "destinations.detail.duration.threeDays"
+  | "destinations.detail.duration.halfDay"
+  | "destinations.detail.duration.fullDay"
+  | "destinations.detail.duration.nightHike"
+  | "destinations.detail.groupSize"
+  | "destinations.detail.people"
+  | "destinations.detail.groupSize.2to8"
+  | "destinations.detail.groupSize.2to10"
+  | "destinations.detail.groupSize.2to12"
+  | "destinations.detail.groupSize.2to15"
+  | "destinations.detail.groupSize.2to20"
+  | "destinations.detail.groupSize.4to8"
+  | "destinations.detail.easy"
+  | "destinations.detail.included.professionalGuide"
+  | "destinations.detail.included.entranceFees"
+  | "destinations.detail.included.transportation"
+  | "destinations.detail.included.lunch"
+  | "destinations.detail.included.waterBottles"
+  | "destinations.detail.included.safetyEquipment"
+  | "destinations.detail.included.teaTasting"
+  | "destinations.detail.included.culturalShow"
+  | "destinations.detail.included.parkFees"
+  | "destinations.detail.included.whaleWatching"
+  | "destinations.detail.included.surfingEquipment"
+  | "destinations.detail.included.archaeologicalTour"
+  | "destinations.detail.included.templeVisit"
+  | "destinations.detail.included.teaFactoryTour"
+  | "destinations.detail.included.hikingGuide"
+  | "destinations.detail.included.campingEquipment"
+  | "destinations.detail.included.safariJeep"
+  | "destinations.detail.included.binoculars"
+  | "destinations.detail.included.refreshments"
+  | "destinations.detail.included.whaleWatchingTour"
+  | "destinations.detail.included.snorkelingEquipment"
+  | "destinations.detail.included.bottledWater"
+  | "destinations.detail.included.historicalSiteVisits"
+  | "destinations.detail.included.gardenVisits"
+  | "destinations.detail.included.meals"
+  | "destinations.detail.notIncluded.personalExpenses"
+  | "destinations.detail.notIncluded.tips"
+  | "destinations.detail.notIncluded.accommodation"
+  | "destinations.detail.notIncluded.travelInsurance"
+  | "destinations.detail.notIncluded.alcoholicBeverages"
+  | "destinations.detail.notIncluded.optionalActivities"
+  | "destinations.detail.notIncluded.internationalFlights"
+  | "destinations.detail.notIncluded.visaFees"
+  | "destinations.detail.notIncluded.souvenirs"
+  | "destinations.detail.notIncluded.medicalExpenses"
+  | "destinations.detail.notIncluded.meals"
+  | "destinations.detail.nearby.dambullaCaveTemple"
+  | "destinations.detail.nearby.minneriyaNationalPark"
+  | "destinations.detail.nearby.polonnaruwaAncientCity"
+  | "destinations.detail.nearby.kaudullaNationalPark"
+  | "destinations.detail.nearby.royalBotanicalGardens"
+  | "destinations.detail.nearby.peradeniyaUniversity"
+  | "destinations.detail.nearby.kandyLake"
+  | "destinations.detail.nearby.kandyMarket"
+  | "destinations.detail.nearby.udawattakeleForestReserve"
+  | "destinations.detail.nearby.bahirawakandaTemple"
+  | "destinations.detail.nearby.nineArchBridge"
+  | "destinations.detail.nearby.littleAdamsPeak"
+  | "destinations.detail.nearby.rawanaFalls"
+  | "destinations.detail.nearby.ellaRock"
+  | "destinations.detail.nearby.diyalumaFalls"
+  | "destinations.detail.nearby.bambaragalaPeak"
+  | "destinations.detail.nearby.galleLighthouse"
+  | "destinations.detail.nearby.galleMaritimeMuseum"
+  | "destinations.detail.nearby.ramparts"
+  | "destinations.detail.nearby.unawatunaBeach"
+  | "destinations.detail.nearby.hikkaduwaBeach"
+  | "destinations.detail.nearby.koggalaLake"
+  | "destinations.detail.nearby.stiltFishermen"
+  | "destinations.detail.nearby.udawalaweNationalPark"
+  | "destinations.detail.nearby.bundalaNationalPark"
+  | "destinations.detail.nearby.weligamaBay"
+  | "destinations.detail.nearby.coconutTreeHill"
+  | "destinations.detail.nearby.whaleWatching"
+  | "destinations.detail.nearby.mihintale"
+  | "destinations.detail.nearby.ritigala"
+  | "destinations.detail.nearby.anuradhapuraMuseum"
+  | "destinations.detail.nearby.hortonPlains"
+  | "destinations.detail.nearby.gregoryLake"
+  | "destinations.detail.nearby.hakgalaBotanicalGardens"
+  | "destinations.detail.nearby.teaMuseum"
+  | "destinations.detail.nearby.kataragamaTemple"
+  | "destinations.detail.nearby.sithulpawwaTemple"
+  | "destinations.detail.nearby.kumanaNationalPark"
+  | "destinations.detail.nearby.polhenaBeach"
+  | "destinations.detail.nearby.dondraHeadLighthouse"
+  | "destinations.detail.nearby.mihintaleSacredMountain"
+  | "destinations.detail.nearby.ellaHillCountry"
+  | "destinations.detail.nearby.adamsPeak"
+  | "destinations.detail.nearby.kandyCity"
+  | "destinations.detail.nearby.sigiriyaRockFortress"
+  | "destinations.adventure.adamsPeak.name"
+  | "destinations.adventure.adamsPeak.location"
+  | "destinations.adventure.adamsPeak.description"
+  | "destinations.adventure.adamsPeak.fullDescription"
+  | "destinations.adventure.adamsPeak.highlights.pilgrimage"
+  | "destinations.adventure.adamsPeak.highlights.sunrise"
+  | "destinations.adventure.adamsPeak.highlights.steps"
+  | "destinations.adventure.adamsPeak.highlights.views"
+  | "destinations.adventure.adamsPeak.highlights.nightHike"
+  | "destinations.adventure.adamsPeak.highlights.culture"
+  | "destinations.adventure.adamsPeak.bestTime"
+  | "destinations.adventure.adamsPeak.difficulty"
+  | "destinations.adventure.kitulgala.name"
+  | "destinations.adventure.kitulgala.location"
+  | "destinations.adventure.kitulgala.description"
+  | "destinations.adventure.kitulgala.fullDescription"
+  | "destinations.adventure.kitulgala.highlights.rapids"
+  | "destinations.adventure.kitulgala.highlights.canyon"
+  | "destinations.adventure.kitulgala.highlights.swimming"
+  | "destinations.adventure.kitulgala.highlights.safety"
+  | "destinations.adventure.kitulgala.highlights.lunch"
+  | "destinations.adventure.kitulgala.bestTime"
+  | "destinations.adventure.kitulgala.difficulty"
+  | "destinations.adventure.ellaRock.name"
+  | "destinations.adventure.ellaRock.location"
+  | "destinations.adventure.ellaRock.description"
+  | "destinations.adventure.ellaRock.fullDescription"
+  | "destinations.adventure.ellaRock.highlights.panorama"
+  | "destinations.adventure.ellaRock.highlights.trails"
+  | "destinations.adventure.ellaRock.highlights.village"
+  | "destinations.adventure.ellaRock.highlights.railway"
+  | "destinations.adventure.ellaRock.bestTime"
+  | "destinations.adventure.ellaRock.difficulty"
+  | "destinations.adventure.knuckles.name"
+  | "destinations.adventure.knuckles.location"
+  | "destinations.adventure.knuckles.description"
+  | "destinations.adventure.knuckles.fullDescription"
+  | "destinations.adventure.knuckles.highlights.biosphere"
+  | "destinations.adventure.knuckles.highlights.ecosystem"
+  | "destinations.adventure.knuckles.highlights.camping"
+  | "destinations.adventure.knuckles.highlights.waterfalls"
+  | "destinations.adventure.knuckles.highlights.wildlife"
+  | "destinations.adventure.knuckles.bestTime"
+  | "destinations.adventure.knuckles.difficulty"
+  | "destinations.adventure.hortonPlains.name"
+  | "destinations.adventure.hortonPlains.location"
+  | "destinations.adventure.hortonPlains.description"
+  | "destinations.adventure.hortonPlains.fullDescription"
+  | "destinations.adventure.hortonPlains.highlights.viewpoint"
+  | "destinations.adventure.hortonPlains.highlights.falls"
+  | "destinations.adventure.hortonPlains.highlights.grasslands"
+  | "destinations.adventure.hortonPlains.highlights.wildlife"
+  | "destinations.adventure.hortonPlains.bestTime"
+  | "destinations.adventure.hortonPlains.difficulty"
+  | "destinations.adventure.notIncluded.entranceDonations"
+  | "destinations.adventure.notIncluded.photos"
+  | "destinations.adventure.notIncluded.parkFees"
+  | "destinations.adventure.notIncluded.personalGear"
+  | "destinations.adventure.notIncluded.warmClothing"
+  | "destinations.adventure.nearby.nallathanniya"
+  | "destinations.adventure.nearby.hattonTeaEstates"
+  | "destinations.adventure.nearby.maskeliyaReservoir"
+  | "destinations.adventure.nearby.belilenaCave"
+  | "destinations.adventure.nearby.filmingSites"
+  | "destinations.adventure.nearby.rainforestWalks"
+  | "destinations.adventure.nearby.nineArchBridge"
+  | "destinations.adventure.nearby.littleAdamsPeak"
+  | "destinations.adventure.nearby.ravanaFalls"
+  | "destinations.adventure.nearby.riverston"
+  | "destinations.adventure.nearby.miniWorldsEnd"
+  | "destinations.adventure.nearby.wasgamuwa"
+  | "destinations.adventure.nearby.nuwaraEliya"
+  | "destinations.adventure.nearby.pedroTeaEstate"
+  | "destinations.adventure.nearby.gregoryLake"
+  | "destinations.detail.moderate"
+  | "destinations.detail.challenging"
+  | "destinations.detail.yearRound"
+  | "destinations.detail.oneDay"
+  | "destinations.detail.twoThreeDays"
+  | "destinations.detail.fourPlusDays"
+  | "destinations.detail.halfDay"
+  | "destinations.detail.fullDay"
+  | "destinations.detail.twoDays"
+  | "destinations.detail.oneDayNightHike"
   // Gallery Page
   | "gallery.items.sigiriya.title"
   | "gallery.items.sigiriya.description"
@@ -823,7 +1165,6 @@ type TranslationKeys =
   | "contact.form.emailAddress"
   | "contact.form.phoneNumber"
   | "contact.form.subject"
-  | "contact.form.message"
   | "contact.form.tourType"
   | "contact.form.placeholders.fullName"
   | "contact.form.placeholders.email"
@@ -901,6 +1242,246 @@ const translations: { [lang: string]: TranslationMap } = {
     "destinations.from": "From",
     "destinations.days": "days",
     "destinations.highlights": "Highlights",
+    "destinations.hero.exploreParadise": "Explore Paradise",
+    "destinations.hero.title": "Discover Sri Lanka",
+    "destinations.hero.subtitle": "From ancient kingdoms to pristine beaches, explore the island's most captivating destinations.",
+    "destinations.sort.mostPopular": "Most Popular",
+    "destinations.sort.highestRated": "Highest Rated",
+    "destinations.sort.priceLowToHigh": "Price: Low to High",
+    "destinations.sort.priceHighToLow": "Price: High to Low",
+    "destinations.showing": "Showing",
+    "destinations.destinations": "destinations",
+    "destinations.categories.heritage": "Heritage",
+    "destinations.categories.nature": "Nature",
+    "destinations.categories.culture": "Culture",
+    "destinations.categories.adventure": "Adventure",
+    "destinations.categories.beaches": "Beaches",
+    "destinations.categories.hiking": "Hiking",
+    "destinations.categories.water": "Water Sports",
+
+    // Home Page Components
+    "destinations.hero.exploreParadise": "Explore Paradise",
+    "common.viewDetails": "View Details",
+    "services.hero.premiumServices": "Premium Services",
+    "packages.hero.premiumPackages": "Premium Packages",
+    "packages.custom.title": "Need a Custom Package?",
+    "packages.custom.subtitle": "Let us create a personalized itinerary just for you",
+    "packages.home.culturalHeritage.name": "Cultural Heritage",
+    "packages.home.culturalHeritage.duration": "7 Days",
+    "packages.home.culturalHeritage.price": "$899",
+    "packages.home.culturalHeritage.originalPrice": "$1199",
+    "packages.home.adventureWildlife.name": "Adventure & Wildlife",
+    "packages.home.adventureWildlife.duration": "10 Days",
+    "packages.home.adventureWildlife.price": "$1299",
+    "packages.home.adventureWildlife.originalPrice": "$1599",
+    "packages.home.beachRelaxation.name": "Beach & Relaxation",
+    "packages.home.beachRelaxation.duration": "5 Days",
+    "packages.home.beachRelaxation.price": "$1599",
+    "packages.home.beachRelaxation.originalPrice": "$1999",
+    "about.hero.trustedSince": "Trusted Since 2023",
+    "about.cta.learnMore": "Learn More About Us",
+    "testimonials.hero.clientStories": "Client Stories",
+    "testimonials.sarah.name": "Sarah Johnson",
+    "testimonials.sarah.location": "New York, USA",
+    "testimonials.sarah.tour": "Cultural Heritage Explorer",
+    "testimonials.sarah.review": "Absolutely incredible experience! The team at Ceylon Escape made our Sri Lankan adventure unforgettable. From the ancient temples to the stunning landscapes, every moment was perfectly planned.",
+    "testimonials.michael.name": "Michael Chen",
+    "testimonials.michael.location": "Toronto, Canada",
+    "testimonials.michael.tour": "Adventure & Wildlife",
+    "testimonials.michael.review": "The wildlife safari exceeded all expectations! We spotted leopards, elephants, and countless bird species. The accommodation was luxurious and the food was amazing.",
+    "testimonials.emma.name": "Emma Thompson",
+    "testimonials.emma.location": "London, UK",
+    "testimonials.emma.tour": "Luxury Beach & Spa",
+    "testimonials.emma.review": "Pure paradise! The beach resort was stunning and the spa treatments were world-class. Every detail was taken care of, from airport transfers to daily excursions.",
+    "gallery.hero.visualJourney": "Visual Journey",
+    "gallery.items.sigiriya.title": "Sigiriya Rock Fortress",
+    "gallery.items.beach.title": "Beach Paradise",
+    "gallery.items.tea.title": "Tea Plantations",
+    "gallery.items.temple.title": "Sacred Temple",
+    "gallery.items.wildlife.title": "Wildlife Safari",
+    "gallery.items.cultural.title": "Cultural Performance",
+
+    // Destination Details
+    "destinations.destination.sigiriya.name": "Sigiriya Rock Fortress",
+    "destinations.destination.sigiriya.location": "Central Province",
+    "destinations.destination.sigiriya.description": "Ancient royal palace and fortress built on a massive rock formation, featuring stunning frescoes and water gardens.",
+    "destinations.destination.sigiriya.fullDescription": "Sigiriya, also known as Lion Rock, is an ancient rock fortress and palace ruin located in the northern Matale District near the town of Dambulla in the Central Province, Sri Lanka. It is a site of historical and archaeological significance that is dominated by a massive column of rock nearly 200 meters high.\n\nAccording to the ancient Sri Lankan chronicle the Culavamsa, this area was a large forest, then after storms and landslides it became a hill and was selected by King Kashyapa (477 – 495 CE) for his new capital. He built his palace on the top of this rock and decorated its sides with colorful frescoes.\n\nThe site was both a palace and a fortress. The upper palace on the top of the rock includes cisterns cut into the rock that still retain water. The moats and walls that surround the lower palace are still exquisitely preserved.\n\nSigiriya is considered one of the best preserved examples of ancient urban planning. It is the most visited historic site in Sri Lanka. The palace is located in the heart of the island between the towns of Dambulla and Habarane on a massive rocky plateau 370 meters above sea level.\n\nThe rock itself is a hardened magma plug from an extinct volcano. The site was used as a Buddhist monastery from the 3rd century BCE, with caves prepared and donated by devotees to the sangha.",
+    "destinations.destination.sigiriya.highlights.ancient": "Ancient Palace Ruins",
+    "destinations.destination.sigiriya.highlights.frescoes": "Famous Frescoes",
+    "destinations.destination.sigiriya.highlights.gardens": "Water Gardens",
+    "destinations.destination.sigiriya.highlights.museum": "Archaeological Museum",
+    "destinations.destination.sigiriya.bestTime": "December to April",
+    "destinations.destination.sigiriya.difficulty": "Moderate",
+    "destinations.destination.sigiriya.groupSize": "2-15 people",
+
+    "destinations.destination.kandy.name": "Kandy Cultural Triangle",
+    "destinations.destination.kandy.location": "Central Province",
+    "destinations.destination.kandy.description": "Sacred city housing the Temple of the Tooth Relic, surrounded by beautiful botanical gardens and traditional culture.",
+    "destinations.destination.kandy.highlights.temple": "Temple of the Tooth",
+    "destinations.destination.kandy.highlights.gardens": "Royal Botanical Gardens",
+    "destinations.destination.kandy.highlights.dance": "Traditional Dance Shows",
+    "destinations.destination.kandy.highlights.lake": "Kandy Lake",
+    "destinations.destination.kandy.bestTime": "Year-round",
+    "destinations.destination.kandy.difficulty": "Easy",
+    "destinations.destination.kandy.groupSize": "2-20 people",
+    "destinations.destination.kandy.fullDescription": "Kandy is a major city in Sri Lanka located in the Central Province. It was the last capital of the ancient kings' era of Sri Lanka. The city lies in the midst of hills in the Kandy plateau, which crosses an area of tropical plantations, mainly tea. Kandy is both an administrative and religious city and is also the capital of the Central Province.\n\nKandy is the home of the Temple of the Tooth Relic (Sri Dalada Maligawa), one of the most sacred places of worship in the Buddhist world. It was declared a world heritage site by UNESCO in 1988. The city and the region have been known by many different names and versions of those names. Some scholars suggest that the original name of Kandy was Katubulu Nuwara located near the present Watapuluwa. However, the more popular historical name is Senkadagala or Senkadagalapura, officially Senkadagala Siriwardhana Maha Nuwara (meaning 'great city of Senkadagala of growing resplendence'), generally shortened to 'Maha Nuwara'.\n\nThe city is a world heritage site declared by UNESCO, in part due to the temple. Kandy is the second largest city of the island and the capital of Central Province of Sri Lanka. It is also the administrative capital of Kandy District.",
+
+    "destinations.destination.ella.name": "Ella Hill Country",
+    "destinations.destination.ella.location": "Uva Province",
+    "destinations.destination.ella.description": "Misty mountains, tea plantations, and scenic train rides through some of Sri Lanka's most beautiful landscapes.",
+    "destinations.destination.ella.highlights.bridge": "Nine Arch Bridge",
+    "destinations.destination.ella.highlights.peak": "Little Adam's Peak",
+    "destinations.destination.ella.highlights.tea": "Tea Plantation Tours",
+    "destinations.destination.ella.highlights.train": "Scenic Train Ride",
+    "destinations.destination.ella.bestTime": "December to March",
+    "destinations.destination.ella.difficulty": "Moderate",
+    "destinations.destination.ella.groupSize": "2-12 people",
+    "destinations.destination.ella.fullDescription": "Ella is a small town in the Badulla District of Uva Province, Sri Lanka, governed by an Urban Council. It is approximately 200 kilometres east of Colombo and is situated at an elevation of 1,041 metres above sea level. The area has a rich bio-diversity, dense with numerous varieties of flora and fauna. Ella is surrounded by hills covered with cloud forests and tea plantations. The town has a cooler climate than surrounding lowlands, due to its elevation.\n\nElla is most famous for its scenic beauty and the famous Nine Arch Bridge. The area is also known for its tea plantations, which produce some of the world's finest tea. The town is a popular destination for tourists who come to enjoy the cool climate, scenic views, and outdoor activities such as hiking and trekking.\n\nThe Nine Arch Bridge is one of the most iconic landmarks in Sri Lanka. Built in 1921, this architectural marvel is made entirely of stone, brick, and cement without any steel. The bridge spans 91 meters at a height of 24 meters and is surrounded by lush green tea plantations and misty mountains.\n\nElla is also home to Little Adam's Peak, a popular hiking destination that offers panoramic views of the surrounding countryside. The hike is relatively easy and takes about 30-45 minutes to reach the summit.",
+
+    "destinations.destination.galle.name": "Galle Dutch Fort",
+    "destinations.destination.galle.location": "Southern Province",
+    "destinations.destination.galle.description": "UNESCO World Heritage colonial fort with historic lighthouse, museums, and charming cobblestone streets.",
+    "destinations.destination.galle.highlights.architecture": "Colonial Architecture",
+    "destinations.destination.galle.highlights.lighthouse": "Historic Lighthouse",
+    "destinations.destination.galle.highlights.ramparts": "Fort Ramparts",
+    "destinations.destination.galle.highlights.museum": "Maritime Museum",
+    "destinations.destination.galle.bestTime": "November to April",
+    "destinations.destination.galle.difficulty": "Easy",
+    "destinations.destination.galle.groupSize": "2-25 people",
+    "destinations.destination.galle.fullDescription": "Galle Fort, in the Bay of Galle on the southwest coast of Sri Lanka, was built first in 1588 by the Portuguese, then extensively fortified by the Dutch during the 17th century from 1649 onwards. It is a historical, archaeological and architectural heritage monument, which even after more than 432 years maintains a polished appearance, due to extensive reconstruction work done by Archaeological Department of Sri Lanka.\n\nThe fort has a colorful history, and today has a multi-ethnic and multi-religious population. The Sri Lankan government and many Dutch people who still own some of the properties inside the fort are looking at making this one of the modern wonders of the world. The heritage value of the fort has been recognized by the UNESCO and the site has been inscribed as a cultural heritage UNESCO World Heritage site under criteria iv, for its unique exposition of 'an urban ensemble which illustrates the interaction of European architecture and South Asian traditions from the 16th to the 19th centuries.'\n\nThe Galle Fort, also known as the Dutch Fort or the 'Ramparts of Galle', withstood the Boxing Day tsunami which damaged part of coastal area Galle town. It has been since restored. The Galle Fort is considered to be one of the best examples of a fortified city built by Europeans in South and Southeast Asia, showing the interaction between European architectural styles and South Asian traditions.",
+
+    "destinations.destination.yala.name": "Yala National Park",
+    "destinations.destination.yala.location": "Southern Province",
+    "destinations.destination.yala.description": "Premier wildlife destination famous for leopards, elephants, and diverse bird species in their natural habitat.",
+    "destinations.destination.yala.highlights.leopard": "Leopard Spotting",
+    "destinations.destination.yala.highlights.elephants": "Elephant Herds",
+    "destinations.destination.yala.highlights.birds": "Bird Watching",
+    "destinations.destination.yala.highlights.camping": "Beach Camping",
+    "destinations.destination.yala.bestTime": "February to July",
+    "destinations.destination.yala.difficulty": "Easy",
+    "destinations.destination.yala.groupSize": "2-8 people",
+    "destinations.destination.yala.fullDescription": "Yala National Park is the most visited and second largest national park in Sri Lanka, bordering the Indian Ocean. The park consists of five blocks, two of which are now open to the public, and also adjoining parks. The blocks have individual names such as, Ruhuna National Park (Block 1), and Kumana National Park or 'Yala East' for the adjoining area. It is situated in the southeast region of the country, and lies in Southern Province and Uva Province. The park covers 979 square kilometres and is located about 300 kilometres from Colombo.\n\nYala was designated as a wildlife sanctuary in 1900, and, along with Wilpattu was one of the first two national parks in Sri Lanka, having been designated in 1938. The park is best known for its variety of wild animals. It is important for the conservation of Sri Lankan elephants, Sri Lankan leopards and aquatic birds.\n\nThere are six national parks and three wildlife sanctuaries in the vicinity of Yala. Among the largest is Lunugamvehera National Park. The park is situated in the dry semi-arid climatic region and rain is received mainly during the northeast monsoon. Yala hosts a variety of ecosystems ranging from moist monsoon forests to freshwater and marine wetlands. It is one of the 70 Important Bird Areas (IBAs) in Sri Lanka. Yala harbours 215 bird species including six endemic species of Sri Lanka. The number of mammals that has been recorded from the park is 44, and it has one of the highest leopard densities in the world.",
+
+    "destinations.destination.mirissa.name": "Mirissa Beach",
+    "destinations.destination.mirissa.location": "Southern Province",
+    "destinations.destination.mirissa.description": "Pristine golden beaches perfect for whale watching, surfing, and enjoying spectacular tropical sunsets.",
+    "destinations.destination.mirissa.highlights.whales": "Blue Whale Watching",
+    "destinations.destination.mirissa.highlights.beaches": "Golden Beaches",
+    "destinations.destination.mirissa.highlights.surfing": "Surfing Spots",
+    "destinations.destination.mirissa.highlights.coconut": "Coconut Tree Hill",
+    "destinations.destination.mirissa.bestTime": "November to April",
+    "destinations.destination.mirissa.difficulty": "Easy",
+    "destinations.destination.mirissa.groupSize": "2-15 people",
+    "destinations.destination.mirissa.fullDescription": "Mirissa is a small town on the south coast of Sri Lanka, located in the Matara District of the Southern Province. It is approximately 150 kilometres south of Colombo and is situated at an elevation of 4 metres above sea level. Mirissa beach and nightlife make it a popular tourist destination. It is also a fishing port and one of the island's main whale and dolphin watching locations.\n\nMirissa is the largest fishing port on the south coast and is a one of the island's main whale and dolphin watching locations. The whale and dolphin watching tours are the main tourist attraction of the town. The best time to spot whales and dolphins is from November to April. The most common whale species spotted are the blue whale, sperm whale, and occasionally killer whales.\n\nThe town has a beautiful beach with golden sand and clear blue water. The beach is perfect for swimming, surfing, and sunbathing. The town also has a vibrant nightlife with many restaurants, bars, and cafes. The most popular spot for sunset viewing is Coconut Tree Hill, which offers panoramic views of the Indian Ocean.\n\nMirissa is also known for its surfing spots, particularly at Weligama Bay, which is just a few kilometers away. The area is perfect for beginners and intermediate surfers.",
+
+    "destinations.destination.anuradhapura.name": "Anuradhapura Ancient City",
+    "destinations.destination.anuradhapura.location": "North Central Province",
+    "destinations.destination.anuradhapura.description": "Ancient capital with sacred Buddhist sites, massive dagobas, and ruins dating back over 2,000 years.",
+    "destinations.destination.anuradhapura.highlights.bodhi": "Sacred Bodhi Tree",
+    "destinations.destination.anuradhapura.highlights.dagobas": "Ancient Dagobas",
+    "destinations.destination.anuradhapura.highlights.ruins": "Ruins & Monasteries",
+    "destinations.destination.anuradhapura.highlights.archaeological": "Archaeological Sites",
+    "destinations.destination.anuradhapura.bestTime": "December to March",
+    "destinations.destination.anuradhapura.difficulty": "Easy",
+    "destinations.destination.anuradhapura.groupSize": "2-20 people",
+    "destinations.destination.anuradhapura.fullDescription": "Anuradhapura is one of the ancient capitals of Sri Lanka, famous for its well-preserved ruins of ancient Sinhalese civilization. It was the first capital of the island and remained so for nearly 1,400 years. The city, now a UNESCO World Heritage site, was the center of Theravada Buddhism for many centuries.\n\nThe city is home to some of the most sacred Buddhist sites in the world, including the Sri Maha Bodhi tree, which is said to be a sapling from the original Bodhi tree under which Buddha attained enlightenment. This makes it one of the oldest living trees in the world, planted in 288 BC.\n\nAnuradhapura is also famous for its massive dagobas (stupas), including the Ruwanwelisaya, Jetavanaramaya, and Abhayagiri stupas. These architectural marvels showcase the advanced engineering skills of ancient Sri Lankan civilization.\n\nThe city was abandoned in 993 AD due to repeated invasions from South India, and the capital was moved to Polonnaruwa. However, the sacred city continued to be maintained by Buddhist monks and pilgrims, preserving its religious significance.\n\nToday, Anuradhapura is a major pilgrimage site for Buddhists worldwide and attracts thousands of visitors who come to experience its rich history, ancient architecture, and spiritual atmosphere.",
+
+    "destinations.destination.nuwara.name": "Nuwara Eliya Tea Country",
+    "destinations.destination.nuwara.location": "Central Province",
+    "destinations.destination.nuwara.description": "Cool climate hill station surrounded by tea plantations, colonial architecture, and beautiful gardens.",
+    "destinations.destination.nuwara.highlights.tea": "Tea Factory Tours",
+    "destinations.destination.nuwara.highlights.architecture": "Colonial Architecture",
+    "destinations.destination.nuwara.highlights.horton": "Horton Plains",
+    "destinations.destination.nuwara.highlights.lake": "Gregory Lake",
+    "destinations.destination.nuwara.bestTime": "December to April",
+    "destinations.destination.nuwara.difficulty": "Easy",
+    "destinations.destination.nuwara.groupSize": "2-18 people",
+    "destinations.destination.nuwara.fullDescription": "Nuwara Eliya, often called 'Little England,' is a city in the hill country of the Central Province, Sri Lanka. It is the highest city in the country, sitting at an elevation of 1,868 meters (6,128 feet) above sea level. The city is famous for its cool climate, tea plantations, and colonial architecture.\n\nThe city was established by the British in the 19th century as a hill station to escape the heat of the lowlands. The British influence is still visible in the architecture, with many colonial-style buildings, including the Grand Hotel and the Hill Club.\n\nNuwara Eliya is the heart of Sri Lanka's tea country, surrounded by rolling hills covered in lush green tea plantations. The area produces some of the world's finest Ceylon tea, and visitors can tour tea factories to learn about the tea-making process.\n\nThe city is also known for its beautiful gardens, including the Hakgala Botanical Gardens, which features a variety of exotic plants and flowers. Gregory Lake, located in the center of the city, offers boating and other recreational activities.\n\nThe climate in Nuwara Eliya is much cooler than the rest of Sri Lanka, with temperatures rarely exceeding 20°C (68°F). This makes it a popular destination for both locals and tourists seeking relief from the tropical heat.\n\nThe city is also a gateway to Horton Plains National Park, home to World's End, a dramatic cliff with stunning views over the surrounding landscape.",
+
+    // Additional Destinations for Detail Page
+    "destinations.detail.adamsPeak.name": "Adam's Peak (Sri Pada)",
+    "destinations.detail.adamsPeak.location": "Central Province",
+    "destinations.detail.adamsPeak.description": "Sacred night hike to the 2,243m summit for a breathtaking sunrise and spiritual experience.",
+    "destinations.detail.adamsPeak.fullDescription": "Adam's Peak, also known as Sri Pada, is a revered mountain famous for its summit footprint and spectacular sunrise. The traditional pilgrimage route climbs thousands of steps through tea country and cloud forest. This hike is challenging but achievable for most active travelers, with rest stops and tea stalls along the way.",
+    "destinations.detail.adamsPeak.highlights.pilgrimage": "Sacred pilgrimage site",
+    "destinations.detail.adamsPeak.highlights.sunrise": "Sunrise above the clouds",
+    "destinations.detail.adamsPeak.highlights.steps": "Ancient stone steps",
+    "destinations.detail.adamsPeak.highlights.views": "Tea country views",
+    "destinations.detail.adamsPeak.highlights.nightHike": "Night hike experience",
+    "destinations.detail.adamsPeak.highlights.culture": "Local culture",
+    "destinations.detail.adamsPeak.bestTime": "December to May",
+    "destinations.detail.adamsPeak.difficulty": "Challenging",
+    "destinations.detail.adamsPeak.groupSize": "2-12 people",
+    "destinations.detail.adamsPeak.duration": "1 day (night hike)",
+    "destinations.detail.adamsPeak.price": "120",
+    "destinations.detail.adamsPeak.rating": "4.9",
+    "destinations.detail.adamsPeak.reviews": "342",
+
+    "destinations.detail.kitulgala.name": "White Water Rafting – Kitulgala",
+    "destinations.detail.kitulgala.location": "Sabaragamuwa Province",
+    "destinations.detail.kitulgala.description": "Thrilling Grade 2–3 rapids on the Kelani River through lush rainforest scenery.",
+    "destinations.detail.kitulgala.fullDescription": "Kitulgala is Sri Lanka's white-water capital. After a safety briefing, you'll raft down the Kelani River tackling a series of fun rapids suitable for beginners and families. Between rapids, enjoy calm pools for swimming and rainforest views.",
+    "destinations.detail.kitulgala.highlights.rapids": "Grade 2–3 rapids",
+    "destinations.detail.kitulgala.highlights.canyon": "Rainforest canyon",
+    "destinations.detail.kitulgala.highlights.swimming": "Swimming spots",
+    "destinations.detail.kitulgala.highlights.safety": "Professional safety gear",
+    "destinations.detail.kitulgala.highlights.lunch": "Riverside lunch",
+    "destinations.detail.kitulgala.bestTime": "May to December",
+    "destinations.detail.kitulgala.difficulty": "Moderate",
+    "destinations.detail.kitulgala.groupSize": "4-8 people",
+    "destinations.detail.kitulgala.duration": "Half day",
+    "destinations.detail.kitulgala.price": "85",
+    "destinations.detail.kitulgala.rating": "4.8",
+    "destinations.detail.kitulgala.reviews": "256",
+
+    "destinations.detail.ellaRock.name": "Ella Rock Sunrise Trek",
+    "destinations.detail.ellaRock.location": "Uva Province",
+    "destinations.detail.ellaRock.description": "Pre-dawn trek through tea fields to panoramic sunrise views from Ella Rock.",
+    "destinations.detail.ellaRock.fullDescription": "A classic Ella experience: start before dawn, follow rail tracks and tea trails, then climb to the rocky summit for incredible sunrise views over the hill country. Suitable for active travelers with a moderate fitness level.",
+    "destinations.detail.ellaRock.highlights.sunrise": "Sunrise panorama",
+    "destinations.detail.ellaRock.highlights.teaTrails": "Tea plantation trails",
+    "destinations.detail.ellaRock.highlights.villagePaths": "Local village paths",
+    "destinations.detail.ellaRock.highlights.railWalking": "Rail track walking",
+    "destinations.detail.ellaRock.bestTime": "December to March",
+    "destinations.detail.ellaRock.difficulty": "Moderate",
+    "destinations.detail.ellaRock.groupSize": "2-10 people",
+    "destinations.detail.ellaRock.duration": "Half day",
+    "destinations.detail.ellaRock.price": "65",
+    "destinations.detail.ellaRock.rating": "4.7",
+    "destinations.detail.ellaRock.reviews": "189",
+
+    "destinations.detail.knuckles.name": "Knuckles Range Expedition",
+    "destinations.detail.knuckles.location": "Central Province",
+    "destinations.detail.knuckles.description": "Two-day trek through UNESCO-listed cloud forests, peaks, and remote villages.",
+    "destinations.detail.knuckles.fullDescription": "The Knuckles Mountain Range offers rugged terrain, pristine cloud forests, and endemic wildlife. This two-day expedition includes camping or eco-lodge stays, guided summit attempts, and immersive nature trails.",
+    "destinations.detail.knuckles.highlights.biosphere": "UNESCO biosphere",
+    "destinations.detail.knuckles.highlights.ecosystem": "Cloud forest ecosystem",
+    "destinations.detail.knuckles.highlights.camping": "Mountain camping",
+    "destinations.detail.knuckles.highlights.waterfalls": "Waterfalls & streams",
+    "destinations.detail.knuckles.highlights.wildlife": "Endemic flora & fauna",
+    "destinations.detail.knuckles.bestTime": "January to April",
+    "destinations.detail.knuckles.difficulty": "Challenging",
+    "destinations.detail.knuckles.groupSize": "4-8 people",
+    "destinations.detail.knuckles.duration": "2 days",
+    "destinations.detail.knuckles.price": "280",
+    "destinations.detail.knuckles.rating": "4.8",
+    "destinations.detail.knuckles.reviews": "167",
+
+    "destinations.detail.hortonPlains.name": "Horton Plains – World's End",
+    "destinations.detail.hortonPlains.location": "Central Province",
+    "destinations.detail.hortonPlains.description": "Full-day trek across montane grasslands to World's End and Baker's Falls.",
+    "destinations.detail.hortonPlains.fullDescription": "Horton Plains National Park is a unique highland plateau with sweeping grasslands and cloud forests. The loop trail visits World's End, a dramatic 870m escarpment, and the scenic Baker's Falls. Cool weather and clear mornings offer best views.",
+    "destinations.detail.hortonPlains.highlights.worldsEnd": "World's End viewpoint",
+    "destinations.detail.hortonPlains.highlights.bakersFalls": "Baker's Falls",
+    "destinations.detail.hortonPlains.highlights.grasslands": "Montane grasslands",
+    "destinations.detail.hortonPlains.highlights.wildlife": "Endemic wildlife",
+    "destinations.detail.hortonPlains.bestTime": "January to March",
+    "destinations.detail.hortonPlains.difficulty": "Moderate",
+    "destinations.detail.hortonPlains.groupSize": "2-12 people",
+    "destinations.detail.hortonPlains.duration": "Full day",
+    "destinations.detail.hortonPlains.price": "140",
+    "destinations.detail.hortonPlains.rating": "4.8",
+    "destinations.detail.hortonPlains.reviews": "201",
 
     // Packages
     "packages.title": "Tour Packages",
@@ -1074,7 +1655,6 @@ const translations: { [lang: string]: TranslationMap } = {
     "contact.form.name": "Your Name",
     "contact.form.email": "Email Address",
     "contact.form.phone": "Phone Number",
-    "contact.form.message": "Your Message",
     "contact.form.send": "Send Message",
 
     // Footer
@@ -1249,6 +1829,217 @@ const translations: { [lang: string]: TranslationMap } = {
     "destinations.common.moderate": "Moderate",
     "destinations.common.easy": "Easy",
     "destinations.common.yearRound": "Year-round",
+
+    // Destination Detail Page
+    "destinations.detail.aboutDestination": "About This Destination",
+    "destinations.detail.highlights": "Highlights",
+    "destinations.detail.photoGallery": "Photo Gallery",
+    "destinations.detail.location": "Location",
+    "destinations.detail.quickInfo": "Quick Info",
+    "destinations.detail.whatsIncluded": "What's Included",
+    "destinations.detail.notIncluded": "Not Included",
+    "destinations.detail.nearbyAttractions": "Nearby Attractions",
+    "destinations.detail.bookViaWhatsApp": "Book via WhatsApp",
+    "destinations.detail.callUs": "Call Us",
+    "destinations.detail.viewOnGoogleMaps": "View on Google Maps",
+    "destinations.detail.destinationNotFound": "Destination Not Found",
+    "destinations.detail.backToDestinations": "Back to Destinations",
+    "destinations.detail.bestTime": "Best Time",
+    "destinations.detail.difficulty": "Difficulty",
+    "destinations.detail.duration": "Duration",
+    "destinations.detail.duration.oneDay": "1 day",
+    "destinations.detail.duration.twoDays": "2-3 days",
+    "destinations.detail.duration.threeDays": "2-3 days",
+    "destinations.detail.duration.halfDay": "Half day",
+    "destinations.detail.duration.fullDay": "Full day",
+    "destinations.detail.duration.nightHike": "1 day (night hike)",
+    "destinations.detail.groupSize": "Group Size",
+    "destinations.detail.people": "people",
+    "destinations.detail.groupSize.2to8": "2-8 people",
+    "destinations.detail.groupSize.2to10": "2-10 people",
+    "destinations.detail.groupSize.2to12": "2-12 people",
+    "destinations.detail.groupSize.2to15": "2-15 people",
+    "destinations.detail.groupSize.2to20": "2-20 people",
+    "destinations.detail.groupSize.4to8": "4-8 people",
+
+    // What's Included and Not Included
+    "destinations.detail.included.professionalGuide": "Professional guide",
+    "destinations.detail.included.entranceFees": "Entrance fees",
+    "destinations.detail.included.transportation": "Transportation",
+    "destinations.detail.included.lunch": "Lunch",
+    "destinations.detail.included.waterBottles": "Water bottles",
+    "destinations.detail.included.safetyEquipment": "Safety equipment",
+    "destinations.detail.included.teaTasting": "Tea tasting",
+    "destinations.detail.included.culturalShow": "Cultural show",
+    "destinations.detail.included.parkFees": "Park fees",
+    "destinations.detail.included.whaleWatching": "Whale watching",
+    "destinations.detail.included.surfingEquipment": "Surfing equipment",
+    "destinations.detail.included.archaeologicalTour": "Archaeological tour",
+    "destinations.detail.included.templeVisit": "Temple visit",
+    "destinations.detail.included.teaFactoryTour": "Tea factory tour",
+    "destinations.detail.included.hikingGuide": "Hiking guide",
+    "destinations.detail.included.campingEquipment": "Camping equipment",
+    "destinations.detail.included.safariJeep": "Safari jeep",
+    "destinations.detail.included.binoculars": "Binoculars",
+    "destinations.detail.included.refreshments": "Refreshments",
+    "destinations.detail.included.whaleWatchingTour": "Whale watching tour",
+    "destinations.detail.included.snorkelingEquipment": "Snorkeling equipment",
+    "destinations.detail.included.bottledWater": "Bottled water",
+    "destinations.detail.included.historicalSiteVisits": "Historical site visits",
+    "destinations.detail.included.gardenVisits": "Garden visits",
+    "destinations.detail.included.meals": "Meals",
+
+    // Adventure Destinations
+    "destinations.adventure.adamsPeak.name": "Adam's Peak (Sri Pada)",
+    "destinations.adventure.adamsPeak.location": "Central Province",
+    "destinations.adventure.adamsPeak.description": "Sacred night hike to the 2,243m summit for a breathtaking sunrise and spiritual experience.",
+    "destinations.adventure.adamsPeak.fullDescription": "Adam's Peak, also known as Sri Pada, is a revered mountain famous for its summit footprint and spectacular sunrise. The traditional pilgrimage route climbs thousands of steps through tea country and cloud forest. This hike is challenging but achievable for most active travelers, with rest stops and tea stalls along the way.",
+    "destinations.adventure.adamsPeak.highlights.pilgrimage": "Sacred pilgrimage site",
+    "destinations.adventure.adamsPeak.highlights.sunrise": "Sunrise above the clouds",
+    "destinations.adventure.adamsPeak.highlights.steps": "Ancient stone steps",
+    "destinations.adventure.adamsPeak.highlights.views": "Tea country views",
+    "destinations.adventure.adamsPeak.highlights.nightHike": "Night hike experience",
+    "destinations.adventure.adamsPeak.highlights.culture": "Local culture",
+    "destinations.adventure.adamsPeak.bestTime": "December to May",
+    "destinations.adventure.adamsPeak.difficulty": "Challenging",
+
+    "destinations.adventure.kitulgala.name": "White Water Rafting – Kitulgala",
+    "destinations.adventure.kitulgala.location": "Sabaragamuwa Province",
+    "destinations.adventure.kitulgala.description": "Thrilling Grade 2–3 rapids on the Kelani River through lush rainforest scenery.",
+    "destinations.adventure.kitulgala.fullDescription": "Kitulgala is Sri Lanka's white-water capital. After a safety briefing, you'll raft down the Kelani River tackling a series of fun rapids suitable for beginners and families. Between rapids, enjoy calm pools for swimming and rainforest views.",
+    "destinations.adventure.kitulgala.highlights.rapids": "Grade 2–3 rapids",
+    "destinations.adventure.kitulgala.highlights.canyon": "Rainforest canyon",
+    "destinations.adventure.kitulgala.highlights.swimming": "Swimming spots",
+    "destinations.adventure.kitulgala.highlights.safety": "Professional safety gear",
+    "destinations.adventure.kitulgala.highlights.lunch": "Riverside lunch",
+    "destinations.adventure.kitulgala.bestTime": "May to December",
+    "destinations.adventure.kitulgala.difficulty": "Moderate",
+
+    "destinations.adventure.ellaRock.name": "Ella Rock Sunrise Trek",
+    "destinations.adventure.ellaRock.location": "Uva Province",
+    "destinations.adventure.ellaRock.description": "Pre-dawn trek through tea fields to panoramic sunrise views from Ella Rock.",
+    "destinations.adventure.ellaRock.fullDescription": "A classic Ella experience: start before dawn, follow rail tracks and tea trails, then climb to the rocky summit for incredible sunrise views over the hill country. Suitable for active travelers with a moderate fitness level.",
+    "destinations.adventure.ellaRock.highlights.panorama": "Sunrise panorama",
+    "destinations.adventure.ellaRock.highlights.trails": "Tea plantation trails",
+    "destinations.adventure.ellaRock.highlights.village": "Local village paths",
+    "destinations.adventure.ellaRock.highlights.railway": "Rail track walking",
+    "destinations.adventure.ellaRock.bestTime": "December to March",
+    "destinations.adventure.ellaRock.difficulty": "Moderate",
+
+    "destinations.adventure.knuckles.name": "Knuckles Range Expedition",
+    "destinations.adventure.knuckles.location": "Central Province",
+    "destinations.adventure.knuckles.description": "Two-day trek through UNESCO-listed cloud forests, peaks, and remote villages.",
+    "destinations.adventure.knuckles.fullDescription": "The Knuckles Mountain Range offers rugged terrain, pristine cloud forests, and endemic wildlife. This two-day expedition includes camping or eco-lodge stays, guided summit attempts, and immersive nature trails.",
+    "destinations.adventure.knuckles.highlights.biosphere": "UNESCO biosphere",
+    "destinations.adventure.knuckles.highlights.ecosystem": "Cloud forest ecosystem",
+    "destinations.adventure.knuckles.highlights.camping": "Mountain camping",
+    "destinations.adventure.knuckles.highlights.waterfalls": "Waterfalls & streams",
+    "destinations.adventure.knuckles.highlights.wildlife": "Endemic flora & fauna",
+    "destinations.adventure.knuckles.bestTime": "January to April",
+    "destinations.adventure.knuckles.difficulty": "Challenging",
+
+    "destinations.adventure.hortonPlains.name": "Horton Plains – World's End",
+    "destinations.adventure.hortonPlains.location": "Central Province",
+    "destinations.adventure.hortonPlains.description": "Full-day trek across montane grasslands to World's End and Baker's Falls.",
+    "destinations.adventure.hortonPlains.fullDescription": "Horton Plains National Park is a unique highland plateau with sweeping grasslands and cloud forests. The loop trail visits World's End, a dramatic 870m escarpment, and the scenic Baker's Falls. Cool weather and clear mornings offer best views.",
+    "destinations.adventure.hortonPlains.highlights.viewpoint": "World's End viewpoint",
+    "destinations.adventure.hortonPlains.highlights.falls": "Baker's Falls",
+    "destinations.adventure.hortonPlains.highlights.grasslands": "Montane grasslands",
+    "destinations.adventure.hortonPlains.highlights.wildlife": "Endemic wildlife",
+    "destinations.adventure.hortonPlains.bestTime": "January to March",
+    "destinations.adventure.hortonPlains.difficulty": "Moderate",
+
+    "destinations.adventure.notIncluded.entranceDonations": "Entrance donations",
+    "destinations.adventure.notIncluded.photos": "Photos/videos",
+    "destinations.adventure.notIncluded.parkFees": "Park fees (if any)",
+    "destinations.adventure.notIncluded.personalGear": "Personal gear",
+    "destinations.adventure.notIncluded.warmClothing": "Warm clothing",
+
+    "destinations.adventure.nearby.nallathanniya": "Nallathanniya",
+    "destinations.adventure.nearby.hattonTeaEstates": "Hatton Tea Estates",
+    "destinations.adventure.nearby.maskeliyaReservoir": "Maskeliya Reservoir",
+    "destinations.adventure.nearby.belilenaCave": "Belilena Cave",
+    "destinations.adventure.nearby.filmingSites": "Filming sites",
+    "destinations.adventure.nearby.rainforestWalks": "Rainforest walks",
+    "destinations.adventure.nearby.nineArchBridge": "Nine Arch Bridge",
+    "destinations.adventure.nearby.littleAdamsPeak": "Little Adam's Peak",
+    "destinations.adventure.nearby.ravanaFalls": "Ravana Falls",
+    "destinations.adventure.nearby.riverston": "Riverston",
+    "destinations.adventure.nearby.miniWorldsEnd": "Mini World's End",
+    "destinations.adventure.nearby.wasgamuwa": "Wasgamuwa",
+    "destinations.adventure.nearby.nuwaraEliya": "Nuwara Eliya",
+    "destinations.adventure.nearby.pedroTeaEstate": "Pedro Tea Estate",
+    "destinations.adventure.nearby.gregoryLake": "Gregory Lake",
+
+    "destinations.detail.notIncluded.personalExpenses": "Personal expenses",
+    "destinations.detail.notIncluded.tips": "Tips",
+    "destinations.detail.notIncluded.accommodation": "Accommodation",
+    "destinations.detail.notIncluded.travelInsurance": "Travel insurance",
+    "destinations.detail.notIncluded.alcoholicBeverages": "Alcoholic beverages",
+    "destinations.detail.notIncluded.optionalActivities": "Optional activities",
+    "destinations.detail.notIncluded.internationalFlights": "International flights",
+    "destinations.detail.notIncluded.visaFees": "Visa fees",
+    "destinations.detail.notIncluded.souvenirs": "Souvenirs",
+    "destinations.detail.notIncluded.medicalExpenses": "Medical expenses",
+    "destinations.detail.notIncluded.meals": "Meals",
+
+    // Nearby Attractions
+    "destinations.detail.nearby.dambullaCaveTemple": "Dambulla Cave Temple",
+    "destinations.detail.nearby.minneriyaNationalPark": "Minneriya National Park",
+    "destinations.detail.nearby.polonnaruwaAncientCity": "Polonnaruwa Ancient City",
+    "destinations.detail.nearby.kaudullaNationalPark": "Kaudulla National Park",
+    "destinations.detail.nearby.royalBotanicalGardens": "Royal Botanical Gardens",
+    "destinations.detail.nearby.peradeniyaUniversity": "Peradeniya University",
+    "destinations.detail.nearby.kandyLake": "Kandy Lake",
+    "destinations.detail.nearby.kandyMarket": "Kandy Market",
+    "destinations.detail.nearby.udawattakeleForestReserve": "Udawattakele Forest Reserve",
+    "destinations.detail.nearby.bahirawakandaTemple": "Bahirawakanda Temple",
+    "destinations.detail.nearby.nineArchBridge": "Nine Arch Bridge",
+    "destinations.detail.nearby.littleAdamsPeak": "Little Adam's Peak",
+    "destinations.detail.nearby.rawanaFalls": "Rawana Falls",
+    "destinations.detail.nearby.ellaRock": "Ella Rock",
+    "destinations.detail.nearby.diyalumaFalls": "Diyaluma Falls",
+    "destinations.detail.nearby.bambaragalaPeak": "Bambaragala Peak",
+    "destinations.detail.nearby.galleLighthouse": "Galle Lighthouse",
+    "destinations.detail.nearby.galleMaritimeMuseum": "Galle Maritime Museum",
+    "destinations.detail.nearby.ramparts": "Ramparts",
+    "destinations.detail.nearby.unawatunaBeach": "Unawatuna Beach",
+    "destinations.detail.nearby.hikkaduwaBeach": "Hikkaduwa Beach",
+    "destinations.detail.nearby.koggalaLake": "Koggala Lake",
+    "destinations.detail.nearby.stiltFishermen": "Stilt Fishermen",
+    "destinations.detail.nearby.udawalaweNationalPark": "Udawalawe National Park",
+    "destinations.detail.nearby.bundalaNationalPark": "Bundala National Park",
+    "destinations.detail.nearby.weligamaBay": "Weligama Bay",
+    "destinations.detail.nearby.coconutTreeHill": "Coconut Tree Hill",
+    "destinations.detail.nearby.whaleWatching": "Whale Watching",
+    "destinations.detail.nearby.mihintale": "Mihintale",
+    "destinations.detail.nearby.ritigala": "Ritigala",
+    "destinations.detail.nearby.anuradhapuraMuseum": "Anuradhapura Museum",
+    "destinations.detail.nearby.hortonPlains": "Horton Plains",
+    "destinations.detail.nearby.gregoryLake": "Gregory Lake",
+    "destinations.detail.nearby.hakgalaBotanicalGardens": "Hakgala Botanical Gardens",
+    "destinations.detail.nearby.teaMuseum": "Tea Museum",
+    "destinations.detail.nearby.kataragamaTemple": "Kataragama Temple",
+    "destinations.detail.nearby.sithulpawwaTemple": "Sithulpawwa Temple",
+    "destinations.detail.nearby.kumanaNationalPark": "Kumana National Park",
+    "destinations.detail.nearby.polhenaBeach": "Polhena Beach",
+    "destinations.detail.nearby.dondraHeadLighthouse": "Dondra Head Lighthouse",
+    "destinations.detail.nearby.mihintaleSacredMountain": "Mihintale Sacred Mountain",
+    "destinations.detail.nearby.ellaHillCountry": "Ella Hill Country",
+    "destinations.detail.nearby.adamsPeak": "Adam's Peak",
+    "destinations.detail.nearby.kandyCity": "Kandy City",
+
+    "destinations.detail.easy": "Easy",
+    "destinations.detail.moderate": "Moderate",
+    "destinations.detail.challenging": "Challenging",
+    "destinations.detail.yearRound": "Year-round",
+    "destinations.detail.oneDay": "1 day",
+    "destinations.detail.twoThreeDays": "2-3 days",
+    "destinations.detail.fourPlusDays": "4+ days",
+    "destinations.detail.halfDay": "Half day",
+    "destinations.detail.fullDay": "Full day",
+    "destinations.detail.twoDays": "2 days",
+    "destinations.detail.oneDayNightHike": "1 day (night hike)",
 
     // Gallery Page
     "gallery.items.sigiriya.title": "Sigiriya Rock Fortress",
@@ -1712,7 +2503,6 @@ const translations: { [lang: string]: TranslationMap } = {
     "contact.form.emailAddress": "Email Address",
     "contact.form.phoneNumber": "Phone Number",
     "contact.form.subject": "Subject",
-    "contact.form.message": "Message",
     "contact.form.tourType": "Tour Type",
     "contact.form.placeholders.fullName": "Enter your full name",
     "contact.form.placeholders.email": "Enter your email address",
@@ -1795,6 +2585,64 @@ const translations: { [lang: string]: TranslationMap } = {
     "destinations.from": "От",
     "destinations.days": "дней",
     "destinations.highlights": "Особенности",
+    "destinations.hero.exploreParadise": "Исследуйте рай",
+    "destinations.hero.title": "Откройте для себя Шри-Ланку",
+    "destinations.hero.subtitle": "От древних королевств до нетронутых пляжей, исследуйте самые захватывающие направления острова.",
+    "destinations.sort.mostPopular": "Самые популярные",
+    "destinations.sort.highestRated": "Самые высокие рейтинги",
+    "destinations.sort.priceLowToHigh": "Цена: от низкой к высокой",
+    "destinations.sort.priceHighToLow": "Цена: от высокой к низкой",
+    "destinations.showing": "Показано",
+    "destinations.destinations": "направлений",
+    "destinations.categories.heritage": "Наследие",
+    "destinations.categories.nature": "Природа",
+    "destinations.categories.culture": "Культура",
+    "destinations.categories.adventure": "Приключения",
+    "destinations.categories.beaches": "Пляжи",
+    "destinations.categories.hiking": "Пеший туризм",
+    "destinations.categories.water": "Водные виды спорта",
+
+    // Home Page Components
+    "destinations.hero.exploreParadise": "Исследуйте рай",
+    "common.viewDetails": "Подробнее",
+    "services.hero.premiumServices": "Премиум услуги",
+    "packages.hero.premiumPackages": "Премиум пакеты",
+    "packages.custom.title": "Нужен индивидуальный пакет?",
+    "packages.custom.subtitle": "Давайте создадим персональный маршрут специально для вас",
+    "packages.home.culturalHeritage.name": "Культурное наследие",
+    "packages.home.culturalHeritage.duration": "7 дней",
+    "packages.home.culturalHeritage.price": "$899",
+    "packages.home.culturalHeritage.originalPrice": "$1199",
+    "packages.home.adventureWildlife.name": "Приключения и дикая природа",
+    "packages.home.adventureWildlife.duration": "10 дней",
+    "packages.home.adventureWildlife.price": "$1299",
+    "packages.home.adventureWildlife.originalPrice": "$1599",
+    "packages.home.beachRelaxation.name": "Пляж и отдых",
+    "packages.home.beachRelaxation.duration": "5 дней",
+    "packages.home.beachRelaxation.price": "$1599",
+    "packages.home.beachRelaxation.originalPrice": "$1999",
+    "about.hero.trustedSince": "Доверяют с 2023 года",
+    "about.cta.learnMore": "Узнать больше о нас",
+    "testimonials.hero.clientStories": "Истории клиентов",
+    "testimonials.sarah.name": "Сара Джонсон",
+    "testimonials.sarah.location": "Нью-Йорк, США",
+    "testimonials.sarah.tour": "Исследователь культурного наследия",
+    "testimonials.sarah.review": "Невероятный опыт! Команда Ceylon Escape сделала наше приключение на Шри-Ланке незабываемым. От древних храмов до потрясающих пейзажей - каждый момент был идеально спланирован.",
+    "testimonials.michael.name": "Майкл Чен",
+    "testimonials.michael.location": "Торонто, Канада",
+    "testimonials.michael.tour": "Приключения и дикая природа",
+    "testimonials.michael.review": "Сафари превзошло все ожидания! Мы видели леопардов, слонов и бесчисленное множество видов птиц. Размещение было роскошным, а еда потрясающей.",
+    "testimonials.emma.name": "Эмма Томпсон",
+    "testimonials.emma.location": "Лондон, Великобритания",
+    "testimonials.emma.tour": "Роскошный пляж и спа",
+    "testimonials.emma.review": "Чистый рай! Пляжный курорт был потрясающим, а спа-процедуры мирового класса. Каждая деталь была продумана - от трансферов из аэропорта до ежедневных экскурсий.",
+    "gallery.hero.visualJourney": "Визуальное путешествие",
+    "gallery.items.sigiriya.title": "Крепость Сигирия",
+    "gallery.items.beach.title": "Пляжный рай",
+    "gallery.items.tea.title": "Чайные плантации",
+    "gallery.items.temple.title": "Священный храм",
+    "gallery.items.wildlife.title": "Сафари по дикой природе",
+    "gallery.items.cultural.title": "Культурное представление",
 
     // Packages
     "packages.title": "Туристические пакеты",
@@ -2161,6 +3009,399 @@ const translations: { [lang: string]: TranslationMap } = {
     "destinations.common.moderate": "Умеренная",
     "destinations.common.easy": "Легкая",
     "destinations.common.yearRound": "Круглый год",
+
+    // Destination Details
+    "destinations.destination.sigiriya.name": "Крепость Сигирия",
+    "destinations.destination.sigiriya.location": "Центральная провинция",
+    "destinations.destination.sigiriya.description": "Древний королевский дворец и крепость, построенная на массивной скальной формации, с потрясающими фресками и водными садами.",
+    "destinations.destination.sigiriya.fullDescription": "Сигирия, также известная как Львиная скала, - это древняя скальная крепость и руины дворца, расположенные в северном округе Матале недалеко от города Дамбулла в Центральной провинции Шри-Ланки. Это место исторического и археологического значения, которое доминирует массивная скальная колонна высотой почти 200 метров.\n\nСогласно древней шри-ланкийской хронике Кулавамса, эта область была большим лесом, затем после штормов и оползней она стала холмом и была выбрана королем Кашьяпой (477-495 гг. н.э.) для своей новой столицы. Он построил свой дворец на вершине этой скалы и украсил ее стороны красочными фресками.\n\nМесто было одновременно дворцом и крепостью. Верхний дворец на вершине скалы включает цистерны, вырезанные в скале, которые до сих пор удерживают воду. Рвы и стены, окружающие нижний дворец, до сих пор превосходно сохранились.\n\nСигирия считается одним из лучших сохранившихся примеров древнего городского планирования. Это самое посещаемое историческое место в Шри-Ланке. Дворец расположен в сердце острова между городами Дамбулла и Хабаране на массивном скальном плато на высоте 370 метров над уровнем моря.\n\nСама скала представляет собой затвердевшую пробку магмы из потухшего вулкана. Место использовалось как буддийский монастырь с 3 века до н.э., с пещерами, подготовленными и подаренными преданными сангхе.",
+    "destinations.destination.sigiriya.highlights.ancient": "Древние руины дворца",
+    "destinations.destination.sigiriya.highlights.frescoes": "Знаменитые фрески",
+    "destinations.destination.sigiriya.highlights.gardens": "Водные сады",
+    "destinations.destination.sigiriya.highlights.museum": "Археологический музей",
+    "destinations.destination.sigiriya.bestTime": "Декабрь - апрель",
+    "destinations.destination.sigiriya.difficulty": "Умеренная",
+    "destinations.destination.sigiriya.groupSize": "2-15 человек",
+
+    "destinations.destination.kandy.name": "Культурный треугольник Канди",
+    "destinations.destination.kandy.location": "Центральная провинция",
+    "destinations.destination.kandy.description": "Священный город, где находится Храм Священного Зуба, окруженный красивыми ботаническими садами и традиционной культурой.",
+    "destinations.destination.kandy.highlights.temple": "Храм Священного Зуба",
+    "destinations.destination.kandy.highlights.gardens": "Королевские ботанические сады",
+    "destinations.destination.kandy.highlights.dance": "Традиционные танцевальные шоу",
+    "destinations.destination.kandy.highlights.lake": "Озеро Канди",
+    "destinations.destination.kandy.bestTime": "Круглый год",
+    "destinations.destination.kandy.difficulty": "Легкая",
+    "destinations.destination.kandy.groupSize": "2-20 человек",
+    "destinations.destination.kandy.fullDescription": "Канди - крупный город в Шри-Ланке, расположенный в Центральной провинции. Это была последняя столица эпохи древних королей Шри-Ланки. Город лежит среди холмов на плато Канди, которое пересекает область тропических плантаций, в основном чайных. Канди является одновременно административным и религиозным городом, а также столицей Центральной провинции.\n\nКанди - это дом Храма Священного Зуба (Шри Далада Малигава), одного из самых священных мест поклонения в буддийском мире. Он был объявлен объектом всемирного наследия ЮНЕСКО в 1988 году. Город и регион были известны под многими разными именами и их вариантами. Некоторые ученые предполагают, что первоначальное название Канди было Катубулу Нувара, расположенное недалеко от нынешнего Ватапулува. Однако более популярное историческое название - Сенкадагала или Сенкадагалапура, официально Сенкадагала Сиривардхана Маха Нувара (означающее 'великий город Сенкадагала растущего великолепия'), обычно сокращенное до 'Маха Нувара'.\n\nГород является объектом всемирного наследия, объявленным ЮНЕСКО, отчасти благодаря храму. Канди - второй по величине город острова и столица Центральной провинции Шри-Ланки. Это также административная столица округа Канди.",
+
+    "destinations.destination.ella.name": "Горная страна Элла",
+    "destinations.destination.ella.location": "Провинция Ува",
+    "destinations.destination.ella.description": "Туманные горы, чайные плантации и живописные поездки на поезде через одни из самых красивых пейзажей Шри-Ланки.",
+    "destinations.destination.ella.highlights.bridge": "Мост Девяти арок",
+    "destinations.destination.ella.highlights.peak": "Маленький пик Адама",
+    "destinations.destination.ella.highlights.tea": "Экскурсии по чайным плантациям",
+    "destinations.destination.ella.highlights.train": "Живописная поездка на поезде",
+    "destinations.destination.ella.bestTime": "Декабрь - март",
+    "destinations.destination.ella.difficulty": "Умеренная",
+    "destinations.destination.ella.groupSize": "2-12 человек",
+    "destinations.destination.ella.fullDescription": "Элла - небольшой город в округе Бадулла провинции Ува, Шри-Ланка, управляемый городским советом. Он расположен примерно в 200 километрах к востоку от Коломбо и находится на высоте 1041 метр над уровнем моря. В этом районе богатое биоразнообразие, густое с многочисленными разновидностями флоры и фауны. Элла окружена холмами, покрытыми облачными лесами и чайными плантациями. В городе более прохладный климат, чем в окружающих низменностях, из-за его высоты.\n\nЭлла наиболее известна своей живописной красотой и знаменитым мостом Девяти арок. Этот район также известен своими чайными плантациями, которые производят один из лучших чаев в мире. Город является популярным туристическим направлением для тех, кто приезжает насладиться прохладным климатом, живописными видами и активным отдыхом, таким как пешие походы и треккинг.\n\nМост Девяти арок - одна из самых знаковых достопримечательностей Шри-Ланки. Построенный в 1921 году, этот архитектурный шедевр полностью сделан из камня, кирпича и цемента без использования стали. Мост протянулся на 91 метр на высоте 24 метра и окружен пышными зелеными чайными плантациями и туманными горами.\n\nЭлла также является домом для Маленького пика Адама, популярного места для пеших походов, которое предлагает панорамные виды на окружающую сельскую местность. Поход относительно легкий и занимает около 30-45 минут, чтобы достичь вершины.",
+
+    "destinations.destination.galle.name": "Голландский форт Галле",
+    "destinations.destination.galle.location": "Южная провинция",
+    "destinations.destination.galle.description": "Колониальный форт всемирного наследия ЮНЕСКО с историческим маяком, музеями и очаровательными мощенными улицами.",
+    "destinations.destination.galle.highlights.architecture": "Колониальная архитектура",
+    "destinations.destination.galle.highlights.lighthouse": "Исторический маяк",
+    "destinations.destination.galle.highlights.ramparts": "Фортификационные стены",
+    "destinations.destination.galle.highlights.museum": "Морской музей",
+    "destinations.destination.galle.bestTime": "Ноябрь - апрель",
+    "destinations.destination.galle.difficulty": "Легкая",
+    "destinations.destination.galle.groupSize": "2-25 человек",
+    "destinations.destination.galle.fullDescription": "Форт Галле, в заливе Галле на юго-западном побережье Шри-Ланки, был впервые построен в 1588 году португальцами, а затем значительно укреплен голландцами в течение 17 века с 1649 года. Это исторический, археологический и архитектурный памятник наследия, который даже после более чем 432 лет сохраняет полированный вид благодаря обширным реставрационным работам, проведенным Археологическим департаментом Шри-Ланки.\n\nФорт имеет красочную историю, и сегодня имеет многоэтническое и многоконфессиональное население. Правительство Шри-Ланки и многие голландцы, которые до сих пор владеют некоторыми объектами внутри форта, рассматривают возможность сделать это одним из современных чудес света. Ценность наследия форта была признана ЮНЕСКО, и объект был внесен в список культурного наследия ЮНЕСКО по критерию iv за его уникальную демонстрацию 'городского ансамбля, который иллюстрирует взаимодействие европейской архитектуры и южноазиатских традиций с 16 по 19 века.'\n\nФорт Галле, также известный как Голландский форт или 'Валы Галле', выдержал цунами в день подарков, которое повредило часть прибрежной зоны города Галле. С тех пор он был восстановлен. Форт Галле считается одним из лучших примеров укрепленного города, построенного европейцами в Южной и Юго-Восточной Азии, показывающего взаимодействие между европейскими архитектурными стилями и южноазиатскими традициями.",
+
+    "destinations.destination.yala.name": "Национальный парк Яла",
+    "destinations.destination.yala.location": "Южная провинция",
+    "destinations.destination.yala.description": "Главное направление для наблюдения за дикой природой, знаменитое леопардами, слонами и разнообразными видами птиц в их естественной среде обитания.",
+    "destinations.destination.yala.highlights.leopard": "Наблюдение за леопардами",
+    "destinations.destination.yala.highlights.elephants": "Стада слонов",
+    "destinations.destination.yala.highlights.birds": "Наблюдение за птицами",
+    "destinations.destination.yala.highlights.camping": "Пляжный кемпинг",
+    "destinations.destination.yala.bestTime": "Февраль - июль",
+    "destinations.destination.yala.difficulty": "Легкая",
+    "destinations.destination.yala.groupSize": "2-8 человек",
+    "destinations.destination.yala.fullDescription": "Национальный парк Яла - самый посещаемый и второй по величине национальный парк в Шри-Ланке, граничащий с Индийским океаном. Парк состоит из пяти блоков, два из которых теперь открыты для публики, а также прилегающих парков. Блоки имеют индивидуальные названия, такие как Национальный парк Рухуна (Блок 1) и Национальный парк Кумана или 'Яла Восток' для прилегающей территории. Он расположен в юго-восточном регионе страны и находится в Южной провинции и провинции Ува. Парк занимает 979 квадратных километров и расположен примерно в 300 километрах от Коломбо.\n\nЯла был объявлен заповедником дикой природы в 1900 году и вместе с Вилпатту был одним из первых двух национальных парков в Шри-Ланке, получивших статус в 1938 году. Парк наиболее известен разнообразием диких животных. Он важен для сохранения шри-ланкийских слонов, шри-ланкийских леопардов и водоплавающих птиц.\n\nВ окрестностях Яла есть шесть национальных парков и три заповедника дикой природы. Среди крупнейших - Национальный парк Лунгамвехера. Парк расположен в сухом полузасушливом климатическом регионе, и дожди выпадают в основном во время северо-восточного муссона. Яла содержит разнообразные экосистемы от влажных муссонных лесов до пресноводных и морских водно-болотных угодий. Это одна из 70 важных орнитологических территорий (IBA) в Шри-Ланке. Яла является домом для 215 видов птиц, включая шесть эндемичных видов Шри-Ланки. Количество млекопитающих, зарегистрированных в парке, составляет 44, и он имеет одну из самых высоких плотностей леопардов в мире.",
+
+    "destinations.destination.mirissa.name": "Пляж Мирисса",
+    "destinations.destination.mirissa.location": "Южная провинция",
+    "destinations.destination.mirissa.description": "Нетронутые золотые пляжи, идеальные для наблюдения за китами, серфинга и наслаждения захватывающими тропическими закатами.",
+    "destinations.destination.mirissa.highlights.whales": "Наблюдение за синими китами",
+    "destinations.destination.mirissa.highlights.beaches": "Золотые пляжи",
+    "destinations.destination.mirissa.highlights.surfing": "Места для серфинга",
+    "destinations.destination.mirissa.highlights.coconut": "Холм Кокосовых пальм",
+    "destinations.destination.mirissa.bestTime": "Ноябрь - апрель",
+    "destinations.destination.mirissa.difficulty": "Легкая",
+    "destinations.destination.mirissa.groupSize": "2-15 человек",
+    "destinations.destination.mirissa.fullDescription": "Мирисса - небольшой город на южном побережье Шри-Ланки, расположенный в округе Матара Южной провинции. Он находится примерно в 150 километрах к югу от Коломбо и расположен на высоте 4 метра над уровнем моря. Пляж Мирисса и ночная жизнь делают его популярным туристическим направлением. Это также рыбный порт и одно из основных мест наблюдения за китами и дельфинами на острове.\n\nМирисса - крупнейший рыбный порт на южном побережье и одно из основных мест наблюдения за китами и дельфинами на острове. Туры по наблюдению за китами и дельфинами являются главной туристической достопримечательностью города. Лучшее время для наблюдения за китами и дельфинами - с ноября по апрель. Наиболее распространенные виды китов, которых можно увидеть, - это синий кит, кашалот и иногда косатки.\n\nВ городе есть красивый пляж с золотым песком и чистой голубой водой. Пляж идеально подходит для плавания, серфинга и принятия солнечных ванн. В городе также есть оживленная ночная жизнь с множеством ресторанов, баров и кафе. Самое популярное место для наблюдения за закатом - Холм Кокосовых пальм, который предлагает панорамные виды на Индийский океан.\n\nМирисса также известна своими местами для серфинга, особенно в заливе Велигама, который находится всего в нескольких километрах. Этот район идеально подходит для начинающих и серферов среднего уровня.",
+
+    "destinations.destination.anuradhapura.name": "Древний город Анурадхапура",
+    "destinations.destination.anuradhapura.location": "Северо-Центральная провинция",
+    "destinations.destination.anuradhapura.description": "Древняя столица со священными буддийскими местами, массивными дагобами и руинами, датируемыми более 2000 лет.",
+    "destinations.destination.anuradhapura.highlights.bodhi": "Священное дерево Бодхи",
+    "destinations.destination.anuradhapura.highlights.dagobas": "Древние дагобы",
+    "destinations.destination.anuradhapura.highlights.ruins": "Руины и монастыри",
+    "destinations.destination.anuradhapura.highlights.archaeological": "Археологические места",
+    "destinations.destination.anuradhapura.bestTime": "Декабрь - март",
+    "destinations.destination.anuradhapura.difficulty": "Легкая",
+    "destinations.destination.anuradhapura.groupSize": "2-20 человек",
+    "destinations.destination.anuradhapura.fullDescription": "Анурадхапура - одна из древних столиц Шри-Ланки, знаменитая своими хорошо сохранившимися руинами древней сингальской цивилизации. Это была первая столица острова и оставалась ею почти 1400 лет. Город, ныне объект всемирного наследия ЮНЕСКО, был центром буддизма Тхеравады на протяжении многих веков.\n\nГород является домом для некоторых из самых священных буддийских мест в мире, включая дерево Шри Маха Бодхи, которое, как говорят, является саженцем от оригинального дерева Бодхи, под которым Будда достиг просветления. Это делает его одним из старейших живых деревьев в мире, посаженным в 288 году до н.э.\n\nАнурадхапура также знаменита своими массивными дагобами (ступами), включая Руванвелисая, Джатаванарамая и Абхаягири ступы. Эти архитектурные чудеса демонстрируют передовые инженерные навыки древней шри-ланкийской цивилизации.\n\nГород был заброшен в 993 году н.э. из-за повторяющихся вторжений из Южной Индии, и столица была перенесена в Полоннаруву. Однако священный город продолжал поддерживаться буддийскими монахами и паломниками, сохраняя свое религиозное значение.\n\nСегодня Анурадхапура является крупным местом паломничества для буддистов по всему миру и привлекает тысячи посетителей, которые приезжают, чтобы испытать его богатую историю, древнюю архитектуру и духовную атмосферу.",
+
+    "destinations.destination.nuwara.name": "Чайная страна Нувара-Элия",
+    "destinations.destination.nuwara.location": "Центральная провинция",
+    "destinations.destination.nuwara.description": "Прохладная горная станция, окруженная чайными плантациями, колониальной архитектурой и красивыми садами.",
+    "destinations.destination.nuwara.highlights.tea": "Экскурсии по чайным фабрикам",
+    "destinations.destination.nuwara.highlights.architecture": "Колониальная архитектура",
+    "destinations.destination.nuwara.highlights.horton": "Хортон-Плейнс",
+    "destinations.destination.nuwara.highlights.lake": "Озеро Грегори",
+    "destinations.destination.nuwara.bestTime": "Декабрь - апрель",
+    "destinations.destination.nuwara.difficulty": "Легкая",
+    "destinations.destination.nuwara.groupSize": "2-18 человек",
+    "destinations.destination.nuwara.fullDescription": "Нувара-Элия, часто называемая 'Маленькой Англией', - это город в горной стране Центральной провинции Шри-Ланки. Это самый высокий город в стране, расположенный на высоте 1868 метров (6128 футов) над уровнем моря. Город знаменит своим прохладным климатом, чайными плантациями и колониальной архитектурой.\n\nГород был основан британцами в 19 веке как горная станция, чтобы избежать жары низменностей. Британское влияние все еще видно в архитектуре, с множеством зданий в колониальном стиле, включая Гранд-отель и Хилл-клуб.\n\nНувара-Элия - это сердце чайной страны Шри-Ланки, окруженная холмистыми холмами, покрытыми пышными зелеными чайными плантациями. Этот район производит один из лучших цейлонских чаев в мире, и посетители могут совершить экскурсии по чайным фабрикам, чтобы узнать о процессе производства чая.\n\nГород также известен своими красивыми садами, включая Ботанические сады Хакгала, которые содержат разнообразные экзотические растения и цветы. Озеро Грегори, расположенное в центре города, предлагает катание на лодках и другие развлекательные мероприятия.\n\nКлимат в Нувара-Элии намного прохладнее, чем в остальной части Шри-Ланки, с температурами, редко превышающими 20°C (68°F). Это делает его популярным направлением как для местных жителей, так и для туристов, ищущих облегчение от тропической жары.\n\nГород также является воротами в Национальный парк Хортон-Плейнс, домом для Края света, драматического обрыва с потрясающими видами на окружающий ландшафт.",
+
+    // Additional Destinations for Detail Page
+    "destinations.detail.adamsPeak.name": "Пик Адама (Шри Пада)",
+    "destinations.detail.adamsPeak.location": "Центральная провинция",
+    "destinations.detail.adamsPeak.description": "Священный ночной поход к вершине высотой 2243м для захватывающего восхода солнца и духовного опыта.",
+    "destinations.detail.adamsPeak.fullDescription": "Пик Адама, также известный как Шри Пада, - это почитаемая гора, знаменитая своим отпечатком стопы на вершине и захватывающим восходом солнца. Традиционный паломнический маршрут поднимается по тысячам ступеней через чайную страну и облачный лес. Этот поход сложный, но достижимый для большинства активных путешественников, с местами для отдыха и чайными лавками по пути.",
+    "destinations.detail.adamsPeak.highlights.pilgrimage": "Священное место паломничества",
+    "destinations.detail.adamsPeak.highlights.sunrise": "Восход солнца над облаками",
+    "destinations.detail.adamsPeak.highlights.steps": "Древние каменные ступени",
+    "destinations.detail.adamsPeak.highlights.views": "Виды на чайную страну",
+    "destinations.detail.adamsPeak.highlights.nightHike": "Ночной поход",
+    "destinations.detail.adamsPeak.highlights.culture": "Местная культура",
+    "destinations.detail.adamsPeak.bestTime": "Декабрь - май",
+    "destinations.detail.adamsPeak.difficulty": "Сложная",
+    "destinations.detail.adamsPeak.groupSize": "2-12 человек",
+    "destinations.detail.adamsPeak.duration": "1 день (ночной поход)",
+    "destinations.detail.adamsPeak.price": "120",
+    "destinations.detail.adamsPeak.rating": "4.9",
+    "destinations.detail.adamsPeak.reviews": "342",
+
+    "destinations.detail.kitulgala.name": "Рафтинг по бурной воде - Китulgala",
+    "destinations.detail.kitulgala.location": "Провинция Сабарагамува",
+    "destinations.detail.kitulgala.description": "Захватывающие пороги 2-3 категории на реке Келани через пышные пейзажи тропического леса.",
+    "destinations.detail.kitulgala.fullDescription": "Китulgala - это столица рафтинга Шри-Ланки. После инструктажа по безопасности вы будете сплавляться по реке Келани, преодолевая серию веселых порогов, подходящих для начинающих и семей. Между порогами наслаждайтесь спокойными бассейнами для плавания и видами на тропический лес.",
+    "destinations.detail.kitulgala.highlights.rapids": "Пороги 2-3 категории",
+    "destinations.detail.kitulgala.highlights.canyon": "Каньон тропического леса",
+    "destinations.detail.kitulgala.highlights.swimming": "Места для плавания",
+    "destinations.detail.kitulgala.highlights.safety": "Профессиональное снаряжение безопасности",
+    "destinations.detail.kitulgala.highlights.lunch": "Обед на берегу реки",
+    "destinations.detail.kitulgala.bestTime": "Май - декабрь",
+    "destinations.detail.kitulgala.difficulty": "Умеренная",
+    "destinations.detail.kitulgala.groupSize": "4-8 человек",
+    "destinations.detail.kitulgala.duration": "Полдня",
+    "destinations.detail.kitulgala.price": "85",
+    "destinations.detail.kitulgala.rating": "4.8",
+    "destinations.detail.kitulgala.reviews": "256",
+
+    "destinations.detail.ellaRock.name": "Восход на скале Элла",
+    "destinations.detail.ellaRock.location": "Провинция Ува",
+    "destinations.detail.ellaRock.description": "Предрассветный поход через чайные поля к панорамным видам восхода солнца со скалы Элла.",
+    "destinations.detail.ellaRock.fullDescription": "Классический опыт Эллы: начните перед рассветом, следуйте по железнодорожным путям и чайным тропам, затем поднимитесь на скалистую вершину для невероятных видов восхода солнца над горной страной. Подходит для активных путешественников с умеренным уровнем физической подготовки.",
+    "destinations.detail.ellaRock.highlights.sunrise": "Панорама восхода солнца",
+    "destinations.detail.ellaRock.highlights.teaTrails": "Тропы чайных плантаций",
+    "destinations.detail.ellaRock.highlights.villagePaths": "Местные деревенские тропы",
+    "destinations.detail.ellaRock.highlights.railWalking": "Ходьба по железнодорожным путям",
+    "destinations.detail.ellaRock.bestTime": "Декабрь - март",
+    "destinations.detail.ellaRock.difficulty": "Умеренная",
+    "destinations.detail.ellaRock.groupSize": "2-10 человек",
+    "destinations.detail.ellaRock.duration": "Полдня",
+    "destinations.detail.ellaRock.price": "65",
+    "destinations.detail.ellaRock.rating": "4.7",
+    "destinations.detail.ellaRock.reviews": "189",
+
+    "destinations.detail.knuckles.name": "Экспедиция в горный хребет Кнuckles",
+    "destinations.detail.knuckles.location": "Центральная провинция",
+    "destinations.detail.knuckles.description": "Двухдневный поход через облачные леса, включенные в список ЮНЕСКО, вершины и отдаленные деревни.",
+    "destinations.detail.knuckles.fullDescription": "Горный хребет Кнuckles предлагает пересеченную местность, нетронутые облачные леса и эндемичную дикую природу. Эта двухдневная экспедиция включает кемпинг или проживание в эко-лоджах, попытки восхождения на вершину с гидом и погружающие тропы природы.",
+    "destinations.detail.knuckles.highlights.biosphere": "Биосфера ЮНЕСКО",
+    "destinations.detail.knuckles.highlights.ecosystem": "Экосистема облачного леса",
+    "destinations.detail.knuckles.highlights.camping": "Горный кемпинг",
+    "destinations.detail.knuckles.highlights.waterfalls": "Водопады и ручьи",
+    "destinations.detail.knuckles.highlights.wildlife": "Эндемичная флора и фауна",
+    "destinations.detail.knuckles.bestTime": "Январь - апрель",
+    "destinations.detail.knuckles.difficulty": "Сложная",
+    "destinations.detail.knuckles.groupSize": "4-8 человек",
+    "destinations.detail.knuckles.duration": "2 дня",
+    "destinations.detail.knuckles.price": "280",
+    "destinations.detail.knuckles.rating": "4.8",
+    "destinations.detail.knuckles.reviews": "167",
+
+    "destinations.detail.hortonPlains.name": "Хортон-Плейнс - Край света",
+    "destinations.detail.hortonPlains.location": "Центральная провинция",
+    "destinations.detail.hortonPlains.description": "Полнодневный поход по горным лугам к Краю света и водопадам Бейкера.",
+    "destinations.detail.hortonPlains.fullDescription": "Национальный парк Хортон-Плейнс - это уникальное высокогорное плато с просторными лугами и облачными лесами. Кольцевая тропа посещает Край света, драматический обрыв высотой 870м, и живописные водопады Бейкера. Прохладная погода и ясные утра предлагают лучшие виды.",
+    "destinations.detail.hortonPlains.highlights.worldsEnd": "Смотровая площадка Край света",
+    "destinations.detail.hortonPlains.highlights.bakersFalls": "Водопады Бейкера",
+    "destinations.detail.hortonPlains.highlights.grasslands": "Горные луга",
+    "destinations.detail.hortonPlains.highlights.wildlife": "Эндемичная дикая природа",
+    "destinations.detail.hortonPlains.bestTime": "Январь - март",
+    "destinations.detail.hortonPlains.difficulty": "Умеренная",
+    "destinations.detail.hortonPlains.groupSize": "2-12 человек",
+    "destinations.detail.hortonPlains.duration": "Полный день",
+    "destinations.detail.hortonPlains.price": "140",
+    "destinations.detail.hortonPlains.rating": "4.8",
+    "destinations.detail.hortonPlains.reviews": "201",
+
+    // Destination Detail Page
+    "destinations.detail.aboutDestination": "О направлении",
+    "destinations.detail.highlights": "Особенности",
+    "destinations.detail.photoGallery": "Фотогалерея",
+    "destinations.detail.location": "Местоположение",
+    "destinations.detail.quickInfo": "Быстрая информация",
+    "destinations.detail.whatsIncluded": "Что включено",
+    "destinations.detail.notIncluded": "Не включено",
+    "destinations.detail.nearbyAttractions": "Близлежащие достопримечательности",
+    "destinations.detail.bookViaWhatsApp": "Забронировать через WhatsApp",
+    "destinations.detail.callUs": "Позвонить нам",
+    "destinations.detail.viewOnGoogleMaps": "Посмотреть на Google Maps",
+    "destinations.detail.destinationNotFound": "Направление не найдено",
+    "destinations.detail.backToDestinations": "Назад к направлениям",
+    "destinations.detail.bestTime": "Лучшее время",
+    "destinations.detail.difficulty": "Сложность",
+    "destinations.detail.duration": "Продолжительность",
+    "destinations.detail.duration.oneDay": "1 день",
+    "destinations.detail.duration.twoDays": "2-3 дня",
+    "destinations.detail.duration.threeDays": "2-3 дня",
+    "destinations.detail.duration.halfDay": "Полдня",
+    "destinations.detail.duration.fullDay": "Полный день",
+    "destinations.detail.duration.nightHike": "1 день (ночной поход)",
+    "destinations.detail.groupSize": "Размер группы",
+    "destinations.detail.people": "человек",
+    "destinations.detail.groupSize.2to8": "2-8 человек",
+    "destinations.detail.groupSize.2to10": "2-10 человек",
+    "destinations.detail.groupSize.2to12": "2-12 человек",
+    "destinations.detail.groupSize.2to15": "2-15 человек",
+    "destinations.detail.groupSize.2to20": "2-20 человек",
+    "destinations.detail.groupSize.4to8": "4-8 человек",
+
+    // What's Included and Not Included
+    "destinations.detail.included.professionalGuide": "Профессиональный гид",
+    "destinations.detail.included.entranceFees": "Входные билеты",
+    "destinations.detail.included.transportation": "Транспорт",
+    "destinations.detail.included.lunch": "Обед",
+    "destinations.detail.included.waterBottles": "Бутылки с водой",
+    "destinations.detail.included.safetyEquipment": "Оборудование безопасности",
+    "destinations.detail.included.teaTasting": "Дегустация чая",
+    "destinations.detail.included.culturalShow": "Культурное шоу",
+    "destinations.detail.included.parkFees": "Плата за парк",
+    "destinations.detail.included.whaleWatching": "Наблюдение за китами",
+    "destinations.detail.included.surfingEquipment": "Оборудование для серфинга",
+    "destinations.detail.included.archaeologicalTour": "Археологическая экскурсия",
+    "destinations.detail.included.templeVisit": "Посещение храма",
+    "destinations.detail.included.teaFactoryTour": "Экскурсия по чайной фабрике",
+    "destinations.detail.included.hikingGuide": "Гид для похода",
+    "destinations.detail.included.campingEquipment": "Кемпинговое оборудование",
+    "destinations.detail.included.safariJeep": "Джип для сафари",
+    "destinations.detail.included.binoculars": "Бинокли",
+    "destinations.detail.included.refreshments": "Охлаждающие напитки",
+    "destinations.detail.included.whaleWatchingTour": "Тур по наблюдению за китами",
+    "destinations.detail.included.snorkelingEquipment": "Оборудование для сноркелинга",
+    "destinations.detail.included.bottledWater": "Бутилированная вода",
+    "destinations.detail.included.historicalSiteVisits": "Посещение исторических мест",
+    "destinations.detail.included.gardenVisits": "Посещение садов",
+    "destinations.detail.included.meals": "Питание",
+
+    // Adventure Destinations
+    "destinations.adventure.adamsPeak.name": "Пик Адама (Шри Пада)",
+    "destinations.adventure.adamsPeak.location": "Центральная провинция",
+    "destinations.adventure.adamsPeak.description": "Священный ночной поход к вершине высотой 2243 м для захватывающего восхода солнца и духовного опыта.",
+    "destinations.adventure.adamsPeak.fullDescription": "Пик Адама, также известный как Шри Пада, - это почитаемая гора, знаменитая отпечатком стопы на вершине и потрясающим восходом солнца. Традиционный паломнический маршрут поднимается по тысячам ступеней через чайные плантации и облачный лес. Этот поход сложный, но доступный для большинства активных путешественников, с местами для отдыха и чайными лавками по пути.",
+    "destinations.adventure.adamsPeak.highlights.pilgrimage": "Священное место паломничества",
+    "destinations.adventure.adamsPeak.highlights.sunrise": "Восход солнца над облаками",
+    "destinations.adventure.adamsPeak.highlights.steps": "Древние каменные ступени",
+    "destinations.adventure.adamsPeak.highlights.views": "Виды на чайные плантации",
+    "destinations.adventure.adamsPeak.highlights.nightHike": "Опыт ночного похода",
+    "destinations.adventure.adamsPeak.highlights.culture": "Местная культура",
+    "destinations.adventure.adamsPeak.bestTime": "Декабрь - май",
+    "destinations.adventure.adamsPeak.difficulty": "Сложный",
+
+    "destinations.adventure.kitulgala.name": "Рафтинг по бурной воде – Китулгала",
+    "destinations.adventure.kitulgala.location": "Провинция Сабарагамува",
+    "destinations.adventure.kitulgala.description": "Захватывающие пороги 2-3 категории на реке Келани среди пышных тропических лесов.",
+    "destinations.adventure.kitulgala.fullDescription": "Китулгала - столица рафтинга Шри-Ланки. После инструктажа по безопасности вы сплавитесь по реке Келани, преодолевая серию веселых порогов, подходящих для новичков и семей. Между порогами наслаждайтесь спокойными бассейнами для плавания и видами тропического леса.",
+    "destinations.adventure.kitulgala.highlights.rapids": "Пороги 2-3 категории",
+    "destinations.adventure.kitulgala.highlights.canyon": "Каньон тропического леса",
+    "destinations.adventure.kitulgala.highlights.swimming": "Места для плавания",
+    "destinations.adventure.kitulgala.highlights.safety": "Профессиональное защитное снаряжение",
+    "destinations.adventure.kitulgala.highlights.lunch": "Обед на берегу реки",
+    "destinations.adventure.kitulgala.bestTime": "Май - декабрь",
+    "destinations.adventure.kitulgala.difficulty": "Умеренный",
+
+    "destinations.adventure.ellaRock.name": "Восхождение на Элла Рок на рассвете",
+    "destinations.adventure.ellaRock.location": "Провинция Ува",
+    "destinations.adventure.ellaRock.description": "Поход до рассвета через чайные поля к панорамным видам восхода солнца с Элла Рок.",
+    "destinations.adventure.ellaRock.fullDescription": "Классический опыт Эллы: начните до рассвета, следуйте по железнодорожным путям и чайным тропам, затем поднимитесь на скалистую вершину для невероятных видов восхода солнца над горной страной. Подходит для активных путешественников с умеренным уровнем физической подготовки.",
+    "destinations.adventure.ellaRock.highlights.panorama": "Панорама восхода солнца",
+    "destinations.adventure.ellaRock.highlights.trails": "Тропы чайных плантаций",
+    "destinations.adventure.ellaRock.highlights.village": "Местные деревенские тропы",
+    "destinations.adventure.ellaRock.highlights.railway": "Прогулка по железнодорожным путям",
+    "destinations.adventure.ellaRock.bestTime": "Декабрь - март",
+    "destinations.adventure.ellaRock.difficulty": "Умеренный",
+
+    "destinations.adventure.knuckles.name": "Экспедиция в горный хребет Кнаклс",
+    "destinations.adventure.knuckles.location": "Центральная провинция",
+    "destinations.adventure.knuckles.description": "Двухдневный поход через облачные леса, пики и отдаленные деревни, включенные в список ЮНЕСКО.",
+    "destinations.adventure.knuckles.fullDescription": "Горный хребет Кнаклс предлагает пересеченную местность, нетронутые облачные леса и эндемичную дикую природу. Эта двухдневная экспедиция включает кемпинг или проживание в эко-лоджах, организованные попытки восхождения на вершины и захватывающие природные тропы.",
+    "destinations.adventure.knuckles.highlights.biosphere": "Биосфера ЮНЕСКО",
+    "destinations.adventure.knuckles.highlights.ecosystem": "Экосистема облачного леса",
+    "destinations.adventure.knuckles.highlights.camping": "Горный кемпинг",
+    "destinations.adventure.knuckles.highlights.waterfalls": "Водопады и ручьи",
+    "destinations.adventure.knuckles.highlights.wildlife": "Эндемичная флора и фауна",
+    "destinations.adventure.knuckles.bestTime": "Январь - апрель",
+    "destinations.adventure.knuckles.difficulty": "Сложный",
+
+    "destinations.adventure.hortonPlains.name": "Хортон Плейнс – Край света",
+    "destinations.adventure.hortonPlains.location": "Центральная провинция",
+    "destinations.adventure.hortonPlains.description": "Однодневный поход по горным лугам к Краю света и водопаду Бейкера.",
+    "destinations.adventure.hortonPlains.fullDescription": "Национальный парк Хортон Плейнс - это уникальное высокогорное плато с просторными лугами и облачными лесами. Кольцевая тропа посещает Край света, драматический 870-метровый обрыв, и живописный водопад Бейкера. Прохладная погода и ясные утра обеспечивают лучшие виды.",
+    "destinations.adventure.hortonPlains.highlights.viewpoint": "Смотровая площадка Край света",
+    "destinations.adventure.hortonPlains.highlights.falls": "Водопад Бейкера",
+    "destinations.adventure.hortonPlains.highlights.grasslands": "Горные луга",
+    "destinations.adventure.hortonPlains.highlights.wildlife": "Эндемичная дикая природа",
+    "destinations.adventure.hortonPlains.bestTime": "Январь - март",
+    "destinations.adventure.hortonPlains.difficulty": "Умеренный",
+
+    "destinations.adventure.notIncluded.entranceDonations": "Входные пожертвования",
+    "destinations.adventure.notIncluded.photos": "Фото/видео",
+    "destinations.adventure.notIncluded.parkFees": "Парковые сборы (если есть)",
+    "destinations.adventure.notIncluded.personalGear": "Личное снаряжение",
+    "destinations.adventure.notIncluded.warmClothing": "Теплая одежда",
+
+    "destinations.adventure.nearby.nallathanniya": "Наллатханния",
+    "destinations.adventure.nearby.hattonTeaEstates": "Чайные плантации Хаттон",
+    "destinations.adventure.nearby.maskeliyaReservoir": "Водохранилище Маскелия",
+    "destinations.adventure.nearby.belilenaCave": "Пещера Белилена",
+    "destinations.adventure.nearby.filmingSites": "Места съемок",
+    "destinations.adventure.nearby.rainforestWalks": "Прогулки по тропическому лесу",
+    "destinations.adventure.nearby.nineArchBridge": "Мост Девяти арок",
+    "destinations.adventure.nearby.littleAdamsPeak": "Малый пик Адама",
+    "destinations.adventure.nearby.ravanaFalls": "Водопад Равана",
+    "destinations.adventure.nearby.riverston": "Риверстон",
+    "destinations.adventure.nearby.miniWorldsEnd": "Мини-Край света",
+    "destinations.adventure.nearby.wasgamuwa": "Васагамува",
+    "destinations.adventure.nearby.nuwaraEliya": "Нувара-Элия",
+    "destinations.adventure.nearby.pedroTeaEstate": "Чайная плантация Педро",
+    "destinations.adventure.nearby.gregoryLake": "Озеро Грегори",
+
+    "destinations.detail.notIncluded.personalExpenses": "Личные расходы",
+    "destinations.detail.notIncluded.tips": "Чаевые",
+    "destinations.detail.notIncluded.accommodation": "Проживание",
+    "destinations.detail.notIncluded.travelInsurance": "Страхование путешествий",
+    "destinations.detail.notIncluded.alcoholicBeverages": "Алкогольные напитки",
+    "destinations.detail.notIncluded.optionalActivities": "Дополнительные мероприятия",
+    "destinations.detail.notIncluded.internationalFlights": "Международные рейсы",
+    "destinations.detail.notIncluded.visaFees": "Визовые сборы",
+    "destinations.detail.notIncluded.souvenirs": "Сувениры",
+    "destinations.detail.notIncluded.medicalExpenses": "Медицинские расходы",
+    "destinations.detail.notIncluded.meals": "Питание",
+
+    // Nearby Attractions
+    "destinations.detail.nearby.dambullaCaveTemple": "Пещерный храм Дамбулла",
+    "destinations.detail.nearby.minneriyaNationalPark": "Национальный парк Миннерия",
+    "destinations.detail.nearby.polonnaruwaAncientCity": "Древний город Полоннарува",
+    "destinations.detail.nearby.kaudullaNationalPark": "Национальный парк Каудулла",
+    "destinations.detail.nearby.royalBotanicalGardens": "Королевские ботанические сады",
+    "destinations.detail.nearby.peradeniyaUniversity": "Университет Перадения",
+    "destinations.detail.nearby.kandyLake": "Озеро Канди",
+    "destinations.detail.nearby.kandyMarket": "Рынок Канди",
+    "destinations.detail.nearby.udawattakeleForestReserve": "Лесной заповедник Удаваттакеле",
+    "destinations.detail.nearby.bahirawakandaTemple": "Храм Бахираваканда",
+    "destinations.detail.nearby.nineArchBridge": "Мост Девяти арок",
+    "destinations.detail.nearby.littleAdamsPeak": "Маленький пик Адама",
+    "destinations.detail.nearby.rawanaFalls": "Водопад Равана",
+    "destinations.detail.nearby.ellaRock": "Скала Элла",
+    "destinations.detail.nearby.diyalumaFalls": "Водопад Диялума",
+    "destinations.detail.nearby.bambaragalaPeak": "Пик Бамбарагала",
+    "destinations.detail.nearby.galleLighthouse": "Маяк Галле",
+    "destinations.detail.nearby.galleMaritimeMuseum": "Морской музей Галле",
+    "destinations.detail.nearby.ramparts": "Фортификационные стены",
+    "destinations.detail.nearby.unawatunaBeach": "Пляж Унаватуна",
+    "destinations.detail.nearby.hikkaduwaBeach": "Пляж Хиккадува",
+    "destinations.detail.nearby.koggalaLake": "Озеро Коггала",
+    "destinations.detail.nearby.stiltFishermen": "Рыбаки на ходулях",
+    "destinations.detail.nearby.udawalaweNationalPark": "Национальный парк Удавалаве",
+    "destinations.detail.nearby.bundalaNationalPark": "Национальный парк Бундала",
+    "destinations.detail.nearby.weligamaBay": "Залив Велигама",
+    "destinations.detail.nearby.coconutTreeHill": "Холм Кокосовых пальм",
+    "destinations.detail.nearby.whaleWatching": "Наблюдение за китами",
+    "destinations.detail.nearby.mihintale": "Михинтале",
+    "destinations.detail.nearby.ritigala": "Ритигала",
+    "destinations.detail.nearby.anuradhapuraMuseum": "Музей Анурадхапуры",
+    "destinations.detail.nearby.hortonPlains": "Хортон-Плейнс",
+    "destinations.detail.nearby.gregoryLake": "Озеро Грегори",
+    "destinations.detail.nearby.hakgalaBotanicalGardens": "Ботанические сады Хакгала",
+    "destinations.detail.nearby.teaMuseum": "Чайный музей",
+    "destinations.detail.nearby.kataragamaTemple": "Храм Катарагама",
+    "destinations.detail.nearby.sithulpawwaTemple": "Храм Ситхулпавва",
+    "destinations.detail.nearby.kumanaNationalPark": "Национальный парк Кумана",
+    "destinations.detail.nearby.polhenaBeach": "Пляж Полхена",
+    "destinations.detail.nearby.dondraHeadLighthouse": "Маяк Дондры",
+    "destinations.detail.nearby.mihintaleSacredMountain": "Священная гора Михинтале",
+    "destinations.detail.nearby.ellaHillCountry": "Горная страна Элла",
+    "destinations.detail.nearby.adamsPeak": "Пик Адама",
+    "destinations.detail.nearby.kandyCity": "Город Канди",
+
+    "destinations.detail.easy": "Легкая",
+    "destinations.detail.moderate": "Умеренная",
+    "destinations.detail.challenging": "Сложная",
+    "destinations.detail.yearRound": "Круглый год",
+    "destinations.detail.oneDay": "1 день",
+    "destinations.detail.twoThreeDays": "2-3 дня",
+    "destinations.detail.fourPlusDays": "4+ дня",
+    "destinations.detail.halfDay": "Полдня",
+    "destinations.detail.fullDay": "Полный день",
+    "destinations.detail.twoDays": "2 дня",
+    "destinations.detail.oneDayNightHike": "1 день (ночной поход)",
 
     // Gallery Page
     "gallery.items.sigiriya.title": "Крепость Сигирия",
@@ -2638,7 +3879,6 @@ const translations: { [lang: string]: TranslationMap } = {
     "contact.form.emailAddress": "Email адрес",
     "contact.form.phoneNumber": "Номер телефона",
     "contact.form.subject": "Тема",
-    "contact.form.message": "Сообщение",
     "contact.form.tourType": "Тип тура",
     "contact.form.placeholders.fullName": "Введите ваше полное имя",
     "contact.form.placeholders.email": "Введите ваш email адрес",

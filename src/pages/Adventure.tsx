@@ -519,18 +519,19 @@ function AdventuresPageContent() {
     window.open("https://wa.me/94771234567", "_blank");
   };
 
-  const adventureToDestinationMap: Record<string, string> = {
-    "Yala Leopard Safari": "5",
-    "Mirissa Whale Watching": "6",
-    "Adam's Peak Sacred Climb": "9",
-    "White Water Rafting Kitulgala": "10",
-    "Ella Rock Sunrise Trek": "11",
-    "Knuckles Range Expedition": "12",
-    "Horton Plains World's End": "13",
+  const adventureToDestinationMap: Record<number, string> = {
+    1: "9",  // Adam's Peak Sacred Climb -> Destination 9
+    2: "10", // White Water Rafting Kitulgala -> Destination 10
+    3: "11", // Ella Rock Sunrise Trek -> Destination 11
+    4: "5",  // Yala Leopard Safari -> Destination 5
+    5: "12", // Knuckles Range Expedition -> Destination 12
+    6: "6",  // Mirissa Whale Watching -> Destination 6
+    7: "1",  // Sigiriya Rock Climbing -> Destination 1
+    8: "13", // Horton Plains World's End -> Destination 13
   };
 
-  const handleArrowClick = (adventureName: string) => {
-    const destId = adventureToDestinationMap[adventureName];
+  const handleArrowClick = (adventureId: number) => {
+    const destId = adventureToDestinationMap[adventureId];
     if (destId) {
       navigateToDestination(destId);
     } else {
@@ -813,7 +814,7 @@ function AdventuresPageContent() {
                       <span>{t("adventure.bookNow")}</span>
                     </button>
                     <button
-                      onClick={() => handleArrowClick(adventure.name)}
+                      onClick={() => handleArrowClick(adventure.id)}
                       className="px-4 py-3 border border-gray-300 hover:border-emerald-500 text-gray-700 hover:text-emerald-600 font-semibold rounded-lg transition-colors duration-300 flex items-center justify-center"
                     >
                       <ArrowRight className="w-4 h-4" />

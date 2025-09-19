@@ -56,7 +56,7 @@ export default function Destinations() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium mb-4">
             <MapPin className="w-4 h-4 mr-2" />
-            Explore Paradise
+{t("destinations.hero.exploreParadise")}
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">{t("destinations.title")}</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">{t("destinations.subtitle")}</p>
@@ -139,7 +139,7 @@ export default function Destinations() {
                       navigateToDestination(destination.id)
                     }}
                   >
-                    View Details
+{t("common.viewDetails")}
                   </button>
                 </div>
               </div>

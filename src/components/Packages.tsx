@@ -23,10 +23,10 @@ export default function Packages() {
   const packages = [
     {
       id: "1",
-      name: "Cultural Heritage",
-      duration: "7 Days",
-      price: "$899",
-      originalPrice: "$1199",
+      name: t("packages.home.culturalHeritage.name"),
+      duration: t("packages.home.culturalHeritage.duration"),
+      price: t("packages.home.culturalHeritage.price"),
+      originalPrice: t("packages.home.culturalHeritage.originalPrice"),
       image: "culturalHeri.jpg",
       rating: 4.9,
       reviews: 156,
@@ -35,10 +35,10 @@ export default function Packages() {
     },
     {
       id: "2",
-      name: "Adventure & Wildlife",
-      duration: "10 Days",
-      price: "$1299",
-      originalPrice: "$1599",
+      name: t("packages.home.adventureWildlife.name"),
+      duration: t("packages.home.adventureWildlife.duration"),
+      price: t("packages.home.adventureWildlife.price"),
+      originalPrice: t("packages.home.adventureWildlife.originalPrice"),
       image: "adventureWild.jpg",
       rating: 4.8,
       reviews: 203,
@@ -47,10 +47,10 @@ export default function Packages() {
     },
     {
       id: "3",
-      name: "Beach & Relaxation",
-      duration: "5 Days",
-      price: "$1599",
-      originalPrice: "$1999",
+      name: t("packages.home.beachRelaxation.name"),
+      duration: t("packages.home.beachRelaxation.duration"),
+      price: t("packages.home.beachRelaxation.price"),
+      originalPrice: t("packages.home.beachRelaxation.originalPrice"),
       image: "beachRelax.jpg",
       rating: 5.0,
       reviews: 89,
@@ -92,7 +92,7 @@ export default function Packages() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium mb-4">
             <Crown className="w-4 h-4 mr-2" />
-            Premium Packages
+{t("packages.hero.premiumPackages")}
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">{t("packages.title")}</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">{t("packages.subtitle")}</p>
@@ -173,8 +173,8 @@ export default function Packages() {
 
         {/* Bottom CTA */}
         <div className="text-center bg-emerald-600 rounded-2xl p-8 text-white">
-          <h3 className="text-3xl font-bold mb-4">Need a Custom Package?</h3>
-          <p className="text-xl mb-6 opacity-90">Let us create a personalized itinerary just for you</p>
+          <h3 className="text-3xl font-bold mb-4">{t("packages.custom.title")}</h3>
+          <p className="text-xl mb-6 opacity-90">{t("packages.custom.subtitle")}</p>
           <button onClick={handleGetQuote} className="bg-white text-emerald-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors duration-300">
             {t("common.getQuote")}
           </button>

@@ -37,33 +37,30 @@ export default function Testimonials() {
   const testimonials = [
     {
       id: 1,
-      name: "Sarah Johnson",
-      location: "New York, USA",
+      name: t("testimonials.sarah.name"),
+      location: t("testimonials.sarah.location"),
       avatar: "testi-girl1.webp",
       rating: 5,
-      tour: "Cultural Heritage Explorer",
-      review:
-        "Absolutely incredible experience! The team at Ceylon Escape made our Sri Lankan adventure unforgettable. From the ancient temples to the stunning landscapes, every moment was perfectly planned.",
+      tour: t("testimonials.sarah.tour"),
+      review: t("testimonials.sarah.review"),
     },
     {
       id: 2,
-      name: "Michael Chen",
-      location: "Toronto, Canada",
+      name: t("testimonials.michael.name"),
+      location: t("testimonials.michael.location"),
       avatar: "testi-boy.webp",
       rating: 5,
-      tour: "Adventure & Wildlife",
-      review:
-        "The wildlife safari exceeded all expectations! We spotted leopards, elephants, and countless bird species. The accommodation was luxurious and the food was amazing.",
+      tour: t("testimonials.michael.tour"),
+      review: t("testimonials.michael.review"),
     },
     {
       id: 3,
-      name: "Emma Thompson",
-      location: "London, UK",
+      name: t("testimonials.emma.name"),
+      location: t("testimonials.emma.location"),
       avatar: "testi-girl2.webp",
       rating: 5,
-      tour: "Luxury Beach & Spa",
-      review:
-        "Pure paradise! The beach resort was stunning and the spa treatments were world-class. Every detail was taken care of, from airport transfers to daily excursions.",
+      tour: t("testimonials.emma.tour"),
+      review: t("testimonials.emma.review"),
     },
   ]
 
@@ -76,7 +73,7 @@ export default function Testimonials() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium mb-4">
             <Quote className="w-4 h-4 mr-2" />
-            Client Stories
+{t("testimonials.hero.clientStories")}
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">{t("testimonials.title")}</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">{t("testimonials.subtitle")}</p>

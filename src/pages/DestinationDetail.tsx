@@ -4,8 +4,6 @@ import { useState, useEffect } from "react";
 import {
   ArrowLeft,
   MapPin,
-  Heart,
-  Share2,
   MessageCircle,
   Phone,
   Navigation,
@@ -24,17 +22,17 @@ export default function DestinationDetail({
   destinationId,
   onNavigateBack,
 }: DestinationDetailProps) {
-  const { currentLanguage } = useLanguage();
-  const [isFavorite, setIsFavorite] = useState(false);
+  const { currentLanguage, t } = useLanguage();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
 
   // Enhanced destination data with full details
   const destinations = {
     "1": {
       id: 1,
-      name: "Sigiriya Rock Fortress",
+      name: t("destinations.destination.sigiriya.name"),
       category: "heritage",
-      location: "Central Province",
+      location: t("destinations.destination.sigiriya.location"),
       coordinates: { lat: 7.9569, lng: 80.7597 },
       mainImage: "/sigiriya-rock.jpg",
       gallery: [
@@ -43,57 +41,46 @@ export default function DestinationDetail({
         "/temple.jpg",
         "/temple-sacred.jpg",
       ],
-      shortDescription:
-        "Ancient royal palace and fortress built on a massive rock formation, featuring stunning frescoes and water gardens.",
-      fullDescription: `Sigiriya, also known as Lion Rock, is an ancient rock fortress and palace ruin located in the northern Matale District near the town of Dambulla in the Central Province, Sri Lanka. It is a site of historical and archaeological significance that is dominated by a massive column of rock nearly 200 meters high.
-
-According to the ancient Sri Lankan chronicle the Culavamsa, this area was a large forest, then after storms and landslides it became a hill and was selected by King Kashyapa (477 – 495 CE) for his new capital. He built his palace on the top of this rock and decorated its sides with colorful frescoes.
-
-The site was both a palace and a fortress. The upper palace on the top of the rock includes cisterns cut into the rock that still retain water. The moats and walls that surround the lower palace are still exquisitely preserved.
-
-Sigiriya is considered one of the best preserved examples of ancient urban planning. It is the most visited historic site in Sri Lanka. The palace is located in the heart of the island between the towns of Dambulla and Habarane on a massive rocky plateau 370 meters above sea level.
-
-The rock itself is a hardened magma plug from an extinct volcano. The site was used as a Buddhist monastery from the 3rd century BCE, with caves prepared and donated by devotees to the sangha.`,
+      shortDescription: t("destinations.destination.sigiriya.description"),
+      fullDescription: t("destinations.destination.sigiriya.fullDescription"),
       highlights: [
-        "Ancient Palace Ruins",
-        "Famous Frescoes",
-        "Water Gardens",
-        "Archaeological Museum",
-        "Lion's Gate",
-        "Mirror Wall",
+        t("destinations.destination.sigiriya.highlights.ancient"),
+        t("destinations.destination.sigiriya.highlights.frescoes"),
+        t("destinations.destination.sigiriya.highlights.gardens"),
+        t("destinations.destination.sigiriya.highlights.museum"),
       ],
-      bestTime: "December to April",
-      difficulty: "Moderate",
-      groupSize: "2-15 people",
-      duration: "2-3 days",
+      bestTime: t("destinations.destination.sigiriya.bestTime"),
+      difficulty: t("destinations.destination.sigiriya.difficulty"),
+      groupSize: t("destinations.detail.groupSize.2to20"),
+      duration: t("destinations.detail.duration.twoDays"),
       price: 150,
       rating: 4.9,
       reviews: 234,
       included: [
-        "Professional guide",
-        "Entrance fees",
-        "Transportation",
-        "Lunch",
-        "Water bottles",
+        t("destinations.detail.included.professionalGuide"),
+        t("destinations.detail.included.entranceFees"),
+        t("destinations.detail.included.transportation"),
+        t("destinations.detail.included.lunch"),
+        t("destinations.detail.included.waterBottles"),
       ],
       notIncluded: [
-        "Personal expenses",
-        "Tips",
-        "Accommodation",
-        "Travel insurance",
+        t("destinations.detail.notIncluded.personalExpenses"),
+        t("destinations.detail.notIncluded.tips"),
+        t("destinations.detail.notIncluded.accommodation"),
+        t("destinations.detail.notIncluded.travelInsurance"),
       ],
       nearbyAttractions: [
-        "Dambulla Cave Temple",
-        "Minneriya National Park",
-        "Polonnaruwa Ancient City",
-        "Kaudulla National Park",
+        t("destinations.detail.nearby.dambullaCaveTemple"),
+        t("destinations.detail.nearby.minneriyaNationalPark"),
+        t("destinations.detail.nearby.polonnaruwaAncientCity"),
+        t("destinations.detail.nearby.kaudullaNationalPark"),
       ],
     },
     "2": {
       id: 2,
-      name: "Kandy Cultural Triangle",
+      name: t("destinations.destination.kandy.name"),
       category: "culture",
-      location: "Central Province",
+      location: t("destinations.destination.kandy.location"),
       coordinates: { lat: 7.2906, lng: 80.6337 },
       mainImage: "/temple.jpg",
       gallery: [
@@ -102,53 +89,46 @@ The rock itself is a hardened magma plug from an extinct volcano. The site was u
         "/cultural.jpg",
         "/culturalHeri.jpg",
       ],
-      shortDescription:
-        "Sacred city housing the Temple of the Tooth Relic, surrounded by beautiful botanical gardens and traditional culture.",
-      fullDescription: `Kandy is a major city in Sri Lanka located in the Central Province. It was the last capital of the ancient kings' era of Sri Lanka. The city lies in the midst of hills in the Kandy plateau, which crosses an area of tropical plantations, mainly tea. Kandy is both an administrative and religious city and is also the capital of the Central Province.
-
-Kandy is the home of the Temple of the Tooth Relic (Sri Dalada Maligawa), one of the most sacred places of worship in the Buddhist world. It was declared a world heritage site by UNESCO in 1988. The city and the region have been known by many different names and versions of those names. Some scholars suggest that the original name of Kandy was Katubulu Nuwara located near the present Watapuluwa. However, the more popular historical name is Senkadagala or Senkadagalapura, officially Senkadagala Siriwardhana Maha Nuwara (meaning 'great city of Senkadagala of growing resplendence'), generally shortened to 'Maha Nuwara'.
-
-The city is a world heritage site declared by UNESCO, in part due to the temple. Kandy is the second largest city of the island and the capital of Central Province of Sri Lanka. It is also the administrative capital of Kandy District.`,
+      shortDescription: t("destinations.destination.kandy.description"),
+      fullDescription: t("destinations.destination.kandy.fullDescription"),
       highlights: [
-        "Temple of the Tooth",
-        "Royal Botanical Gardens",
-        "Traditional Dance Shows",
-        "Kandy Lake",
-        "Peradeniya University",
-        "Kandy Market",
+        t("destinations.destination.kandy.highlights.temple"),
+        t("destinations.destination.kandy.highlights.gardens"),
+        t("destinations.destination.kandy.highlights.dance"),
+        t("destinations.destination.kandy.highlights.lake"),
       ],
-      bestTime: "Year-round",
-      difficulty: "Easy",
-      groupSize: "2-20 people",
-      duration: "2-3 days",
+      bestTime: t("destinations.destination.kandy.bestTime"),
+      difficulty: t("destinations.destination.kandy.difficulty"),
+      groupSize: t("destinations.detail.groupSize.2to20"),
+      duration: t("destinations.detail.duration.twoDays"),
       price: 200,
       rating: 4.8,
       reviews: 189,
       included: [
-        "Professional guide",
-        "Entrance fees",
-        "Transportation",
-        "Traditional dance show",
-        "Lunch",
+        t("destinations.detail.included.professionalGuide"),
+        t("destinations.detail.included.entranceFees"),
+        t("destinations.detail.included.transportation"),
+        t("destinations.detail.included.culturalShow"),
+        t("destinations.detail.included.lunch"),
       ],
       notIncluded: [
-        "Personal expenses",
-        "Tips",
-        "Accommodation",
-        "Travel insurance",
+        t("destinations.detail.notIncluded.personalExpenses"),
+        t("destinations.detail.notIncluded.tips"),
+        t("destinations.detail.notIncluded.accommodation"),
+        t("destinations.detail.notIncluded.travelInsurance"),
       ],
       nearbyAttractions: [
-        "Peradeniya Botanical Gardens",
-        "Udawattakele Forest Reserve",
-        "Bahirawakanda Temple",
-        "Kandy Lake",
+        t("destinations.detail.nearby.royalBotanicalGardens"),
+        t("destinations.detail.nearby.udawattakeleForestReserve"),
+        t("destinations.detail.nearby.bahirawakandaTemple"),
+        t("destinations.detail.nearby.kandyLake"),
       ],
     },
     "3": {
       id: 3,
-      name: "Ella Hill Country",
+      name: t("destinations.destination.ella.name"),
       category: "nature",
-      location: "Uva Province",
+      location: t("destinations.destination.ella.location"),
       coordinates: { lat: 6.8667, lng: 81.0464 },
       mainImage: "/distEella.jpg",
       gallery: [
@@ -157,55 +137,46 @@ The city is a world heritage site declared by UNESCO, in part due to the temple.
         "/tea.jpg",
         "/adventureHero.webp",
       ],
-      shortDescription:
-        "Misty mountains, tea plantations, and scenic train rides through some of Sri Lanka's most beautiful landscapes.",
-      fullDescription: `Ella is a small town in the Badulla District of Uva Province, Sri Lanka, governed by an Urban Council. It is approximately 200 kilometres east of Colombo and is situated at an elevation of 1,041 metres above sea level. The area has a rich bio-diversity, dense with numerous varieties of flora and fauna. Ella is surrounded by hills covered with cloud forests and tea plantations. The town has a cooler climate than surrounding lowlands, due to its elevation.
-
-Ella is most famous for its scenic beauty and the famous Nine Arch Bridge. The area is also known for its tea plantations, which produce some of the world's finest tea. The town is a popular destination for tourists who come to enjoy the cool climate, scenic views, and outdoor activities such as hiking and trekking.
-
-The Nine Arch Bridge is one of the most iconic landmarks in Sri Lanka. Built in 1921, this architectural marvel is made entirely of stone, brick, and cement without any steel. The bridge spans 91 meters at a height of 24 meters and is surrounded by lush green tea plantations and misty mountains.
-
-Ella is also home to Little Adam's Peak, a popular hiking destination that offers panoramic views of the surrounding countryside. The hike is relatively easy and takes about 30-45 minutes to reach the summit.`,
+      shortDescription: t("destinations.destination.ella.description"),
+      fullDescription: t("destinations.destination.ella.fullDescription"),
       highlights: [
-        "Nine Arch Bridge",
-        "Little Adam's Peak",
-        "Tea Plantation Tours",
-        "Scenic Train Ride",
-        "Ravana Falls",
-        "Ella Rock",
+        t("destinations.destination.ella.highlights.bridge"),
+        t("destinations.destination.ella.highlights.peak"),
+        t("destinations.destination.ella.highlights.tea"),
+        t("destinations.destination.ella.highlights.train"),
       ],
-      bestTime: "December to March",
-      difficulty: "Moderate",
-      groupSize: "2-12 people",
-      duration: "2-3 days",
+      bestTime: t("destinations.destination.ella.bestTime"),
+      difficulty: t("destinations.destination.ella.difficulty"),
+      groupSize: t("destinations.detail.groupSize.2to12"),
+      duration: t("destinations.detail.duration.twoDays"),
       price: 120,
       rating: 4.9,
       reviews: 156,
       included: [
-        "Professional guide",
-        "Transportation",
-        "Tea plantation tour",
-        "Train tickets",
-        "Lunch",
+        t("destinations.detail.included.professionalGuide"),
+        t("destinations.detail.included.transportation"),
+        t("destinations.detail.included.teaFactoryTour"),
+        t("destinations.detail.included.entranceFees"),
+        t("destinations.detail.included.lunch"),
       ],
       notIncluded: [
-        "Personal expenses",
-        "Tips",
-        "Accommodation",
-        "Travel insurance",
+        t("destinations.detail.notIncluded.personalExpenses"),
+        t("destinations.detail.notIncluded.tips"),
+        t("destinations.detail.notIncluded.accommodation"),
+        t("destinations.detail.notIncluded.travelInsurance"),
       ],
       nearbyAttractions: [
-        "Ravana Falls",
-        "Ella Rock",
-        "Diyaluma Falls",
-        "Bambaragala Peak",
+        t("destinations.detail.nearby.rawanaFalls"),
+        t("destinations.detail.nearby.ellaRock"),
+        t("destinations.detail.nearby.diyalumaFalls"),
+        t("destinations.detail.nearby.bambaragalaPeak"),
       ],
     },
     "4": {
       id: 4,
-      name: "Galle Dutch Fort",
+      name: t("destinations.destination.galle.name"),
       category: "heritage",
-      location: "Southern Province",
+      location: t("destinations.destination.galle.location"),
       coordinates: { lat: 6.0329, lng: 80.2169 },
       mainImage: "/temple.jpg",
       gallery: [
@@ -214,52 +185,45 @@ Ella is also home to Little Adam's Peak, a popular hiking destination that offer
         "/cultural.jpg",
         "/culturalHeri.jpg",
       ],
-      shortDescription:
-        "UNESCO World Heritage colonial fort with historic lighthouse, museums, and charming cobblestone streets.",
-      fullDescription: `Galle Fort, in the Bay of Galle on the southwest coast of Sri Lanka, was built first in 1588 by the Portuguese, then extensively fortified by the Dutch during the 17th century from 1649 onwards. It is a historical, archaeological and architectural heritage monument, which even after more than 432 years maintains a polished appearance, due to extensive reconstruction work done by Archaeological Department of Sri Lanka.
-
-The fort has a colorful history, and today has a multi-ethnic and multi-religious population. The Sri Lankan government and many Dutch people who still own some of the properties inside the fort are looking at making this one of the modern wonders of the world. The heritage value of the fort has been recognized by the UNESCO and the site has been inscribed as a cultural heritage UNESCO World Heritage site under criteria iv, for its unique exposition of "an urban ensemble which illustrates the interaction of European architecture and South Asian traditions from the 16th to the 19th centuries."
-
-The Galle Fort, also known as the Dutch Fort or the "Ramparts of Galle", withstood the Boxing Day tsunami which damaged part of coastal area Galle town. It has been since restored. The Galle Fort is considered to be one of the best examples of a fortified city built by Europeans in South and Southeast Asia, showing the interaction between European architectural styles and South Asian traditions.`,
+      shortDescription: t("destinations.destination.galle.description"),
+      fullDescription: t("destinations.destination.galle.fullDescription"),
       highlights: [
-        "Colonial Architecture",
-        "Historic Lighthouse",
-        "Fort Ramparts",
-        "Maritime Museum",
-        "Dutch Reformed Church",
-        "Galle Fort Hotel",
+        t("destinations.destination.galle.highlights.architecture"),
+        t("destinations.destination.galle.highlights.lighthouse"),
+        t("destinations.destination.galle.highlights.ramparts"),
+        t("destinations.destination.galle.highlights.museum"),
       ],
-      bestTime: "November to April",
-      difficulty: "Easy",
-      groupSize: "2-25 people",
-      duration: "1 day",
+      bestTime: t("destinations.destination.galle.bestTime"),
+      difficulty: t("destinations.destination.galle.difficulty"),
+      groupSize: t("destinations.detail.groupSize.2to20"),
+      duration: t("destinations.detail.duration.oneDay"),
       price: 80,
       rating: 4.7,
       reviews: 203,
       included: [
-        "Professional guide",
-        "Entrance fees",
-        "Transportation",
-        "Lunch",
+        t("destinations.detail.included.professionalGuide"),
+        t("destinations.detail.included.entranceFees"),
+        t("destinations.detail.included.transportation"),
+        t("destinations.detail.included.lunch"),
       ],
       notIncluded: [
-        "Personal expenses",
-        "Tips",
-        "Accommodation",
-        "Travel insurance",
+        t("destinations.detail.notIncluded.personalExpenses"),
+        t("destinations.detail.notIncluded.tips"),
+        t("destinations.detail.notIncluded.accommodation"),
+        t("destinations.detail.notIncluded.travelInsurance"),
       ],
       nearbyAttractions: [
-        "Unawatuna Beach",
-        "Hikkaduwa Beach",
-        "Koggala Lake",
-        "Stilt Fishermen",
+        t("destinations.detail.nearby.unawatunaBeach"),
+        t("destinations.detail.nearby.hikkaduwaBeach"),
+        t("destinations.detail.nearby.koggalaLake"),
+        t("destinations.detail.nearby.stiltFishermen"),
       ],
     },
     "5": {
       id: 5,
-      name: "Yala National Park",
+      name: t("destinations.destination.yala.name"),
       category: "nature",
-      location: "Southern Province",
+      location: t("destinations.destination.yala.location"),
       coordinates: { lat: 6.37278, lng: 81.51694 },
       mainImage: "/safari.webp",
       gallery: [
@@ -268,53 +232,46 @@ The Galle Fort, also known as the Dutch Fort or the "Ramparts of Galle", withsto
         "/wildlife.jpg",
         "/adventureWild.jpg",
       ],
-      shortDescription:
-        "Premier wildlife destination famous for leopards, elephants, and diverse bird species in their natural habitat.",
-      fullDescription: `Yala National Park is the most visited and second largest national park in Sri Lanka, bordering the Indian Ocean. The park consists of five blocks, two of which are now open to the public, and also adjoining parks. The blocks have individual names such as, Ruhuna National Park (Block 1), and Kumana National Park or 'Yala East' for the adjoining area. It is situated in the southeast region of the country, and lies in Southern Province and Uva Province. The park covers 979 square kilometres and is located about 300 kilometres from Colombo.
-
-Yala was designated as a wildlife sanctuary in 1900, and, along with Wilpattu was one of the first two national parks in Sri Lanka, having been designated in 1938. The park is best known for its variety of wild animals. It is important for the conservation of Sri Lankan elephants, Sri Lankan leopards and aquatic birds.
-
-There are six national parks and three wildlife sanctuaries in the vicinity of Yala. Among the largest is Lunugamvehera National Park. The park is situated in the dry semi-arid climatic region and rain is received mainly during the northeast monsoon. Yala hosts a variety of ecosystems ranging from moist monsoon forests to freshwater and marine wetlands. It is one of the 70 Important Bird Areas (IBAs) in Sri Lanka. Yala harbours 215 bird species including six endemic species of Sri Lanka. The number of mammals that has been recorded from the park is 44, and it has one of the highest leopard densities in the world.`,
+      shortDescription: t("destinations.destination.yala.description"),
+      fullDescription: t("destinations.destination.yala.fullDescription"),
       highlights: [
-        "Leopard Spotting",
-        "Elephant Herds",
-        "Bird Watching",
-        "Beach Camping",
-        "Safari Tours",
-        "Wildlife Photography",
+        t("destinations.destination.yala.highlights.leopard"),
+        t("destinations.destination.yala.highlights.elephants"),
+        t("destinations.destination.yala.highlights.birds"),
+        t("destinations.destination.yala.highlights.camping"),
       ],
-      bestTime: "February to July",
-      difficulty: "Easy",
-      groupSize: "2-8 people",
-      duration: "1-2 days",
+      bestTime: t("destinations.destination.yala.bestTime"),
+      difficulty: t("destinations.destination.yala.difficulty"),
+      groupSize: t("destinations.detail.groupSize.2to8"),
+      duration: t("destinations.detail.duration.twoDays"),
       price: 180,
       rating: 4.8,
       reviews: 178,
       included: [
-        "Safari jeep",
-        "Professional guide",
-        "Park entrance fees",
-        "Binoculars",
-        "Refreshments",
+        t("destinations.detail.included.safariJeep"),
+        t("destinations.detail.included.professionalGuide"),
+        t("destinations.detail.included.parkFees"),
+        t("destinations.detail.included.binoculars"),
+        t("destinations.detail.included.refreshments"),
       ],
       notIncluded: [
-        "Personal expenses",
-        "Tips",
-        "Accommodation",
-        "Travel insurance",
+        t("destinations.detail.notIncluded.personalExpenses"),
+        t("destinations.detail.notIncluded.tips"),
+        t("destinations.detail.notIncluded.accommodation"),
+        t("destinations.detail.notIncluded.travelInsurance"),
       ],
       nearbyAttractions: [
-        "Kataragama Temple",
-        "Bundala National Park",
-        "Sithulpawwa Temple",
-        "Kumana National Park",
+        t("destinations.detail.nearby.kataragamaTemple"),
+        t("destinations.detail.nearby.bundalaNationalPark"),
+        t("destinations.detail.nearby.sithulpawwaTemple"),
+        t("destinations.detail.nearby.kumanaNationalPark"),
       ],
     },
     "6": {
       id: 6,
-      name: "Mirissa Beach",
+      name: t("destinations.destination.mirissa.name"),
       category: "beaches",
-      location: "Southern Province",
+      location: t("destinations.destination.mirissa.location"),
       coordinates: { lat: 5.9495, lng: 80.4563 },
       // Custom Google Maps embed URL with information card (get this from Google Maps Share > Embed a map)
       mapEmbedUrl:
@@ -326,55 +283,46 @@ There are six national parks and three wildlife sanctuaries in the vicinity of Y
         "/beachRelax.jpg",
         "/tea.jpg",
       ],
-      shortDescription:
-        "Pristine golden beaches perfect for whale watching, surfing, and enjoying spectacular tropical sunsets.",
-      fullDescription: `Mirissa is a small town on the south coast of Sri Lanka, located in the Matara District of the Southern Province. It is approximately 150 kilometres south of Colombo and is situated at an elevation of 4 metres above sea level. Mirissa beach and nightlife make it a popular tourist destination. It is also a fishing port and one of the island's main whale and dolphin watching locations.
-
-Mirissa is the largest fishing port on the south coast and is a one of the island's main whale and dolphin watching locations. The whale and dolphin watching tours are the main tourist attraction of the town. The best time to spot whales and dolphins is from November to April. The most common whale species spotted are the blue whale, sperm whale, and occasionally killer whales.
-
-The town has a beautiful beach with golden sand and clear blue water. The beach is perfect for swimming, surfing, and sunbathing. The town also has a vibrant nightlife with many restaurants, bars, and cafes. The most popular spot for sunset viewing is Coconut Tree Hill, which offers panoramic views of the Indian Ocean.
-
-Mirissa is also known for its surfing spots, particularly at Weligama Bay, which is just a few kilometers away. The area is perfect for beginners and intermediate surfers.`,
+      shortDescription: t("destinations.destination.mirissa.description"),
+      fullDescription: t("destinations.destination.mirissa.fullDescription"),
       highlights: [
-        "Blue Whale Watching",
-        "Golden Beaches",
-        "Surfing Spots",
-        "Coconut Tree Hill",
-        "Sunset Views",
-        "Nightlife",
+        t("destinations.destination.mirissa.highlights.whales"),
+        t("destinations.destination.mirissa.highlights.beaches"),
+        t("destinations.destination.mirissa.highlights.surfing"),
+        t("destinations.destination.mirissa.highlights.coconut"),
       ],
-      bestTime: "November to April",
-      difficulty: "Easy",
-      groupSize: "2-15 people",
-      duration: "2-3 days",
+      bestTime: t("destinations.destination.mirissa.bestTime"),
+      difficulty: t("destinations.destination.mirissa.difficulty"),
+      groupSize: t("destinations.detail.groupSize.2to15"),
+      duration: t("destinations.detail.duration.twoDays"),
       price: 100,
       rating: 4.9,
       reviews: 267,
       included: [
-        "Whale watching tour",
-        "Professional guide",
-        "Transportation",
-        "Lunch",
-        "Snorkeling equipment",
+        t("destinations.detail.included.whaleWatchingTour"),
+        t("destinations.detail.included.professionalGuide"),
+        t("destinations.detail.included.transportation"),
+        t("destinations.detail.included.lunch"),
+        t("destinations.detail.included.snorkelingEquipment"),
       ],
       notIncluded: [
-        "Personal expenses",
-        "Tips",
-        "Accommodation",
-        "Travel insurance",
+        t("destinations.detail.notIncluded.personalExpenses"),
+        t("destinations.detail.notIncluded.tips"),
+        t("destinations.detail.notIncluded.accommodation"),
+        t("destinations.detail.notIncluded.travelInsurance"),
       ],
       nearbyAttractions: [
-        "Weligama Bay",
-        "Polhena Beach",
-        "Dondra Head Lighthouse",
-        "Koggala Lake",
+        t("destinations.detail.nearby.weligamaBay"),
+        t("destinations.detail.nearby.polhenaBeach"),
+        t("destinations.detail.nearby.dondraHeadLighthouse"),
+        t("destinations.detail.nearby.koggalaLake"),
       ],
     },
     "7": {
       id: 7,
-      name: "Anuradhapura Ancient City",
+      name: t("destinations.destination.anuradhapura.name"),
       category: "heritage",
-      location: "North Central Province",
+      location: t("destinations.destination.anuradhapura.location"),
       coordinates: { lat: 8.3114, lng: 80.4037 },
       mainImage: "/Distination/anuradhapura.jpg",
       gallery: [
@@ -383,52 +331,46 @@ Mirissa is also known for its surfing spots, particularly at Weligama Bay, which
         "/cultural.jpg",
         "/culturalHeri.jpg",
       ],
-      shortDescription:
-        "Ancient capital with sacred Buddhist sites, massive dagobas, and ruins dating back over 2,000 years.",
-      fullDescription: `Anuradhapura is one of the ancient capitals of Sri Lanka, famous for its well-preserved ruins of ancient Sinhalese civilization. It was the first capital of the island and remained so for nearly 1,400 years. The city, now a UNESCO World Heritage site, was the center of Theravada Buddhism for many centuries.
-
-The city is home to some of the most sacred Buddhist sites in the world, including the Sri Maha Bodhi tree, which is said to be a sapling from the original Bodhi tree under which Buddha attained enlightenment. This makes it one of the oldest living trees in the world, planted in 288 BC.
-
-Anuradhapura is also famous for its massive dagobas (stupas), including the Ruwanwelisaya, Jetavanaramaya, and Abhayagiri stupas. These architectural marvels showcase the advanced engineering skills of ancient Sri Lankan civilization.
-
-The city was abandoned in 993 AD due to repeated invasions from South India, and the capital was moved to Polonnaruwa. However, the sacred city continued to be maintained by Buddhist monks and pilgrims, preserving its religious significance.
-
-Today, Anuradhapura is a major pilgrimage site for Buddhists worldwide and attracts thousands of visitors who come to experience its rich history, ancient architecture, and spiritual atmosphere.`,
+      shortDescription: t("destinations.destination.anuradhapura.description"),
+      fullDescription: t("destinations.destination.anuradhapura.fullDescription"),
       highlights: [
-        "Sacred Bodhi Tree (2,500 years old)",
-        "Ruwanwelisaya Dagoba",
-        "Jetavanaramaya Stupa",
-        "Abhayagiri Monastery",
-        "Isurumuniya Rock Temple",
-        "Sri Maha Bodhi Temple",
+        t("destinations.destination.anuradhapura.highlights.bodhi"),
+        t("destinations.destination.anuradhapura.highlights.dagobas"),
+        t("destinations.destination.anuradhapura.highlights.ruins"),
+        t("destinations.destination.anuradhapura.highlights.archaeological"),
       ],
-      bestTime: "Year-round (cooler months preferred)",
-      difficulty: "Easy",
-      duration: "1-2 days",
-      groupSize: "2-20 people",
+      bestTime: t("destinations.destination.anuradhapura.bestTime"),
+      difficulty: t("destinations.destination.anuradhapura.difficulty"),
+      groupSize: t("destinations.detail.groupSize.2to20"),
+      duration: t("destinations.detail.duration.twoDays"),
       rating: 4.6,
       reviews: 145,
       price: 90,
       included: [
-        "Professional guide",
-        "Entrance fees",
-        "Transportation",
-        "Bottled water",
-        "Historical site visits",
+        t("destinations.detail.included.professionalGuide"),
+        t("destinations.detail.included.entranceFees"),
+        t("destinations.detail.included.transportation"),
+        t("destinations.detail.included.bottledWater"),
+        t("destinations.detail.included.historicalSiteVisits"),
       ],
-      notIncluded: ["Personal expenses", "Tips", "Accommodation", "Meals"],
+      notIncluded: [
+        t("destinations.detail.notIncluded.personalExpenses"),
+        t("destinations.detail.notIncluded.tips"),
+        t("destinations.detail.notIncluded.accommodation"),
+        t("destinations.detail.notIncluded.meals"),
+      ],
       nearbyAttractions: [
-        "Mihintale Sacred Mountain",
-        "Polonnaruwa Ancient City",
-        "Dambulla Cave Temple",
-        "Sigiriya Rock Fortress",
+        t("destinations.detail.nearby.mihintaleSacredMountain"),
+        t("destinations.detail.nearby.polonnaruwaAncientCity"),
+        t("destinations.detail.nearby.dambullaCaveTemple"),
+        t("destinations.detail.nearby.sigiriyaRockFortress"),
       ],
     },
     "8": {
       id: 8,
-      name: "Nuwara Eliya Tea Country",
+      name: t("destinations.destination.nuwara.name"),
       category: "nature",
-      location: "Central Province",
+      location: t("destinations.destination.nuwara.location"),
       coordinates: { lat: 6.9497, lng: 80.7891 },
       mainImage: "/tea.jpg",
       gallery: [
@@ -437,54 +379,46 @@ Today, Anuradhapura is a major pilgrimage site for Buddhists worldwide and attra
         "/adventureWild.jpg",
         "/beachRelax.jpg",
       ],
-      shortDescription:
-        "Cool climate hill station surrounded by tea plantations, colonial architecture, and beautiful gardens.",
-      fullDescription: `Nuwara Eliya, often called "Little England," is a city in the hill country of the Central Province, Sri Lanka. It is the highest city in the country, sitting at an elevation of 1,868 meters (6,128 feet) above sea level. The city is famous for its cool climate, tea plantations, and colonial architecture.
-
-The city was established by the British in the 19th century as a hill station to escape the heat of the lowlands. The British influence is still visible in the architecture, with many colonial-style buildings, including the Grand Hotel and the Hill Club.
-
-Nuwara Eliya is the heart of Sri Lanka's tea country, surrounded by rolling hills covered in lush green tea plantations. The area produces some of the world's finest Ceylon tea, and visitors can tour tea factories to learn about the tea-making process.
-
-The city is also known for its beautiful gardens, including the Hakgala Botanical Gardens, which features a variety of exotic plants and flowers. Gregory Lake, located in the center of the city, offers boating and other recreational activities.
-
-The climate in Nuwara Eliya is much cooler than the rest of Sri Lanka, with temperatures rarely exceeding 20°C (68°F). This makes it a popular destination for both locals and tourists seeking relief from the tropical heat.
-
-The city is also a gateway to Horton Plains National Park, home to World's End, a dramatic cliff with stunning views over the surrounding landscape.`,
+      shortDescription: t("destinations.destination.nuwara.description"),
+      fullDescription: t("destinations.destination.nuwara.fullDescription"),
       highlights: [
-        "Tea Plantation Tours",
-        "Horton Plains National Park",
-        "Gregory Lake",
-        "Hakgala Botanical Gardens",
-        "Pedro Tea Estate",
-        "Colonial Architecture",
+        t("destinations.destination.nuwara.highlights.tea"),
+        t("destinations.destination.nuwara.highlights.horton"),
+        t("destinations.destination.nuwara.highlights.lake"),
+        t("destinations.destination.nuwara.highlights.architecture"),
       ],
-      bestTime: "March to May, September to November",
-      difficulty: "Easy",
-      duration: "2-3 days",
-      groupSize: "2-15 people",
+      bestTime: t("destinations.destination.nuwara.bestTime"),
+      difficulty: t("destinations.destination.nuwara.difficulty"),
+      groupSize: t("destinations.detail.groupSize.2to15"),
+      duration: t("destinations.detail.duration.twoDays"),
       rating: 4.7,
       reviews: 198,
       price: 110,
       included: [
-        "Professional guide",
-        "Tea factory tour",
-        "Transportation",
-        "Bottled water",
-        "Garden visits",
+        t("destinations.detail.included.professionalGuide"),
+        t("destinations.detail.included.teaFactoryTour"),
+        t("destinations.detail.included.transportation"),
+        t("destinations.detail.included.bottledWater"),
+        t("destinations.detail.included.gardenVisits"),
       ],
-      notIncluded: ["Personal expenses", "Tips", "Accommodation", "Meals"],
+      notIncluded: [
+        t("destinations.detail.notIncluded.personalExpenses"),
+        t("destinations.detail.notIncluded.tips"),
+        t("destinations.detail.notIncluded.accommodation"),
+        t("destinations.detail.notIncluded.meals"),
+      ],
       nearbyAttractions: [
-        "Ella Hill Country",
-        "Adam's Peak",
-        "Kandy City",
-        "Horton Plains",
+        t("destinations.detail.nearby.ellaHillCountry"),
+        t("destinations.detail.nearby.adamsPeak"),
+        t("destinations.detail.nearby.kandyCity"),
+        t("destinations.detail.nearby.hortonPlains"),
       ],
     },
     "9": {
       id: 9,
-      name: "Adam's Peak (Sri Pada)",
-      category: "hiking",
-      location: "Central Province",
+      name: t("destinations.adventure.adamsPeak.name"),
+      category: t("destinations.categories.hiking"),
+      location: t("destinations.adventure.adamsPeak.location"),
       coordinates: { lat: 6.8097, lng: 80.4994 },
       mainImage: "/temple-sacred.jpg",
       gallery: [
@@ -493,43 +427,45 @@ The city is also a gateway to Horton Plains National Park, home to World's End, 
         "/cultural.jpg",
         "/distEella.jpg",
       ],
-      shortDescription:
-        "Sacred night hike to the 2,243m summit for a breathtaking sunrise and spiritual experience.",
-      fullDescription:
-        `Adam's Peak, also known as Sri Pada, is a revered mountain famous for its summit footprint and spectacular sunrise. The traditional pilgrimage route climbs thousands of steps through tea country and cloud forest. This hike is challenging but achievable for most active travelers, with rest stops and tea stalls along the way.`,
+      shortDescription: t("destinations.adventure.adamsPeak.description"),
+      fullDescription: t("destinations.adventure.adamsPeak.fullDescription"),
       highlights: [
-        "Sacred pilgrimage site",
-        "Sunrise above the clouds",
-        "Ancient stone steps",
-        "Tea country views",
-        "Night hike experience",
-        "Local culture",
+        t("destinations.adventure.adamsPeak.highlights.pilgrimage"),
+        t("destinations.adventure.adamsPeak.highlights.sunrise"),
+        t("destinations.adventure.adamsPeak.highlights.steps"),
+        t("destinations.adventure.adamsPeak.highlights.views"),
+        t("destinations.adventure.adamsPeak.highlights.nightHike"),
+        t("destinations.adventure.adamsPeak.highlights.culture"),
       ],
-      bestTime: "December to May",
-      difficulty: "Challenging",
-      groupSize: "2-12 people",
-      duration: "1 day (night hike)",
+      bestTime: t("destinations.adventure.adamsPeak.bestTime"),
+      difficulty: t("destinations.adventure.adamsPeak.difficulty"),
+      groupSize: t("destinations.detail.groupSize.2to12"),
+      duration: t("destinations.detail.duration.nightHike"),
       price: 120,
       rating: 4.9,
       reviews: 342,
       included: [
-        "Professional guide",
-        "Safety equipment",
-        "Tea/refreshments",
-        "Transportation",
+        t("destinations.detail.included.professionalGuide"),
+        t("destinations.detail.included.safetyEquipment"),
+        t("destinations.detail.included.refreshments"),
+        t("destinations.detail.included.transportation"),
       ],
-      notIncluded: ["Entrance donations", "Meals", "Personal expenses"],
+      notIncluded: [
+        t("destinations.adventure.notIncluded.entranceDonations"),
+        t("destinations.detail.notIncluded.meals"),
+        t("destinations.detail.notIncluded.personalExpenses"),
+      ],
       nearbyAttractions: [
-        "Nallathanniya",
-        "Hatton Tea Estates",
-        "Maskeliya Reservoir",
+        t("destinations.adventure.nearby.nallathanniya"),
+        t("destinations.adventure.nearby.hattonTeaEstates"),
+        t("destinations.adventure.nearby.maskeliyaReservoir"),
       ],
     },
     "10": {
       id: 10,
-      name: "White Water Rafting – Kitulgala",
-      category: "water",
-      location: "Sabaragamuwa Province",
+      name: t("destinations.adventure.kitulgala.name"),
+      category: t("destinations.categories.water"),
+      location: t("destinations.adventure.kitulgala.location"),
       coordinates: { lat: 6.9902, lng: 80.4153 },
       mainImage: "/adventureWild.jpg",
       gallery: [
@@ -537,125 +473,155 @@ The city is also a gateway to Horton Plains National Park, home to World's End, 
         "/Sri-Lanka-wildlife.webp",
         "/wildlife.jpg",
       ],
-      shortDescription:
-        "Thrilling Grade 2–3 rapids on the Kelani River through lush rainforest scenery.",
-      fullDescription:
-        `Kitulgala is Sri Lanka's white-water capital. After a safety briefing, you'll raft down the Kelani River tackling a series of fun rapids suitable for beginners and families. Between rapids, enjoy calm pools for swimming and rainforest views.`,
+      shortDescription: t("destinations.adventure.kitulgala.description"),
+      fullDescription: t("destinations.adventure.kitulgala.fullDescription"),
       highlights: [
-        "Grade 2–3 rapids",
-        "Rainforest canyon",
-        "Swimming spots",
-        "Professional safety gear",
-        "Riverside lunch",
+        t("destinations.adventure.kitulgala.highlights.rapids"),
+        t("destinations.adventure.kitulgala.highlights.canyon"),
+        t("destinations.adventure.kitulgala.highlights.swimming"),
+        t("destinations.adventure.kitulgala.highlights.safety"),
+        t("destinations.adventure.kitulgala.highlights.lunch"),
       ],
-      bestTime: "May to December",
-      difficulty: "Moderate",
-      groupSize: "4-8 people",
-      duration: "Half day",
+      bestTime: t("destinations.adventure.kitulgala.bestTime"),
+      difficulty: t("destinations.adventure.kitulgala.difficulty"),
+      groupSize: t("destinations.detail.groupSize.4to8"),
+      duration: t("destinations.detail.duration.halfDay"),
       price: 85,
       rating: 4.8,
       reviews: 256,
       included: [
-        "Rafting equipment",
-        "Guide & safety team",
-        "Lunch",
-        "Transport from base",
+        t("destinations.detail.included.safetyEquipment"),
+        t("destinations.detail.included.professionalGuide"),
+        t("destinations.detail.included.lunch"),
+        t("destinations.detail.included.transportation"),
       ],
-      notIncluded: ["Photos/videos", "Personal expenses"],
-      nearbyAttractions: ["Belilena Cave", "Filming sites", "Rainforest walks"],
+      notIncluded: [
+        t("destinations.adventure.notIncluded.photos"),
+        t("destinations.detail.notIncluded.personalExpenses"),
+      ],
+      nearbyAttractions: [
+        t("destinations.adventure.nearby.belilenaCave"),
+        t("destinations.adventure.nearby.filmingSites"),
+        t("destinations.adventure.nearby.rainforestWalks"),
+      ],
     },
     "11": {
       id: 11,
-      name: "Ella Rock Sunrise Trek",
-      category: "hiking",
-      location: "Uva Province",
+      name: t("destinations.adventure.ellaRock.name"),
+      category: t("destinations.categories.hiking"),
+      location: t("destinations.adventure.ellaRock.location"),
       coordinates: { lat: 6.8667, lng: 81.0464 },
       mainImage: "/distEella.jpg",
       gallery: ["/distEella.jpg", "/hicking.webp", "/tea.jpg"],
-      shortDescription:
-        "Pre-dawn trek through tea fields to panoramic sunrise views from Ella Rock.",
-      fullDescription:
-        `A classic Ella experience: start before dawn, follow rail tracks and tea trails, then climb to the rocky summit for incredible sunrise views over the hill country. Suitable for active travelers with a moderate fitness level.`,
+      shortDescription: t("destinations.adventure.ellaRock.description"),
+      fullDescription: t("destinations.adventure.ellaRock.fullDescription"),
       highlights: [
-        "Sunrise panorama",
-        "Tea plantation trails",
-        "Local village paths",
-        "Rail track walking",
+        t("destinations.adventure.ellaRock.highlights.panorama"),
+        t("destinations.adventure.ellaRock.highlights.trails"),
+        t("destinations.adventure.ellaRock.highlights.village"),
+        t("destinations.adventure.ellaRock.highlights.railway"),
       ],
-      bestTime: "December to March",
-      difficulty: "Moderate",
-      groupSize: "2-10 people",
-      duration: "Half day",
+      bestTime: t("destinations.adventure.ellaRock.bestTime"),
+      difficulty: t("destinations.adventure.ellaRock.difficulty"),
+      groupSize: t("destinations.detail.groupSize.2to10"),
+      duration: t("destinations.detail.duration.halfDay"),
       price: 65,
       rating: 4.7,
       reviews: 189,
-      included: ["Local guide", "Light breakfast", "Transfers"],
-      notIncluded: ["Park fees (if any)", "Personal expenses"],
+      included: [
+        t("destinations.detail.included.professionalGuide"),
+        t("destinations.detail.included.refreshments"),
+        t("destinations.detail.included.transportation"),
+      ],
+      notIncluded: [
+        t("destinations.adventure.notIncluded.parkFees"),
+        t("destinations.detail.notIncluded.personalExpenses"),
+      ],
       nearbyAttractions: [
-        "Nine Arch Bridge",
-        "Little Adam's Peak",
-        "Ravana Falls",
+        t("destinations.adventure.nearby.nineArchBridge"),
+        t("destinations.adventure.nearby.littleAdamsPeak"),
+        t("destinations.adventure.nearby.ravanaFalls"),
       ],
     },
     "12": {
       id: 12,
-      name: "Knuckles Range Expedition",
-      category: "hiking",
-      location: "Central Province",
+      name: t("destinations.adventure.knuckles.name"),
+      category: t("destinations.categories.hiking"),
+      location: t("destinations.adventure.knuckles.location"),
       coordinates: { lat: 7.4431, lng: 80.7772 },
       mainImage: "/culturalHeri.jpg",
       gallery: ["/culturalHeri.jpg", "/cultural.jpg", "/tea.jpg"],
-      shortDescription:
-        "Two-day trek through UNESCO-listed cloud forests, peaks, and remote villages.",
-      fullDescription:
-        `The Knuckles Mountain Range offers rugged terrain, pristine cloud forests, and endemic wildlife. This two-day expedition includes camping or eco-lodge stays, guided summit attempts, and immersive nature trails.`,
+      shortDescription: t("destinations.adventure.knuckles.description"),
+      fullDescription: t("destinations.adventure.knuckles.fullDescription"),
       highlights: [
-        "UNESCO biosphere",
-        "Cloud forest ecosystem",
-        "Mountain camping",
-        "Waterfalls & streams",
-        "Endemic flora & fauna",
+        t("destinations.adventure.knuckles.highlights.biosphere"),
+        t("destinations.adventure.knuckles.highlights.ecosystem"),
+        t("destinations.adventure.knuckles.highlights.camping"),
+        t("destinations.adventure.knuckles.highlights.waterfalls"),
+        t("destinations.adventure.knuckles.highlights.wildlife"),
       ],
-      bestTime: "January to April",
-      difficulty: "Challenging",
-      groupSize: "4-8 people",
-      duration: "2 days",
+      bestTime: t("destinations.adventure.knuckles.bestTime"),
+      difficulty: t("destinations.adventure.knuckles.difficulty"),
+      groupSize: t("destinations.detail.groupSize.4to8"),
+      duration: t("destinations.detail.duration.twoDays"),
       price: 280,
       rating: 4.8,
       reviews: 167,
-      included: ["Camping gear", "Meals", "Expert guide", "Permits"],
-      notIncluded: ["Personal gear", "Tips"],
-      nearbyAttractions: ["Riverston", "Mini World's End", "Wasgamuwa"],
+      included: [
+        t("destinations.detail.included.campingEquipment"),
+        t("destinations.detail.included.meals"),
+        t("destinations.detail.included.professionalGuide"),
+        t("destinations.detail.included.parkFees"),
+      ],
+      notIncluded: [
+        t("destinations.adventure.notIncluded.personalGear"),
+        t("destinations.detail.notIncluded.tips"),
+      ],
+      nearbyAttractions: [
+        t("destinations.adventure.nearby.riverston"),
+        t("destinations.adventure.nearby.miniWorldsEnd"),
+        t("destinations.adventure.nearby.wasgamuwa"),
+      ],
     },
     
     "13": {
       id: 13,
-      name: "Horton Plains – World's End",
-      category: "hiking",
-      location: "Central Province",
+      name: t("destinations.adventure.hortonPlains.name"),
+      category: t("destinations.categories.hiking"),
+      location: t("destinations.adventure.hortonPlains.location"),
       coordinates: { lat: 6.8018, lng: 80.8039 },
       mainImage: "/wildlife.jpg",
       gallery: ["/wildlife.jpg", "/beachRelax.jpg", "/tea.jpg"],
-      shortDescription:
-        "Full-day trek across montane grasslands to World's End and Baker's Falls.",
-      fullDescription:
-        `Horton Plains National Park is a unique highland plateau with sweeping grasslands and cloud forests. The loop trail visits World's End, a dramatic 870m escarpment, and the scenic Baker's Falls. Cool weather and clear mornings offer best views.`,
+      shortDescription: t("destinations.adventure.hortonPlains.description"),
+      fullDescription: t("destinations.adventure.hortonPlains.fullDescription"),
       highlights: [
-        "World's End viewpoint",
-        "Baker's Falls",
-        "Montane grasslands",
-        "Endemic wildlife",
+        t("destinations.adventure.hortonPlains.highlights.viewpoint"),
+        t("destinations.adventure.hortonPlains.highlights.falls"),
+        t("destinations.adventure.hortonPlains.highlights.grasslands"),
+        t("destinations.adventure.hortonPlains.highlights.wildlife"),
       ],
-      bestTime: "January to March",
-      difficulty: "Moderate",
-      groupSize: "2-12 people",
-      duration: "Full day",
+      bestTime: t("destinations.adventure.hortonPlains.bestTime"),
+      difficulty: t("destinations.adventure.hortonPlains.difficulty"),
+      groupSize: t("destinations.detail.groupSize.2to12"),
+      duration: t("destinations.detail.duration.fullDay"),
       price: 140,
       rating: 4.8,
       reviews: 201,
-      included: ["Park entrance", "Guide service", "Packed lunch", "Transport"],
-      notIncluded: ["Warm clothing", "Personal expenses"],
-      nearbyAttractions: ["Nuwara Eliya", "Pedro Tea Estate", "Gregory Lake"],
+      included: [
+        t("destinations.detail.included.parkFees"),
+        t("destinations.detail.included.professionalGuide"),
+        t("destinations.detail.included.lunch"),
+        t("destinations.detail.included.transportation"),
+      ],
+      notIncluded: [
+        t("destinations.adventure.notIncluded.warmClothing"),
+        t("destinations.detail.notIncluded.personalExpenses"),
+      ],
+      nearbyAttractions: [
+        t("destinations.adventure.nearby.nuwaraEliya"),
+        t("destinations.adventure.nearby.pedroTeaEstate"),
+        t("destinations.adventure.nearby.gregoryLake"),
+      ],
     },
   };
 
@@ -677,14 +643,14 @@ The city is also a gateway to Horton Plains National Park, home to World's End, 
       <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">
-            Destination Not Found
+            {t("destinations.detail.destinationNotFound")}
           </h1>
           <button
             onClick={onNavigateBack}
             className="inline-flex items-center px-6 py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Destinations
+            {t("destinations.detail.backToDestinations")}
           </button>
         </div>
       </div>
@@ -748,8 +714,8 @@ The city is also a gateway to Horton Plains National Park, home to World's End, 
         {/* Title Overlay */}
         <div className="absolute bottom-0 left-0 right-0 p-8">
           <div className="max-w-4xl">
-            <div className="inline-flex items-center px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-medium mb-4 capitalize">
-              {destination.category}
+            <div className="inline-flex items-center px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-medium mb-4">
+              {t(`destinations.categories.${destination.category}`)}
             </div>
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
               {destination.name}
@@ -770,7 +736,7 @@ The city is also a gateway to Horton Plains National Park, home to World's End, 
             {/* Description */}
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                About This Destination
+                {t("destinations.detail.aboutDestination")}
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-6">
                 {destination.shortDescription}
@@ -783,7 +749,7 @@ The city is also a gateway to Horton Plains National Park, home to World's End, 
             {/* Highlights */}
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Highlights
+                {t("destinations.detail.highlights")}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {destination.highlights.map((highlight) => (
@@ -798,7 +764,7 @@ The city is also a gateway to Horton Plains National Park, home to World's End, 
             {/* Photo Gallery Auto Carousel */}
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Photo Gallery
+                {t("destinations.detail.photoGallery")}
               </h3>
               <div className="relative">
                 <div className="overflow-hidden rounded-2xl shadow-2xl">
@@ -873,7 +839,7 @@ The city is also a gateway to Horton Plains National Park, home to World's End, 
             {/* Map */}
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Location
+                {t("destinations.detail.location")}
               </h3>
               <div className="h-64 rounded-lg overflow-hidden shadow-lg">
                 <iframe
@@ -903,7 +869,7 @@ The city is also a gateway to Horton Plains National Park, home to World's End, 
                     className="text-emerald-600 hover:text-emerald-700 font-medium text-sm flex items-center space-x-1"
                   >
                     <Navigation className="w-4 h-4" />
-                    <span>View on Google Maps</span>
+                    <span>{t("destinations.detail.viewOnGoogleMaps")}</span>
                   </button>
                 </div>
               </div>
@@ -920,14 +886,14 @@ The city is also a gateway to Horton Plains National Park, home to World's End, 
                   className="w-full py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors flex items-center justify-center space-x-2"
                 >
                   <MessageCircle className="w-5 h-5" />
-                  <span>Book via WhatsApp</span>
+                  <span>{t("destinations.detail.bookViaWhatsApp")}</span>
                 </button>
                 <a
                   href="tel:+94771234567"
                   className="w-full py-3 border border-gray-300 hover:border-emerald-500 text-gray-700 hover:text-emerald-600 font-semibold rounded-lg transition-colors flex items-center justify-center space-x-2"
                 >
                   <Phone className="w-5 h-5" />
-                  <span>Call Us</span>
+                  <span>{t("destinations.detail.callUs")}</span>
                 </a>
               </div>
             </div>
@@ -936,29 +902,29 @@ The city is also a gateway to Horton Plains National Park, home to World's End, 
             <div className="bg-gradient-to-br from-emerald-50 to-blue-50 rounded-2xl p-6 border border-emerald-100">
               <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
                 <MapPin className="w-5 h-5 text-emerald-600 mr-2" />
-                Quick Info
+                {t("destinations.detail.quickInfo")}
               </h4>
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-600 text-sm">Best Time:</span>
+                  <span className="text-gray-600 text-sm">{t("destinations.detail.bestTime")}:</span>
                   <span className="text-gray-900 font-medium text-sm">
                     {destination.bestTime}
                   </span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-600 text-sm">Difficulty:</span>
+                  <span className="text-gray-600 text-sm">{t("destinations.detail.difficulty")}:</span>
                   <span className="text-gray-900 font-medium text-sm">
                     {destination.difficulty}
                   </span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-600 text-sm">Duration:</span>
+                  <span className="text-gray-600 text-sm">{t("destinations.detail.duration")}:</span>
                   <span className="text-gray-900 font-medium text-sm">
                     {destination.duration}
                   </span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-gray-600 text-sm">Group Size:</span>
+                  <span className="text-gray-600 text-sm">{t("destinations.detail.groupSize")}:</span>
                   <span className="text-gray-900 font-medium text-sm">
                     {destination.groupSize}
                   </span>
@@ -970,7 +936,7 @@ The city is also a gateway to Horton Plains National Park, home to World's End, 
             <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
               <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
                 <CheckCircle className="w-5 h-5 text-emerald-600 mr-2" />
-                What's Included
+                {t("destinations.detail.whatsIncluded")}
               </h4>
               <ul className="space-y-3">
                 {destination.included.map((item) => (
@@ -987,7 +953,7 @@ The city is also a gateway to Horton Plains National Park, home to World's End, 
             {/* What's Not Included */}
             <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
               <h4 className="text-lg font-bold text-gray-900 mb-4">
-                Not Included
+                {t("destinations.detail.notIncluded")}
               </h4>
               <ul className="space-y-3">
                 {destination.notIncluded.map((item) => (
@@ -1005,7 +971,7 @@ The city is also a gateway to Horton Plains National Park, home to World's End, 
             <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
               <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
                 <Navigation className="w-5 h-5 text-emerald-600 mr-2" />
-                Nearby Attractions
+                {t("destinations.detail.nearbyAttractions")}
               </h4>
               <ul className="space-y-3">
                 {destination.nearbyAttractions.map((attraction) => (

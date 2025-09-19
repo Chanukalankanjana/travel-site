@@ -100,7 +100,7 @@ export default function About() {
           <div>
             <div className="inline-flex items-center px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium mb-6">
               <Award className="w-4 h-4 mr-2" />
-              Trusted Since 2023
+{t("about.hero.trustedSince")}
             </div>
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">{t("about.title")}</h2>
             <p className="text-xl text-gray-600 mb-6">{t("about.subtitle")}</p>
@@ -110,7 +110,7 @@ export default function About() {
               onClick={() => navigateToAbout()}
               className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition-colors duration-300"
             >
-              Learn More About Us
+{t("about.cta.learnMore")}
             </button>
           </div>
 
