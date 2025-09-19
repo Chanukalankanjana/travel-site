@@ -760,6 +760,46 @@ type TranslationKeys =
   | "adventure.filters.waterSports"
   | "adventure.filters.wildlifeSafari"
   | "adventure.filters.extremeSports"
+  | "adventure.hero.badge"
+  | "adventure.hero.title"
+  | "adventure.hero.subtitle"
+  | "adventure.hero.desc"
+  | "adventure.hero.plan"
+  | "adventure.hero.explore"
+  | "adventure.hero.back"
+  | "adventure.categories.title"
+  | "adventure.categories.subtitle"
+  | "adventure.categories.hiking.desc"
+  | "adventure.categories.water.desc"
+  | "adventure.categories.wildlife.desc"
+  | "adventure.categories.extreme.desc"
+  | "adventure.filters.title"
+  | "adventure.difficulty.all"
+  | "adventure.difficulty.easy"
+  | "adventure.difficulty.moderate"
+  | "adventure.difficulty.challenging"
+  | "adventure.difficulty.extreme"
+  | "adventure.sort.popular"
+  | "adventure.sort.rating"
+  | "adventure.sort.priceLow"
+  | "adventure.sort.priceHigh"
+  | "adventure.filters.showing"
+  | "adventure.bookNow"
+  | "adventure.moreHighlights"
+  | "adventure.why.title"
+  | "adventure.why.subtitle"
+  | "adventure.why.safety.title"
+  | "adventure.why.safety.desc"
+  | "adventure.why.expert.title"
+  | "adventure.why.expert.desc"
+  | "adventure.why.groups.title"
+  | "adventure.why.groups.desc"
+  | "adventure.why.authentic.title"
+  | "adventure.why.authentic.desc"
+  | "adventure.cta.title"
+  | "adventure.cta.subtitle"
+  | "adventure.cta.chat"
+  | "adventure.cta.call"
   // Contact Page Additional
   | "contact.info.phone.title"
   | "contact.info.phone.description"
@@ -1588,6 +1628,65 @@ const translations: { [lang: string]: TranslationMap } = {
     "adventure.filters.waterSports": "Water Sports",
     "adventure.filters.wildlifeSafari": "Wildlife Safari",
     "adventure.filters.extremeSports": "Extreme Sports",
+    "adventure.hero.badge": "Adrenaline & Adventure Awaits",
+    "adventure.hero.title": "Epic Adventures",
+    "adventure.hero.subtitle": "in Sri Lanka",
+    "adventure.hero.desc":
+      "From sacred mountain peaks to thrilling rapids, discover heart-pounding adventures in the Pearl of the Indian Ocean. Your next adrenaline rush awaits in paradise.",
+    "adventure.hero.plan": "Plan My Adventure",
+    "adventure.hero.explore": "Explore Adventures",
+    "adventure.hero.back": "Back to Home",
+
+    "adventure.categories.title": "Adventure Categories",
+    "adventure.categories.subtitle":
+      "Choose your adventure style and discover the thrill that matches your spirit",
+    "adventure.categories.hiking.desc":
+      "Conquer peaks, explore trails, and witness breathtaking vistas",
+    "adventure.categories.water.desc":
+      "Dive into thrilling water adventures and marine encounters",
+    "adventure.categories.wildlife.desc":
+      "Get close to nature's most magnificent creatures",
+    "adventure.categories.extreme.desc":
+      "Push your limits with heart-pounding extreme sports",
+
+    "adventure.filters.title": "Filter adventures:",
+
+    "adventure.difficulty.all": "All Levels",
+    "adventure.difficulty.easy": "Easy",
+    "adventure.difficulty.moderate": "Moderate",
+    "adventure.difficulty.challenging": "Challenging",
+    "adventure.difficulty.extreme": "Extreme",
+
+    "adventure.sort.popular": "Most Popular",
+    "adventure.sort.rating": "Highest Rated",
+    "adventure.sort.priceLow": "Price: Low to High",
+    "adventure.sort.priceHigh": "Price: High to Low",
+    "adventure.filters.showing": "Showing {count} adventures",
+
+    "adventure.bookNow": "Book Now",
+    "adventure.moreHighlights": "+{count} more",
+
+    "adventure.why.title": "Why Choose Our Adventures?",
+    "adventure.why.subtitle":
+      "Experience Sri Lanka's adventures with the safety, expertise, and local knowledge you deserve",
+    "adventure.why.safety.title": "Safety First",
+    "adventure.why.safety.desc":
+      "Professional safety equipment and certified guides ensure your adventure is both thrilling and secure.",
+    "adventure.why.expert.title": "Expert Guides",
+    "adventure.why.expert.desc":
+      "Local experts with deep knowledge of terrain, wildlife, and cultural significance of each location.",
+    "adventure.why.groups.title": "Small Groups",
+    "adventure.why.groups.desc":
+      "Intimate group sizes for personalized attention and minimal environmental impact.",
+    "adventure.why.authentic.title": "Authentic Experiences",
+    "adventure.why.authentic.desc":
+      "Genuine local encounters and off-the-beaten-path adventures you won't find elsewhere.",
+
+    "adventure.cta.title": "Ready for Your Next Adventure?",
+    "adventure.cta.subtitle":
+      "Don't just visit Sri Lanka – experience it! Let us craft the perfect adventure that matches your thrill level and interests.",
+    "adventure.cta.chat": "Chat with Adventure Expert",
+    "adventure.cta.call": "Call Now",
 
     // Contact Page Additional
     "contact.info.phone.title": "Phone Numbers",
@@ -2454,6 +2553,65 @@ const translations: { [lang: string]: TranslationMap } = {
     "adventure.filters.waterSports": "Водные виды спорта",
     "adventure.filters.wildlifeSafari": "Сафари по дикой природе",
     "adventure.filters.extremeSports": "Экстремальные виды спорта",
+    "adventure.hero.badge": "Адреналин и приключения ждут",
+    "adventure.hero.title": "Эпические приключения",
+    "adventure.hero.subtitle": "на Шри-Ланке",
+    "adventure.hero.desc":
+      "От священных горных вершин до бурных порогов — откройте для себя захватывающие приключения на Жемчужине Индийского океана. Ваш следующий всплеск адреналина ждет вас в раю.",
+    "adventure.hero.plan": "Спланировать приключение",
+    "adventure.hero.explore": "Исследовать приключения",
+    "adventure.hero.back": "Назад на главную",
+
+    "adventure.categories.title": "Категории приключений",
+    "adventure.categories.subtitle":
+      "Выберите свой стиль приключений и найдите подходящий для себя драйв",
+    "adventure.categories.hiking.desc":
+      "Покоряйте вершины, исследуйте тропы и наслаждайтесь захватывающими видами",
+    "adventure.categories.water.desc":
+      "Погрузитесь в водные приключения и морские встречи",
+    "adventure.categories.wildlife.desc":
+      "Познакомьтесь с величественными созданиями природы",
+    "adventure.categories.extreme.desc":
+      "Испытайте себя в экстремальных видах спорта",
+
+    "adventure.filters.title": "Фильтр приключений:",
+
+    "adventure.difficulty.all": "Все уровни",
+    "adventure.difficulty.easy": "Легко",
+    "adventure.difficulty.moderate": "Средне",
+    "adventure.difficulty.challenging": "Сложно",
+    "adventure.difficulty.extreme": "Экстремально",
+
+    "adventure.sort.popular": "Самые популярные",
+    "adventure.sort.rating": "С наивысшим рейтингом",
+    "adventure.sort.priceLow": "Цена: по возрастанию",
+    "adventure.sort.priceHigh": "Цена: по убыванию",
+    "adventure.filters.showing": "Показано приключений: {count}",
+
+    "adventure.bookNow": "Забронировать",
+    "adventure.moreHighlights": "+{count} еще",
+
+    "adventure.why.title": "Почему выбрать наши приключения?",
+    "adventure.why.subtitle":
+      "Ощутите приключения Шри-Ланки с безопасностью, экспертизой и местными знаниями",
+    "adventure.why.safety.title": "Безопасность прежде всего",
+    "adventure.why.safety.desc":
+      "Профессиональное снаряжение и сертифицированные гиды обеспечивают безопасность и драйв.",
+    "adventure.why.expert.title": "Экспертные гиды",
+    "adventure.why.expert.desc":
+      "Местные эксперты с глубокими знаниями о природе, животных и культуре.",
+    "adventure.why.groups.title": "Малые группы",
+    "adventure.why.groups.desc":
+      "Небольшие группы для индивидуального подхода и минимального воздействия на природу.",
+    "adventure.why.authentic.title": "Аутентичные впечатления",
+    "adventure.why.authentic.desc":
+      "Настоящие местные встречи и уникальные приключения вне туристических маршрутов.",
+
+    "adventure.cta.title": "Готовы к новому приключению?",
+    "adventure.cta.subtitle":
+      "Не просто посетите Шри-Ланку — испытайте её! Мы подберём идеальное приключение под ваш уровень и интересы.",
+    "adventure.cta.chat": "Чат с экспертом по приключениям",
+    "adventure.cta.call": "Позвонить сейчас",
 
     // Contact Page Additional
     "contact.info.phone.title": "Номера телефонов",

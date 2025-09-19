@@ -420,19 +420,17 @@ function AdventuresPageContent() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white text-sm font-medium mb-8">
             <Zap className="w-4 h-4 mr-2 animate-pulse" />
-            Adrenaline & Adventure Awaits
+            {t("adventure.hero.badge")}
           </div>
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
             <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
-              Epic Adventures
+              {t("adventure.hero.title")}
             </span>
             <br />
-            <span className="text-white">in Sri Lanka</span>
+            <span className="text-white">{t("adventure.hero.subtitle")}</span>
           </h1>
           <p className="text-xl sm:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-12">
-            From sacred mountain peaks to thrilling rapids, discover
-            heart-pounding adventures in the Pearl of the Indian Ocean. Your
-            next adrenaline rush awaits in paradise.
+            {t("adventure.hero.desc")}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -441,14 +439,14 @@ function AdventuresPageContent() {
               className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2 shadow-lg"
             >
               <MessageCircle className="w-5 h-5" />
-              <span>Plan My Adventure</span>
+              <span>{t("adventure.hero.plan")}</span>
             </button>
             <a
               href="#adventures"
               className="px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/30 text-white hover:bg-white/20 font-semibold rounded-xl transition-all duration-300 flex items-center justify-center space-x-2"
             >
               <Mountain className="w-5 h-5" />
-              <span>Explore Adventures</span>
+              <span>{t("adventure.hero.explore")}</span>
             </a>
           </div>
 
@@ -458,7 +456,7 @@ function AdventuresPageContent() {
             className="inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/30 text-white hover:bg-white/20 transition-colors duration-200 rounded-lg"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Home
+            {t("adventure.hero.back")}
           </a>
         </div>
       </section>
@@ -468,11 +466,10 @@ function AdventuresPageContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Adventure Categories
+              {t("adventure.categories.title")}
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Choose your adventure style and discover the thrill that matches
-              your spirit
+              {t("adventure.categories.subtitle")}
             </p>
           </div>
 
@@ -492,13 +489,13 @@ function AdventuresPageContent() {
                   </h3>
                   <p className="text-gray-600 text-sm leading-relaxed">
                     {category.id === "hiking" &&
-                      "Conquer peaks, explore trails, and witness breathtaking vistas"}
+                      t("adventure.categories.hiking.desc")}
                     {category.id === "water" &&
-                      "Dive into thrilling water adventures and marine encounters"}
+                      t("adventure.categories.water.desc")}
                     {category.id === "wildlife" &&
-                      "Get close to nature's most magnificent creatures"}
+                      t("adventure.categories.wildlife.desc")}
                     {category.id === "extreme" &&
-                      "Push your limits with heart-pounding extreme sports"}
+                      t("adventure.categories.extreme.desc")}
                   </p>
                 </div>
               );
@@ -517,7 +514,7 @@ function AdventuresPageContent() {
             <div className="flex items-center space-x-4">
               <Filter className="w-5 h-5 text-gray-500" />
               <span className="text-sm font-medium text-gray-700">
-                Filter adventures:
+                {t("adventure.filters.title")}
               </span>
             </div>
 
@@ -541,11 +538,17 @@ function AdventuresPageContent() {
                 onChange={(e) => setSelectedDifficulty(e.target.value)}
                 className="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
               >
-                {difficulties.map((difficulty) => (
-                  <option key={difficulty.id} value={difficulty.id}>
-                    {difficulty.label}
-                  </option>
-                ))}
+                <option value="all">{t("adventure.difficulty.all")}</option>
+                <option value="easy">{t("adventure.difficulty.easy")}</option>
+                <option value="moderate">
+                  {t("adventure.difficulty.moderate")}
+                </option>
+                <option value="challenging">
+                  {t("adventure.difficulty.challenging")}
+                </option>
+                <option value="extreme">
+                  {t("adventure.difficulty.extreme")}
+                </option>
               </select>
 
               {/* Sort Filter */}
@@ -554,10 +557,14 @@ function AdventuresPageContent() {
                 onChange={(e) => setSortBy(e.target.value)}
                 className="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
               >
-                <option value="popular">Most Popular</option>
-                <option value="rating">Highest Rated</option>
-                <option value="price-low">Price: Low to High</option>
-                <option value="price-high">Price: High to Low</option>
+                <option value="popular">{t("adventure.sort.popular")}</option>
+                <option value="rating">{t("adventure.sort.rating")}</option>
+                <option value="price-low">
+                  {t("adventure.sort.priceLow")}
+                </option>
+                <option value="price-high">
+                  {t("adventure.sort.priceHigh")}
+                </option>
               </select>
             </div>
 
@@ -681,7 +688,7 @@ function AdventuresPageContent() {
                   <div className="flex gap-3">
                     <button className="flex-1 px-4 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition-colors duration-300 flex items-center justify-center space-x-2">
                       <Calendar className="w-4 h-4" />
-                      <span>Book Now</span>
+                      <span>{t("adventure.bookNow")}</span>
                     </button>
                     <button
                       onClick={() => handleArrowClick(adventure.name)}
@@ -702,11 +709,10 @@ function AdventuresPageContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Why Choose Our Adventures?
+              {t("adventure.why.title")}
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Experience Sri Lanka's adventures with the safety, expertise, and
-              local knowledge you deserve
+              {t("adventure.why.subtitle")}
             </p>
           </div>
 
@@ -714,27 +720,23 @@ function AdventuresPageContent() {
             {[
               {
                 icon: Shield,
-                title: "Safety First",
-                description:
-                  "Professional safety equipment and certified guides ensure your adventure is both thrilling and secure.",
+                title: t("adventure.why.safety.title"),
+                description: t("adventure.why.safety.desc"),
               },
               {
                 icon: Award,
-                title: "Expert Guides",
-                description:
-                  "Local experts with deep knowledge of terrain, wildlife, and cultural significance of each location.",
+                title: t("adventure.why.expert.title"),
+                description: t("adventure.why.expert.desc"),
               },
               {
                 icon: Users,
-                title: "Small Groups",
-                description:
-                  "Intimate group sizes for personalized attention and minimal environmental impact.",
+                title: t("adventure.why.groups.title"),
+                description: t("adventure.why.groups.desc"),
               },
               {
                 icon: Heart,
-                title: "Authentic Experiences",
-                description:
-                  "Genuine local encounters and off-the-beaten-path adventures you won't find elsewhere.",
+                title: t("adventure.why.authentic.title"),
+                description: t("adventure.why.authentic.desc"),
               },
             ].map((feature, index) => {
               const IconComponent = feature.icon;
@@ -763,11 +765,10 @@ function AdventuresPageContent() {
       <section className="py-20 bg-gradient-to-r from-emerald-600 to-teal-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-4">
-            Ready for Your Next Adventure?
+            {t("adventure.cta.title")}
           </h2>
           <p className="text-xl text-emerald-100 mb-8 max-w-2xl mx-auto">
-            Don't just visit Sri Lanka – experience it! Let us craft the perfect
-            adventure that matches your thrill level and interests.
+            {t("adventure.cta.subtitle")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
@@ -775,14 +776,14 @@ function AdventuresPageContent() {
               className="px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors duration-300 flex items-center justify-center space-x-2"
             >
               <MessageCircle className="w-5 h-5" />
-              <span>Chat with Adventure Expert</span>
+              <span>{t("adventure.cta.chat")}</span>
             </button>
             <a
               href="tel:+94771234567"
               className="px-8 py-4 bg-white text-emerald-600 hover:bg-gray-100 font-semibold rounded-lg transition-colors duration-300 flex items-center justify-center space-x-2"
             >
               <Phone className="w-5 h-5" />
-              <span>Call Now</span>
+              <span>{t("adventure.cta.call")}</span>
             </a>
           </div>
         </div>
