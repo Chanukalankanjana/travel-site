@@ -384,7 +384,6 @@ type TranslationKeys =
   | "contact.phone.desc"
   | "contact.office.title"
   | "contact.office.desc"
-  | "contact.form.title"
   | "contact.form.name"
   | "contact.form.email"
   | "contact.form.phone"
@@ -1072,7 +1071,6 @@ const translations: { [lang: string]: TranslationMap } = {
     "contact.phone.desc": "24/7 travel assistance",
     "contact.office.title": "Visit Our Office",
     "contact.office.desc": "Meet us in person for personalized planning",
-    "contact.form.title": "Send us a Message",
     "contact.form.name": "Your Name",
     "contact.form.email": "Email Address",
     "contact.form.phone": "Phone Number",
@@ -1976,7 +1974,6 @@ const translations: { [lang: string]: TranslationMap } = {
     "contact.office.title": "Посетите наш офис",
     "contact.office.desc":
       "Встретьтесь с нами лично для персонального планирования",
-    "contact.form.title": "Отправьте нам сообщение",
     "contact.form.name": "Ваше имя",
     "contact.form.email": "Email адрес",
     "contact.form.phone": "Номер телефона",
@@ -2667,7 +2664,6 @@ const translations: { [lang: string]: TranslationMap } = {
     "contact.form.optional": "необязательно",
 
     // Contact Page Additional
-    "contact.form.title": "Отправьте нам сообщение",
     "contact.form.subtitle":
       "Заполните форму ниже, и мы свяжемся с вами в течение 2 часов",
     "contact.whyChooseUs.title": "Почему выбирают нас?",
