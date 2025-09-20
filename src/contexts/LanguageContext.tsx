@@ -68,8 +68,10 @@ type TranslationKeys =
   | "destinations.categories.beaches"
   | "destinations.categories.hiking"
   | "destinations.categories.water"
+  | "destinations.sigiriya.name"
+  | "destinations.kandy.name"
+  | "destinations.ella.name"
   // Home Page Components
-  | "destinations.hero.exploreParadise"
   | "common.viewDetails"
   | "services.hero.premiumServices"
   | "packages.hero.premiumPackages"
@@ -536,6 +538,20 @@ type TranslationKeys =
   | "footer.newsletter"
   | "footer.newsletterDesc"
   | "footer.subscribe"
+  | "footer.services.luxury"
+  | "footer.services.cultural"
+  | "footer.services.adventure"
+  | "footer.services.wellness"
+  | "footer.services.transport"
+  | "footer.services.accommodation"
+  | "footer.whatsapp"
+  | "footer.email"
+  | "footer.phone"
+  | "footer.location"
+  | "footer.emailPlaceholder"
+  | "footer.privacy"
+  | "footer.terms"
+  | "footer.cookies"
   // Common
   | "common.readMore"
   | "common.learnMore"
@@ -1258,9 +1274,11 @@ const translations: { [lang: string]: TranslationMap } = {
     "destinations.categories.beaches": "Beaches",
     "destinations.categories.hiking": "Hiking",
     "destinations.categories.water": "Water Sports",
+    "destinations.sigiriya.name": "Sigiriya Rock",
+    "destinations.kandy.name": "Kandy Temple",
+    "destinations.ella.name": "Ella Hills",
 
     // Home Page Components
-    "destinations.hero.exploreParadise": "Explore Paradise",
     "common.viewDetails": "View Details",
     "services.hero.premiumServices": "Premium Services",
     "packages.hero.premiumPackages": "Premium Packages",
@@ -1667,6 +1685,20 @@ const translations: { [lang: string]: TranslationMap } = {
     "footer.newsletter": "Newsletter",
     "footer.newsletterDesc": "Subscribe for travel tips and exclusive offers",
     "footer.subscribe": "Subscribe",
+    "footer.services.luxury": "Luxury Tours",
+    "footer.services.cultural": "Cultural Heritage",
+    "footer.services.adventure": "Adventure Tours",
+    "footer.services.wellness": "Wellness Retreats",
+    "footer.services.transport": "Transportation",
+    "footer.services.accommodation": "Accommodation",
+    "footer.whatsapp": "WhatsApp",
+    "footer.email": "info@ceylonescape.com",
+    "footer.phone": "+94 77 123 4567",
+    "footer.location": "Colombo, Sri Lanka",
+    "footer.emailPlaceholder": "Your email",
+    "footer.privacy": "Privacy Policy",
+    "footer.terms": "Terms of Service",
+    "footer.cookies": "Cookie Policy",
 
     // Common
     "common.readMore": "Read More",
@@ -2601,9 +2633,11 @@ const translations: { [lang: string]: TranslationMap } = {
     "destinations.categories.beaches": "Пляжи",
     "destinations.categories.hiking": "Пеший туризм",
     "destinations.categories.water": "Водные виды спорта",
+    "destinations.sigiriya.name": "Скала Сигирия",
+    "destinations.kandy.name": "Храм Канди",
+    "destinations.ella.name": "Холмы Эллы",
 
     // Home Page Components
-    "destinations.hero.exploreParadise": "Исследуйте рай",
     "common.viewDetails": "Подробнее",
     "services.hero.premiumServices": "Премиум услуги",
     "packages.hero.premiumPackages": "Премиум пакеты",
@@ -2839,6 +2873,20 @@ const translations: { [lang: string]: TranslationMap } = {
     "footer.newsletterDesc":
       "Подпишитесь на советы по путешествиям и эксклюзивные предложения",
     "footer.subscribe": "Подписаться",
+    "footer.services.luxury": "Роскошные туры",
+    "footer.services.cultural": "Культурное наследие",
+    "footer.services.adventure": "Приключенческие туры",
+    "footer.services.wellness": "Оздоровительные ретриты",
+    "footer.services.transport": "Транспорт",
+    "footer.services.accommodation": "Размещение",
+    "footer.whatsapp": "WhatsApp",
+    "footer.email": "info@ceylonescape.com",
+    "footer.phone": "+94 77 123 4567",
+    "footer.location": "Коломбо, Шри-Ланка",
+    "footer.emailPlaceholder": "Ваш email",
+    "footer.privacy": "Политика конфиденциальности",
+    "footer.terms": "Условия использования",
+    "footer.cookies": "Политика cookies",
 
     // Common
     "common.readMore": "Читать далее",

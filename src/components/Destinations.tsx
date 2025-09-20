@@ -31,19 +31,19 @@ export default function Destinations() {
   const destinations = [
     {
       id: "1",
-      name: "Sigiriya Rock",
+      name: t("destinations.sigiriya.name"),
       image: "sigiria-sri-lanka-945x630.jpg",
       rating: 4.9,
     },
     {
       id: "2",
-      name: "Kandy Temple",
+      name: t("destinations.kandy.name"),
       image: "temple.jpg",
       rating: 4.8,
     },
     {
       id: "3",
-      name: "Ella Hills",
+      name: t("destinations.ella.name"),
       image: "distEella.jpg",
       rating: 4.9,
     },

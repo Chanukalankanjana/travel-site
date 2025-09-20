@@ -35,12 +35,12 @@ export default function Footer() {
   ];
 
   const services = [
-    "Luxury Tours",
-    "Cultural Heritage",
-    "Adventure Tours",
-    "Wellness Retreats",
-    "Transportation",
-    "Accommodation",
+    { key: "footer.services.luxury", href: "#services" },
+    { key: "footer.services.cultural", href: "#services" },
+    { key: "footer.services.adventure", href: "#services" },
+    { key: "footer.services.wellness", href: "#services" },
+    { key: "footer.services.transport", href: "#services" },
+    { key: "footer.services.accommodation", href: "#services" },
   ];
 
   const socialLinks = [
@@ -110,10 +110,10 @@ export default function Footer() {
               {services.map((service, index) => (
                 <a
                   key={index}
-                  href="#services"
+                  href={service.href}
                   className="block text-gray-400 hover:text-white transition-colors duration-200"
                 >
-                  {service}
+                  {t(service.key)}
                 </a>
               ))}
             </div>
@@ -130,25 +130,25 @@ export default function Footer() {
                 className="flex items-center space-x-3 text-gray-400 hover:text-green-400 transition-colors duration-200"
               >
                 <MessageCircle className="w-5 h-5" />
-                <span>WhatsApp</span>
+                <span>{t("footer.whatsapp")}</span>
               </button>
               <a
                 href="mailto:info@ceylonescape.com"
                 className="flex items-center space-x-3 text-gray-400 hover:text-blue-400 transition-colors duration-200"
               >
                 <Mail className="w-5 h-5" />
-                <span>info@ceylonescape.com</span>
+                <span>{t("footer.email")}</span>
               </a>
               <a
                 href="tel:+94771234567"
                 className="flex items-center space-x-3 text-gray-400 hover:text-emerald-400 transition-colors duration-200"
               >
                 <Phone className="w-5 h-5" />
-                <span>+94 77 123 4567</span>
+                <span>{t("footer.phone")}</span>
               </a>
               <div className="flex items-center space-x-3 text-gray-400">
                 <MapPin className="w-5 h-5" />
-                <span>Colombo, Sri Lanka</span>
+                <span>{t("footer.location")}</span>
               </div>
             </div>
 
@@ -161,7 +161,7 @@ export default function Footer() {
               <div className="flex space-x-2">
                 <input
                   type="email"
-                  placeholder="Your email"
+                  placeholder={t("footer.emailPlaceholder")}
                   className="flex-1 px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
                 />
                 <button className="bg-emerald-600 hover:bg-emerald-700 px-4 py-2 text-sm font-medium rounded-lg text-white transition-colors duration-200">
@@ -183,19 +183,19 @@ export default function Footer() {
                 href="#"
                 className="hover:text-white transition-colors duration-200"
               >
-                Privacy Policy
+                {t("footer.privacy")}
               </a>
               <a
                 href="#"
                 className="hover:text-white transition-colors duration-200"
               >
-                Terms of Service
+                {t("footer.terms")}
               </a>
               <a
                 href="#"
                 className="hover:text-white transition-colors duration-200"
               >
-                Cookie Policy
+                {t("footer.cookies")}
               </a>
             </div>
           </div>

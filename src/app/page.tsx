@@ -5,22 +5,19 @@ import Packages from "../components/Packages"
 import About from "../components/About"
 import Testimonials from "../components/Testimonials"
 import Gallery from "../components/Gallery"
-import { LanguageProvider } from "../contexts/LanguageContext"
 
 export default function HomePage() {
   return (
-    <LanguageProvider>
-      <div className="min-h-screen bg-white">
-        <main>
-          <Hero />
-          <Destinations />
-          <Services />
-          <Packages />
-          <About />
-          <Testimonials />
-          <Gallery />
-        </main>
-      </div>
-    </LanguageProvider>
+    <div className="min-h-screen bg-white">
+      <main>
+        <Hero />
+        <Destinations />
+        <Services />
+        <Packages />
+        <About />
+        <Testimonials />
+        <Gallery />
+      </main>
+    </div>
   )
 }
