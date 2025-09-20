@@ -1,7 +1,6 @@
 "use client";
 
 import {
-  Heart,
   MessageCircle,
   Mail,
   Phone,
@@ -16,14 +15,10 @@ import { useLanguage } from "../contexts/LanguageContext";
 export default function Footer() {
   const { t, currentLanguage } = useLanguage();
 
-  const whatsappNumbers = {
-    en: "+94771234567",
-    ru: "+94777654321",
-  };
-
   const handleWhatsAppClick = () => {
-    const number = whatsappNumbers[currentLanguage.code];
-    window.open(`https://wa.me/${number}`, "_blank");
+    const number = t(`whatsapp.phoneNumber.${currentLanguage.code}`);
+    const message = encodeURIComponent(t("whatsapp.message.contact"));
+    window.open(`https://wa.me/${number}?text=${message}`, "_blank");
   };
 
   const quickLinks = [
@@ -140,11 +135,11 @@ export default function Footer() {
                 <span>{t("footer.email")}</span>
               </a>
               <a
-                href="tel:+94771234567"
+                href={`tel:${t(`whatsapp.phoneNumber.${currentLanguage.code}`)}`}
                 className="flex items-center space-x-3 text-gray-400 hover:text-emerald-400 transition-colors duration-200"
               >
                 <Phone className="w-5 h-5" />
-                <span>{t("footer.phone")}</span>
+                <span>{t(`whatsapp.phoneNumber.${currentLanguage.code}`)}</span>
               </a>
               <div className="flex items-center space-x-3 text-gray-400">
                 <MapPin className="w-5 h-5" />

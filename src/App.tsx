@@ -36,8 +36,8 @@ function App() {
       const path = window.location.pathname;
 
       if (path.startsWith("/destination/")) {
-        const id = path.split("/destination/")[1];
-        setDestinationId(id);
+        const slug = path.split("/destination/")[1];
+        setDestinationId(slug);
         setCurrentPage("destination-detail");
       } else {
         // Reset destination ID for all other routes
@@ -97,9 +97,11 @@ function App() {
     setDestinationId(null);
   };
 
-  const navigateToDestination = (id: string) => {
-    window.history.pushState({}, "", `/destination/${id}`);
-    setDestinationId(id);
+  const navigateToDestination = (idOrSlug: string) => {
+    // If it's already a slug (contains hyphens), use it directly
+    // If it's an ID (numeric), we'll let the DestinationDetail component handle the conversion
+    window.history.pushState({}, "", `/destination/${idOrSlug}`);
+    setDestinationId(idOrSlug);
     setCurrentPage("destination-detail");
   };
 

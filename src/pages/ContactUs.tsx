@@ -21,8 +21,8 @@ import { useLanguage } from "../contexts/LanguageContext";
 
 const ContactPageContent = () => {
   const { t, currentLanguage } = useLanguage();
-  const phoneNumber = currentLanguage.code === "ru" ? "+94 77 765 4321" : "+94 77 123 4567";
-  const phoneDigits = currentLanguage.code === "ru" ? "94777654321" : "94771234567";
+  const phoneNumber = t(`whatsapp.phoneNumber.${currentLanguage.code}`);
+  const phoneDigits = t(`whatsapp.phoneNumber.${currentLanguage.code}`).replace("+", "");
   const labels = currentLanguage.code === "ru"
     ? {
         whatsapp: "WhatsApp",

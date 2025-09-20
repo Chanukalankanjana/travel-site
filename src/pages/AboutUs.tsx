@@ -55,17 +55,13 @@ export default function AboutPage() {
     return () => clearInterval(timer);
   }, []);
 
-  const whatsappNumbers = {
-    en: "+94771234567",
-    ru: "+94777654321",
-  };
-
   const handleWhatsAppClick = () => {
-    const number = whatsappNumbers[currentLanguage.code];
-    window.open(`https://wa.me/${number}`, "_blank");
+    const number = t(`whatsapp.phoneNumber.${currentLanguage.code}`);
+    const message = encodeURIComponent(t("whatsapp.message.contact"));
+    window.open(`https://wa.me/${number}?text=${message}`, "_blank");
   };
 
-  const phoneDigits = currentLanguage.code === "ru" ? "94777654321" : "94771234567";
+  const phoneDigits = t(`whatsapp.phoneNumber.${currentLanguage.code}`).replace("+", "");
 
   const stats = [
     {

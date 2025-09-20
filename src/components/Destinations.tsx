@@ -28,22 +28,35 @@ export default function Destinations() {
     return () => observer.disconnect()
   }, [])
 
+  // Function to convert destination name to URL slug
+  const nameToSlug = (name: string) => {
+    return name
+      .toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, '') // Remove special characters except spaces and hyphens
+      .replace(/\s+/g, '-') // Replace spaces with hyphens
+      .replace(/-+/g, '-') // Replace multiple hyphens with single hyphen
+      .trim();
+  };
+
   const destinations = [
     {
       id: "1",
       name: t("destinations.sigiriya.name"),
+      slug: nameToSlug(t("destinations.sigiriya.name")),
       image: "sigiria-sri-lanka-945x630.jpg",
       rating: 4.9,
     },
     {
       id: "2",
       name: t("destinations.kandy.name"),
+      slug: nameToSlug(t("destinations.kandy.name")),
       image: "temple.jpg",
       rating: 4.8,
     },
     {
       id: "3",
       name: t("destinations.ella.name"),
+      slug: nameToSlug(t("destinations.ella.name")),
       image: "distEella.jpg",
       rating: 4.9,
     },

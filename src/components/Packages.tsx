@@ -6,17 +6,9 @@ import { useNavigation } from "../contexts/NavigationContext"
 export default function Packages() {
   const { t, currentLanguage } = useLanguage()
   const { navigateToPackages } = useNavigation()
-  const whatsappNumbers: Record<string, string> = {
-    en: "94771234567",
-    ru: "79261234567",
-  }
-  const whatsappMessages: Record<string, string> = {
-    en: "Hello! I’d like a custom Sri Lanka tour package. Please help me plan an itinerary.",
-    ru: "Здравствуйте! Хочу индивидуальный тур по Шри‑Ланке. Помогите, пожалуйста, составить маршрут.",
-  }
   const handleGetQuote = () => {
-    const num = whatsappNumbers[currentLanguage.code] || whatsappNumbers.en
-    const msg = whatsappMessages[currentLanguage.code] || whatsappMessages.en
+    const num = t(`whatsapp.phoneNumber.${currentLanguage.code}`)
+    const msg = t("whatsapp.message.packages")
     window.open(`https://wa.me/${num}?text=${encodeURIComponent(msg)}`, "_blank")
   }
 

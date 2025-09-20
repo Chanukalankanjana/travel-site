@@ -22,7 +22,7 @@ export default function DestinationDetail({
   destinationId,
   onNavigateBack,
 }: DestinationDetailProps) {
-  const { currentLanguage, t } = useLanguage();
+  const { t, currentLanguage } = useLanguage();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
 
@@ -417,7 +417,7 @@ export default function DestinationDetail({
     "9": {
       id: 9,
       name: t("destinations.adventure.adamsPeak.name"),
-      category: t("destinations.categories.hiking"),
+      category: "hiking",
       location: t("destinations.adventure.adamsPeak.location"),
       coordinates: { lat: 6.8097, lng: 80.4994 },
       mainImage: "/temple-sacred.jpg",
@@ -464,7 +464,7 @@ export default function DestinationDetail({
     "10": {
       id: 10,
       name: t("destinations.adventure.kitulgala.name"),
-      category: t("destinations.categories.water"),
+      category: "water",
       location: t("destinations.adventure.kitulgala.location"),
       coordinates: { lat: 6.9902, lng: 80.4153 },
       mainImage: "/adventureWild.jpg",
@@ -508,7 +508,7 @@ export default function DestinationDetail({
     "11": {
       id: 11,
       name: t("destinations.adventure.ellaRock.name"),
-      category: t("destinations.categories.hiking"),
+      category: "hiking",
       location: t("destinations.adventure.ellaRock.location"),
       coordinates: { lat: 6.8667, lng: 81.0464 },
       mainImage: "/distEella.jpg",
@@ -546,7 +546,7 @@ export default function DestinationDetail({
     "12": {
       id: 12,
       name: t("destinations.adventure.knuckles.name"),
-      category: t("destinations.categories.hiking"),
+      category: "hiking",
       location: t("destinations.adventure.knuckles.location"),
       coordinates: { lat: 7.4431, lng: 80.7772 },
       mainImage: "/culturalHeri.jpg",
@@ -587,7 +587,7 @@ export default function DestinationDetail({
     "13": {
       id: 13,
       name: t("destinations.adventure.hortonPlains.name"),
-      category: t("destinations.categories.hiking"),
+      category: "hiking",
       location: t("destinations.adventure.hortonPlains.location"),
       coordinates: { lat: 6.8018, lng: 80.8039 },
       mainImage: "/wildlife.jpg",
@@ -625,7 +625,91 @@ export default function DestinationDetail({
     },
   };
 
-  const destination = destinations[destinationId as keyof typeof destinations];
+  // Function to convert destination name to URL slug
+  const nameToSlug = (name: string) => {
+    return name
+      .toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, '') // Remove special characters except spaces and hyphens
+      .replace(/\s+/g, '-') // Replace spaces with hyphens
+      .replace(/-+/g, '-') // Replace multiple hyphens with single hyphen
+      .trim();
+  };
+
+  // Function to find destination by slug
+  const findDestinationBySlug = (slug: string) => {
+    console.log('Looking for destination with slug/ID:', slug);
+    
+    // First try to find by ID (backward compatibility)
+    if (destinations[slug as keyof typeof destinations]) {
+      const dest = destinations[slug as keyof typeof destinations];
+      console.log('Found by ID:', dest);
+      return { key: slug, destination: dest };
+    }
+    
+    // Then try to find by slug
+    for (const [key, dest] of Object.entries(destinations)) {
+      const destSlug = nameToSlug(dest.name);
+      console.log('Checking destination:', dest.name, 'slug:', destSlug);
+      if (destSlug === slug) {
+        console.log('Found by slug:', dest);
+        return { key, destination: dest };
+      }
+    }
+    
+    console.log('No destination found');
+    return null;
+  };
+
+  // Find destination by slug or ID
+  const destinationData = findDestinationBySlug(destinationId);
+  const destination = destinationData?.destination;
+
+  // Debug logging
+  console.log('Destination ID:', destinationId);
+  console.log('Available destinations:', Object.keys(destinations));
+  console.log('Found destination:', destination);
+
+  // Update URL to use slug if we found destination by ID
+  useEffect(() => {
+    if (destination && destinationData?.key === destinationId) {
+      // If we found by ID, update URL to use slug
+      const slug = nameToSlug(destination.name);
+      if (slug !== destinationId) {
+        window.history.replaceState({}, "", `/destination/${slug}`);
+      }
+    }
+  }, [destination, destinationId, destinationData?.key]);
+
+  // Handle case when destination is not found
+  if (!destination) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">Destination Not Found</h1>
+          <p className="text-gray-600 mb-6">The destination you're looking for doesn't exist.</p>
+          <button
+            onClick={onNavigateBack}
+            className="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-lg transition-colors duration-300"
+          >
+            Back to Destinations
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // Function to get translated category name
+  const getCategoryName = (category: string) => {
+    const categoryMap: { [key: string]: string } = {
+      "heritage": t("destinations.categories.heritage"),
+      "culture": t("destinations.categories.culture"),
+      "nature": t("destinations.categories.nature"),
+      "beaches": t("destinations.categories.beaches"),
+      "hiking": t("destinations.categories.hiking"),
+      "water": t("destinations.categories.water"),
+    };
+    return categoryMap[category] || category;
+  };
 
   // Auto-play carousel functionality
   useEffect(() => {
@@ -657,16 +741,10 @@ export default function DestinationDetail({
     );
   }
 
-  const whatsappNumbers = {
-    en: "+94771234567",
-    ru: "+94777654321",
-  };
-
   const handleWhatsAppClick = () => {
-    const number = whatsappNumbers[currentLanguage.code];
-    const message = encodeURIComponent(
-      `Hi! I'm interested in booking the ${destination.name} tour. Can you provide more details?`
-    );
+    const number = t(`whatsapp.phoneNumber.${currentLanguage.code}`);
+    const baseMessage = t("whatsapp.message.destination");
+    const message = encodeURIComponent(baseMessage.replace("{destinationName}", destination.name));
     window.open(`https://wa.me/${number}?text=${message}`, "_blank");
   };
 
@@ -715,7 +793,7 @@ export default function DestinationDetail({
         <div className="absolute bottom-0 left-0 right-0 p-8">
           <div className="max-w-4xl">
             <div className="inline-flex items-center px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-medium mb-4">
-              {t(`destinations.categories.${destination.category}`)}
+              {getCategoryName(destination.category)}
             </div>
             <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
               {destination.name}
@@ -889,7 +967,7 @@ export default function DestinationDetail({
                   <span>{t("destinations.detail.bookViaWhatsApp")}</span>
                 </button>
                 <a
-                  href="tel:+94771234567"
+                  href={`tel:${t(`whatsapp.phoneNumber.${currentLanguage.code}`)}`}
                   className="w-full py-3 border border-gray-300 hover:border-emerald-500 text-gray-700 hover:text-emerald-600 font-semibold rounded-lg transition-colors flex items-center justify-center space-x-2"
                 >
                   <Phone className="w-5 h-5" />

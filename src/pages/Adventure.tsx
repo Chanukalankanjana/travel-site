@@ -516,8 +516,11 @@ function AdventuresPageContent() {
   const sortedAdventures = filteredAdventures;
 
   const handleWhatsAppClick = () => {
-    window.open("https://wa.me/94771234567", "_blank");
+    const number = t(`whatsapp.phoneNumber.${currentLanguage.code}`);
+    const message = encodeURIComponent(t("whatsapp.message.adventure"));
+    window.open(`https://wa.me/${number}?text=${message}`, "_blank");
   };
+
 
   const adventureToDestinationMap: Record<number, string> = {
     1: "9",  // Adam's Peak Sacred Climb -> Destination 9

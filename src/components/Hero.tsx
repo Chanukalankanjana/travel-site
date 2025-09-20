@@ -12,18 +12,9 @@ export default function Hero() {
     setIsVisible(true)
   }, [])
 
-  const whatsappNumbers = {
-    en: "+94771234567",
-    ru: "+94777654321",
-  }
-
   const handleWhatsAppClick = () => {
-    const number = whatsappNumbers[currentLanguage.code]
-    const message = encodeURIComponent(
-      currentLanguage.code === "en"
-        ? "Hello! I'm interested in your travel services."
-        : "Привет! Меня интересуют ваши туристические услуги.",
-    )
+    const number = t(`whatsapp.phoneNumber.${currentLanguage.code}`)
+    const message = encodeURIComponent(t("whatsapp.message.hero"))
     window.open(`https://wa.me/${number}?text=${message}`, "_blank")
   }
 

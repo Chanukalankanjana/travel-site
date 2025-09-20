@@ -1219,7 +1219,16 @@ type TranslationKeys =
   // Contact Hero Section
   | "contact.hero.badge"
   | "contact.hero.title"
-  | "contact.hero.subtitle";
+  | "contact.hero.subtitle"
+  // WhatsApp and Phone
+  | "whatsapp.phoneNumber.en"
+  | "whatsapp.phoneNumber.ru"
+  | "whatsapp.message.hero"
+  | "whatsapp.message.packages"
+  | "whatsapp.message.packageDetail"
+  | "whatsapp.message.contact"
+  | "whatsapp.message.adventure"
+  | "whatsapp.message.destination";
 
 type TranslationMap = {
   [key in TranslationKeys]: string;
@@ -2585,6 +2594,16 @@ const translations: { [lang: string]: TranslationMap } = {
     "contact.hero.title": "Contact Us",
     "contact.hero.subtitle":
       "Ready to embark on your Sri Lankan adventure? We're here to help you plan the perfect journey. Reach out to us and let's create unforgettable memories together.",
+    
+    // WhatsApp and Phone
+    "whatsapp.phoneNumber.en": "+94774416774",
+    "whatsapp.phoneNumber.ru": "+94771234567",
+    "whatsapp.message.hero": "Hello! I'm interested in your travel services.",
+    "whatsapp.message.packages": "Hello! I'd like a custom Sri Lanka tour package. Please help me plan an itinerary.",
+    "whatsapp.message.packageDetail": "Hello! I'm interested in this {packageName} tour package. Could you provide more details and availability?",
+    "whatsapp.message.contact": "Hello! I'd like to get in touch about your travel services.",
+    "whatsapp.message.adventure": "Hello! I'm interested in your adventure tours in Sri Lanka.",
+    "whatsapp.message.destination": "Hi! I'm interested in booking this {destinationName} tour. Can you provide more details?",
   },
   ru: {
     // Navigation
@@ -3976,6 +3995,16 @@ const translations: { [lang: string]: TranslationMap } = {
     "contact.hero.title": "Контакты",
     "contact.hero.subtitle":
       "Готовы отправиться в приключение на Шри-Ланке? Мы здесь, чтобы помочь вам спланировать идеальное путешествие. Обратитесь к нам, и давайте создадим незабываемые воспоминания вместе.",
+    
+    // WhatsApp and Phone
+    "whatsapp.phoneNumber.en": "+94774416774",
+    "whatsapp.phoneNumber.ru": "+94771234567",
+    "whatsapp.message.hero": "Привет! Меня интересуют ваши туристические услуги.",
+    "whatsapp.message.packages": "Здравствуйте! Хочу индивидуальный тур по Шри‑Ланке. Помогите, пожалуйста, составить маршрут.",
+    "whatsapp.message.packageDetail": "Привет! Меня интересует этот {packageName} тур-пакет. Можете предоставить больше информации и доступность?",
+    "whatsapp.message.contact": "Привет! Хотел бы связаться по поводу ваших туристических услуг.",
+    "whatsapp.message.adventure": "Привет! Меня интересуют ваши приключенческие туры на Шри-Ланке.",
+    "whatsapp.message.destination": "Привет! Меня интересует бронирование {destinationName} тура. Можете предоставить больше информации?",
   },
 };
 

@@ -24,18 +24,10 @@ const PackagesContent = () => {
     setIsVisible(true);
   }, []);
 
-  const whatsappNumbers = {
-    en: "+94771234567",
-    ru: "+94777654321",
-  };
-
   const handleWhatsAppClick = (packageName: string) => {
-    const number = whatsappNumbers[currentLanguage.code];
-    const message = encodeURIComponent(
-      currentLanguage.code === "en"
-        ? `Hello! I'm interested in the ${packageName}. Could you provide more details and availability?`
-        : `Привет! Меня интересует тур ${packageName}. Можете предоставить больше информации и доступность?`
-    );
+    const number = t(`whatsapp.phoneNumber.${currentLanguage.code}`);
+    const baseMessage = t("whatsapp.message.packageDetail");
+    const message = encodeURIComponent(baseMessage.replace("{packageName}", packageName));
     window.open(`https://wa.me/${number}?text=${message}`, "_blank");
   };
 
